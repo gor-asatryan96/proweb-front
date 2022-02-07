@@ -1,0 +1,17 @@
+.flag {
+  display: inline-flex;
+  width: 1.571rem;
+  height: 1.142rem;
+  border-radius: 0.3rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.flag_england {
+  background-image: url("../../images/flag/englandBig.svg");
+}
+
+.flag_germany {
+  background-image: url("../../images/flag/germany.svg");
+}

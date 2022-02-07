@@ -1,0 +1,272 @@
+.favourite.popup_favourite {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: var(--pmbet-blue);
+  color: var(--pmbet-green);
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+}
+
+.favourite__header {
+  display: flex;
+  justify-content: space-between;
+  height: 3.571rem;
+}
+
+.favourite__title {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  font-size: 1.571rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.favourite__closeButton {
+  position: relative;
+  width: 4.285rem;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.favourite__closeButtonContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favourite__closeButtonSvg {
+  --icon-size: 1.33rem;
+
+  width: var(--icon-size);
+  height: var(--icon-size);
+  fill: var(--pmbet-white);
+}
+
+.favourite__container {
+  position: relative;
+  overflow-y: auto;
+  height: calc(100% - 16.142rem);
+  padding-bottom: 0.2rem;
+  background-color: var(--pmbet-cream);
+}
+
+.favourite__emptyContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.571rem;
+  font-weight: bold;
+}
+
+.favourite__listFilter {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0.714rem;
+  overflow-x: auto;
+  color: var(--pmbet-gray);
+}
+
+.favourite__itemFilter {
+  width: 12.428rem;
+  height: 9.571rem;
+  flex-shrink: 0;
+
+  &:not(:last-child) {
+    margin-right: 0.714rem;
+  }
+}
+
+.favourite__filterItem {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.favourite__filterItemSquare {
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0.428rem;
+  background-color: var(--pmbet-gray);
+  color: var(--pmbet-gray-lighter--2);
+}
+
+.favorite__filterInfoTitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.285rem;
+  padding-right: 1.7rem;
+  font-size: 1.285rem;
+}
+
+.favorite__filterInfoTitleGameName {
+  margin-top: 0.1rem;
+  margin-left: 0.2rem;
+  font-size: 1.071rem;
+  line-height: 1;
+}
+
+.favourite__filterTime {
+  display: flex;
+  justify-content: center;
+  color: var(--pmbet-gray-lighter--2);
+}
+
+.favourite__itemDate {
+  padding-left: 1rem;
+  background-color: var(--pmbet-white);
+  border-bottom: 1px solid var(--pmbet-black-05);
+  font-size: 1.142rem;
+  line-height: 1.8;
+}
+
+.favourite__casinoField {
+  position: relative;
+  display: flex;
+  padding-left: 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
+  }
+}
+
+.favourite__casinoFieldImg {
+  width: 8.428rem;
+  height: 5.285rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.favourite__casinoFieldImgTag {
+  object-fit: cover;
+}
+
+.favourite__casinoFieldInfo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 0.571rem;
+}
+
+.favourite__casinoFieldTitle {
+  font-size: 1.071rem;
+  font-weight: bold;
+}
+
+.favourite__casinoFiledGameName {
+  font-size: 1.125rem;
+}
+
+.favourite__casinoFieldButtonContainer {
+  margin-top: 0.428rem;
+  margin-right: 1.428rem;
+  margin-left: auto;
+}
+
+.favourite__casinoFieldButton {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.favourite__casinoFieldButton_filter {
+  position: absolute;
+  top: 0.428rem;
+  right: 0.428rem;
+}
+
+.favourite__casinoFieldButtonIcon {
+  width: 1.683rem;
+  height: 1.584rem;
+}
+
+.favourite__casinoFieldButtonIconSvg {
+  width: 100%;
+  height: 100%;
+  fill: var(--pmbet-yellow);
+}
+
+.favourite__filterColumn {
+  display: flex;
+}
+
+.favourite__filterColumn_addMargin {
+  margin-bottom: 0.357rem;
+}
+
+.favourite__filterCell {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.428rem;
+  border-radius: 0.3rem;
+  background-color: var(--pmbet-blue);
+
+  &:not(:last-child) {
+    margin-right: 0.428rem;
+  }
+}
+
+.favourite__flag {
+  margin-right: 0.571rem;
+}
+
+.favourite__filterCell_growOne {
+  flex-grow: 1;
+}
+
+.favourite__filters {
+  display: flex;
+  flex-direction: column;
+  height: 12.571rem;
+  padding-top: 0.428rem;
+}
+
+.favourite__filtersTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.favourite__filterSvg {
+  width: 0.917rem;
+  height: 0.94rem;
+  fill: var(--pmbet-green);
+  margin-right: 0.228rem;
+}
+
+.favourite__empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  color: var(--pmbet-gray-light);
+  font-size: 1.375rem;
+  font-weight: bold;
+}

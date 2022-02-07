@@ -1,0 +1,25 @@
+.socialList {
+  display: flex;
+}
+
+.socialList__item {
+  &:not(:last-child) {
+    margin-right: 0.9rem;
+  }
+}
+
+.socialList__itemLink {
+  --link-size: 1.714rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--link-size);
+  height: var(--link-size);
+}
+
+.socialList__itemLinkSvg {
+  width: 100%;
+  height: 100%;
+  fill: var(--pmbet-gray);
+}

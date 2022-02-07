@@ -1,0 +1,61 @@
+/* global style */
+@import "./variable.scss";
+@import "./fonts.scss";
+@import "./global.scss";
+@import "./core.scss";
+
+//blocks
+@import "./blocks/header";
+@import "./blocks/gallery";
+@import "./blocks/panel";
+@import "./blocks/sidebar";
+@import "./blocks/bet";
+@import "./blocks/betFilterConfig";
+@import "./blocks/betFilterUpcoming";
+@import "./blocks/betItem";
+@import "./blocks/menu";
+@import "./blocks/gameTypes";
+@import "./blocks/responsibility";
+@import "./blocks/socialList";
+@import "./blocks/betLive";
+@import "./blocks/flag";
+@import "./blocks/live";
+@import "./blocks/betGame";
+@import "./blocks/search";
+@import "./blocks/liveCasino";
+@import "./blocks/casino";
+@import "./blocks/userInfo";
+@import "./blocks/userMenuConfig";
+@import "./blocks/license";
+@import "./blocks/casino-kind";
+@import "./blocks/navigation";
+@import "./blocks/bet-search";
+@import "./blocks/favourite";
+@import "./blocks/jeckpot";
+@import "./blocks/game";
+
+//popup
+@import "./popup/popup";
+@import "./popup/popup-login";
+@import "./popup/popup-recovery";
+@import "./popup/popup-forgot";
+@import "./popup/popup-reset";
+@import "./popup/popup-sent";
+@import "./popup/popup-confirm";
+@import "./popup/popup-skip";
+@import "./popup/popup-create";
+@import "./popup/popup-personal";
+@import "./popup/popup-document";
+@import "./popup/popup-winner";
+@import "./popup/popup-error";
+@import "./popup/fixtures";
+@import "./popup/about-use";
+@import "./popup/express";
+@import "./popup/withdraw";
+@import "./popup/transaction";
+@import "./popup/coupon";
+@import "./popup/profile";
+@import "./popup/deposit";
+@import "./popup/message";
+@import "./popup/gifts";
+@import "./popup/history";

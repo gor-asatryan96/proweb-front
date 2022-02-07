@@ -1,0 +1,127 @@
+.game-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 1.857rem;
+
+  background-color: var(--pmbet-blue-dark);
+}
+
+.game-search-title {
+  margin-right: 0.571rem;
+
+  color: var(--pmbet-green);
+
+  font-size: 1.142rem;
+  font-weight: 600;
+  line-height: 1.785rem;
+}
+
+.game-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.game-search-input {
+  width: 12.857rem;
+  max-width: 19.285rem;
+  padding: 0;
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+  color: var(--pmbet-gray);
+
+  font-size: 1.142rem;
+  line-height: 1.5rem;
+}
+
+.game-search__icon-btn {
+  position: relative;
+
+  width: 1.928rem;
+  height: 1.928rem;
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+}
+
+.game-search__icon-btn svg {
+  max-width: 100%;
+  max-height: 100%;
+
+  fill: var(--pmbet-gray);
+}
+
+.game-gallery__swiper {
+  position: relative;
+  height: 7.357rem;
+  margin-bottom: 1.428rem;
+}
+
+.game-slider__block {
+  display: flex;
+  overflow-x: auto;
+
+  max-width: 100%;
+  margin-bottom: 1.428rem;
+}
+
+.game-slider {
+  position: relative;
+
+  width: 12.857rem;
+  margin-left: 0.714rem;
+  border-radius: 0.285rem;
+}
+
+.game-slider:first-child {
+  margin-left: 0.857rem;
+}
+
+.game-slider::before {
+  content: "";
+  display: block;
+  padding-top: 33.333%;
+}
+
+.game-slider img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0.285rem;
+}
+
+.game-slider__text-block {
+  position: absolute;
+  top: 0.428rem;
+  right: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-slider__text_title {
+  color: var(--pmbet-white-light);
+
+  font-size: 1.285rem;
+  font-weight: bold;
+  line-height: 1.428rem;
+}
+
+.game-slider__text_price {
+  color: var(--pmbet-yellow-dark);
+
+  font-size: 1.142rem;
+  font-weight: bold;
+  line-height: 1.285rem;
+}
+
+.casino-advertising_game {
+  margin-bottom: 1.428rem;
+}

@@ -1,0 +1,175 @@
+.bet-search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 1;
+
+  display: none;
+  flex-direction: column;
+
+  background-color: var(--pmbet-cream);
+}
+
+.bet-search.active {
+  display: flex;
+}
+
+.bet-search__value {
+  height: 3.66rem;
+  flex-shrink: 0;
+}
+
+.bet-search__label {
+  position: relative;
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+}
+
+.bet-search__input {
+  appearance: none;
+  border: none;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--pmbet-white-5);
+
+  font-size: 1.142rem;
+  color: var(--pmbet-gray);
+
+  padding-top: 1rem;
+  padding-right: 4.642rem;
+  padding-bottom: 1rem;
+  padding-left: 1.428rem;
+}
+
+.bet-search__input::placeholder {
+  color: var(--pmbet-gray-light);
+}
+
+.bet-search__del {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  appearance: none;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  display: inline-flex;
+
+  height: 100%;
+  width: 4.285rem;
+}
+
+.bet-search__del svg {
+  fill: var(--pmbet-gray);
+}
+
+.bet-search__empty {
+  position: relative;
+  flex-grow: 1;
+}
+
+.bet-search__empty svg {
+  width: 8.474rem;
+}
+
+.bet-search__result {
+  display: none;
+}
+
+.bet-search__result.active {
+  display: block;
+}
+
+.bet-search__result.active ~ .bet-search__empty {
+  display: none;
+}
+
+.bet-search__quantity {
+  position: relative;
+
+  font-size: 1.142rem;
+  color: var(--pmbet-gray);
+
+  padding-top: 0.5rem;
+  padding-right: 1.428rem;
+  padding-bottom: 0.642rem;
+  padding-left: 1.428rem;
+}
+
+.bet-search__quantity::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,var(--pmbet-black-03) 50%,var(--pmbet-white-6) 50%);
+}
+
+.bet-search__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bet-search__item {
+  position: relative;
+
+  padding-top: 0.714rem;
+  padding-right: 1.428rem;
+  padding-bottom: 0.857rem;
+  padding-left: 1.428rem;
+}
+
+.bet-search__item::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,var(--pmbet-black-03) 50%,var(--pmbet-white-6) 50%);
+}
+
+.bet-search__title {
+  color: var(--pmbet-blue-darker);
+  font-size: 1.142rem;
+
+  margin-bottom: 0.571rem;
+}
+
+.bet-search__team {
+
+}
+
+.bet-search__club {
+  font-size: 1.285rem;
+  font-weight: 700;
+
+  color: var(--pmbet-gray);
+}
+
+.bet-search__separate {
+  color: var(--pmbet-blue-darker);
+}
+
+.bet-search__time {
+  color: var(--pmbet-blue-darker);
+  font-weight: 700;
+
+  margin-left: 1.785rem;
+}

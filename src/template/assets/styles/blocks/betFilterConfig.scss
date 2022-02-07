@@ -1,0 +1,288 @@
+.bet-filter__config {
+  //padding-top: 0.5rem;
+  //padding-right: 0.428rem;
+  padding-left: 1.071rem;
+
+  transition: var(--pmbet-transition);
+
+  max-height: 0;
+  overflow: hidden;
+
+  .bet-type__list {
+    position: relative;
+
+    justify-content: flex-start;
+
+    padding-top: 1.214rem;
+    padding-bottom: 1.214rem;
+
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .bet-type__list::after {
+    content: "0";
+    display: block;
+    height: 100%;
+    width: 1.071rem;
+    flex-shrink: 0;
+
+    color: transparent;
+  }
+
+  .bet-type__item {
+    flex-grow: 0;
+  }
+
+  .bet-type__item--active {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+
+  .bet-type__item--active .bet-type__link {
+    background-color: var(--pmbet-green);
+    color: var(--pmbet-white);
+  }
+}
+
+.bet-filter__config.active {
+  max-height: 300px;
+}
+
+.bet-filter__config__line {
+  position: relative;
+
+  border-bottom: 1px solid var(--pmbet-black-03);
+}
+
+.bet-filter__config__line--hours .bet-type__list {
+  padding-top: 1.285rem;
+}
+
+.bet-filter__config__line--hours .bet-type__link {
+  min-width: 3.857rem;
+
+  padding-right: 0.714rem;
+  padding-left: 0.714rem;
+}
+
+.bet-filter__config__line--type {
+  //padding-top: 1.214rem;
+  //padding-bottom: 1.214rem;
+}
+
+.bet-filter__config__line--type .bet-type__link {
+  min-width: 3.857rem;
+
+  padding-right: 0.714rem;
+  padding-left: 0.714rem;
+}
+
+.bet-filter__config__line--type .dropdown__list {
+  padding-right: 1px;
+  padding-left: 0.285rem;
+}
+
+.bet-filter__config__line--type .dropdown__arrow {
+  right: 1px;
+}
+
+.bet-filter__config__line--match {
+  display: flex;
+  align-items: center;
+
+  //padding-top: 1.214rem;
+  //padding-bottom: 1.214rem;
+}
+
+.bet-filter__config__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+
+  padding-top: 1.642rem;
+  padding-bottom: 1.642rem;
+
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.bet-filter__config__list::after {
+  content: "0";
+  display: block;
+  height: 100%;
+  width: 2.142rem;
+  flex-shrink: 0;
+  color: transparent;
+}
+
+.bet-filter__config__item {
+  flex-shrink: 0;
+}
+
+.bet-filter__config__item:not(:last-child) {
+  margin-right: 2.142rem;
+}
+
+.bet-filter__config__checkbox {
+  align-items: center;
+
+  height: auto;
+  width: auto;
+
+  font-size: 1.142rem;
+  font-weight: 700;
+  color: var(--pmbet-gray-light);
+}
+
+.bet-filter__config__name {
+  flex-shrink: 0;
+}
+
+.bet-filter__config__checkbox .checkbox-2__icon {
+  border-width: 1px;
+
+  height: 1.285rem;
+  width: 1.285rem;
+}
+
+.bet-filter__config__checkbox .checkbox-2__icon {
+  margin-right: 0.357rem;
+
+  border-radius: 2px;
+  border-color: var(--pmbet-gray-light);
+}
+
+.bet-filter__config__checkbox .checkbox-2__btn:checked ~ .checkbox-2__icon {
+  border-color: var(--pmbet-green);
+}
+
+.bet-filter__config__checkbox .checkbox-2__btn:checked ~ .bet-filter__config__name {
+  color: var(--pmbet-gray);
+}
+
+.bet-filter__config__select {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  margin-left: auto;
+}
+
+.bet-filter__config__select .dropdown__list {
+  background-color: transparent;
+  box-shadow: none;
+
+  padding-top: 0;
+  padding-left: 0.285rem;
+  padding-bottom: 0;
+  padding-right: 0.9rem;
+
+  border: 1px solid var(--pmbet-gray-light);
+}
+
+.bet-filter__config__select .dropdown__arrow {
+  right: 0.214rem;
+}
+
+.bet-filter__config__line--event {
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: none;
+
+  padding-top: 0.642rem;
+  padding-right: 1.071rem;
+  padding-bottom: 0.642rem;
+}
+
+.bet-filter__config__line--event::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: -0.428rem;
+  height: 2px;
+  width: calc(100% + 0.856rem);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
+}
+
+.bet-filter__config__event {
+  font-weight: 700;
+  font-size: 1.285rem;
+  color: var(--pmbet-gray-light);
+}
+
+.bet-filter__config__nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+}
+
+.bet-filter__config__nav__item:not(:last-child) {
+  margin-right: 2.5rem;
+}
+
+.bet-filter__config__nav__item--reset .bet-filter__config__nav__icon {
+  width: 1.071rem;
+}
+
+.bet-filter__config__nav__item--reset .bet-filter__config__nav__icon::before {
+  content: "";
+  display: block;
+  padding-top: 101.66%;
+}
+
+.bet-filter__config__nav__item--save .bet-filter__config__nav__icon {
+  width: 1.285rem;
+}
+
+.bet-filter__config__nav__item--save .bet-filter__config__nav__icon::before {
+  content: "";
+  display: block;
+  padding-top: 94.44%;
+}
+
+.bet-filter__config__nav__btn {
+  display: inline-flex;
+  align-items: center;
+
+  appearance: none;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+
+  background-color: transparent;
+}
+
+.bet-filter__config__nav__item--save .bet-filter__config__nav__btn svg {
+  fill: transparent;
+  stroke: var(--pmbet-yellow);
+}
+
+.bet-filter__config__nav__item--save .bet-filter__config__nav__btn.active svg {
+  fill: var(--pmbet-yellow);
+}
+
+.bet-filter__config__nav__icon {
+  position: relative;
+  flex-shrink: 0;
+
+  margin-right: 0.428rem;
+}
+
+.bet-filter__config__nav__icon svg {
+  height: 100%;
+  width: 100%;
+}
+
+.bet-filter__config__nav__name {
+  font-size: 1.285rem;
+  font-weight: 700;
+  color: var(--pmbet-gray);
+}

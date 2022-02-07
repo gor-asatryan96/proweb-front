@@ -1,0 +1,177 @@
+.bet-type__live {
+  padding-top: 0.571rem;
+  padding-bottom: 1.071rem;
+
+  border-bottom: none;
+}
+
+.bet-type__live .bet-type__link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.bet-live {
+  .bet-rate__set__info {
+    padding-top: 0.5rem;
+  }
+
+  .bet-rate__set__team__block {
+    display: flex;
+    //align-items: center;
+
+    margin-bottom: 0.7rem;
+  }
+}
+
+.bet-live__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bet-live__btn {
+  appearance: none;
+
+  display: flex;
+  align-items: center;
+
+  font-weight: 700;
+  font-size: 1.071rem;
+  color: var(--pmbet-gray);
+
+  //margin-bottom: 1px;
+
+  background-color: var(--pmbet-white-7);
+  border: none;
+  border-radius: 0.214rem;
+
+  //margin-right: 0.571rem;
+
+  padding-top: 0.95rem;
+  padding-right: 0.714rem;
+  padding-bottom: 0.95rem;
+  padding-left: 0.714rem;
+
+  width: 100%;
+}
+
+.bet-live__dropdown {
+  transition: var(--pmbet-transition);
+}
+
+.bet-live__btn.active .bet-live__dropdown {
+  transform: scale(-1);
+}
+
+.bet-live__block {
+  height: 0;
+
+  transform: scaleY(0);
+  transform-origin: center top;
+}
+
+.bet-live__block.active {
+  height: auto;
+
+  transform: scaleY(1);
+  transition: var(--pmbet-transition);
+}
+
+.bet-live__flag {
+  position: relative;
+  width: 1.571rem;
+
+  margin-right: 0.571rem;
+
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+}
+
+.bet-live__flag::before {
+  content: "";
+  display: block;
+  padding-top: 72.72%;
+}
+
+.bet-live__flag img {
+  height: 100%;
+  width: 100%;
+}
+
+.bet-live__num {
+  margin-right: 1.357rem;
+  margin-left: auto;
+}
+
+.bet-live__team {
+  position: relative;
+
+  padding-top: 0.286rem;
+  padding-right: 0.357rem;
+  padding-bottom: 0.286rem;
+  padding-left: 0.357rem;
+
+  background-color: var(--pmbet-white-7);
+
+  font-size: 1.071rem;
+  color: var(--pmbet-blue-darkest);
+}
+
+.bet-live__team::before,
+.bet-live__team::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
+}
+
+.bet-live__team::before {
+  top: 0;
+  right: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom,var(--pmbet-white-6) 50%, var(--pmbet-black-03) 50%);
+}
+
+.bet-live__team::after {
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.bet-rate__live .bet-rate__item:last-child::after {
+  content: none;
+}
+
+.bet-rate__live .bet-rate__nav__time {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--pmbet-green);
+}
+
+.bet-rate__set__team__inner {
+  margin-right: 0.5rem;
+}
+
+.bet-rate__live__score {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+
+  color: var(--pmbet-gray);
+  font-size: 1.071rem;
+  font-weight: 700;
+
+  margin-left: auto;
+  //margin-right: 0.714rem;
+}
+
+.bet-rate__live__num:first-child {
+  margin-bottom: 0.357rem;
+}
+
+.bet-rate__live__time {
+  font-weight: 700;
+  font-size: 0.785rem;
+  color: var(--pmbet-white-lighter--2);
+}

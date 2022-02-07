@@ -1,0 +1,640 @@
+.withdraw {
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  touch-action: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  background-color: var(--pmbet-cream);
+  font-family: "Poppins", "Arial", sans-serif;
+}
+
+.withdraw__title-icon {
+  display: block;
+  position: relative;
+
+  width: 2.173rem;
+  margin-right: 0.685rem;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-top: 85.44%;
+  }
+}
+
+.withdraw__title-icon svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: var(--pmbet-gray);
+  stroke: var(--pmbet-gray);
+}
+
+.withdraw__title-icon svg path:not(:first-child) {
+  fill: var(--pmbet-gray);
+}
+
+.withdraw__title-icon svg path:not(:last-child) {
+  fill: var(--pmbet-gray);
+}
+
+.withdraw__title-icon svg path:last-child {
+  stroke: var(--pmbet-gray);
+}
+
+.withdraw__list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.614rem;
+  margin: 0;
+}
+
+.withdraw__list.passive {
+  display: none;
+}
+
+.withdraw__item {
+  width: 31.439%;
+  margin-bottom: 0.564rem;
+
+  &:not(:nth-child(3n+3)) {
+    margin-right: calc((100% - 94.317%) / 2);
+  }
+}
+
+.withdraw__link {
+  display: block;
+  text-decoration: none;
+}
+
+.withdraw__img-container {
+  position: relative;
+  width: 100%;
+
+  background-color: var(--pmbet-white);
+
+  border-bottom: 1px solid var(--pmbet-black-03);
+}
+
+.withdraw__img-container::before {
+  content: "";
+  display: block;
+  padding-top: 44%;
+}
+
+.withdraw__img_voda {
+  padding: 0.428rem;
+}
+
+.withdraw__img-container img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.withdraw__img_voda img {
+  //width: 88.709%;
+  //height: auto;
+}
+
+.withdraw__img_hola img {
+  width: 89.427%;
+  height: auto;
+}
+
+.withdraw__img_air img {
+  width: 80.645%;
+  height: auto;
+}
+
+.withdraw__img_tigo img {
+  width: 88.709%;
+  height: auto;
+}
+
+.withdraw__img_pm img {
+  width: 65.185%;
+  height: auto;
+}
+
+.withdraw__img_visa img {
+  width: 82.258%;
+  height: auto;
+}
+
+.withdraw__title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  // text-transform: capitalize;
+  text-align: center;
+
+  color: var(--pmbet-white);
+  background-color: var(--pmbet-gray);
+  border-top: 1px solid var(--pmbet-white);
+
+  width: 100%;
+
+  padding-top: 0.571rem;
+  padding-right: 0.25rem;
+  padding-bottom: 0.571rem;
+  padding-left: 0.25rem;
+}
+
+.withdraw__title.withdraw__title_small {
+  font-size: 0.786rem;
+}
+
+.withdraw__sign-content {
+  display: none;
+  width: 100%;
+  padding: 0.928rem 0 1.428rem;
+
+  background-color: var(--pmbet-white);
+}
+
+.withdraw__sign-content.active {
+  display: block;
+}
+
+.withdraw__sign-icon-box {
+  position: relative;
+  width: 7.857rem;
+  height: 1.928rem;
+
+  display: inline-flex;
+
+  margin-bottom: 0.1rem;
+  margin-left: 1.214rem;
+}
+
+.withdraw__sign-icon-box::before {
+  content: "";
+  display: block;
+  padding-top: 24.54%;
+}
+
+.withdraw__sign-icon-box img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.withdraw__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.714rem;
+}
+
+.withdraw__label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.withdraw__input {
+  display: block;
+
+  font-size: 0.857rem;
+  font-weight: 600;
+  line-height: 1.285rem;
+  text-transform: capitalize;
+  letter-spacing: .028rem;
+
+  width: 100%;
+  padding: 0.742rem 0.621rem;
+
+  color: var(--pmbet-gray);
+  background-color: var(--pmbet-white-lighter);
+  border: none;
+  outline: none;
+}
+
+.withdraw__input::placeholder {
+  color: var(--pmbet-gray-5);
+}
+
+.withdraw__input.withdraw__input_num {
+  margin-bottom: 1.42rem;
+}
+
+.withdraw__input.withdraw__input_amount {
+  position: relative;
+}
+
+.withdraw__input-amount-text {
+  display: block;
+
+  font-size: 0.714rem;
+  font-weight: 600;
+  line-height: 1.142rem;
+  letter-spacing: 0.015rem;
+
+  color: var(--pmbet-gray);
+}
+
+.withdraw__form-btn {
+  display: block;
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+
+  margin-top: 1.571rem;
+  width: 38.071%;
+  padding: 0.714rem 0;
+  border-radius: 0.142rem;
+
+  background-color: var(--pmbet-green);
+  color: var(--pmbet-white);
+  border: none;
+  outline: none;
+}
+
+.withdraw__form-btn:disabled {
+  opacity: 0.5;
+}
+
+.withdraw__bank {
+  display: none;
+}
+
+.withdraw__bank.active {
+  display: block;
+}
+
+
+.withdraw__bank-list {
+  font-family: "Poppins", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.withdraw__bank-card {
+  position: relative;
+  padding: 0.957rem 0;
+  background-color: var(--pmbet-white);
+}
+
+.withdraw__bank-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0.142rem;
+  background-image: linear-gradient(to bottom, var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
+}
+
+.withdraw__bank-card-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.withdraw__bank-logo {
+  position: relative;
+  width: 28.019%;
+}
+
+.withdraw__bank-logo::before {
+  content: '';
+  display: block;
+  padding-top: 31.192%;
+}
+
+.withdraw__bank-logo .img-container {
+  justify-content: flex-start;
+  padding-left: 0.714rem;
+  padding-right: 2.857rem;
+}
+
+.withdraw__bank-logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.withdraw__bank-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 63.285%;
+  padding-right: 0.5rem;
+}
+
+.withdraw__bank-text {
+  font-size: 0.857rem;
+  font-weight: 600;
+  line-height: 1.285rem;
+  letter-spacing: .038rem;
+
+  color: var(--pmbet-gray);
+}
+
+.withdraw__bank-text:first-child {
+  margin-bottom: 0.142rem;
+}
+
+.withdraw__bank-card.active .withdraw__bank-arrow {
+    transform: rotate(180deg);
+}
+
+.withdraw__bank-arrow {
+  width: 8.696%;
+  position: relative;
+  padding: 0 0.821rem;
+  transition: all 200ms;
+}
+
+.withdraw__bank-arrow::before {
+  content: '';
+  display: block;
+  padding-top: 62.5%;
+}
+
+.withdraw__bank-arrow-box {
+  width: 1.141rem;
+  height: 0.64rem;
+}
+
+.withdraw__bank-arrow-box svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.withdraw__bank-inner {
+  padding: 0.657rem 0.714rem 0.857rem;
+  color: var(--pmbet-gray);
+}
+
+.withdraw__bank-inner-content {
+  padding-right: 3.65rem;
+}
+
+.withdraw__bank-inner-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+
+  margin-bottom: 0.6rem;
+}
+
+.withdraw__bank-inner-text {
+  font-size: 0.857rem;
+  font-weight: 600;
+  line-height: 1.314rem;
+}
+
+.withdraw__bank-inner-list {
+  list-style: '-' inside;
+  margin: 0;
+  padding: 0;
+}
+
+.withdraw__bank-card.active {
+  background-color: var(--pmbet-white-5);
+}
+
+.withdraw__bank-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.714rem;
+  margin-bottom: 1.428rem;
+}
+
+.withdraw__bank-row {
+  position: relative;
+  display: flex;
+  padding-top: 1.642rem;
+  margin-bottom: 1.814rem;
+}
+
+.withdraw__bank-row.withdraw__bank-row_valid {
+  margin-bottom: 2.3rem;
+}
+
+.withdraw__bank-form input,
+.withdraw__bank-form select {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+
+  color: var(--pmbet-gray);
+
+  padding-top: 0.892rem;
+  padding-bottom: 0.83rem;
+  padding-left: 0.83rem;
+  width: 100%;
+  min-width: 3rem;
+  border: none;
+  outline: none;
+}
+
+.withdraw__bank-label {
+  width: 100%;
+}
+
+.withdraw__bank-label-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  color: var(--pmbet-gray);
+
+  font-size: 1rem;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 700;
+}
+
+.withdraw__bank-row_card {
+  width: 71.519%;
+}
+
+.withdraw__bank-row_card .withdraw__bank-label {
+  width: 23.404%;
+}
+
+.withdraw__bank-row_card .withdraw__bank-label:not(:last-child) {
+  margin-right: auto;
+}
+
+.withdraw__bank-row_card input {
+  text-align: center;
+  padding-left: 0;
+}
+
+.withdraw__bank-row_name {
+  width: 71.519%;
+}
+
+.withdraw__bank-row_valid {
+  width: 58.331%;
+  justify-content: space-between;
+}
+
+.withdraw__bank-select-box {
+  width: 48.695%;
+}
+
+.withdraw__bank-select {
+  display: block;
+  padding-left: 0.714rem;
+  appearance: none;
+
+  background-color: var(--pmbet-white);
+  background-image: url("../../images/icon/arrow-bottom.svg");
+  background-size: 1.141rem 0.64rem;
+  background-position-x: calc(100% - 1.071rem);
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+}
+
+.withdraw__bank-row_submit {
+  width: 100%;
+  align-items: stretch;
+}
+
+.withdraw__bank-row_submit .withdraw__bank-label {
+  width: 61.881%;
+}
+
+.withdraw__bank-submit-btn {
+  width: 38.119%;
+  border: none;
+  outline: none;
+
+  background-color: var(--pmbet-green);
+  color: var(--pmbet-white);
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.withdraw__bank-submit-btn:disabled {
+  opacity: 50%;
+}
+
+.withdraw__bank-drop {
+  position: relative;
+  display: none;
+
+  padding: 0.857rem 0 0;
+}
+
+//.withdraw__bank-drop::before {
+//  content: '';
+//  position: absolute;
+//  bottom: 0;
+//  left: 0;
+//  right: 0;
+//
+//  width: 100%;
+//  height: 0.142rem;
+//
+//  background: rgb(227,227,227);
+//  background: linear-gradient(180deg, rgba(227,227,227,1) 0%, rgba(227,227,227,1) 50%, rgba(246,246,246,1) 50%, rgba(246,246,246,1) 100%);
+//}
+
+.withdraw__bank-drop.active {
+  display: block;
+}
+
+.withdraw__bank-form_drop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 1.642rem;
+  margin: 0 0.571rem 0 0.714rem;
+}
+
+.withdraw__bank-drop-block {
+  display: flex;
+
+  width: 83.668%;
+}
+
+.withdraw__bank-drop-label {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+
+  width: 100%;
+}
+
+.withdraw__bank-drop-input {
+  width: 63.964%;
+  padding-top: 0.592rem;
+  padding-bottom: 0.592rem;
+  padding-left: 0.714rem;
+  border: none;
+  outline: none;
+
+  color: var(--pmbet-gray);
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.withdraw__bank-btn {
+  display: block;
+
+  width: 36.036%;
+  border: none;
+  outline: none;
+
+  background-color: var(--pmbet-green);
+  color: var(--pmbet-white);
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.withdraw__bank-btn:disabled {
+  opacity: 50%;
+}
+
+.withdraw__bank-drop-icon {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+
+  display: inline-flex;
+
+  position: relative;
+
+  height: 1.95rem;
+  width: 1.642rem;
+  flex-shrink: 0;
+}
+
+.withdraw__bank-drop-block .withdraw__bank-label-text {
+  transform: translateY(-1.642rem);
+}
+
+
+

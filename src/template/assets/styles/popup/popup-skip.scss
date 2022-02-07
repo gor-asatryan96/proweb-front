@@ -1,0 +1,56 @@
+.popup-skip {
+
+}
+
+.popup-skip__caption {
+  font-size: 1.428rem;
+  font-weight: 700;
+  color: var(--pmbet-gray);
+
+  text-align: center;
+
+  margin-bottom: 2.428rem;
+}
+
+.popup-skip__info {
+  font-size: 1.285rem;
+  color: var(--pmbet-gray);
+
+  margin-bottom: 5.5rem;
+}
+
+.popup-skip__accept {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 1.1rem;
+}
+
+.popup-skip__accept__btn {
+  width: 21.928rem;
+
+  min-width: unset;
+}
+
+.popup-skip__full {
+  display: flex;
+  justify-content: center;
+}
+
+.popup-skip__full__btn {
+  display: inline-flex;
+
+  font-size: 1.428rem;
+  font-weight: 700;
+  color: var(--pmbet-gray);
+  text-decoration: none;
+
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: auto 1.142rem;
+  background-image: url("../../images/icon/arrow-right.svg");
+
+  padding-top: 0.142rem;
+  padding-right: 1.428rem;
+  padding-bottom: 0.142rem;
+}

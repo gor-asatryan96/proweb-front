@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 22.2 16.2" style="enable-background:new 0 0 22.2 16.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#5F6C79;stroke-width:0.2;}
+	.st1{filter:url(#Path_260);}
+	.st2{fill:#D80027;}
+</style>
+<filter  filterUnits="userSpaceOnUse" height="34" id="Path_260" width="40" x="0" y="0">
+	<feOffset  dy="3" input="SourceAlpha"></feOffset>
+	<feGaussianBlur  result="blur" stdDeviation="3"></feGaussianBlur>
+	<feFlood  flood-opacity="0.161"></feFlood>
+	<feComposite  in2="blur" operator="in"></feComposite>
+	<feComposite  in="SourceGraphic" operator="over"></feComposite>
+</filter>
+<g id="englandBig" transform="translate(9 6)">
+	<path id="Path_259" class="st0" d="M-6.5-5.9h17.1c1.4,0,2.5,1.2,2.4,2.5c0,0,0,0,0,0V7.5c0,1.4-1,2.5-2.4,2.6c0,0,0,0,0,0H-6.5
+		c-1.4,0-2.5-1.2-2.4-2.5c0,0,0,0,0,0V-3.3C-8.9-4.7-7.9-5.8-6.5-5.9C-6.5-5.9-6.5-5.9-6.5-5.9z"/>
+	<g transform="matrix(1, 0, 0, 1, -9, -6)" class="st1">
+		<path id="Path_260-2_1_" class="st2" d="M12.5,0.1H9.7v6.5H0.1v3h9.6v6.5h2.7V9.6h9.6v-3h-9.6V0.1z"/>
+	</g>
+</g>
+</svg>

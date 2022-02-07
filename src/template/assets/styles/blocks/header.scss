@@ -1,0 +1,35 @@
+.header {
+  height: 3.857rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: var(--pmbet-blue);
+}
+
+.header__container {
+  display: flex;
+
+  height: 100%;
+}
+
+.header__burger {
+  margin-right: 0.4rem;
+}
+
+.header__burger .img-container {
+  justify-content: flex-start;
+}
+
+.header__logo {
+  margin-right: 0.5rem;
+}
+
+.header__nav {
+  align-self: stretch;
+
+  margin-left: auto;
+}
+
+.header__user {
+  margin-left: auto;
+  align-self: stretch;
+}

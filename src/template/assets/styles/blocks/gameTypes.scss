@@ -1,0 +1,186 @@
+.gameTypes {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.142rem;
+  text-transform: uppercase;
+}
+
+.gameTypes__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 4.26rem;
+  color: var(--pmbet-gray);
+}
+
+.gameTypes__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 1.071rem;
+}
+
+.gameTypes__title {
+  font-size: 1rem;
+
+  font-weight: 600;
+}
+
+.gameTypes__container_active {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  background-color: var(--pmbet-white);
+  color: var(--pmbet-green);
+
+  .gameTypes__container {
+    position: relative;
+  }
+
+  .gameTypes__arrowRight {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 0.728rem;
+    transform: translateY(-50%);
+    width: 0.64rem;
+    height: 1.14rem;
+  }
+
+  .gameTypes__arrowRightSvg {
+    width: 100%;
+    height: 100%;
+    fill: var(--pmbet-green);
+  }
+
+  .gameTypes__title {
+    font-size: 1.142rem;
+    font-weight: 600;
+  }
+
+  .gameTypes__icon svg {
+    fill: var(--pmbet-green);
+  }
+}
+
+.gameTypes__arrowRight {
+  display: none;
+}
+
+.gameTypes__icon {
+  position: relative;
+  width: 2.357rem;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  margin-right: 0.928rem;
+}
+
+.gameTypes__icon::before {
+  content: "";
+  display: block;
+  padding-top: 90.909%;
+}
+
+.gameTypes__icon svg {
+  max-height: 100%;
+  max-width: 100%;
+
+  fill: var(--pmbet-gray);
+}
+
+.gameTypes__icon_football {
+  background-image: url("../../images/sport-kind/football.svg");
+}
+
+.gameTypes__icon_basketball {
+  background-image: url("../../images/sport-kind/basketball.svg");
+}
+
+.gameTypes__icon_tennis {
+  background-image: url("../../images/sport-kind/tennis.svg");
+}
+
+.gameTypes__icon_volleyball {
+  background-image: url("../../images/sport-kind/volleyball.svg");
+}
+
+.gameTypes__icon_iceHockey {
+  background-image: url("../../images/sport-kind/iceHockey.svg");
+}
+
+.gameTypes__icon_tableTennis {
+  background-image: url("../../images/sport-kind/tableTennis.svg");
+}
+
+.gameTypes__icon_handball {
+  background-image: url("../../images/sport-kind/handball.svg");
+}
+
+.gameTypes__icon_handball {
+  background-image: url("../../images/sport-kind/handball.svg");
+}
+
+.gameTypes__icon_baseball {
+  background-image: url("../../images/sport-kind/baseball.svg");
+}
+
+.gameTypes__icon_boxing {
+  background-image: url("../../images/sport-kind/boxing.svg");
+}
+
+.gameTypes__icon_rugbyUnion {
+  background-image: url("../../images/sport-kind/rugbyUnion.svg");
+}
+
+.gameTypes__icon_cricket {
+  background-image: url("../../images/sport-kind/cricket.svg");
+}
+
+.gameTypes__icon_rugbyLeague {
+  background-image: url("../../images/sport-kind/rungbyLeague.svg");
+}
+
+.menu__contentContainers_right .gameTypes__title {
+  font-size: 0.857rem;
+}
+
+.gameTypes__additionalLinks {
+  padding-bottom: 2rem;
+  background-color: var(--pmbet-white-7);
+}
+
+.gameTypes_inner {
+  .gameTypes__item {
+    color: var(--pmbet-gray-light);
+  }
+
+  .gameTypes__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .gameTypes__icon {
+    background-color: transparent;
+  }
+
+  .gameTypes__item_active {
+    --padding-box: 0.214rem;
+    position: relative;
+    color: var(--pmbet-white);
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: var(--padding-box);
+      right: var(--padding-box);
+      bottom: var(--padding-box);
+      left: var(--padding-box);
+      background-color: var(--pmbet-green);
+    }
+  }
+}

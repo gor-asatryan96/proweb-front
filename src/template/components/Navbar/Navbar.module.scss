@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  border-bottom: 3px solid #8EC714;
+  background-color: #1C2129;
+}
+
+.navItem {
+  margin: 0 2rem;
+  color: #8EC714;
+  font-size: 1.2rem;
+}
