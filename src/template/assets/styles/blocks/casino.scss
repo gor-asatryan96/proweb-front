@@ -102,10 +102,11 @@
   margin-right: 0.75rem;
 }
 
-.casino-game__item:hover .casino-game__play {
+.casino-game__item:hover .casino-game__play, .casino-game__play.active {
   transform: scale(1);
   visibility: visible;
 }
+
 
 .casino-game__item.new {
   overflow: hidden;

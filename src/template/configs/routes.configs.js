@@ -73,6 +73,26 @@ export const ROUTES = [
     element: <Games />,
   },
   {
+    path: '/fixtures',
+    name: 'FIXTURES',
+    element: <Games />,
+  },
+  {
+    path: '/promotions',
+    name: 'PROMOTIONS',
+    element: <Games />,
+  },
+  {
+    path: '/statistic',
+    name: 'STATISTIC',
+    element: <Games />,
+  },
+  {
+    path: '/results',
+    name: 'RESULTS',
+    element: <Games />,
+  },
+  {
     path: '*',
     element: <Navigate to="/sport" replace />,
   },

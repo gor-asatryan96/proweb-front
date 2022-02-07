@@ -1,5 +1,5 @@
 import React from 'react';
-import BurgerNavFooter from './components/BurgerNavFooter/BurgerNavFooter';
+import BurgerMenuFooter from './components/BurgerMenuFooter/BurgerMenuFooter';
 import BurgerNavLeft from './components/BurgerNavLeft/BurgerNavLeft';
 import BurgerNavRight from './components/BurgerNavRight/BurgerNavRight';
 
@@ -8,7 +8,7 @@ const BurgerNav = ({ setActiveTab }) => <>
     <BurgerNavLeft setActiveTab={setActiveTab} />
     <BurgerNavRight />
   </nav>
-  <BurgerNavFooter />
+  <BurgerMenuFooter />
 </>;
 
 export default BurgerNav;

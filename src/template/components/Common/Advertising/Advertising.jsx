@@ -15,10 +15,12 @@ const fakeItems = [
   },
 ];
 
-const Advertising = ({ items = fakeItems }) => <ul class="bet-advertising__list">
-  {items.map(item => (
-    <AdvertisingItem key={item.id} data={item} />
-  ))}
-</ul>;
+const Advertising = ({ items = fakeItems }) => (
+  <ul className="bet-advertising__list">
+    {items.map(item => (
+      <AdvertisingItem key={item.id} data={item} />
+    ))}
+  </ul>
+);
 
 export default Advertising;
