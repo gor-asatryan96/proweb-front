@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import Panel from './components/Mobile/Panel/Panel';
 import BurgerMenu from './components/Mobile/BurgerMenu/BurgerMenu';
-import Swiper from './components/Mobile/Slider/Slider';
+import Slider from './components/Mobile/Slider/Slider';
 import './assets/styles/template-index.scss';
 import Header from './components/Common/Header/Header';
 import Popups from './components/Popups/Popups';
@@ -27,7 +27,7 @@ const App = () => {
         <Header />
         {isBurgerActive && <BurgerMenu />}
         {isSearchActive && <SearchPanel />}
-        {isSwiperActive && <Swiper />}
+        {isSwiperActive && <Slider />}
         {routes}
         <Panel />
       </div>

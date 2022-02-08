@@ -21,7 +21,7 @@ const LanguageSwitcher = () => {
       <button onClick={() => setIsOpen(prev => !prev)} className="menu__language__btn">
         <span className="menu__language__current">
           <span className="menu__language__flag">
-            <div className={classNames('flags', `flag-${activeLanguage}`)} />
+            <div className={classNames('flags ff-xl', `flag-${activeLanguage}`)} />
           </span>
           <span className="menu__language__name">
             {activeLanguage}

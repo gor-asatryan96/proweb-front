@@ -5,7 +5,7 @@ const LanguageItem = ({ language, onLanguageClick }) => (
     <button onClick={onLanguageClick} className="menu__language__btn">
       <span className="menu__language__current">
         <span className="menu__language__flag">
-          <div className={classNames('flags', `flag-${language}`)} />
+          <div className={classNames('flags ff-xl', `flag-${language}`)} />
         </span>
         <span className="menu__language__name">
           {language}
