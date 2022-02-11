@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Betslip from '../../../components/Common/Betslip/Betslip';
 import SportFilters from '../components/SportFilters/SportFilters';
 import SportHeader from '../components/SportHeader/SportHeader';
-import SportItem from '../components/SportItem/SportItem';
+import SportCard from '../components/SportCard/SportCard';
 import SportMenu from '../components/SportMenu/SportMenu';
 import { SPORT_TABS } from '../constants/sport.constants';
 
@@ -198,7 +198,7 @@ const Sport = () => {
         <div className="bet-rate">
           <ul className="bet-rate__list">
             {sportItems.map(sport => (
-              <SportItem key={sport.id} data={sport} />
+              <SportCard key={sport.id} data={sport} />
             ))}
           </ul>
         </div>

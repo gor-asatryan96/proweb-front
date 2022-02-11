@@ -495,3 +495,22 @@ input[type="number"]::-webkit-outer-spin-button {
 .rotate-180 {
   transform: rotate(180deg);
 }
+
+.content-section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content-section__inner {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: var(--pmbet-cream)
+}
+
+.formError {
+  padding: 0.3rem 0 0.5rem;
+  color: red;
+}

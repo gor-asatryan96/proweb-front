@@ -1,22 +1,17 @@
 import { Navigate } from 'react-router-dom';
+import IframeSection from '../components/Common/IframeSection/IframeSection';
+import DailyExpress from '../pages/DailyExpress/DailyExpress';
+import Fixtures from '../pages/Fixtures/Fixtures';
 import Games from '../pages/Games/Games';
 import Live from '../pages/SportLive/Live/Live';
 import SingleSport from '../pages/SportLive/SingleSport/SingleSport';
 import Sport from '../pages/SportLive/Sport/Sport';
 
-export const ROUTES = [
-  {
-    path: '/',
-    element: <Navigate to="/sport" replace />,
-  },
+export const PANEL_ROUTES = [
   {
     path: '/sport',
     name: 'SPORTS',
     element: <Sport />,
-  },
-  {
-    path: '/sport/:id',
-    element: <SingleSport />,
   },
   {
     path: '/live',
@@ -24,13 +19,9 @@ export const ROUTES = [
     element: <Live />,
   },
   {
-    path: '/live/:id',
-    element: <SingleSport />,
-  },
-  {
     path: '/casino',
     name: 'CASINO',
-    element: <Games />,
+    element: <IframeSection />,
   },
   {
     path: '/games',
@@ -40,58 +31,87 @@ export const ROUTES = [
   {
     path: '/live-casino',
     name: 'LIVE CASINO',
-    element: <Games />,
+    element: <IframeSection />,
   },
   {
     path: '/chukua-tano',
     name: 'CHUKUA TANO',
-    element: <Games />,
+    element: <IframeSection />,
   },
   {
     path: '/virtual-sport',
     name: 'VIRTUAL SPORT',
-    element: <Games />,
+    element: <IframeSection />,
   },
   {
     path: '/live-games',
     name: 'LIVE GAMES',
-    element: <Games />,
+    element: <IframeSection />,
   },
   {
     path: '/e-sports',
     name: 'E SPORTS',
-    element: <Games />,
+    element: <IframeSection />,
   },
   {
     path: '/pm-league',
     name: 'PM LEAGUE',
-    element: <Games />,
+    element: <IframeSection />,
   },
   {
     path: '/jackpot',
     name: 'JACKPOT',
-    element: <Games />,
+    element: <IframeSection />,
+  },
+];
+
+export const NESTED_ROUTES = [
+  {
+    path: '/sport/:id',
+    element: <SingleSport />,
+  },
+  {
+    path: '/live/:id',
+    element: <SingleSport />,
+  },
+];
+
+export const PLUS_7_ROUTES = [
+  {
+    path: '/promotions',
+    name: 'PROMOTIONS',
+    element: <IframeSection />,
   },
   {
     path: '/fixtures',
     name: 'FIXTURES',
-    element: <Games />,
+    element: <Fixtures />,
   },
   {
-    path: '/promotions',
-    name: 'PROMOTIONS',
-    element: <Games />,
+    path: '/daily-express',
+    name: 'DAILY EXPRESS',
+    element: <DailyExpress />,
   },
   {
     path: '/statistic',
     name: 'STATISTIC',
-    element: <Games />,
+    element: <IframeSection />,
   },
   {
     path: '/results',
     name: 'RESULTS',
-    element: <Games />,
+    element: <IframeSection />,
   },
+];
+
+export const ALL_ROUTES = [
+  {
+    path: '/',
+    element: <Navigate to="/sport" replace />,
+  },
+  ...PANEL_ROUTES,
+  ...NESTED_ROUTES,
+  ...PLUS_7_ROUTES,
   {
     path: '*',
     element: <Navigate to="/sport" replace />,

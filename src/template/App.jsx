@@ -9,14 +9,14 @@ import './assets/styles/template-index.scss';
 import Header from './components/Common/Header/Header';
 import Popups from './components/Popups/Popups';
 import { selectIsBurgerActive } from '../redux/slices/configs.slice';
-import { ROUTES } from './configs/routes.configs';
+import { ALL_ROUTES } from './configs/routes.configs';
 import SearchPanel from './components/Common/SearchPanel/SearchPanel';
 
 const App = () => {
   const { pathname } = useLocation();
 
   const isBurgerActive = useSelector(selectIsBurgerActive);
-  const routes = useRoutes(ROUTES);
+  const routes = useRoutes(ALL_ROUTES);
 
   const isSearchActive = [ '/games' ].includes(pathname);
   const isSwiperActive = [ '/sport', '/live', '/games' ].includes(pathname);

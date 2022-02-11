@@ -1,9 +1,9 @@
 import dayjs from 'dayjs';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Bet from './components/Bet/Bet';
+import SportCardBet from './components/SportCardBet/SportCardBet';
 
-const SportItem = ({ data, live }) => {
+const SportCard = ({ data, live }) => {
   const navigate = useNavigate();
 
   const onItemClick = () => {
@@ -48,7 +48,7 @@ const SportItem = ({ data, live }) => {
         </div>
         <div className="bet-rate__set__nav">
           {data.bets.map(bet => (
-            <Bet key={bet.id} data={bet} />
+            <SportCardBet key={bet.id} data={bet} />
           ))}
         </div>
       </div>
@@ -56,4 +56,4 @@ const SportItem = ({ data, live }) => {
   );
 };
 
-export default SportItem;
+export default SportCard;

@@ -1,7 +1,6 @@
 import classNames from 'classnames';
-import React from 'react';
 
-const Bet = ({ data }) => (
+const SportCardBet = ({ data }) => (
   <button className={classNames('bet-rate__set__btn', { hot: data.burn })}>
     <span className="bet-rate__set__number">
       {data.type}
@@ -12,4 +11,4 @@ const Bet = ({ data }) => (
   </button>
 );
 
-export default Bet;
+export default SportCardBet;

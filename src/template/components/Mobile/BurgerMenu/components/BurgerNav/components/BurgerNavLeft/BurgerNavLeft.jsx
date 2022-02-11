@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { ROUTES } from '../../../../../../../configs/routes.configs';
+import { PANEL_ROUTES, PLUS_7_ROUTES } from '../../../../../../../configs/routes.configs';
 import { INFO_RULES_CONFIGS } from '../../../../../../Common/InfoRules/configs/infoRules.configs';
 import BurgerRouteItem from './components/BurgerRouteItem/BurgerRouteItem';
 
-const panelItems = ROUTES.filter(route => route.name);
+const routes = [ ...PANEL_ROUTES, ...PLUS_7_ROUTES ];
 const infoRulesTabs = Object.keys(INFO_RULES_CONFIGS);
 
 const BurgerNavLeft = ({ setActiveTab }) => {
@@ -12,7 +12,7 @@ const BurgerNavLeft = ({ setActiveTab }) => {
 
   return (<div className="menu__contentContainers menu__contentContainers_left">
     <ul className="resetList menu__gameTypes gameTypes">
-      {panelItems.map(item => (
+      {routes.map(item => (
         <BurgerRouteItem key={item.path} data={item} active={pathname.includes(item.path)} />
       ))}
     </ul>

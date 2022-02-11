@@ -39,6 +39,14 @@ body {
   flex-shrink: 0;
 }
 
+.iframe-section {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .svg-sprite {
   display: none;
 }
