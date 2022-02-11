@@ -6,12 +6,15 @@ import App from './template/App';
 import { store } from './redux/store';
 import * as serviceWorker from './serviceWorker';
 import './assets/styles/index.scss';
+import LanguageProvider from './context/LanguageProvider';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <LanguageProvider>
+          <App />
+        </LanguageProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>,
