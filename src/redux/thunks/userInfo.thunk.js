@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { AXIOS } from '../../api/axios';
+import axios from 'axios';
 import { getErrorMessage } from '../../helpers/api';
 
 export const registerUserThunk = createAsyncThunk(
   'userInfo/registerUser',
   async ({ email, password }) => {
-    const response = await AXIOS.post('/user/register', { email, password });
+    const response = await axios.post('/user/register', { email, password });
     return response;
   },
 );

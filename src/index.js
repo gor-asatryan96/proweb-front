@@ -7,6 +7,9 @@ import { store } from './redux/store';
 import * as serviceWorker from './serviceWorker';
 import './assets/styles/index.scss';
 import LanguageProvider from './context/LanguageProvider';
+import { setupAxios } from './api/axios';
+
+setupAxios();
 
 ReactDOM.render(
   <React.StrictMode>
