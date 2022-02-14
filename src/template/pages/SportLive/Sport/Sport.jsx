@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-
-import Betslip from '../../../components/Common/Betslip/Betslip';
+import { useState } from 'react';
 import SportFilters from '../components/SportFilters/SportFilters';
 import SportHeader from '../components/SportHeader/SportHeader';
 import SportCard from '../components/SportCard/SportCard';
@@ -16,9 +14,15 @@ const sportItems = [
     oddsCount: '+367',
     date: new Date(),
     bets: [
-      { id: 1, type: '1', coefficient: '1.2' },
-      { id: 2, type: 'x', coefficient: '4.2' },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 1, name: 'Match Result', type: '1', coefficient: '1.2',
+      },
+      {
+        id: 2, name: 'Match Result', type: 'x', coefficient: '4.2',
+      },
+      {
+        id: 3, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
   {
@@ -30,10 +34,14 @@ const sportItems = [
     date: new Date(),
     bets: [
       {
-        id: 1, type: '1', coefficient: '1.2', burn: true,
+        id: 4, name: 'Match Result', type: '1', coefficient: '1.2', burn: true,
       },
-      { id: 2, type: 'x', coefficient: '4.2' },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 5, name: 'Match Result', type: 'x', coefficient: '4.2',
+      },
+      {
+        id: 6, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
   {
@@ -44,9 +52,15 @@ const sportItems = [
     oddsCount: '+367',
     date: new Date(),
     bets: [
-      { id: 1, type: '1', coefficient: '1.2' },
-      { id: 2, type: 'x', coefficient: '4.2' },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 7, name: 'Match Result', type: '1', coefficient: '1.2',
+      },
+      {
+        id: 8, name: 'Match Result', type: 'x', coefficient: '4.2',
+      },
+      {
+        id: 9, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
   {
@@ -57,10 +71,14 @@ const sportItems = [
     oddsCount: '+367',
     date: new Date(),
     bets: [
-      { id: 1, type: '1', coefficient: '1.2' },
-      { id: 2, type: 'x', coefficient: '4.2' },
       {
-        id: 3, type: '2', coefficient: '8', burn: true,
+        id: 10, name: 'Match Result', type: '1', coefficient: '1.2',
+      },
+      {
+        id: 11, name: 'Match Result', type: 'x', coefficient: '4.2',
+      },
+      {
+        id: 12, name: 'Match Result', type: '2', coefficient: '8', burn: true,
       },
     ],
   },
@@ -73,10 +91,14 @@ const sportItems = [
     date: new Date(),
     bets: [
       {
-        id: 1, type: '1', coefficient: '1.2', burn: true,
+        id: 13, name: 'Match Result', type: '1', coefficient: '1.2', burn: true,
       },
-      { id: 2, type: 'x', coefficient: '4.2' },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 14, name: 'Match Result', type: 'x', coefficient: '4.2',
+      },
+      {
+        id: 15, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
   {
@@ -87,11 +109,15 @@ const sportItems = [
     oddsCount: '+367',
     date: new Date(),
     bets: [
-      { id: 1, type: '1', coefficient: '1.2' },
       {
-        id: 2, type: 'x', coefficient: '4.2', burn: true,
+        id: 16, name: 'Match Result', type: '1', coefficient: '1.2',
       },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 17, name: 'Match Result', type: 'x', coefficient: '4.2', burn: true,
+      },
+      {
+        id: 18, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
   {
@@ -103,10 +129,14 @@ const sportItems = [
     date: new Date(),
     bets: [
       {
-        id: 1, type: '1', coefficient: '1.2', burn: true,
+        id: 19, name: 'Match Result', type: '1', coefficient: '1.2', burn: true,
       },
-      { id: 2, type: 'x', coefficient: '4.2' },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 20, name: 'Match Result', type: 'x', coefficient: '4.2',
+      },
+      {
+        id: 21, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
   {
@@ -117,9 +147,15 @@ const sportItems = [
     oddsCount: '+367',
     date: new Date(),
     bets: [
-      { id: 1, type: '1', coefficient: '1.2' },
-      { id: 2, type: 'x', coefficient: '4.2' },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 22, name: 'Match Result', type: '1', coefficient: '1.2',
+      },
+      {
+        id: 23, name: 'Match Result', type: 'x', coefficient: '4.2',
+      },
+      {
+        id: 24, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
   {
@@ -130,9 +166,15 @@ const sportItems = [
     oddsCount: '+367',
     date: new Date(),
     bets: [
-      { id: 1, type: '1', coefficient: '1.2' },
-      { id: 2, type: 'x', coefficient: '4.2' },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 25, name: 'Match Result', type: '1', coefficient: '1.2',
+      },
+      {
+        id: 26, name: 'Match Result', type: 'x', coefficient: '4.2',
+      },
+      {
+        id: 27, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
   {
@@ -143,11 +185,15 @@ const sportItems = [
     oddsCount: '+367',
     date: new Date(),
     bets: [
-      { id: 1, type: '1', coefficient: '1.2' },
       {
-        id: 2, type: 'x', coefficient: '4.2', burn: true,
+        id: 28, name: 'Match Result', type: '1', coefficient: '1.2',
       },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 29, name: 'Match Result', type: 'x', coefficient: '4.2', burn: true,
+      },
+      {
+        id: 30, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
   {
@@ -158,9 +204,15 @@ const sportItems = [
     oddsCount: '+367',
     date: new Date(),
     bets: [
-      { id: 1, type: '1', coefficient: '1.2' },
-      { id: 2, type: 'x', coefficient: '4.2' },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 31, name: 'Match Result', type: '1', coefficient: '1.2',
+      },
+      {
+        id: 32, name: 'Match Result', type: 'x', coefficient: '4.2',
+      },
+      {
+        id: 33, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
   {
@@ -172,10 +224,14 @@ const sportItems = [
     date: new Date(),
     bets: [
       {
-        id: 1, type: '1', coefficient: '1.2', burn: true,
+        id: 34, name: 'Match Result', type: '1', coefficient: '1.2', burn: true,
       },
-      { id: 2, type: 'x', coefficient: '4.2' },
-      { id: 3, type: '2', coefficient: '8' },
+      {
+        id: 35, name: 'Match Result', type: 'x', coefficient: '4.2',
+      },
+      {
+        id: 36, name: 'Match Result', type: '2', coefficient: '8',
+      },
     ],
   },
 ];
@@ -250,7 +306,6 @@ const Sport = () => {
         </div>
       </div>
     </section>
-    <Betslip />
   </>);
 };
 

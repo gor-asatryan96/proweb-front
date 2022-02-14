@@ -1,13 +1,27 @@
 import dayjs from 'dayjs';
-import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { useNavigate } from 'react-router-dom';
+import { addBet, removeBet, selectBetsIds } from '../../../../../redux/slices/betslip.slice';
 import SportCardBet from './components/SportCardBet/SportCardBet';
 
 const SportCard = ({ data, live }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const betsIds = useSelector(selectBetsIds);
 
   const onItemClick = () => {
     navigate(String(data.id));
+  };
+
+  const onBetClick = (e, bet, isActive) => {
+    e.stopPropagation();
+    if (isActive) {
+      dispatch(removeBet(bet.id));
+    } else {
+      const { bets, ...event } = data;
+      dispatch(addBet({ bet, event }));
+    }
   };
 
   return (
@@ -48,7 +62,11 @@ const SportCard = ({ data, live }) => {
         </div>
         <div className="bet-rate__set__nav">
           {data.bets.map(bet => (
-            <SportCardBet key={bet.id} data={bet} />
+            <SportCardBet
+              key={bet.id}
+              data={bet}
+              active={betsIds.includes(String(bet.id))}
+              onBetClick={e => onBetClick(e, bet, betsIds.includes(String(bet.id)))} />
           ))}
         </div>
       </div>

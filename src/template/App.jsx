@@ -11,6 +11,7 @@ import Popups from './components/Popups/Popups';
 import { selectIsBurgerActive } from '../redux/slices/configs.slice';
 import { ALL_ROUTES } from './configs/routes.configs';
 import SearchPanel from './components/Common/SearchPanel/SearchPanel';
+import Betslip from './components/Common/Betslip/Betslip';
 
 const App = () => {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ const App = () => {
         {isSearchActive && <SearchPanel />}
         {isSwiperActive && <Slider />}
         {routes}
+        <Betslip />
         <Panel />
       </div>
       <Popups />
