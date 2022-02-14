@@ -1,4 +1,4 @@
-import tableField from '../../../../../assets/images/casinoGames/results.png';
+import tableField from '../../../../../assets/images/casinoGames/results-animation.png';
 
 const LiveTable = () => (
   <div className="bet-match__col bet-match__col_results active">
