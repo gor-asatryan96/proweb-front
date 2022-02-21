@@ -6,7 +6,9 @@ import { openPopup } from '../../../../redux/slices/popups.slice';
 import { selectIsAuth } from '../../../../redux/slices/userInfo.slice';
 import { POPUPS_IDS } from '../../Popups/constants/popups.constants';
 
-const { LOGIN, REGISTER, USER_PROFILE } = POPUPS_IDS;
+const {
+  LOGIN, REGISTER, USER_PROFILE, FAVOURITES,
+} = POPUPS_IDS;
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -37,7 +39,7 @@ const Header = () => {
         </div>
         <div className="config header__config">
           <ul className="config__list">
-            <li className="config__item">
+            <li onClick={() => togglePopup(FAVOURITES)} className="config__item">
               <div className="config__link">
                 <div className="img-container">
                   <div className="config__content">
