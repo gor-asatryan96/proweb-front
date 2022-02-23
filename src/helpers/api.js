@@ -4,3 +4,8 @@ export const getErrorMessage = (error) => {
   }
   return 'Something went wrong';
 };
+
+export const clearTokenFromStorage = () => {
+  localStorage.removeItem('token');
+  sessionStorage.removeItem('token');
+};

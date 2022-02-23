@@ -53,7 +53,7 @@ const RegisterStep3 = () => (
         <input className="checkbox-2__btn" type="checkbox" id="age" />
         <span className="checkbox-2__icon" />
       </div>
-      <label className="popup__age__name" for="age">
+      <label className="popup__age__name" htmlFor="age">
         I am 18 years of age and have read and agree to the
         <a className="popup__age__link" href="/">Terms</a>
         <a className="popup__age__link" href="/">And Conditions</a>

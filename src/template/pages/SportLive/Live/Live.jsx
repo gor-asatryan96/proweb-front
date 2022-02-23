@@ -4725,7 +4725,7 @@ const Live = () => <>
       </div>
       <div className="bet-search">
         <div className="bet-search__value">
-          <label className="bet-search__label" for="">
+          <label className="bet-search__label" htmlFor="">
             <input className="bet-search__input" type="text" placeholder="Search" />
             <button className="bet-search__del">
               <span className="img-container">

@@ -2,9 +2,10 @@ import { useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { closePopup } from '../../../../redux/slices/popups.slice';
+import { selectUserId } from '../../../../redux/slices/user.slice';
 import { Popup } from '../../UI';
 import { POPUPS_IDS } from '../constants/popups.constants';
-import UserConfigMain from './components/UserConfigMain/UserConfigMain';
+import UserProfileMain from './components/UserProfileMain/UserProfileMain';
 import { USER_PROFILE_TABS } from './configs/userProfile.configs';
 
 const { USER_PROFILE } = POPUPS_IDS;
@@ -12,6 +13,7 @@ const { USER_PROFILE } = POPUPS_IDS;
 const UserConfigPopup = () => {
   const dispatch = useDispatch();
   const popupProps = useSelector(state => state.popups.popupsProps[USER_PROFILE]);
+  const userId = useSelector(selectUserId);
 
   const [ activeTab, setActiveTab ] = useState(popupProps?.tab);
 
@@ -39,7 +41,7 @@ const UserConfigPopup = () => {
               <use xlinkHref="#userIconInfo" />
             </svg>
           </span>
-          <span className="userMenuConfig__idConfigLinkIconText">ID: 12345</span>
+          <span className="userMenuConfig__idConfigLinkIconText">ID: {userId}</span>
         </div>
         <button onClick={onClose} type="button" className="userMenuConfig__headerCell userMenuConfig__closeButton">
           <svg className="userMenuConfig__closeButtonSvg">
@@ -49,7 +51,7 @@ const UserConfigPopup = () => {
       </div>
       {activeTab
         ? <activeTabConfigs.Component configs={activeTabConfigs} goBack={() => setActiveTab(null)} />
-        : <UserConfigMain setActiveTab={setActiveTab} />
+        : <UserProfileMain setActiveTab={setActiveTab} />
       }
     </Popup>
   );

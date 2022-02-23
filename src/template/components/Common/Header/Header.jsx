@@ -1,10 +1,14 @@
 import React from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleBurger } from '../../../../redux/slices/configs.slice';
 
 import { openPopup } from '../../../../redux/slices/popups.slice';
-import { selectIsAuth } from '../../../../redux/slices/userInfo.slice';
+import {
+  selectIsAuth, selectIsConnected, selectUserBalance, selectUserCurrency, selectUserId,
+} from '../../../../redux/slices/user.slice';
 import { POPUPS_IDS } from '../../Popups/constants/popups.constants';
+import RowSkeleton from '../../Skeletons/RowSkeleton/RowSkeleton';
 
 const {
   LOGIN, REGISTER, USER_PROFILE, FAVOURITES,
@@ -13,6 +17,10 @@ const {
 const Header = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
+  const isConnected = useSelector(selectIsConnected);
+  const userId = useSelector(selectUserId);
+  const balance = useSelector(selectUserBalance);
+  const currency = useSelector(selectUserCurrency);
 
   const togglePopup = (id) => {
     dispatch(openPopup({ id }));
@@ -55,13 +63,36 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        {
-          isAuth
+        {/* {!isConnected
+        && <div className='headerSkeletons'>
+          <div><RowSkeleton /></div>
+          <div><RowSkeleton /></div>
+          </div>} */}
+        {!isConnected
+        && <div className="header__user userInfo">
+          <div className="userInfo__container">
+            <div className="userInfo__amount">
+              <div className='balanceSkeleton'><RowSkeleton radius='0.2rem' /></div>
+              <div className='currencySkeleton'><RowSkeleton radius='0.2rem' /></div>
+            </div>
+            <div className="userInfo__idConfigLink">
+              <span className="userInfo__idConfigLinkIcon">
+                <svg className="userInfo__idConfigLinkIconSvg" viewBox="0 0 20.46 21">
+                  <use xlinkHref="#userIconInfo" />
+                </svg>
+              </span>
+              <span className="userSkeleton"><RowSkeleton radius='0.15rem' /></span>
+            </div>
+          </div>
+        </div>
+          }
+        {isConnected
+          && (isAuth
             ? <div className="header__user userInfo">
               <div className="userInfo__container">
                 <div className="userInfo__amount">
-                  <div className="userInfo__amountSize">123456</div>
-                  <div className="userInfo__amountType">TZS</div>
+                  <div className="userInfo__amountSize">{balance}</div>
+                  <div className="userInfo__amountType">{currency}</div>
                 </div>
                 <div onClick={() => togglePopup(USER_PROFILE)} className="userInfo__idConfigLink">
                   <span className="userInfo__idConfigLinkIcon">
@@ -69,7 +100,7 @@ const Header = () => {
                       <use xlinkHref="#userIconInfo" />
                     </svg>
                   </span>
-                  <span className="userInfo__idConfigLinkIdWithText">ID: 12345</span>
+                  <span className="userInfo__idConfigLinkIdWithText">ID: {userId}</span>
                 </div>
               </div>
             </div>
@@ -86,7 +117,7 @@ const Header = () => {
                   </div>
                 </li>
               </ul>
-            </nav>
+            </nav>)
         }
 
       </div>

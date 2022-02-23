@@ -1,7 +1,5 @@
 import { useSelector } from 'react-redux';
-import {
-  useLocation, useRoutes,
-} from 'react-router-dom';
+import { useLocation, useRoutes } from 'react-router-dom';
 import Panel from './components/Mobile/Panel/Panel';
 import BurgerMenu from './components/Mobile/BurgerMenu/BurgerMenu';
 import Slider from './components/Mobile/Slider/Slider';
@@ -12,12 +10,15 @@ import { selectIsBurgerActive } from '../redux/slices/configs.slice';
 import { ALL_ROUTES } from './configs/routes.configs';
 import SearchPanel from './components/Common/SearchPanel/SearchPanel';
 import Betslip from './components/Common/Betslip/Betslip';
+import { useSideEffects } from './hooks/useSideEffects';
 
 const App = () => {
   const { pathname } = useLocation();
 
   const isBurgerActive = useSelector(selectIsBurgerActive);
   const routes = useRoutes(ALL_ROUTES);
+
+  useSideEffects();
 
   const isSearchActive = [ '/games' ].includes(pathname);
   const isSwiperActive = [ '/sport', '/live', '/games' ].includes(pathname);
