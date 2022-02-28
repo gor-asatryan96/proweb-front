@@ -1,35 +1,45 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Popup } from '../../UI';
-import RegistersStepNumber from './components/RegistersStepNumber';
-import RegisterStep1 from './components/RegisterStep1';
+import RegistersStepNumber from './components/RegisterStepNumber/RegistersStepNumber';
 import logo from '../../../assets/images/logo.svg';
-import RegisterStep2 from './components/RegisterStep2';
-import RegisterStep3 from './components/RegisterStep3';
 import { closePopup } from '../../../../redux/slices/popups.slice';
 import { POPUPS_IDS } from '../constants/popups.constants';
+import { REGISTER_TABS_IDS } from './constants/register.constants';
+import LicenceFooter from '../components/LicenceFooter/LicenceFooter';
+import { REGISTER_TABS_CONFIGS } from './configs/register.configs';
 
-const registerStepsComponents = [ RegisterStep1, RegisterStep2, RegisterStep3 ];
-const registerClassnames = [ 'popup-create', 'popup-personal', 'popup-document' ];
+const { STEP_1, SKIP, CONFIRM } = REGISTER_TABS_IDS;
+
+const stepComponentConfigs = Object.values(REGISTER_TABS_CONFIGS).filter(tab => tab.step);
 
 const RegisterPopup = () => {
   const dispatch = useDispatch();
 
-  const [ activeStep, setActiveStep ] = useState(0);
+  const [ activeTab, setActiveTab ] = useState(STEP_1);
+  const [ isTermsAccepted, setIsTermsAccepted ] = useState(false);
+  const [ submitForm, setSubmitForm ] = useState({});
 
-  const CurrentStepComponent = registerStepsComponents[activeStep];
+  const currentStepConfigs = REGISTER_TABS_CONFIGS[activeTab];
 
-  const toNextStep = (e) => {
-    e.preventDefault();
-    activeStep < 2 && setActiveStep(prev => prev + 1);
+  const changeTab = (nextTab, formData) => {
+    if (formData) {
+      setSubmitForm(prev => ({ ...prev, ...formData }));
+    }
+    setActiveTab(nextTab);
   };
 
   const onClose = () => {
     dispatch(closePopup(POPUPS_IDS.REGISTER));
   };
 
+  const onRegister = (currentForm) => {
+    const fullForm = { ...currentForm, ...submitForm };
+    console.log('fullForm', fullForm);
+  };
+
   return (
-    <Popup onClose={onClose} className={`${registerClassnames[activeStep]} active`}>
+    <Popup onClose={onClose} className={`${currentStepConfigs.class} active`}>
       <div className="popup__container">
         <div className="popup__header">
           <div className="popup__logo">
@@ -38,7 +48,7 @@ const RegisterPopup = () => {
             </div>
           </div>
           <div className="popup__title">
-            CREATE YOUR ACCOUNT
+            {currentStepConfigs.title}
           </div>
           <button onClick={onClose} className="popup__close">
             <span className="img-container">
@@ -47,44 +57,27 @@ const RegisterPopup = () => {
               </svg>
             </span>
           </button>
-          <div className="popup__step">
+          {REGISTER_TABS_CONFIGS[activeTab].step && <div className="popup__step">
             <ol className="popup__step__list">
-              {registerStepsComponents.map((_, i) => (
-                <RegistersStepNumber active={i === activeStep} number={i + 1} />
+              {stepComponentConfigs.map(item => (
+                <RegistersStepNumber
+                  key={item.step}
+                  active={item.step === REGISTER_TABS_CONFIGS[activeTab].step}
+                  step={item.step} />
               ))}
             </ol>
-          </div>
+          </div>}
         </div>
         <div className="popup__block">
-          <form>
-            <CurrentStepComponent setNextPage={() => setActiveStep(prev => prev + 1)} />
-            <div className="popup__term">
-              <div className="popup__term__info">
-                by clicking button bellow, you agree to our
-                <a className="popup__term__link" href="/">
-                  termS & conditions
-                </a>
-                <a className="popup__term__link" href="/">
-                  privacy policy
-                </a>
-                and
-                <a className="popup__term__link" href="/">
-                  cookies policy
-                </a>
-              </div>
-              <div className="checkbox">
-                <input className="checkbox__btn" type="checkbox" />
-                <span className="checkbox__bg" />
-                <span className="checkbox__round" />
-              </div>
-            </div>
-            <div className="popup-create__accept">
-              <button onClick={toNextStep} className="popup__btn">
-                Register
-              </button>
-            </div>
-          </form>
+          <currentStepConfigs.Component
+            isRegister
+            isTermsAccepted={isTermsAccepted}
+            setIsTermsAccepted={setIsTermsAccepted}
+            setSubmitForm={setSubmitForm}
+            onRegister={onRegister}
+            changeTab={changeTab} />
         </div>
+        {[ SKIP, CONFIRM ].includes(activeTab) && <LicenceFooter />}
       </div>
     </Popup>
   );

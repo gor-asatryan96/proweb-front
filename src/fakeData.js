@@ -2,9 +2,8 @@ export const promise = (value, delay = 2000) => new Promise(resolve => setTimeou
 
 export const FAKE_USER = {
   id: 33033,
-  firstName: 'Levon',
-  lastName: 'Tovmasyan',
-  gender: '1',
+  name: 'Angelina Jolie',
+  gender: 2,
   balance: 307050,
   units: '10',
   date: new Date(),
@@ -14,7 +13,7 @@ export const FAKE_USER = {
   email: 'test_mail@gmail.com',
   number: '099789789',
   documentType: '1',
-  documentNumber: 'AP0216140',
+  documentNumber: 'AQ456545',
   token: 'dsfsdfk-8sd8g7gs4df84s1dg8s7d-8r45r-ew45rw4er5r4',
   isVerified: false,
 };

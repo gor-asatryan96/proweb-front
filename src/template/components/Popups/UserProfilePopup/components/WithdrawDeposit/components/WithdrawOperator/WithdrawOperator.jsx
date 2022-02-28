@@ -1,4 +1,4 @@
-import GoBackHeader from '../../../../../components/GoBackHeader';
+import GoBackHeader from '../../../../../components/GoBackHeader/GoBackHeader';
 
 const WithdrawOperator = ({ goBack, data }) => <>
   <GoBackHeader goBack={goBack} title='WITHDRAW' />

@@ -1,4 +1,4 @@
-import GoBackHeader from '../../../../../components/GoBackHeader';
+import GoBackHeader from '../../../../../components/GoBackHeader/GoBackHeader';
 import { WITHDRAW_DEPOSIT_ITEMS } from '../../configs/withdrawDeposit.configs';
 import WithdrawDepositMenuItem from '../WithdrawDepositMenuItem/WithdrawDepositMenuItem';
 

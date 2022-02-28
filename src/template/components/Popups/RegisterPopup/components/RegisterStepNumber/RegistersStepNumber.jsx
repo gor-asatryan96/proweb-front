@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 
-const RegistersStepNumber = ({ active, number }) => (
+const RegistersStepNumber = ({ active, step }) => (
   <li className={classNames('popup__step__item', { 'popup__step__item--active': active })}>
     <span className="img-container">
-      {number}
+      {step}
     </span>
   </li>
 );

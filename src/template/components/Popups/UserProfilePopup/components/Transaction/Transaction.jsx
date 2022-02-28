@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useState } from 'react';
-import GoBackHeader from '../../../components/GoBackHeader';
+import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import TransactionItem from './components/TransactionItem/TransactionItem';
 
 const items = [

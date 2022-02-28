@@ -1,5 +1,5 @@
 import React from 'react';
-import GoBackHeader from '../../../Popups/components/GoBackHeader';
+import GoBackHeader from '../../../Popups/components/GoBackHeader/GoBackHeader';
 
 const AccountRules = ({ goBack }) => <>
   <GoBackHeader goBack={goBack} title='ACCOUNT RULES' />

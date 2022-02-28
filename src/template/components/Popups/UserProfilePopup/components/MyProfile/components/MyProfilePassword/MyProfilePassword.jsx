@@ -10,7 +10,7 @@ const passwordInputs = [
 
 const MyProfilePassword = () => {
   const [ showPasswords, setShowPasswords ] = useState([]);
-  // const [ isNotSameError, setIsNotSameError ] = useState(false)
+  const [ isNotSameError, setIsNotSameError ] = useState(false);
 
   const {
     register, handleSubmit, formState: { errors },
@@ -25,6 +25,10 @@ const MyProfilePassword = () => {
   };
 
   const onSubmit = (data) => {
+    if (data.newPassword !== data.confirmPassword) {
+      return setIsNotSameError(true);
+    }
+    setIsNotSameError(false);
     console.log('MyProfilePassword', data);
   };
 
@@ -54,8 +58,8 @@ const MyProfilePassword = () => {
           {errors[item.key] && <div className='popup__error'>{errors[item.key].message}</div>}
         </div>
       ))}
-      {/* {isNotSameError
-      && <div className='popup__error'></div>} */}
+      {isNotSameError
+      && <div className='popup__error'>password and confirmation do not match</div>}
       <div className="profile__form-block profile__form-block_btn">
         <button type="submit" className="profile__form-btn">save password</button>
       </div>

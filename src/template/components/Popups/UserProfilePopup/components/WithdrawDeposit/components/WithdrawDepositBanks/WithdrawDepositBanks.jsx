@@ -1,4 +1,4 @@
-import GoBackHeader from '../../../../../components/GoBackHeader';
+import GoBackHeader from '../../../../../components/GoBackHeader/GoBackHeader';
 
 const WithdrawDepositBanks = ({ isDeposit, goBack }) => <>
   <GoBackHeader goBack={goBack} title={isDeposit ? 'DEPOSIT' : 'WITHDRAW'} />

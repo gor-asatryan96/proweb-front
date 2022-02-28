@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import classNames from 'classnames';
-import GoBackHeader from '../../../components/GoBackHeader';
+import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import MyBetsHistoryMenuItem from '../MyBetsHistory/components/MyBetsHistoryMenu/components/MyBetsHistoryMenuItem/MyBetsHistoryMenuItem';
 import MyBetsHistoryItemInfo from '../MyBetsHistory/components/MyBetsHistoryItemInfo/MyBetsHistoryItemInfo';
 

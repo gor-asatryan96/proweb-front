@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../../../../../redux/slices/user.slice';
-import GoBackHeader from '../../../components/GoBackHeader';
+import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import MyProfileInfo from './components/MyProfileInfo/MyProfileInfo';
 import MyProfilePassword from './components/MyProfilePassword/MyProfilePassword';
 
 const MyProfile = ({ goBack, configs }) => {
-  const { email } = useSelector(selectUser);
+  const email = useSelector(state => state.user.email);
+  const number = useSelector(state => state.user.number);
 
   return (
     <>
@@ -25,10 +26,10 @@ const MyProfile = ({ goBack, configs }) => {
             </div>
             <div className="profile__form-row profile__form-row_2">
               <label className="profile__label profile__label_code">
-                <input type="number" className="profile__input" placeholder="+374" />
+                <input disabled className="profile__input" value='+374' />
               </label>
               <label className="profile__label profile__label_number">
-                <input type="number" className="profile__input" placeholder="093933394" />
+                <input disabled type="number" className="profile__input" value={number} />
               </label>
             </div>
           </div>

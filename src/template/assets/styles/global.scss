@@ -518,3 +518,8 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 0.3rem 0 0.5rem;
   color: red;
 }
+
+.disabled {
+  cursor: default;
+  opacity: 0.6;
+}
