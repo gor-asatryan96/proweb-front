@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { BET_SLIP_HEADER_NAV } from '../../template/components/Common/Betslip/constants/betslip.constants';
 
 const initialState = {
   bets: {},
+  currentTab: BET_SLIP_HEADER_NAV[0],
 };
 
 export const betslipSlice = createSlice({
@@ -19,15 +21,21 @@ export const betslipSlice = createSlice({
         delete state.bets[payload];
       }
     },
+    changeBetslipNav: (state, { payload }) => {
+      state.currentTab = payload;
+    },
     resetBetslipSlice: () => initialState,
   },
 });
 
 // ACTIONS
-export const { resetBetslipSlice, addBet, removeBet } = betslipSlice.actions;
+export const {
+  resetBetslipSlice, addBet, removeBet, changeBetslipNav,
+} = betslipSlice.actions;
 
 // SELECTORS
 export const selectBets = state => state.betslip.bets;
+export const betslipTab = state => state.betslip.currentTab;
 export const selectBetsIds = state => Object.keys(state.betslip.bets);
 
 export default betslipSlice.reducer;
