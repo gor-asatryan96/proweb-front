@@ -38,7 +38,7 @@ const Header = () => {
             </svg>
           </span>
         </div>
-        <div className="logo header__logo" href="">
+        <div className="logo header__logo">
           <div className="img-container">
             <svg className="logo__img" width="80.83" height="28.12">
               <use xlinkHref="#logo" />

@@ -12,7 +12,7 @@ const Slider = () => (
       showStatus={false}
       showThumbs={false}>
       {MAIN_BANNERS.map(item => (
-        <img className="gallery__img" src={item} alt="Gallery" />
+        <img key={item} className="gallery__img" src={item} alt="Gallery" />
       ))}
     </Carousel>
   </section>
