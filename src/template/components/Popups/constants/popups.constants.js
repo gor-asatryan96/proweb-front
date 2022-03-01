@@ -1,0 +1,10 @@
+export const POPUPS_IDS = {
+  LOGIN: 1,
+  RECOVERY: 2,
+  REGISTER: 3,
+  FAVOURITES: 4,
+  USER_PROFILE: 5,
+  CONGRATULATIONS: 6,
+  ERROR: 7,
+  GIFTS: 8,
+};

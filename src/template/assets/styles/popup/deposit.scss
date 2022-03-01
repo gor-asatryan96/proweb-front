@@ -1,0 +1,224 @@
+.deposit {
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  touch-action: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  background-color: var(--pmbet-cream);
+  font-family: "Poppins", "Arial", sans-serif;
+}
+
+.deposit__popup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--pmbet-blue-dark-06);
+}
+
+.deposit__popup.active {
+  display: block;
+}
+
+.deposit__popup-close-btn {
+  position: absolute;
+  top: 1.192rem;
+  right: 0.764rem;
+  display: block;
+
+  width: 1.428rem;
+  height: 1.428rem;
+  border: none;
+  outline: none;
+
+  background-color: unset;
+}
+
+.deposit__popup-close-btn svg {
+  fill: var(--pmbet-blue);
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.deposit__voda {
+  position: relative;
+  overflow-y: auto;
+
+  max-height: 100vh;
+  height: calc(100vh - (0.714rem * 2));
+
+  margin: 0.857rem 0.714rem;
+  padding: 0.714rem;
+
+  background-color: var(--pmbet-white);
+  color: var(--pmbet-gray);
+
+  font-family: "Poppins", "Arial", sans-serif;
+}
+
+.deposit__voda-logo {
+  position: relative;
+
+  width: 13.071rem;
+  margin: 0 auto;
+}
+
+.deposit__voda-logo::before {
+  content: "";
+  display: block;
+  padding-top: 24.59%;
+}
+
+.deposit__voda-title {
+  margin-top: 0.642rem;
+  margin-bottom: 0.642rem;
+
+  font-size: 1.142rem;
+  font-weight: 600;
+  line-height: 1.785rem;
+  letter-spacing: 0.01rem;
+}
+
+.deposit__voda-sub {
+  margin-bottom: 0.357rem;
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.deposit__voda-list {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.deposit__voda-item:not(:last-child) {
+  margin-bottom: 0.56rem;
+}
+
+.deposit__voda-item strong {
+  font-size: 1.142rem;
+  font-weight: 600;
+  line-height: 1.785rem;
+
+  color: var(--pmbet-green);
+}
+
+.deposit__voda-item p {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  letter-spacing: 0.01rem;
+
+  margin: 0;
+}
+
+.deposit__voda-desc {
+  margin-top: 0.571rem;
+
+  font-size: 0.857rem;
+  font-weight: 600;
+  line-height: 1.285rem;
+}
+
+.deposit__pm {
+  position: relative;
+  overflow-y: auto;
+
+  max-height: calc(100vh - (0.714rem * 2));
+
+  margin: 0.857rem 0.714rem;
+  padding: 0.714rem;
+
+  background-color: var(--pmbet-white);
+  color: var(--pmbet-gray);
+
+  font-family: "Poppins", "Arial", sans-serif;
+}
+
+.deposit__pm.active {
+  display: block;
+}
+
+.deposit__pm-logo {
+  position: relative;
+
+  width: 9rem;
+  margin: 0 auto 0.785rem;
+}
+
+.deposit__pm-logo::before {
+  content: "";
+  display: block;
+  padding-top: 34.126%;
+}
+
+.deposit__pm-title {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  font-size: 1.142rem;
+  font-weight: 600;
+  line-height: 1.785rem;
+  text-align: center;
+}
+
+.deposit__pm-title_upper {
+  text-transform: uppercase;
+}
+
+.deposit__pm-sub {
+  margin-bottom: 0.714rem;
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.deposit__pm-list {
+  margin: 0 0 0.714rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deposit__pm-item strong {
+  color: var(--pmbet-green);
+
+  font-size: 1.142rem;
+  font-weight: 600;
+  line-height: 1.785rem;
+}
+
+.deposit__pm-item p {
+  margin: 0;
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.deposit__pm-desc {
+  font-size: 0.857rem;
+  font-weight: 600;
+  line-height: 1.285rem;
+}
+

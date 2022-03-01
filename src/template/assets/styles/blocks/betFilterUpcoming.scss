@@ -1,0 +1,46 @@
+.bet-filter__upcoming {
+  padding-left: 1.071rem;
+
+  transition: var(--pmbet-transition);
+
+  max-height: 0;
+  overflow: hidden;
+
+  .bet-type__list {
+    position: relative;
+
+    justify-content: flex-start;
+
+    padding-top: 1.428rem;
+    padding-bottom: 1.428rem;
+
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .bet-type__list::after {
+    content: "0";
+    display: block;
+    height: 100%;
+    width: 1.071rem;
+    flex-shrink: 0;
+
+    color: transparent;
+  }
+
+  .bet-type__item--active {
+    position: sticky;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .bet-type__item--active .bet-type__link {
+    background-color: var(--pmbet-green);
+    color: var(--pmbet-white);
+  }
+}
+
+.bet-filter__upcoming.active {
+  max-height: 300px;
+}

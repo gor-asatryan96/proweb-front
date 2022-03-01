@@ -1,0 +1,26 @@
+.popup-recovery {
+  .popup__block {
+    padding-top: 2.5rem;
+  }
+
+  .popup__form {
+    margin-bottom: 4.285rem;
+  }
+
+  .popup-forgot__submit {
+    display: flex;
+    justify-content: center;
+  }
+
+  .popup__btn {
+    min-width: 13.714rem;
+  }
+}
+
+.popup-recover__title {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 1.285rem;
+  color: var(--pmbet-gray);
+
+  margin-bottom: 1.33rem;
+}

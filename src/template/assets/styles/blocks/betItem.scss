@@ -1,0 +1,630 @@
+.bet-item {
+  position: fixed;
+  right: 0;
+  bottom: 4.571rem;
+  left: 0;
+  z-index: 3;
+
+  width: 100%;
+
+  display: flex;
+  //display: none;
+  flex-direction: column;
+}
+
+.bet-item.active {
+  height: calc(100% - 4.571rem);
+}
+
+.bet-item.active .bet-item__block {
+  height: auto;
+  transform: scaleY(1);
+
+  flex-grow: 1;
+
+  overflow: hidden;
+}
+
+.bet-item__btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  text-decoration: none;
+
+  appearance: none;
+
+  font-weight: 700;
+  font-family: "Poppins", "Arial", sans-serif;
+
+  padding-top: 0.785rem;
+  padding-right: 1.357rem;
+  padding-bottom: 0.785rem;
+  padding-left: 1.357rem;
+
+  background-color: var(--pmbet-blue);
+
+  border: none;
+  border-bottom: 1px solid var(--pmbet-blue-dark);
+}
+
+.bet-item__btn.active {
+  display: flex;
+}
+
+.bet-item__info {
+  display: flex;
+  align-items: center;
+
+  font-size: 1.285rem;
+  font-weight: 600;
+}
+
+.bet-item__quantity {
+  margin-right: 0.65rem;
+
+  color: var(--pmbet-white-dark);
+}
+
+.bet-item__price {
+  color: var(--pmbet-green);
+}
+
+.bet-item__arrow {
+  position: absolute;
+  top: 50%;
+  right: 1.142rem;
+  z-index: 1;
+
+  transform: translateY(-50%);
+
+  height: 0.785rem;
+  width: 1.285rem;
+  flex-shrink: 0;
+}
+
+.bet-item__name {
+  margin-right: 12.95%;
+  margin-left: auto;
+
+  color: var(--pmbet-gray);
+  font-size: 1.071rem;
+}
+
+.bet-item__block {
+  position: relative;
+  z-index: 1;
+
+  height: 0;
+
+  transform: scaleY(0);
+  transform-origin: center bottom;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--pmbet-cream);
+
+  // transition: var(--pmbet-transition);
+}
+
+.bet-item__nav {
+  position: relative;
+  background-color: var(--pmbet-blue);
+
+  display: flex;
+}
+
+.bet-item__nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+.bet-item__nav__item:not(:last-child) {
+  margin-right: 0.72rem;
+}
+
+.bet-item__nav__btn {
+  position: relative;
+
+  display: flex;
+
+  padding-top: 0.858rem;
+  padding-right: 1rem;
+  padding-bottom: 0.858rem;
+  padding-left: 1rem;
+
+  font-weight: 700;
+  font-size: 1.571rem;
+  color: var(--pmbet-gray-light);
+
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.bet-item__nav__btn.active {
+  color: var(--pmbet-green);
+}
+
+.bet-item__nav__btn.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.214rem;
+  width: 100%;
+  display: block;
+  background-color: var(--pmbet-green);
+}
+
+.bet-item__nav__close {
+  position: relative;
+
+  appearance: none;
+  border: none;
+
+  display: inline-flex;
+
+  padding: 0;
+  margin-left: auto;
+
+  transform: scale(-1);
+
+  background-color: transparent;
+
+  height: 100%;
+  width: 3.357rem;
+}
+
+.bet-item__hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 1.071rem;
+  padding-right: 0.5rem;
+  padding-bottom: 1.071rem;
+  padding-left: 0.5rem;
+}
+
+.bet-item__hint__icon {
+  position: relative;
+  width: 1.628rem;
+  flex-shrink: 0;
+}
+
+.bet-item__hint__icon::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.bet-item__hint__icon {
+  margin-right: 0.657rem;
+}
+
+.bet-item__hint__icon svg {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.bet-item__hint__info {
+  font-size: 1.142rem;
+  color: var(--pmbet-blue);
+}
+
+.bet-item__column {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.bet-item__column--single .bet-item__team {
+  max-height: calc(100% - 15.714rem);
+}
+
+.bet-item__column--system {
+  .bet-item__team {
+    max-height: calc(100% - 23.357rem);
+  }
+
+  .bet-item__panel__column:only-of-type {
+    margin-left: auto;
+  }
+}
+
+.bet-item__team {
+  //background-color: var(--pmbet-gray-lighter);
+
+  flex-grow: 1;
+
+  //max-height: calc(100% - 183px);
+  max-height: calc(100% - 18.285rem);
+  overflow-y: auto;
+
+  overscroll-behavior-y: contain;
+
+  padding-bottom: 0.857rem;
+}
+
+.bet-item__team::-webkit-scrollbar {
+  width: 0.357rem;
+}
+
+.bet-item__team::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bet-item__team::-webkit-scrollbar-thumb {
+  background-color: var(--pmbet-white);
+}
+
+.bet-item__team__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bet-item__team__item {
+  display: flex;
+
+  overflow: hidden;
+
+  border-radius: 2px;
+  background-color: var(--pmbet-white);
+}
+
+.bet-item__team__item:not(:last-child) {
+  margin-bottom: 0.142rem;
+}
+
+.bet-item__team__info {
+  display: flex;
+  align-items: center;
+
+  flex-grow: 1;
+
+  padding-top: 0.357rem;
+  padding-right: 0.607rem;
+  padding-bottom: 0.357rem;
+  padding-left: 0.321rem;
+}
+
+.bet-item__team__title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  font-size: 1.285rem;
+  font-weight: 700;
+
+  margin-right: 0.678rem;
+}
+
+.bet-item__team__name {
+  color: var(--pmbet-gray);
+}
+
+.bet-item__team__separator {
+  color: var(--pmbet-gray-lighter--2);
+
+  margin-right: 0.31rem;
+  margin-left: 0.31rem;
+}
+
+.bet-item__team__total {
+  margin-top: 0.1rem;
+
+  width: 100%;
+}
+
+.bet-item__team__result {
+  color: var(--pmbet-gray-light);
+  font-size: 1.142rem;
+  font-weight: 300;
+}
+
+.bet-item__team__amount {
+  width: 100%;
+  flex-shrink: 0;
+
+  margin-top: 0.2rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.bet-item__team__amount__name {
+  font-size: 1.142rem;
+  font-weight: 300;
+  color: var(--pmbet-gray);
+
+  margin-right: 0.714rem;
+}
+
+.bet-item__team__amount__number {
+  border: none;
+  border-radius: 0.214rem;
+  background-color: var(--pmbet-white-dark);
+
+  font-size: 1.142rem;
+  color: var(--pmbet-gray);
+
+  flex-grow: 1;
+
+  padding-top: 0.108rem;
+  padding-right: 0.285rem;
+  padding-bottom: 0.108rem;
+  padding-left: 0.285rem;
+}
+
+.bet-item__team__ratio {
+  font-weight: 700;
+  font-size: 1.285rem;
+  color: var(--pmbet-green);
+
+  margin-left: auto;
+}
+
+.bet-item__team__delete {
+  appearance: none;
+
+  display: flex;
+
+  border: none;
+
+  width: 3.214rem;
+  flex-shrink: 0;
+
+  background-color: var(--pmbet-white-lightest);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 1.214rem auto;
+  background-image: url("../../images/icon/delete.svg");
+}
+
+// ----- Bet panel -----
+
+.bet-item__panel {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  padding-top: 1.071rem;
+  padding-right: 1.142rem;
+  padding-bottom: 1.357rem;
+  padding-left: 1.142rem;
+
+  background-color: var(--pmbet-cream);
+}
+
+.bet-item__panel__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bet-item__panel__row:first-of-type {
+  margin-bottom: 0.214rem;
+}
+
+.bet-item__panel__row--combination {
+  margin-bottom: 0.428rem;
+
+  .bet-item__panel__number__value {
+    margin-right: 0.285rem;
+    margin-left: 0.785rem;
+  }
+
+  .bet-item__panel__number {
+    align-items: center;
+  }
+
+  .bet-item__panel__title {
+    flex-shrink: 0;
+
+    margin-right: 0;
+  }
+}
+
+.bet-item__panel__column {
+  width: calc(50% - 0.142rem);
+}
+
+.bet-item__panel__number {
+  display: flex;
+  width: 100%;
+}
+
+.bet-item__panel__number__value {
+  border: none;
+  border-radius: 0.214rem;
+
+  padding: 0.465rem 0.464rem;
+
+  width: 100%;
+
+  font-size: 1.142rem;
+  font-weight: 700;
+  color: var(--pmbet-gray);
+
+  background-color: var(--pmbet-white);
+}
+
+.bet-item__panel__label {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+}
+
+.bet-item__panel__select {
+  appearance: none;
+
+  height: 100%;
+
+  border: none;
+  border-radius: 0.142rem;
+  background-color: var(--pmbet-white);
+
+  padding: 0.465rem 0.464rem;
+
+  background-repeat: no-repeat;
+  background-position: center right 0.285rem;
+  background-size: 0.928rem auto;
+  background-image: url("../../images/icon/arrow-bottom.svg");
+
+  font-size: 1rem;
+
+  flex-grow: 1;
+}
+
+.bet-item__panel__title {
+  margin-right: 0.785rem;
+
+  font-size: 1.142rem;
+  font-weight: 700;
+  color: var(--pmbet-gray);
+
+  text-transform: capitalize;
+}
+
+.bet-item__panel__total {
+  margin-bottom: 1.357rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px
+}
+
+.bet-item__panel__total .bet-item__panel__row:not(:last-child) {
+  margin-bottom: 0.284rem;
+}
+
+.bet-item__panel__info {
+  display: flex;
+  align-items: center;
+
+  min-height: 2.285rem;
+
+  padding: 0.429rem 0.464rem;
+
+  font-size: 1.142rem;
+  font-weight: 700;
+
+  border-radius: 0.142rem;
+  background-color: var(--pmbet-white);
+
+  color: var(--pmbet-gray);
+}
+
+.bet-item__panel__amount {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  outline: none;
+  min-height: 2.285rem;
+
+  padding: 0.429rem 0.464rem;
+
+  font-size: 1.142rem;
+  font-weight: 700;
+  border-color: transparent;
+  border-radius: 0.142rem;
+  background-color: var(--pmbet-white);
+
+  color: var(--pmbet-gray);
+}
+
+.bet-item__panel__info--win {
+  color: var(--pmbet-green);
+}
+
+.bet-item__panel__info--amount {
+  font-size: 1rem;
+
+  .bet-item__panel__value {
+    font-size: inherit;
+  }
+}
+
+.bet-item__panel__name {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  margin-right: 0.142rem;
+}
+
+.bet-item__panel__value {
+  font-size: 1.214rem;
+
+  margin-left: auto;
+}
+
+.bet-item__panel__value:only-child {
+  margin-left: 0;
+}
+
+.bet-item__panel__accept .bet-item__panel__column {
+  display: flex;
+  align-items: center;
+}
+
+.bet-item__panel__trash {
+  display: inline-flex;
+  height: 1.95rem;
+  width: 1.642rem;
+
+  appearance: none;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+  background-image: url("../../images/icon/trash.svg");
+  background-color: transparent;
+
+  border: none;
+
+  margin-right: 1.071rem;
+}
+
+.bet-item__panel__btn {
+  appearance: none;
+  border: none;
+
+  display: inline-flex;
+  justify-content: center;
+
+  padding-top: 0.608rem;
+  padding-right: 0.125rem;
+  padding-bottom: 0.608rem;
+  padding-left: 0.125rem;
+
+  min-width: 10.714rem;
+
+  border-radius: 0.571rem;
+
+  text-transform: uppercase;
+
+  font-family: "Poppins", "Arial", sans-serif;
+  font-size: 1.285rem;
+  font-weight: 700;
+  color: var(--pmbet-white-dark);
+}
+
+.bet-item__panel__btn--place {
+  margin-left: auto;
+
+  background-color: var(--pmbet-green);
+}

@@ -1,0 +1,28 @@
+.popup-reset {
+  .popup-forgot__submit {
+    display: flex;
+    justify-content: center;
+  }
+
+  .popup__btn {
+    min-width: 13.714rem;
+  }
+}
+
+.popup-reset__caption {
+  font-size: 1.428rem;
+  font-weight: 700;
+  color: var(--pmbet-gray);
+
+  text-align: center;
+
+  margin-bottom: 2.428rem;
+}
+
+.popup-reset__info {
+  font-size: 1.285rem;
+  color: var(--pmbet-gray);
+  line-height: 1.25;
+
+  margin-bottom: 2.142rem;
+}

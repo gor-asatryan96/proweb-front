@@ -1,0 +1,35 @@
+.responsibility {
+
+}
+
+.responsibility__circle {
+  --rotateAngle: -35;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.285rem;
+  height: 2.285rem;
+  border: 0.275rem solid var(--pmbet-gray);
+  border-right-color: transparent;
+  border-radius: 50%;
+  transform: rotate(calc(var(--rotateAngle) * 1deg));
+}
+
+.responsibility__age {
+  position: relative;
+  transform: rotate(calc(var(--rotateAngle) * -1deg));
+
+  &::before {
+    font-family: 'sans-serif', Arial;
+    content: "+";
+    position: absolute;
+    top: -84%;
+    right: -268%;
+    display: block;
+    transform: translateX(-23px);
+    color: var(--pmbet-gray);
+    font-size: 2rem;
+    line-height: 1;
+  }
+}

@@ -1,0 +1,61 @@
+.casino-kind {
+  padding-top: 1.428rem;
+
+  .casino-block {
+    max-height: calc(100vh - 20.888rem);
+    overflow-y: auto;
+  }
+
+  .casino-filter__dropdown {
+    padding-top: 1.428rem;
+    padding-bottom: 1.428rem;
+  }
+
+  .live-casino__row {
+    padding-top: 0;
+    padding-right: 0.142rem;
+    padding-left: 0.142rem;
+  }
+
+  .casino-game__item:nth-child(n) {
+    width: calc(50% - 0.5rem);
+
+    margin-right: 0;
+    margin-bottom: 0.928rem;
+  }
+
+  .casino-game__item:not(:nth-child(2n)) {
+    margin-right: 1rem;
+  }
+
+  .casino-game__img::before {
+    padding-top: 75%;
+  }
+
+  .bet-rate__nav__link--favorite {
+    width: 1.214rem;
+  }
+
+  .casino-game__name {
+    padding-top: 0.107rem;
+    padding-bottom: 0.107rem;
+  }
+
+  .casino-game__more {
+    position: relative;
+
+    padding-bottom: 7.785rem;
+  }
+
+  .casino-game__load {
+    font-family: "Poppins", "Arial", sans-serif;
+    font-size: 1.285rem;
+
+    padding-top: 0.715rem;
+    padding-right: 1.822rem;
+    padding-bottom: 0.715rem;
+    padding-left: 1.822rem;
+
+    text-transform: uppercase;
+  }
+}

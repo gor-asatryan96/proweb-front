@@ -1,0 +1,258 @@
+.popup_userMenuConfig {
+  display: flex;
+  flex-direction: column;
+}
+
+.userMenuConfig__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 3.857rem;
+  flex-shrink: 0;
+  background-color: var(--pmbet-blue);
+}
+
+.userMenuConfig__idConfigLinkIcon {
+  display: flex;
+
+  width: 1.428rem;
+  height: 1.571rem;
+  flex-shrink: 0;
+
+  margin-right: 0.5rem;
+}
+
+.userMenuConfig__idConfigLinkIconSvg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--pmbet-white);
+}
+
+.userMenuConfig__idConfigLinkIconText {
+  color: var(--pmbet-white);
+
+  font-family: "Poppins", "Arial", sans-serif;
+  font-size: 1.142rem;
+  font-weight: 600;
+}
+
+.userMenuConfig__headerCell {
+  width: 2.9rem;
+}
+
+.userMenuConfig__closeButton {
+  background-color: transparent;
+  border: none;
+}
+
+.userMenuConfig__closeButtonSvg {
+  width: 1.33rem;
+  height: 1.33rem;
+}
+
+.userMenuConfig__closeButtonSvg {
+  fill: var(--pmbet-white-lightest--3);
+}
+
+.userMenuConfig__headerGearIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userMenuConfig__headerGearIconSvg {
+  width: 1.93rem;
+  height: 1.93rem;
+  fill: var(--pmbet-white);
+}
+
+.userMenuConfig__headerInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userMenuConfig__balance {
+  padding-right: 1.428rem;
+  padding-left: 1.428rem;
+
+  flex-shrink: 0;
+}
+
+.userMenuConfig__row {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding-top: 1.214rem;
+  padding-bottom: 1.1rem;
+
+  font-family: "Poppins", "Arial", sans-serif;
+}
+
+.userMenuConfig__row::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
+}
+
+.userMenuConfig__column--info {
+  flex-grow: 1;
+
+  margin-right: 0.5rem;
+}
+
+.userMenuConfig__column--deposit {
+  flex-shrink: 0;
+}
+
+.userMenuConfig__line {
+  display: flex;
+}
+
+.userMenuConfig__name {
+  width: 4.285rem;
+  flex-shrink: 0;
+
+  margin-right: 2.285rem;
+
+  color: var(--pmbet-blue-darker);
+  font-weight: 600;
+
+  word-break: break-all;
+}
+
+.userMenuConfig__value {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+  color: var(--pmbet-green);
+
+  //flex-shrink: 1;
+}
+
+.userMenuConfig__currency {
+  font-size: 0.928rem;
+  font-weight: 600;
+
+  color: var(--pmbet-blue-darker);
+}
+
+.userMenuConfig__deposit {
+  font-size: 1rem;
+  font-weight: 600;
+
+  border-radius: 0.142rem;
+
+  padding-top: 0.714rem;
+  padding-right: 2.214rem;
+  padding-bottom: 0.714rem;
+  padding-left: 2.214rem;
+}
+
+.userMenuConfig__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  flex-shrink: 0;
+
+  max-height: calc(100vh - 23.704rem);
+  overflow-y: auto;
+}
+
+.userMenuConfig__item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--pmbet-cream);
+}
+
+.userMenuConfig__item::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
+}
+
+.userMenuConfig__link {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+
+  width: 100%;
+  padding-top: 1.071rem;
+  padding-right: 1.428rem;
+  padding-bottom: 1.2rem;
+  padding-left: 1.428rem;
+}
+
+.userMenuConfig__icon {
+  position: relative;
+  width: 2.235rem;
+
+  margin-right: 0.692rem;
+}
+
+.userMenuConfig__icon::before {
+  content: "";
+  display: block;
+  padding-top: 83.067%;
+}
+
+.userMenuConfig__icon svg {
+  max-height: 100%;
+  max-width: 100%;
+
+  fill: var(--pmbet-gray);
+  stroke: var(--pmbet-gray);
+}
+
+.userMenuConfig__icon_gift svg {
+
+}
+
+.userMenuConfig__title {
+  font-weight: 600;
+  color: var(--pmbet-gray);
+
+  text-transform: uppercase;
+}
+
+.userMenuConfig__logout {
+  display: flex;
+  justify-content: center;
+
+  height: 100%;
+
+  background-color: var(--pmbet-white-5);
+}
+
+.userMenuConfig__logoutBtn {
+  border-radius: 0.214rem;
+  background-color: var(--pmbet-cream);
+
+  color: var(--pmbet-blue-darker);
+  text-transform: capitalize;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  min-width: 13.714rem;
+}

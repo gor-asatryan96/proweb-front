@@ -1,0 +1,57 @@
+.userInfo {
+  display: flex;
+  align-items: stretch;
+}
+
+.userInfo__container {
+  display: flex;
+}
+
+.userInfo__amount {
+  display: flex;
+  border-left: 1px solid var(--pmbet-blue-dark);
+  border-right: 1px solid var(--pmbet-blue-dark);
+}
+
+.userInfo__amount {
+  display: flex;
+  align-items: center;
+  padding: 0 0.714rem;
+  font-size: 1rem;
+}
+
+.userInfo__amountSize {
+  margin-right: 0.2rem;
+  color: var(--pmbet-green);
+}
+
+.userInfo__amountType {
+  color: var(--pmbet-white);
+  text-transform: uppercase;
+}
+
+.userInfo__idConfigLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.userInfo__idConfigLinkIcon {
+  display: flex;
+  width: 1.428rem;
+  height: 1.571rem;
+}
+
+.userInfo__idConfigLinkIconSvg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--pmbet-green);
+}
+
+.userInfo__idConfigLinkIdWithText {
+  color: var(--pmbet-green);
+  font-size: 0.857rem;
+}

@@ -1,0 +1,48 @@
+.popup-winner {
+    font-family: 'Poppins', sans-serif;
+}
+
+.popup-winner__title {
+    font-family: inherit;
+    font-size: 1.7142rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+    text-transform: capitalize;
+    letter-spacing: 0.03rem;
+
+    color: var(--pmbet-blue);
+
+    padding: 0 3.2143rem 0 3.0714rem;
+    margin-bottom: 1.6rem;
+}
+
+.popup-winner__desc {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+  letter-spacing: 0.011rem;
+
+    color: var(--pmbet-gray);
+
+    padding: 0 3.2143rem 0 3.0714rem;
+    margin-bottom: 1.5rem;
+}
+
+.popup-winner__img-box {
+    position: relative;
+    width: 81.013%;
+
+    margin-bottom: 2.1428rem;
+}
+
+.popup-winner__img-box::after {
+    content: '';
+    display: block;
+    padding-top: 37.5%;
+}
+
+.popup-winner__img-box img {
+    object-fit: cover;
+    object-position: center;
+}

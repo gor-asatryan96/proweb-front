@@ -1,0 +1,520 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.img-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-banner-wrapper {
+  width: 100%;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.burger {
+  position: relative;
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 2.571rem;
+}
+
+.burger-icon {
+  max-height: 100%;
+  max-width: 100%;
+  fill: var(--pmbet-green);
+}
+
+.logo {
+  position: relative;
+  width: 7.714rem;
+  flex-shrink: 0;
+
+  align-self: stretch;
+}
+
+.logo__img {
+  margin-top: -0.4rem;
+
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.config {
+  align-self: stretch;
+}
+
+.config__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  height: 100%;
+}
+
+.config__link {
+  position: relative;
+
+  display: flex;
+
+  height: 100%;
+  width: 3.571rem;
+  flex-shrink: 0;
+}
+
+.config__link.active .config__notification {
+  display: inline-flex;
+}
+
+.config__link.active .config__img {
+  fill: var(--pmbet-yellow);
+  stroke: var(--pmbet-yellow);
+}
+
+.config__content {
+  position: relative;
+}
+
+.config__notification {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(65%, -20%);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  height: 1rem;
+  width: 1rem;
+
+  font-family: "Roboto", "Arial", sans-serif;
+
+  font-size: 0.857rem;
+  color: var(--pmbet-white);
+
+  background-color: var(--pmbet-green);
+  border-radius: 50%;
+
+  filter: drop-shadow(0 1px 1px var(--pmbet-black-05));
+}
+
+.config__img {
+  max-height: 100%;
+  max-width: 100%;
+
+  fill: var(--pmbet-gray);
+  stroke: var(--pmbet-gray);
+}
+
+.nav {
+  font-family: "Poppins", "Arial", sans-serif;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+
+  height: 100%;
+}
+
+.nav__item {
+  height: 100%;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 1.1rem;
+}
+
+.nav__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  font-weight: 700;
+  font-size: 1.142rem;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  padding-right: 0.642rem;
+  padding-left: 0.642rem;
+  white-space: nowrap;
+}
+
+.nav__link.nav__link--login {
+  color: var(--pmbet-white);
+}
+
+.nav__link.nav__link--register {
+  color: var(--pmbet-green);
+
+  padding-right: 2.05rem;
+  padding-left: 0.714rem;
+}
+
+.input {
+  appearance: none;
+
+  min-width: unset;
+  width: 100%;
+
+  min-height: 3.286rem;
+
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 1.285rem;
+  font-weight: 400;
+  color: var(--pmbet-blue-darker);
+
+  padding-top: 0.893rem;
+  padding-right: 0.785rem;
+  padding-bottom: 0.893rem;
+  padding-left: 0.785rem;
+
+  border: none;
+  border-radius: 0.285rem;
+  background-color: var(--pmbet-white);
+}
+
+.input::placeholder {
+  color: var(--pmbet-blue-darker-6);
+}
+
+.input__show {
+  position: relative;
+  display: inline-block;
+
+  width: 1.377rem;
+
+  appearance: none;
+
+  box-sizing: content-box;
+  padding: 0.285rem;
+
+  border: none;
+  background-color: transparent;
+}
+
+.eye-show svg {
+  fill: var(--pmbet-green) !important;
+}
+
+.input__show::before {
+  content: "";
+  display: block;
+  padding-top: 64.285%;
+}
+
+.input__show svg {
+  height: 100%;
+  width: 100%;
+
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.input__show .img-container {
+  padding: 0.214rem;
+}
+
+.select {
+  appearance: none;
+
+  min-width: unset;
+  width: 100%;
+
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 1.285rem;
+  font-weight: 400;
+  color: var(--pmbet-blue-darker);
+
+  padding-top: 0.822rem;
+  padding-right: 1.785rem;
+  padding-bottom: 0.822rem;
+  padding-left: 0.785rem;
+
+  border: none;
+  border-radius: 2px;
+
+  background-color: var(--pmbet-white);
+  background-repeat: no-repeat;
+  background-position: right 0.642rem center;
+  background-size: 1.1rem auto;
+  background-image: url("../images/icon/dropdown-bottom.svg");
+}
+
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  height: 1.785rem;
+  width: 4rem;
+  flex-shrink: 0;
+
+  overflow: hidden;
+  border-radius: 0.892rem;
+}
+
+.checkbox__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  opacity: 0;
+
+  cursor: pointer;
+
+  height: 100%;
+  width: 100%;
+}
+
+.checkbox__btn:checked ~ .checkbox__round {
+  left: calc(100% - 1.7rem);
+
+  background-color: var(--pmbet-white);
+}
+
+.checkbox__round {
+  position: absolute;
+  left: 0;
+
+  border-radius: 50%;
+
+  height: 100%;
+  width: 1.785rem;
+
+  transition: var(--pmbet-transition);
+
+  background-color: var(--pmbet-green);
+}
+
+.checkbox__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  transition: var(--pmbet-transition);
+
+  background-color: var(--pmbet-white);
+
+  height: 100%;
+  width: 100%;
+}
+
+.checkbox__btn:checked ~ .checkbox__bg {
+  background-color: var(--pmbet-green);
+}
+
+.checkbox-2 {
+  position: relative;
+  display: inline-flex;
+
+  height: 1.285rem;
+  width: 1.285rem;
+
+  flex-shrink: 0;
+}
+
+.checkbox-2__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  opacity: 0;
+
+  cursor: pointer;
+
+  height: 100%;
+  width: 100%;
+}
+
+.checkbox-2__icon {
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+
+  flex-shrink: 0;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 0 0;
+  background-image: url("../images/icon/check.svg");
+
+  border: 2px solid var(--pmbet-green);
+}
+
+.checkbox-2__btn:checked ~ .checkbox-2__icon {
+  background-color: var(--pmbet-green);
+  background-size: 1rem auto;
+}
+
+.arrow-bottom {
+  position: relative;
+  width: 0.85rem;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  appearance: none;
+  text-decoration: none;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 0.929rem;
+  padding-right: 3rem;
+  padding-bottom: 0.929rem;
+  padding-left: 3rem;
+
+  border: none;
+  border-radius: 0.571rem;
+
+  background-color: var(--pmbet-green);
+
+  font-size: 1.428rem;
+  font-weight: 700;
+  color: var(--pmbet-white-dark);
+  text-transform: uppercase;
+}
+
+.top {
+  position: absolute;
+  top: 1.642rem;
+  right: 0;
+
+  appearance: none;
+  border: none;
+  padding: 0;
+
+  background-color: var(--pmbet-green);
+
+  height: 2.857rem;
+  width: 2.857rem;
+
+  border-radius: 50%;
+}
+
+.dropdown {
+  position: relative;
+
+  display: flex;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+}
+
+.dropdown__list {
+  appearance: none;
+
+  height: 2.142rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--pmbet-white);
+
+  color: var(--pmbet-gray);
+  font-size: 1.142rem;
+  font-weight: 700;
+
+  padding-top: 0.393rem;
+  padding-right: 1.642rem;
+  padding-bottom: 0.393rem;
+  padding-left: 0.714rem;
+
+  border: none;
+  border-radius: 0.214rem;
+}
+
+.dropdown__arrow {
+  position: absolute;
+  top: 50%;
+  right: 0.571rem;
+  transform: translateY(-40%);
+
+  width: 0.642rem;
+}
+
+// for ul, ol
+.resetList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.littleSpace {
+  width: 100%;
+  display: block;
+  padding-left: 0.2rem;
+  line-height: 1.1;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.content-section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content-section__inner {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: var(--pmbet-cream)
+}
+
+.formError {
+  padding: 0.3rem 0 0.5rem;
+  color: red;
+}

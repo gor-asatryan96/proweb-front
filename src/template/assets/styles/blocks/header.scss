@@ -1,0 +1,70 @@
+.header {
+  height: 3.857rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: var(--pmbet-blue);
+}
+
+.header__container {
+  display: flex;
+
+  height: 100%;
+}
+
+.header__burger {
+  margin-right: 0.4rem;
+}
+
+.header__burger .img-container {
+  justify-content: flex-start;
+}
+
+.header__logo {
+  margin-right: 0.5rem;
+}
+
+.header__nav {
+  align-self: stretch;
+
+  margin-left: auto;
+}
+
+.header__user {
+  margin-left: auto;
+  align-self: stretch;
+}
+
+
+.headerSkeletons {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  & > div {
+    height: 1.7rem;
+    width: 4rem;
+    margin: 0 0.7rem;
+  }
+
+  & > div:last-child {
+    margin-left: 2rem;
+  }
+}
+
+.balanceSkeleton { 
+  height: 1rem;
+  width: 3rem;
+ }
+
+ .currencySkeleton {
+  height: 1rem;
+  width: 1.5rem;
+  margin-left: 0.5rem;
+ }
+
+ .userSkeleton {
+   height: 0.8rem;
+   width: 3.2rem;
+   margin-bottom: 3px;
+ }

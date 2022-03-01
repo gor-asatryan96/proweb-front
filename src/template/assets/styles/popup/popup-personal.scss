@@ -1,0 +1,28 @@
+.popup-personal {
+  .popup__block {
+    padding-top: 3.428rem;
+  }
+
+  .popup-forgot__submit {
+    display: flex;
+    justify-content: center;
+  }
+
+  .popup__btn {
+    min-width: 13.714rem;
+  }
+}
+
+.popup-personal__row {
+  display: flex;
+
+  margin-bottom: 0.214rem;
+}
+
+.popup-personal__column {
+  width: calc(100% / 3 - 3 / 13 * 1rem);
+}
+
+.popup-personal__column:not(:last-child) {
+  margin-right: calc(3 / 7 * 1rem);
+}

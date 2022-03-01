@@ -1,0 +1,49 @@
+.popup-create {
+  .popup__block {
+    padding-top: 3.428rem;
+  }
+
+  .popup-forgot__submit {
+    display: flex;
+    justify-content: center;
+  }
+
+  .popup__btn {
+    min-width: 13.714rem;
+  }
+}
+
+.popup-create__line {
+  display: flex;
+}
+
+.popup-create__code {
+  width: 4rem;
+  flex-shrink: 0;
+
+  margin-right: 0.357rem;
+
+  input {
+    //padding-top: 1.142rem;
+    padding-right: 0.714rem;
+    //padding-bottom: 1.142rem;
+    padding-left: 0.714rem;
+
+    //height: 3.285rem;
+
+    font-size: 1rem;
+  }
+}
+
+.popup-create__code:nth-child(n) {
+  margin-bottom: 0;
+}
+
+.popup-create__tel {
+  flex-grow: 1;
+}
+
+.popup-create__accept {
+  display: flex;
+  justify-content: center;
+}

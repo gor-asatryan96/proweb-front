@@ -1,0 +1,36 @@
+.live {
+  .bet-filter__block::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -0.571rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: var(--pmbet-white-5);
+
+    height: calc(100% + 0.571rem);
+    width: 100%;
+  }
+
+  .bet-filter__upcoming .bet-type__list {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .bet-rate__set__team__block {
+    margin-bottom: 0.214rem;
+  }
+
+  .bet-rate__set__desc {
+    font-size: 0.928rem;
+  }
+
+  .bet-rate__set__btn {
+    justify-content: flex-start;
+
+    padding-top: 0.357rem;
+    padding-bottom: 0.357rem;
+  }
+}
