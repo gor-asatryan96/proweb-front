@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
+import cn from 'classnames';
 import { toggleBurger } from '../../../../redux/slices/configs.slice';
 
 import { openPopup } from '../../../../redux/slices/popups.slice';
@@ -9,6 +10,7 @@ import {
 } from '../../../../redux/slices/user.slice';
 import { POPUPS_IDS } from '../../Popups/constants/popups.constants';
 import RowSkeleton from '../../Skeletons/RowSkeleton/RowSkeleton';
+import { selectFavorites } from '../../../../redux/slices/favorites.slice';
 
 const {
   LOGIN, REGISTER, USER_PROFILE, FAVOURITES,
@@ -21,6 +23,7 @@ const Header = () => {
   const userId = useSelector(selectUserId);
   const balance = useSelector(selectUserBalance);
   const currency = useSelector(selectUserCurrency);
+  const favoriteItems = useSelector(selectFavorites);
 
   const togglePopup = (id) => {
     dispatch(openPopup({ id }));
@@ -54,7 +57,9 @@ const Header = () => {
                     <div className="config__notification">
                       4
                     </div>
-                    <svg className="config__img" width="20" height="19" fill="#5f6c79" stroke="#5f6c79">
+                    <svg className={cn('favourite__image', {
+                      active: Object.keys(favoriteItems).length,
+                    })}>
                       <use xlinkHref="#star" />
                     </svg>
                   </div>

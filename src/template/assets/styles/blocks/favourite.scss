@@ -270,3 +270,20 @@
   font-size: 1.375rem;
   font-weight: bold;
 }
+
+.favourite__image {
+  width: 20px;
+  height: 19px;
+  max-height: 100%;
+  max-width: 100%;
+  fill: var(--pmbet-gray);
+  stroke: var(--pmbet-gray);
+
+  &.active {
+    transition: all 0.2s ease-in;
+    fill: var(--pmbet-yellow);
+    stroke: var(--pmbet-yellow);
+  }
+}
+
+
