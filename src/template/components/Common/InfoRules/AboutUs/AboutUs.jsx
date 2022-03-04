@@ -1,5 +1,5 @@
 import React from 'react';
-import GoBackHeader from '../../../Popups/components/GoBackHeader';
+import GoBackHeader from '../../../Popups/components/GoBackHeader/GoBackHeader';
 
 const AboutUs = ({ goBack }) => <>
   <GoBackHeader goBack={goBack} title='ABOUT US' />

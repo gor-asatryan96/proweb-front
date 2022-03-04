@@ -4,6 +4,10 @@ export function validateEmail(email) {
   return re.test(email);
 }
 
+export function allowOnlyNumber(value) {
+  return value.replace(/[^0-9]/g, '');
+}
+
 export function fixedTo2(num) {
-  return parseFloat(num).toFixed(2);
+  return Number(num).toFixed(2);
 }

@@ -1,10 +1,19 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
+import { GENDER_TYPES } from '../../../../../../../../constants/gender.constants';
+import { selectUser } from '../../../../../../../../redux/slices/user.slice';
 
 const MyProfileInfo = () => {
+  const { gender = 1, name = '' } = useSelector(selectUser);
   const {
     register, handleSubmit, formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      gender,
+      name,
+    },
+  });
 
   const onSubmit = (data) => {
     console.log('MyProfileInfo', data);
@@ -15,8 +24,14 @@ const MyProfileInfo = () => {
       <div className="profile__form-block profile__form-block_personal">
         <div className="profile__form-row">
           <select {...register('gender')} className="profile__select">
-            <option className="profile__option">Mr</option>
-            <option className="profile__option">Mrs</option>
+            {Object.keys(GENDER_TYPES).map(gen => (
+              <option
+                key={gen}
+                value={gen}
+                className="profile__option">
+                {GENDER_TYPES[gen]}
+              </option>
+            ))}
           </select>
         </div>
         <div className="profile__form-row">

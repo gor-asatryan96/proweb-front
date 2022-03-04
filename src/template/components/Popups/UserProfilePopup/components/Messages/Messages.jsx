@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import GoBackHeader from '../../../components/GoBackHeader';
+import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import MessageItem from './components/MessageItem';
 
 const messages = [
