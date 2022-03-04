@@ -86,3 +86,8 @@ export const SPORT_TABS = {
   UPCOMING: 'UPCOMING',
   LEAGUES: 'LEAGUES',
 };
+
+export const FAVORITES_TYPES = {
+  CASINO: 'CASINO',
+  GAME: 'GAME',
+};

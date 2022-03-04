@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Popup } from '../../UI';
 import casinoImage from '../../../assets/images/casinoGames/casino2.png';
 import { closePopup } from '../../../../redux/slices/popups.slice';
@@ -7,6 +7,8 @@ import FavouritsGroup from './components/FavouritsGroup/FavouritsGroup';
 import FavouritsCasinoItem from './components/FavouritsCasinoItem/FavouritsCasinoItem';
 import SportCard from '../../../pages/SportLive/components/SportCard/SportCard';
 import FavouritsFilterItem from './components/FavouritsFilterItem/FavouritsFilterItem';
+import { selectFavorites } from '../../../../redux/slices/favorites.slice';
+import { FAVORITES_TYPES } from '../../../pages/SportLive/constants/sport.constants';
 
 const favoritesList = {
   '10.11.2020': [{
@@ -149,6 +151,8 @@ const favoritesList = {
 const FavouritesPopup = () => {
   const dispatch = useDispatch();
 
+  const favoriteItems = useSelector(selectFavorites);
+
   const onClose = () => {
     dispatch(closePopup(POPUPS_IDS.FAVOURITES));
   };
@@ -171,11 +175,11 @@ const FavouritesPopup = () => {
       </div>
       <div className="favourite__container">
         <ul className="resetList favourite__list">
-          {Object.keys(favoritesList).length ? Object.keys(favoritesList).map(list => (
+          {Object.keys(favoriteItems).length ? Object.keys(favoriteItems).map(list => (
             <FavouritsGroup key={list} date={list}>
-              {favoritesList[list].map((item) => {
-                const CurrentComponent = item.type === 'casino' ? FavouritsCasinoItem : SportCard;
-                return <CurrentComponent key={item.id} data={item} />;
+              {favoriteItems[list].map((item) => {
+                const CurrentComponent = item.type === FAVORITES_TYPES.CASINO ? FavouritsCasinoItem : SportCard;
+                return <CurrentComponent key={item.id} data={item} fromFavorite />;
               })}
             </FavouritsGroup>
           ))
@@ -197,10 +201,10 @@ const FavouritesPopup = () => {
             <FavouritsFilterItem key={i} />
           ))}
         </ul>
-        {/* <!-- TODO if the container is empty use this 'favourite__empty' -->
-        <!--        <div className="favourite__empty">-->
-        <!--          You have no filter saved-->
-        <!--        </div> --> */}
+        {/* <!-- TODO if the container is empty use this 'favourite__empty' --> */}
+        {/* <div className="favourite__empty"> */}
+        {/*  You have no filter saved */}
+        {/* </div> */}
       </div>
     </Popup>
   );

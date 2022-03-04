@@ -1,14 +1,24 @@
 import dayjs from 'dayjs';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { useNavigate } from 'react-router-dom';
+import cn from 'classnames';
+
 import { addBet, removeBet, selectBetsIds } from '../../../../../redux/slices/betslip.slice';
 import SportCardBet from './components/SportCardBet/SportCardBet';
+import { toggleFavoriteItem } from '../../../../../redux/slices/favorites.slice';
+import { FAVORITES_TYPES } from '../../constants/sport.constants';
 
-const SportCard = ({ data, live }) => {
+const SportCard = ({
+  data, live, isFavorite, fromFavorite,
+}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const betsIds = useSelector(selectBetsIds);
+
+  const addToFavorites = (e, id) => {
+    e.stopPropagation();
+    dispatch(toggleFavoriteItem({ id, type: FAVORITES_TYPES.GAME }));
+  };
 
   const onItemClick = () => {
     navigate(String(data.id));
@@ -31,6 +41,13 @@ const SportCard = ({ data, live }) => {
         <div className="bet-rate__set__info">
           {!live && <div className="bet-rate__set__time">
             {data.leauge}
+            <svg
+              onClick={e => addToFavorites(e, data.id)}
+              className={cn('favourite__image', {
+                active: fromFavorite ? !isFavorite : isFavorite,
+              })}>
+              <use xlinkHref="#star" />
+            </svg>
           </div>}
           <div className="bet-rate__set__team__block">
             <div className="bet-rate__set__team">
@@ -61,7 +78,7 @@ const SportCard = ({ data, live }) => {
           </div>
         </div>
         <div className="bet-rate__set__nav">
-          {data.bets.map(bet => (
+          {data.bets?.map(bet => (
             <SportCardBet
               key={bet.id}
               data={bet}

@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import SportFilters from '../components/SportFilters/SportFilters';
 import SportHeader from '../components/SportHeader/SportHeader';
 import SportCard from '../components/SportCard/SportCard';
 import SportMenu from '../components/SportMenu/SportMenu';
-import { SPORT_TABS } from '../constants/sport.constants';
+import { FAVORITES_TYPES, SPORT_TABS } from '../constants/sport.constants';
+import { selectFavorites } from '../../../../redux/slices/favorites.slice';
 
 const sportItems = [
   {
@@ -239,6 +241,10 @@ const sportItems = [
 const Sport = () => {
   const [ isFilterOpen, setIsFilterOpen ] = useState(false);
   const [ activeTab, setActiveTab ] = useState(SPORT_TABS.TOPS);
+
+  const favoriteItems = useSelector(selectFavorites);
+  const keys = Object.keys(favoriteItems);
+
   return (<>
     <SportMenu />
     <section className="bet">
@@ -253,9 +259,16 @@ const Sport = () => {
         </div>
         <div className="bet-rate">
           <ul className="bet-rate__list">
-            {sportItems.map(sport => (
-              <SportCard key={sport.id} data={sport} />
-            ))}
+            {sportItems.map((sport) => {
+              const isFavorite = keys.map((item) => {
+                const payloadIndex = favoriteItems[item].findIndex(({ type, id }) => type === FAVORITES_TYPES.GAME && id === sport.id);
+                return payloadIndex > -1;
+              });
+              return <SportCard
+                key={sport.id}
+                isFavorite={!!isFavorite.some(item => item)}
+                data={sport} />;
+            })}
           </ul>
         </div>
         <div className="bet-search">
