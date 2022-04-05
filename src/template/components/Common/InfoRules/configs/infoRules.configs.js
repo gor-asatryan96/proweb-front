@@ -11,10 +11,10 @@ const {
 } = INFO_RULES_TAB_NAMES;
 
 export const INFO_RULES_CONFIGS = {
-  [ABOUT_US]: { name: ABOUT_US, Component: AboutUs },
-  [ACCOUNT_RULES]: { name: ACCOUNT_RULES, Component: AccountRules },
-  [CONTACTS]: { name: CONTACTS, Component: Contacts },
-  [COOKIES_POLICY]: { name: COOKIES_POLICY, Component: CookiesPolicy },
-  [PRIVACY_POLICY]: { name: PRIVACY_POLICY, Component: PrivacyPolicy },
-  [TERMS]: { name: TERMS, Component: TermsConditions },
+  [ABOUT_US]: { Component: AboutUs },
+  [ACCOUNT_RULES]: { Component: AccountRules },
+  [CONTACTS]: { Component: Contacts },
+  [COOKIES_POLICY]: { Component: CookiesPolicy },
+  [PRIVACY_POLICY]: { Component: PrivacyPolicy },
+  [TERMS]: { Component: TermsConditions },
 };

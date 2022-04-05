@@ -23,6 +23,15 @@
   border: none;
   border-radius: 0.285rem;
   background-color: var(--pmbet-white);
+
+  @media  screen and (min-width: 1025px){
+    font-size: .857rem;
+    padding: 0.822rem 0.785rem;
+    border-radius: 2px;
+    background-color: var(--pmbet-white);
+    min-height: unset;
+  }
+
 }
 
 .inputWithEye {
@@ -44,6 +53,14 @@
   padding-top: 0.642rem;
   font-size: 1rem;
   color: var(--pmbet-red-dark);
+
+  @media screen and (min-width: 1025px){
+    align-items: center;
+    padding-top: 0.499rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.857rem;
+    font-size: .857rem;
+  }
 }
 
 .errorMessage::before {
@@ -72,6 +89,11 @@
   top: 50%;
   right: 0.785rem;
   transform: translateY(-50%);
+
+  @media screen and (min-width: 1025px){
+    width: 1rem;
+    cursor: pointer;
+  }
 }
 
 .eyeShow svg {
@@ -90,6 +112,12 @@
 
   max-height: 100%;
   max-width: 100%;
+
+  @media screen and (min-width: 1025px){
+   height: 0.56rem;
+    width: 0.87rem;
+    fill: var(--pmbet-gray-light);
+  }
 }
 
 .eye .img-container {

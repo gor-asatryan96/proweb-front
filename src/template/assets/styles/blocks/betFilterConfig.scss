@@ -8,6 +8,12 @@
   max-height: 0;
   overflow: hidden;
 
+  @media screen and (min-width: 1025px){
+    padding-top: 0.5rem;
+    padding-right: 0.428rem;
+    padding-left: 0.428rem;
+  }
+
   .bet-type__list {
     position: relative;
 
@@ -18,6 +24,23 @@
 
     max-width: 100%;
     overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 0.357rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--pmbet-white);
+    }
+
+    @media screen and (min-width: 1025px){
+      padding-top: 0.5rem;
+      padding-bottom: 1.285rem;
+    }
   }
 
   .bet-type__list::after {
@@ -57,8 +80,22 @@
   border-bottom: 1px solid var(--pmbet-black-03);
 }
 
-.bet-filter__config__line--hours .bet-type__list {
-  padding-top: 1.285rem;
+.bet-filter__config__line--hours {
+
+  .bet-type__list{
+    padding-top: 1.285rem;
+  }
+
+  @media screen and (min-width: 1025px){
+    .bet-type__list{
+      justify-content: space-between;
+
+      padding-top: 0.5rem;
+      padding-bottom: 1.285rem;
+    }
+  }
+
+
 }
 
 .bet-filter__config__line--hours .bet-type__link {
@@ -66,6 +103,7 @@
 
   padding-right: 0.714rem;
   padding-left: 0.714rem;
+
 }
 
 .bet-filter__config__line--type {
@@ -109,6 +147,23 @@
 
   max-width: 100%;
   overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 0.357rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--pmbet-white);
+  }
+
+  @media screen and (min-width: 1025px){
+    padding-top: 0.571rem;
+    padding-bottom: 1.285rem;
+  }
 }
 
 .bet-filter__config__list::after {
@@ -118,6 +173,10 @@
   width: 2.142rem;
   flex-shrink: 0;
   color: transparent;
+
+  @media screen and (min-width: 1025px){
+    content: none;
+  }
 }
 
 .bet-filter__config__item {
@@ -197,6 +256,13 @@
   padding-top: 0.642rem;
   padding-right: 1.071rem;
   padding-bottom: 0.642rem;
+
+  @media screen and (min-width: 1025px){
+    padding-top: 0.714rem;
+    padding-bottom: 0.857rem;
+    padding-right: 0;
+  }
+
 }
 
 .bet-filter__config__line--event::after {
@@ -259,6 +325,8 @@
   text-decoration: none;
 
   background-color: transparent;
+
+  cursor: pointer;
 }
 
 .bet-filter__config__nav__item--save .bet-filter__config__nav__btn svg {

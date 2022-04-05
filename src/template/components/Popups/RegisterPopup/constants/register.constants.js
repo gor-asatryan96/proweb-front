@@ -4,4 +4,5 @@ export const REGISTER_TABS_IDS = {
   STEP_3: '3',
   SKIP: '4',
   CONFIRM: '5',
+  SUCCESSFUL: '6',
 };

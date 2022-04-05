@@ -2,11 +2,11 @@ import classNames from 'classnames';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const BurgerRouteItem = ({ active, data }) => {
+const BurgerRouteItem = ({ data }) => {
   const label = data.path.slice(1);
 
   return (
-    <NavLink to={data.path} className={classNames('gameTypes__item', { gameTypes__container_active: active })}>
+    <NavLink to={data.path} className={({ isActive }) => classNames('gameTypes__item', { gameTypes__container_active: isActive })}>
       <div className="gameTypes__container">
         <span className="gameTypes__icon">
           <span className="img-container">

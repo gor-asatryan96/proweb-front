@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
+import classNames from 'classnames';
 import { toggleBurger } from '../../../../redux/slices/configs.slice';
 
 import { openPopup } from '../../../../redux/slices/popups.slice';
@@ -9,9 +11,12 @@ import {
 } from '../../../../redux/slices/user.slice';
 import { POPUPS_IDS } from '../../Popups/constants/popups.constants';
 import RowSkeleton from '../../Skeletons/RowSkeleton/RowSkeleton';
+import SearchPanel from '../SearchPanel/SearchPanel';
+import { selectFavorites } from '../../../../redux/slices/favorites.slice';
+import { selectGifts } from '../../../../redux/slices/gifts.slice';
 
 const {
-  LOGIN, REGISTER, USER_PROFILE, FAVOURITES,
+  LOGIN, REGISTER, USER_PROFILE, FAVOURITES, GIFTS, CONGRATULATIONS, ERROR, INFO_RULES, RECOVERY,
 } = POPUPS_IDS;
 
 const Header = () => {
@@ -21,23 +26,29 @@ const Header = () => {
   const userId = useSelector(selectUserId);
   const balance = useSelector(selectUserBalance);
   const currency = useSelector(selectUserCurrency);
+  const favoriteItems = useSelector(selectFavorites);
+  const gifts = useSelector(selectGifts);
 
   const togglePopup = (id) => {
     dispatch(openPopup({ id }));
   };
-
   const openBurger = () => dispatch(toggleBurger(true));
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1025px)',
+  });
 
   return (
     <header className="header">
       <div className="container header__container">
-        <div onClick={openBurger} className="burger header__burger">
-          <span className="img-container">
-            <svg className="burger-icon" width="28" height="24">
-              <use xlinkHref="#burger" />
-            </svg>
-          </span>
-        </div>
+        {!isDesktop && (
+          <div onClick={openBurger} className="burger header__burger">
+            <span className="img-container">
+              <svg className="burger-icon" width="28" height="24">
+                <use xlinkHref="#burger" />
+              </svg>
+            </span>
+          </div>
+        )}
         <div className="logo header__logo">
           <div className="img-container">
             <svg className="logo__img" width="80.83" height="28.12">
@@ -45,22 +56,44 @@ const Header = () => {
             </svg>
           </div>
         </div>
+        {isDesktop && (
+          <SearchPanel />
+        )}
         <div className="config header__config">
           <ul className="config__list">
             <li onClick={() => togglePopup(FAVOURITES)} className="config__item">
               <div className="config__link">
                 <div className="img-container">
                   <div className="config__content">
-                    <div className="config__notification">
-                      4
-                    </div>
-                    <svg className="config__img" width="20" height="19" fill="#5f6c79" stroke="#5f6c79">
+                    {
+                      isDesktop && (
+                        <div className="config__notification">
+                          4
+                        </div>
+                      )
+                    }
+                    <svg className={classNames('favourite__image', {
+                      active: Object.keys(favoriteItems).length,
+                    })}>
                       <use xlinkHref="#star" />
                     </svg>
                   </div>
                 </div>
               </div>
             </li>
+            {isDesktop && (
+              <li className="config__item">
+                <a className="config__link" href="#">
+                  <div className="img-container">
+                    <div className="config__content">
+                      <svg className="config__img config__img--comment" width="1.625ren" height="1.5rem" fill="#5f6c79" stroke="#5f6c79">
+                        <use xlinkHref="#chat-2" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            )}
           </ul>
         </div>
         {/* {!isConnected
@@ -94,12 +127,25 @@ const Header = () => {
                   <div className="userInfo__amountSize">{balance}</div>
                   <div className="userInfo__amountType">{currency}</div>
                 </div>
-                <div onClick={() => togglePopup(USER_PROFILE)} className="userInfo__idConfigLink">
-                  <span className="userInfo__idConfigLinkIcon">
-                    <svg className="userInfo__idConfigLinkIconSvg" viewBox="0 0 20.46 21">
-                      <use xlinkHref="#userIconInfo" />
-                    </svg>
-                  </span>
+                <div onClick={() => togglePopup(gifts.length ? GIFTS : USER_PROFILE)} className="userInfo__idConfigLink">
+                  {
+                    gifts.length ? (<>
+                      <span className="userInfo__idConfigLinkIcon">
+                        <svg className="userInfo__idConfigLinkIconSvg gift" viewBox="0 0 20.46 21">
+                          <use xlinkHref="#gift" />
+                        </svg>
+                        {gifts.length}
+                      </span>
+                    </>
+                    ) : (<>
+                      <span className="userInfo__idConfigLinkIcon">
+                        <svg className="userInfo__idConfigLinkIconSvg" viewBox="0 0 20.46 21">
+                          <use xlinkHref="#userIconInfo" />
+                        </svg>
+                      </span>
+                    </>
+                    )
+                  }
                   <span className="userInfo__idConfigLinkIdWithText">ID: {userId}</span>
                 </div>
               </div>
@@ -119,7 +165,6 @@ const Header = () => {
               </ul>
             </nav>)
         }
-
       </div>
     </header>
   );

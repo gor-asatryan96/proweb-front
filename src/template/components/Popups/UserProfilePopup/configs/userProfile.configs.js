@@ -4,7 +4,8 @@ import Messages from '../components/Messages/Messages';
 import MyBetsHistory from '../components/MyBetsHistory/MyBetsHistory';
 import MyProfile from '../components/MyProfile/MyProfile';
 import Transaction from '../components/Transaction/Transaction';
-import WithdrawDeposit from '../components/WithdrawDeposit/WithdrawDeposit';
+import Deposit from '../components/WithdrawDeposit/Deposit';
+import Withdraw from '../components/WithdrawDeposit/Withdraw';
 import { USER_PROFILE_TABS_NAMES } from '../constants/userProfile.constants';
 
 const {
@@ -25,10 +26,10 @@ export const USER_PROFILE_TABS = {
     name: MY_BETS_HISTORY, icon: 'profile-history', Component: MyBetsHistory, class: 'history',
   },
   [WITHDRAW]: {
-    name: WITHDRAW, icon: 'withdraw', Component: WithdrawDeposit, class: 'withdraw',
+    name: WITHDRAW, icon: 'withdraw', Component: Withdraw, class: 'withdraw',
   },
   [DEPOSIT]: {
-    name: DEPOSIT, icon: '', Component: WithdrawDeposit, class: 'withdraw',
+    name: DEPOSIT, icon: '', Component: Deposit, class: 'withdraw',
   },
   [TRANSACTION]: {
     name: TRANSACTION, icon: 'transaction', Component: Transaction, class: 'transaction transaction_none',

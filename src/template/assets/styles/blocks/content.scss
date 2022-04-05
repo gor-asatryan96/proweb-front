@@ -1,0 +1,19 @@
+.content {
+  flex-grow: 1;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 1025px) {
+    height: calc(100vh - 7.714rem);
+    flex-direction: row;
+  }
+}
+
+.content__row {
+  display: flex;
+  height: calc(100vh - 7.71rem);
+  overflow: hidden;
+}
+

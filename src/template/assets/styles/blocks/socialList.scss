@@ -5,6 +5,10 @@
 .socialList__item {
   &:not(:last-child) {
     margin-right: 0.9rem;
+
+    @media screen and (min-width: 1025px){
+      margin-right: 0.642rem;
+    }
   }
 }
 
@@ -16,6 +20,10 @@
   align-items: center;
   width: var(--link-size);
   height: var(--link-size);
+
+  @media screen and (min-width: 1025px){
+    --link-size: 1.285rem;
+  }
 }
 
 .socialList__itemLinkSvg {

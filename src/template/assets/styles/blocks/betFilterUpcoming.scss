@@ -3,8 +3,12 @@
 
   transition: var(--pmbet-transition);
 
-  max-height: 0;
+  max-height: 4px;
   overflow: hidden;
+
+  @media screen and (min-width: 1025px){
+    padding-left: 0;
+  }
 
   .bet-type__list {
     position: relative;
@@ -16,6 +20,18 @@
 
     max-width: 100%;
     overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 0.357rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--pmbet-white);
+    }
   }
 
   .bet-type__list::after {

@@ -7,4 +7,5 @@ export const POPUPS_IDS = {
   CONGRATULATIONS: 6,
   ERROR: 7,
   GIFTS: 8,
+  INFO_RULES: 9,
 };

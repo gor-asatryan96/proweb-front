@@ -1,23 +1,23 @@
 import React from 'react';
 
 const LicenceFooter = () => (
-  <div class="popup__footer">
-    <div class="popup__info">
-      <div class="popup__licence">
+  <div className="popup__footer">
+    <div className="popup__info">
+      <div className="popup__licence">
         licensed by:
       </div>
-      <div class="popup__country">
+      <div className="popup__country">
         gaming board of tanzania
       </div>
     </div>
-    <div class="popup__rule">
-      <div class="popup__security">
+    <div className="popup__rule">
+      <div className="popup__security">
         Security &
         <br />
         Responsibility
       </div>
-      <div class="popup__rise">
-        <div class="img-container">
+      <div className="popup__rise">
+        <div className="img-container">
           <svg width="29" height="29">
             <use xlinkHref="#18-plus" />
           </svg>

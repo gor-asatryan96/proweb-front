@@ -100,7 +100,7 @@ const RegisterStep1 = ({
       <RegisterFooter isTermsAccepted={isTermsAccepted} setIsTermsAccepted={setIsTermsAccepted} />
       <div className="popup-skip__full full-registration-field">
         <div
-          onClick={isTermsAccepted && handleSubmit(onFullClick)}
+          onClick={isTermsAccepted ? handleSubmit(onFullClick) : null}
           className={classNames('popup-skip__full__btn', { disabled: !isTermsAccepted })}>
           Go to Full Registration
         </div>

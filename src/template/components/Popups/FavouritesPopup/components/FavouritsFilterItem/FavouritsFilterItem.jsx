@@ -3,7 +3,7 @@ import React from 'react';
 const FavouritsFilterItem = () => (
   <li className="favourite__itemFilter">
     <div className="favourite__filterItem">
-      <time className="favourite__filterTime" datetime="2020-11-10">2020.11.10</time>
+      <time className="favourite__filterTime" dateTime="2020-11-10">2020.11.10</time>
       <div className="favourite__filterItemSquare">
         <div className="favorite__filterInfoTitle">
           <span>Sport|</span> <span className="favorite__filterInfoTitleGameName">Football</span>

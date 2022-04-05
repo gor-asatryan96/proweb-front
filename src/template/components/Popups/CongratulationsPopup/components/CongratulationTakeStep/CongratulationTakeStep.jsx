@@ -3,11 +3,17 @@ const CongratulationTakeStep = ({ nextStep }) => <>
     Orem Ipsum Dolor Sit Amet, Consectetur
     Adipiscing Elit, Sed Do Eiusmod Tempor
     Incididunt Ut Labore Et  Dolore Magna
+    <br />
     Quis Nostrud Exercitation Ullamco
+    <br />
     Laboris Nisi Ut Aliquip Ex Ea Commodo
+    <br />
     Conse Quat.
+    <br />
     Duis Aute Irure Dolor In Reprehenderit In
+    <br />
     Voluptate Velit Esse
+    <br />
     Cillum Dolore Eu Fugiat Nulla Pariatur
     Excepteur Sint Occaecat Cupidatat Non
     Proident, Sunt In Culpa Qui Officia Deserunt

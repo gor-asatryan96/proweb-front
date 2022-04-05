@@ -2,7 +2,7 @@ import React from 'react';
 import GoBackHeader from '../../../Popups/components/GoBackHeader/GoBackHeader';
 
 const PrivacyPolicy = ({ goBack }) => <>
-  <GoBackHeader goBack={goBack} title='PRIVACY POLICY' />
+  {goBack && <GoBackHeader goBack={goBack} title='PRIVACY POLICY' />}
   Contrary To Popular Belief, Lorem Ipsum Is Not Simply Random Text. It Has Roots
   In A Piece Of classNameical Latin Literature From 45 BC, Making It Over 2000 Years Old. Richard Mcclintock, A
   Latin Professor At Hampden-Sydney College In Virginia, Looked Up One Of The More Obscure Latin Words,

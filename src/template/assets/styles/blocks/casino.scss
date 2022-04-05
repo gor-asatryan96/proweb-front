@@ -10,29 +10,55 @@
 .casino-block {
   padding-right: 0.714rem;
   padding-left: 0.714rem;
+
+  @media screen and (min-width: 1025px) {
+    padding-right: 1.571rem;
+    padding-left: 1.571rem;
+  }
 }
 
 // ----- Casino advertising
 .casino-advertising {
-  max-width: calc(100% + 0.714rem);
-  overflow-x: auto;
+  //max-width: calc(100% + 0.714rem);
+  //width: calc(100% + 0.714rem);
 
-  width: calc(100% + 0.714rem);
+  @media screen and (min-width: 1025px) {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }
 
 .casino-advertising .bet-advertising__list {
-  //max-width: 100%;
-  //width: calc(100% + 1.571rem);
-  //max-width: calc(100% + 1.571rem);
-  //overflow-x: auto;
-
   display: flex;
   flex-direction: row;
+
+  width: calc(100% + 0.714rem);
+  max-width: calc(100% + 0.714rem);
+  overflow-x: auto;
 
   padding-bottom: 0;
 
   padding-right: 0;
   padding-left: 0;
+
+  @media screen and (min-width: 1025px) {
+    width: calc(100% + 1.571rem);
+    max-width: calc(100% + 1.571rem);
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 0.357rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--pmbet-white);
+    }
+  }
 }
 
 .casino-advertising .bet-advertising__list::after {
@@ -49,16 +75,49 @@
 
   margin-right: 0.714rem;
   margin-bottom: 0;
+
+  @media screen and (min-width: 1025px) {
+    width: 23.28%;
+    margin-right: 0.928rem;
+  }
 }
 
 .casino-advertising .bet-advertising__item::before {
   padding-top: 33.333%;
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 24.24%;
+  }
 }
+
 // ----- Casino filter -----
 
 .casino-filter {
   padding-top: 1.142rem;
   padding-bottom: 1.142rem;
+
+  .bet-type__list {
+    overflow-x: auto;
+    max-width: 100%;
+    padding-top: 1.142rem;
+    padding-bottom: 1.142rem;
+
+    &::-webkit-scrollbar {
+      height: 0.357rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--pmbet-white);
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    padding: 0;
+  }
 }
 
 .casino-filter__select {
@@ -96,10 +155,25 @@
   width: calc(100% / 3 - 0.5rem);
 
   margin-bottom: 1.071rem;
+
+  @media screen and (min-width: 1025px) {
+    width: calc(100% / 5 - (68px / 5));
+    margin-bottom: 1.214rem;
+  }
 }
 
 .casino-game__item:not(:nth-child(3n)) {
   margin-right: 0.75rem;
+
+  @media screen and (min-width: 1025px) {
+    margin-right: 0;
+  }
+}
+
+.casino-game__item:not(:nth-child(5n)) {
+  @media screen and (min-width: 1025px) {
+    margin-right: 17px;
+  }
 }
 
 .casino-game__item:hover .casino-game__play, .casino-game__play.active {
@@ -175,6 +249,12 @@
   z-index: 3;
 
   width: 0.857rem;
+
+  @media screen and (min-width: 1025px) {
+    top: 0.571rem;
+    right: 0.571rem;
+    width: 1.428rem;;
+  }
 }
 
 .casino-game__item .bet-rate__nav__link--favorite svg {
@@ -199,6 +279,10 @@
   content: "";
   display: block;
   padding-top: 74.193%;
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 68.67%;
+  }
 }
 
 .casino-game__img img {
@@ -224,6 +308,12 @@
   padding-right: 0.5rem;
   padding-bottom: 1px;
   padding-left: 0.5rem;
+
+  @media screen and (min-width: 1025px) {
+    font-size: 1.142rem;
+    padding-top: 0.572rem;
+    padding-bottom: 0.572rem;
+  }
 }
 
 .casino-game__play {
@@ -293,6 +383,8 @@
 
   background-color: transparent;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.15);
+
+  cursor: pointer;
 }
 
 .casino-game__now {
@@ -313,4 +405,42 @@
 
   padding-top: 1.642rem;
   padding-bottom: 2.8rem;
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 0.571rem;
+  }
+}
+
+.casino-block__images{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.714rem;
+  border-radius: 0.42rem;
+  overflow: hidden;
+
+}
+
+.casino-block__image{
+  @media screen and (min-width: 1025px){
+    position: relative;
+    width:34%;
+
+    &:before{
+      content: "";
+      display:block;
+      padding-top: 54.27%;
+    }
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:not(:last-child){
+      margin-right: 0.71rem;
+    }
+
+
+  }
 }

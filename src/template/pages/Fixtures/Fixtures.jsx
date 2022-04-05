@@ -1,3 +1,4 @@
+import { useMediaQuery } from 'react-responsive';
 import FixtureItem from './components/FixtureItem/FixtureItem';
 
 const fixtures = [
@@ -7,21 +8,33 @@ const fixtures = [
   'Football Fixture 7', 'Football Fixture 13', 'Table Tennis',
 ];
 
-const Fixtures = () => (
-  <section className="content-section">
-    <div className="menu-back">
-      <div className="menu-back__title">Fixtures</div>
-    </div>
-    <div className="content-section__inner">
-      <div className="fixtures__content">
-        <ul className="fixtures__list">
-          {fixtures.map(fixture => (
-            <FixtureItem key={fixture} title={fixture} />
-          ))}
-        </ul>
+const Fixtures = () => {
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1025px)',
+  });
+  return (
+    <section className="content-section">
+      {!isDesktop && (
+        <div className="menu-back">
+          <div className="menu-back__title">Fixtures</div>
+        </div>
+      )}
+      <div className="content-section__inner">
+        <div className="fixtures__content">
+          {isDesktop && (
+            <div className="fixture-caption">
+              Fixtures
+            </div>
+          )}
+          <ul className="fixtures__list">
+            {fixtures.map(fixture => (
+              <FixtureItem key={fixture} title={fixture} />
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Fixtures;

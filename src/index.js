@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import App from './template/App';
-import { store } from './redux/store';
+import { store, persistor } from './redux/store';
 import * as serviceWorker from './serviceWorker';
 import './assets/styles/index.scss';
 import LanguageProvider from './context/LanguageProvider';
@@ -15,9 +16,11 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <LanguageProvider>
-          <App />
-        </LanguageProvider>
+        <PersistGate loading={null} persistor={persistor}>
+          <LanguageProvider>
+            <App />
+          </LanguageProvider>
+        </PersistGate>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>,

@@ -6,6 +6,29 @@
   background-color: var(--pmbet-blue);
 
   border-top: 1px solid var(--pmbet-blue-dark);
+
+  @media screen and (min-width: 1025px){
+    width: 17.85rem;
+    background-color: var(--pmbet-blue);
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow-y: auto;
+
+
+    &::-webkit-scrollbar {
+      width: 0.357rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--pmbet-blue-dark);
+    }
+  }
+
 }
 
 .sidebar__list {
@@ -15,11 +38,16 @@
   padding: 0;
   list-style: none;
 
-  display: flex;
 
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
+
+  @media screen and (max-width: 1024px){
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+
 }
 
 .sidebar__item {
@@ -28,6 +56,10 @@
 
 .sidebar__item:not(:last-child) .sidebar__btn {
   border-right: 1px solid var(--pmbet-blue-dark);
+
+  @media screen and (min-width: 1025px){
+    border-bottom: 1px solid var(--pmbet-blue-dark);
+  }
 }
 
 .sidebar__btn {
@@ -55,6 +87,12 @@
   padding-right: 1rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
+
+  @media screen and (min-width: 1025px){
+    padding-left: 0.57rem;
+    flex-direction: row;
+    cursor: pointer;
+  }
 }
 
 .sidebar__item--active {
@@ -76,6 +114,11 @@
   margin-bottom: 0.4rem;
 
   font-size: 0.45rem;
+
+  @media screen  and (min-width: 1025px){
+    margin-bottom: 0;
+    margin-right: 1.07rem;
+  }
 }
 
 .sidebar__icon::before {
@@ -99,5 +142,17 @@
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-size: 0.928rem;
   font-weight: 700;
-  color: var(--pmbet-gray-light);
+
+
+  @media screen  and (min-width: 1025px){
+    position: static;
+    display: flex;
+    font-size: 0.85rem;
+    margin-left: auto;
+    transform: translateY(0);
+    font-family: "Poppins", "Arial", sans-serif;
+
+  }
 }
+
+

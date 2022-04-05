@@ -4,16 +4,18 @@ import WithdrawDepositMenuItem from '../WithdrawDepositMenuItem/WithdrawDepositM
 
 const tabs = Object.keys(WITHDRAW_DEPOSIT_ITEMS);
 
-const WithdrawDepositMenu = ({ goBack, configs, setActiveItem }) => (
+const WithdrawDepositMenu = ({
+  goBack, configs, setActiveItem, isDesktop,
+}) => (
   <>
-    <GoBackHeader
+    {!isDesktop && <GoBackHeader
       title={configs.name}
       goBack={goBack}
-      icon={configs.icon} />
+      icon={configs.icon} />}
     <div className="menu-inner">
       <ul className="withdraw__list">
         {tabs.map(tab => (
-          <WithdrawDepositMenuItem setActiveItem={setActiveItem} key={tab} data={WITHDRAW_DEPOSIT_ITEMS[tab]} />
+          <WithdrawDepositMenuItem setActiveItem={isDesktop ? () => {} : setActiveItem} key={tab} data={WITHDRAW_DEPOSIT_ITEMS[tab]} />
         ))}
       </ul>
     </div>

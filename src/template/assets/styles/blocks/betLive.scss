@@ -20,6 +20,10 @@
     //align-items: center;
 
     margin-bottom: 0.7rem;
+
+    @media screen and (min-width: 1025px){
+      flex-direction: column;
+    }
   }
 }
 
@@ -53,6 +57,8 @@
   padding-left: 0.714rem;
 
   width: 100%;
+
+  cursor: pointer;
 }
 
 .bet-live__dropdown {
@@ -60,7 +66,7 @@
 }
 
 .bet-live__btn.active .bet-live__dropdown {
-  transform: scale(-1);
+  transform: rotate(180deg);
 }
 
 .bet-live__block {
@@ -143,10 +149,12 @@
   content: none;
 }
 
-.bet-rate__live .bet-rate__nav__time {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--pmbet-green);
+.bet-rate__live  {
+  .bet-rate__nav__time{
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--pmbet-green);
+  }
 }
 
 .bet-rate__set__team__inner {

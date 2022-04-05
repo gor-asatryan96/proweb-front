@@ -9,7 +9,9 @@ const BurgerNavRightItem = ({
     className={classNames('gameTypes__item', { gameTypes__item_active: active })}>
     <div className="gameTypes__container">
       <span className="gameTypes__icon">
-        <img src={icon} alt={title} />
+        <div className="img-container">
+          <img src={icon} alt={title} />
+        </div>
       </span>
       <span className="gameTypes__title">{title}</span>
     </div>

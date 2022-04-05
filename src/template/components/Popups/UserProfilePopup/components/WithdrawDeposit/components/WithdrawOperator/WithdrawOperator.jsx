@@ -1,7 +1,7 @@
 import GoBackHeader from '../../../../../components/GoBackHeader/GoBackHeader';
 
-const WithdrawOperator = ({ goBack, data }) => <>
-  <GoBackHeader goBack={goBack} title='WITHDRAW' />
+const WithdrawOperator = ({ goBack, data, isDesktop }) => (<>
+  {!isDesktop && <GoBackHeader goBack={goBack} title='WITHDRAW' />}
   <div className="withdraw__sign-content active">
     <div className="withdraw__sign-icon-box">
       <div className="img-container">
@@ -19,6 +19,6 @@ const WithdrawOperator = ({ goBack, data }) => <>
       <button type="button" className="withdraw__form-btn">Withdraw</button>
     </form>
   </div>
-</>;
+</>);
 
 export default WithdrawOperator;

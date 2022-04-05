@@ -1,10 +1,24 @@
 .popup-recovery {
+
+  @media screen and (max-width: 1024px){
+    width: 100%;
+    height: 100%;
+  }
+
   .popup__block {
     padding-top: 2.5rem;
+
+    @media screen and (min-width: 1025px){
+      padding-top: 0.857rem;
+    }
   }
 
   .popup__form {
     margin-bottom: 4.285rem;
+
+    @media screen and (min-width: 1025px){
+      margin-bottom: 5rem;
+    }
   }
 
   .popup-forgot__submit {
@@ -23,4 +37,9 @@
   color: var(--pmbet-gray);
 
   margin-bottom: 1.33rem;
+
+  @media screen and (min-width: 1025px){
+    font-size: 1rem;
+    margin-bottom: 1.071rem;
+  }
 }

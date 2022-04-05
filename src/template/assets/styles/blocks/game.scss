@@ -124,4 +124,10 @@
 
 .casino-advertising_game {
   margin-bottom: 1.428rem;
+
+  @media screen and (min-width: 1025px){
+    margin-bottom: 0.714rem;
+  }
+
 }
+

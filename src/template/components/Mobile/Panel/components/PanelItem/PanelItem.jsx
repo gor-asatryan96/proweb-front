@@ -5,8 +5,11 @@ import { NavLink } from 'react-router-dom';
 const PanelItem = ({ data, active }) => {
   const label = data.path.slice(1);
   return (
-    <li className={classNames('panel__item', { 'panel__item--active': active })}>
-      <NavLink to={data.path} className="panel__link panel__link--sport" aria-label={label}>
+    <NavLink
+      to={data.path}
+      aria-label={label}
+      className={({ isActive }) => classNames('panel__item', { 'panel__item--active': isActive })}>
+      <div className='panel__link panel__link--sport'>
         <div className="panel__icon">
           <div className="img-container">
             <svg>
@@ -17,8 +20,8 @@ const PanelItem = ({ data, active }) => {
         <div className="panel__name">
           {data.name}
         </div>
-      </NavLink>
-    </li>
+      </div>
+    </NavLink>
   );
 };
 

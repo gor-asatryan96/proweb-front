@@ -3,12 +3,21 @@
   flex-shrink: 0;
   overflow: hidden;
   background-color: var(--pmbet-blue);
+
+  @media screen and (min-width: 1025px){
+    order: -2;
+    border-bottom: 1px solid var(--pmbet-blue-dark);
+  }
 }
 
 .header__container {
   display: flex;
 
   height: 100%;
+
+  @media screen and (min-width: 1025px){
+    align-items: center;
+  }
 }
 
 .header__burger {
@@ -21,17 +30,30 @@
 
 .header__logo {
   margin-right: 0.5rem;
+  cursor: pointer;
+
+  @media screen and (min-width: 1025px){
+    margin-right: 0.71rem;
+  }
 }
 
 .header__nav {
   align-self: stretch;
 
   margin-left: auto;
+
+  @media screen and (min-width: 1025px){
+    margin-left: 0;
+  }
 }
 
 .header__user {
   margin-left: auto;
   align-self: stretch;
+
+  @media screen and (min-width: 1025px){
+    margin-left: 0;
+  }
 }
 
 
@@ -67,4 +89,19 @@
    height: 0.8rem;
    width: 3.2rem;
    margin-bottom: 3px;
+ }
+
+ .header__config{
+   @media screen and (min-width: 1025px){
+     margin-left: auto;
+   }
+ }
+
+
+ .config__item{
+   @media screen  and (min-width: 1025px) {
+     &:first-child{
+       margin-right: 2.1rem;
+     }
+   }
  }

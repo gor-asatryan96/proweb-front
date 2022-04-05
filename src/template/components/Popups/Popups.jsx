@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectActivePopups } from '../../../redux/slices/popups.slice';
 import { POPUPS_CONFIGS } from './configs/popup.configs';
@@ -6,15 +6,12 @@ import { POPUPS_CONFIGS } from './configs/popup.configs';
 const Popups = () => {
   const activePopupsIds = useSelector(selectActivePopups);
 
-  const activePopups = useMemo(() => (
-    activePopupsIds.map(id => (
-      POPUPS_CONFIGS[id]
-    ))
-  ), [ activePopupsIds ]);
-
   return (
     <>
-      {activePopups}
+      {activePopupsIds.map((id) => {
+        const PopupComponent = POPUPS_CONFIGS[id];
+        return <PopupComponent key={id} />;
+      })}
     </>
   );
 };

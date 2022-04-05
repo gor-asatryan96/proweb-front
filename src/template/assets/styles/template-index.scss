@@ -33,6 +33,8 @@
 @import "./blocks/favourite";
 @import "./blocks/jeckpot";
 @import "./blocks/game";
+@import "./blocks/content";
+@import "blocks/promotion";
 
 //popup
 @import "./popup/popup";
@@ -59,3 +61,5 @@
 @import "./popup/message";
 @import "./popup/gifts";
 @import "./popup/history";
+@import "./popup/popup-footer.scss";
+@import "./popup/popup-profile.scss";

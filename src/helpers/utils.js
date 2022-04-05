@@ -1,11 +1,11 @@
+import { EMAIL_REGEX, NUMBER_REGEX } from './regex.helpers';
+
 export function validateEmail(email) {
-  // eslint-disable-next-line max-len
-  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
+  return EMAIL_REGEX.test(email);
 }
 
 export function allowOnlyNumber(value) {
-  return value.replace(/[^0-9]/g, '');
+  return value.replace(NUMBER_REGEX, '');
 }
 
 export function fixedTo2(num) {

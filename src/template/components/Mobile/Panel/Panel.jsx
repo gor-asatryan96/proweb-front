@@ -1,17 +1,28 @@
-import { useLocation } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import { PANEL_ROUTES } from '../../../configs/routes.configs';
 import PanelItem from './components/PanelItem/PanelItem';
+import LanguageSwitcher from '../../Common/LanguageSwitcher/LanguageSwitcher';
+import Plus7 from './components/Plus7/Plus7';
 
 const Panel = () => {
-  const { pathname } = useLocation();
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1025px)',
+  });
+
   return (
     <section className="panel">
-      <ul className="panel__list">
-        {/* <!-- TODO: add className panel__item--active --> */}
+      <div className="panel__list">
         {PANEL_ROUTES.map(item => (
-          <PanelItem key={item.path} data={item} active={pathname.includes(item.path)} />
+          <PanelItem key={item.path} data={item} />
         ))}
-      </ul>
+        {isDesktop && (
+          <>
+            <Plus7 />
+            <div className="panel__item panel__item--language">
+              <LanguageSwitcher />
+            </div>
+          </>)}
+      </div>
     </section>
   );
 };

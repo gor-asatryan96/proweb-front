@@ -1,12 +1,17 @@
-import { useMemo, useState } from 'react';
+import {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { useMediaQuery } from 'react-responsive';
 import { closePopup } from '../../../../redux/slices/popups.slice';
 import { selectUserId } from '../../../../redux/slices/user.slice';
 import { Popup } from '../../UI';
 import { POPUPS_IDS } from '../constants/popups.constants';
 import UserProfileMain from './components/UserProfileMain/UserProfileMain';
 import { USER_PROFILE_TABS } from './configs/userProfile.configs';
+import UserProfileHeader from './components/UserProfileHeader/UserProfileHeader';
+import { USER_PROFILE_TABS_NAMES } from './constants/userProfile.constants';
 
 const { USER_PROFILE } = POPUPS_IDS;
 
@@ -17,41 +22,32 @@ const UserConfigPopup = () => {
 
   const [ activeTab, setActiveTab ] = useState(popupProps?.tab);
 
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1025px)',
+  });
+
   const activeTabConfigs = useMemo(() => (
     activeTab ? USER_PROFILE_TABS[activeTab] : null
   ), [ activeTab ]);
 
   const popupClass = activeTab ? activeTabConfigs.class : 'popup_userMenuConfig';
 
-  const onClose = () => {
+  const onClose = useCallback(() => {
     dispatch(closePopup(USER_PROFILE));
-  };
+  }, []);
+
+  useEffect(() => {
+    if (isDesktop && !activeTab) {
+      setActiveTab(USER_PROFILE_TABS_NAMES.MY_PROFILE);
+    }
+  }, [ isDesktop ]);
 
   return (
     <Popup onClose={onClose} className={`${popupClass} active`}>
-      <div className="userMenuConfig__header">
-        <div className="userMenuConfig__headerCell userMenuConfig__headerGearIcon">
-          <svg className="userMenuConfig__headerGearIconSvg" viewBox="0 0 27 27.05">
-            <use xlinkHref="#gear" />
-          </svg>
-        </div>
-        <div className="userMenuConfig__headerInfo">
-          <span className="userMenuConfig__idConfigLinkIcon">
-            <svg className="userMenuConfig__idConfigLinkIconSvg" viewBox="0 0 20.46 21">
-              <use xlinkHref="#userIconInfo" />
-            </svg>
-          </span>
-          <span className="userMenuConfig__idConfigLinkIconText">ID: {userId}</span>
-        </div>
-        <button onClick={onClose} type="button" className="userMenuConfig__headerCell userMenuConfig__closeButton">
-          <svg className="userMenuConfig__closeButtonSvg">
-            <use xlinkHref="#close" />
-          </svg>
-        </button>
-      </div>
+      <UserProfileHeader activeTab={activeTab} onClose={onClose} userId={userId} setActiveTab={setActiveTab} />
       {activeTab
-        ? <activeTabConfigs.Component configs={activeTabConfigs} goBack={() => setActiveTab(null)} />
-        : <UserProfileMain setActiveTab={setActiveTab} />
+        ? <activeTabConfigs.Component configs={{ ...activeTabConfigs, isDesktop }} goBack={() => setActiveTab(null)} />
+        : <UserProfileMain setActiveTab={setActiveTab} isDesktop={isDesktop} />
       }
     </Popup>
   );

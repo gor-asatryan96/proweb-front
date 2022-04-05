@@ -3,20 +3,38 @@ import IframeSection from '../components/Common/IframeSection/IframeSection';
 import DailyExpress from '../pages/DailyExpress/DailyExpress';
 import Fixtures from '../pages/Fixtures/Fixtures';
 import Games from '../pages/Games/Games';
-import Live from '../pages/SportLive/Live/Live';
-import SingleSport from '../pages/SportLive/SingleSport/SingleSport';
-import Sport from '../pages/SportLive/Sport/Sport';
+import Sportsbook from '../pages/Sportsbook/Sportsbook';
+import SingleSport from '../pages/Sportsbook/components/SingleSport/SingleSport';
+import Home from '../pages/Home/Home';
+import Promotions from '../pages/Promotions/Promotions';
 
 export const PANEL_ROUTES = [
   {
+    path: '/',
+    name: 'HOME',
+    element: <Home />,
+  },
+  {
     path: '/sport',
     name: 'SPORTS',
-    element: <Sport />,
+    element: <Sportsbook />,
+    children: [
+      {
+        path: ':id',
+        element: <SingleSport />,
+      },
+    ],
   },
   {
     path: '/live',
     name: 'LIVE',
-    element: <Live />,
+    element: <Sportsbook live />,
+    children: [
+      {
+        path: ':id',
+        element: <SingleSport live />,
+      },
+    ],
   },
   {
     path: '/casino',
@@ -80,7 +98,7 @@ export const PLUS_7_ROUTES = [
   {
     path: '/promotions',
     name: 'PROMOTIONS',
-    element: <IframeSection />,
+    element: <Promotions />,
   },
   {
     path: '/fixtures',
@@ -105,15 +123,11 @@ export const PLUS_7_ROUTES = [
 ];
 
 export const ALL_ROUTES = [
-  {
-    path: '/',
-    element: <Navigate to="/sport" replace />,
-  },
   ...PANEL_ROUTES,
-  ...NESTED_ROUTES,
+  // ...NESTED_ROUTES,
   ...PLUS_7_ROUTES,
   {
     path: '*',
-    element: <Navigate to="/sport" replace />,
+    element: <Navigate to="/" replace />,
   },
 ];

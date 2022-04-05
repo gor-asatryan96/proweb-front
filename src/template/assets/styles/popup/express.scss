@@ -24,6 +24,46 @@
   border-radius: 0.214rem;
 
   background-color: var(--pmbet-white-5);
+
+  @media screen and (min-width: 1025px){
+    position: relative;
+    width: 38rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+
+    margin-top: -15.571rem;
+    margin-bottom: 0.357rem;
+    margin-right: 0;
+    margin-left: 0;
+
+
+    padding-top: 2.285rem;
+    padding-bottom: 1.928rem;
+    padding-left: 0;
+    padding-right: 0;
+
+
+    font-family: "Poppins", "Arial", sans-serif;
+  }
+}
+
+.express__box-title{
+  @media screen and (min-width: 1025px){
+    position: absolute;
+    font-size: 1.428rem;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    color: var(--pmbet-gray);
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0;
+    top: -3.428rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .express__box-text {
@@ -39,14 +79,27 @@
   &_green {
     color: var(--pmbet-green);
   }
+
+  @media screen and (min-width: 1025px){
+    line-height: normal;
+  }
 }
 
 .express__box-text:not(:last-child) {
   margin-bottom: 0.82rem;
+
+  @media screen and (min-width: 1025px){
+    margin-bottom: 1.714rem;
+  }
 }
 
 .express__box-text.express__box-text_title {
   letter-spacing: 0.03rem;
+
+  @media screen and (min-width: 1025px){
+    letter-spacing: normal;
+    margin-bottom: 0.714rem;
+  }
 }
 
 .express__box-btn-container {
@@ -54,6 +107,12 @@
   justify-content: center;
   width: 100%;
   margin-top: 1rem;
+
+  @media screen and (min-width: 1025px){
+    width: auto;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
 }
 
 .express__box-btn {
@@ -70,6 +129,22 @@
   padding: 0.714rem 0;
 
   width: 40.879%;
+
+  @media screen and (min-width: 1025px){
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0.714rem;
+    padding-left: 0.714rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 0.142rem;
+    text-transform: uppercase;
+    height: 2.857rem;
+    min-width: 10.714rem;
+    color: var(--pmbet-white-dark);
+    line-height: normal;
+  }
 }
 
 .express__alert-text {
@@ -83,4 +158,13 @@
   color: var(--pmbet-gray);
 
   margin-top: 1.571rem;
+
+  @media screen and (min-width: 1025px){
+    font-size: 0.857rem;
+    letter-spacing: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-family: "Poppins", "Arial", sans-serif;
+    margin-top: 0;
+  }
 }

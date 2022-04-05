@@ -16,8 +16,8 @@ const SearchPanel = () => {
             </label>
             <button className="search__btn" aria-label="search button">
               <span className="img-container">
-                <svg className="search__icon" width="26.2" height="26.2">
-                  <use xlinkHref="#search" />
+                <svg className="search__icon" width="1.857rem" height="1.857rem">
+                  <use xlinkHref="#search-mobile" />
                 </svg>
               </span>
             </button>

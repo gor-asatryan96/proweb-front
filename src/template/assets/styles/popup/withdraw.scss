@@ -1,18 +1,16 @@
 .withdraw {
-  display: none;
   flex-direction: column;
   overflow: hidden;
   touch-action: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 5;
   background-color: var(--pmbet-cream);
   font-family: "Poppins", "Arial", sans-serif;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (min-width: 1025px) {
+    height: 90.679%;
+    width: 88.75%;
+  }
 }
 
 .withdraw__title-icon {
@@ -54,6 +52,27 @@
   flex-wrap: wrap;
   padding: 0.614rem;
   margin: 0;
+
+  @media screen and (min-width: 1025px) {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0.357rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--pmbet-white);
+    }
+  }
 }
 
 .withdraw__list.passive {
@@ -67,11 +86,29 @@
   &:not(:nth-child(3n+3)) {
     margin-right: calc((100% - 94.317%) / 2);
   }
+
+  @media screen and (min-width: 1025px) {
+    margin-bottom: 0;
+    width: 100%;
+    &:not(:nth-child(3n+3)) {
+      margin-right: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1.285rem;
+    }
+  }
 }
 
 .withdraw__link {
   display: block;
   text-decoration: none;
+
+  @media screen and (min-width: 1025px) {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
 }
 
 .withdraw__img-container {
@@ -81,16 +118,37 @@
   background-color: var(--pmbet-white);
 
   border-bottom: 1px solid var(--pmbet-black-03);
+
+  @media screen and (min-width: 1025px) {
+    border: none;
+
+    .img-container {
+      padding-top: 0.357rem;
+      padding-bottom: 0.357rem;
+    }
+  }
 }
 
 .withdraw__img-container::before {
   content: "";
   display: block;
   padding-top: 44%;
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 21.26%;
+  }
+
 }
 
 .withdraw__img_voda {
   padding: 0.428rem;
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 0.357rem;
+    padding-bottom: 0.357rem;
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .withdraw__img-container img {
@@ -106,26 +164,51 @@
 .withdraw__img_hola img {
   width: 89.427%;
   height: auto;
+
+  @media screen and (min-width: 1025px) {
+    width: auto;
+    height: auto;
+  }
 }
 
 .withdraw__img_air img {
   width: 80.645%;
   height: auto;
+
+  @media screen and (min-width: 1025px) {
+    width: auto;
+    height: auto;
+  }
 }
 
 .withdraw__img_tigo img {
   width: 88.709%;
   height: auto;
+
+  @media screen and (min-width: 1025px) {
+    width: auto;
+    height: auto;
+  }
 }
 
 .withdraw__img_pm img {
   width: 65.185%;
   height: auto;
+
+  @media screen and (min-width: 1025px) {
+    width: auto;
+    height: auto;
+  }
 }
 
 .withdraw__img_visa img {
   width: 82.258%;
   height: auto;
+
+  @media screen and (min-width: 1025px) {
+    width: auto;
+    height: auto;
+  }
 }
 
 .withdraw__title {
@@ -145,6 +228,14 @@
   padding-right: 0.25rem;
   padding-bottom: 0.571rem;
   padding-left: 0.25rem;
+
+  @media screen and (min-width: 1025px) {
+    font-size: 0.857rem;
+    font-weight: normal;
+    padding: 0.357rem;
+    border: none;
+    line-height: normal;
+  }
 }
 
 .withdraw__title.withdraw__title_small {
@@ -157,6 +248,11 @@
   padding: 0.928rem 0 1.428rem;
 
   background-color: var(--pmbet-white);
+
+  @media screen and (min-width: 1025px) {
+    padding: 1.285rem 1.285rem 1.571rem;
+    margin-bottom: 1.285rem;
+  }
 }
 
 .withdraw__sign-content.active {
@@ -172,12 +268,27 @@
 
   margin-bottom: 0.1rem;
   margin-left: 1.214rem;
+
+  @media screen and (min-width: 1025px) {
+    width: 11.428rem;
+    margin-bottom: 0.928rem;
+    margin-left: 0;
+    height: auto;
+
+    .img-container {
+      justify-content: flex-start;
+    }
+  }
 }
 
 .withdraw__sign-icon-box::before {
   content: "";
   display: block;
   padding-top: 24.54%;
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 30%;
+  }
 }
 
 .withdraw__sign-icon-box img {
@@ -190,6 +301,12 @@
   flex-direction: column;
   align-items: center;
   margin: 0 0.714rem;
+
+  @media screen and (min-width: 1025px) {
+    margin: 0;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 
 .withdraw__label {
@@ -197,6 +314,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media screen and (min-width: 1025px) {
+    margin-right: 1.285rem;
+  }
 }
 
 .withdraw__input {
@@ -215,6 +336,17 @@
   background-color: var(--pmbet-white-lighter);
   border: none;
   outline: none;
+
+  @media screen and (min-width: 1025px) {
+    display: flex;
+    align-items: center;
+    color: var(--pmbet-blue-darker);
+    height: 2.857rem;
+    padding-right: 0.857rem;
+    padding-left: 0.857rem;
+    letter-spacing: normal;
+    line-height: normal;
+  }
 }
 
 .withdraw__input::placeholder {
@@ -223,6 +355,10 @@
 
 .withdraw__input.withdraw__input_num {
   margin-bottom: 1.42rem;
+
+  @media screen and (min-width: 1025px) {
+    margin-bottom: 0;
+  }
 }
 
 .withdraw__input.withdraw__input_amount {
@@ -238,6 +374,15 @@
   letter-spacing: 0.015rem;
 
   color: var(--pmbet-gray);
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 0.357rem;
+    text-align: right;
+    font-size: 0.714rem;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--pmbet-gray-5);
+  }
 }
 
 .withdraw__form-btn {
@@ -257,6 +402,34 @@
   color: var(--pmbet-white);
   border: none;
   outline: none;
+
+  @media screen and (min-width: 1025px) {
+    position: relative;
+    appearance: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-right: 0.714rem;
+    padding-left: 0.714rem;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    margin-top: 0;
+
+    border-radius: 0.142rem;
+
+    height: 2.857rem;
+    min-width: 10.714rem;
+    width: auto;
+
+    color: var(--pmbet-white-dark);
+    line-height: normal;
+
+    cursor: pointer;
+
+  }
 }
 
 .withdraw__form-btn:disabled {
@@ -264,13 +437,27 @@
 }
 
 .withdraw__bank {
-  display: none;
-}
-
-.withdraw__bank.active {
   display: block;
-}
 
+  height: 100%;
+  max-height: calc(100% - 7.642rem);
+
+  overflow-y: auto;
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 1.285rem;
+    padding-bottom: 1.285rem;
+
+    height: auto;
+    max-height: unset;
+
+    overflow: visible;
+
+    margin-bottom: 1.285rem;
+
+    background-color: var(--pmbet-white);
+  }
+}
 
 .withdraw__bank-list {
   font-family: "Poppins", "Arial", sans-serif;
@@ -285,6 +472,11 @@
   position: relative;
   padding: 0.957rem 0;
   background-color: var(--pmbet-white);
+
+  @media screen and (min-width: 1025px) {
+    padding: 0;
+    display: flex;
+  }
 }
 
 .withdraw__bank-card::before {
@@ -303,23 +495,42 @@
   display: flex;
   align-items: center;
   position: relative;
+
+  @media screen and (min-width: 1025px) {
+    width: 39.15%;
+    flex-shrink: 0;
+  }
 }
 
 .withdraw__bank-logo {
   position: relative;
   width: 28.019%;
+
+  @media screen and (min-width: 1025px) {
+    width: 8.642rem;
+    flex-shrink: 0;
+    margin-right: 3.642rem;
+  }
 }
 
 .withdraw__bank-logo::before {
   content: '';
   display: block;
   padding-top: 31.192%;
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 54.54%;;
+  }
 }
 
 .withdraw__bank-logo .img-container {
   justify-content: flex-start;
   padding-left: 0.714rem;
   padding-right: 2.857rem;
+  @media screen and (min-width: 1025px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .withdraw__bank-logo img {
@@ -334,6 +545,11 @@
 
   width: 63.285%;
   padding-right: 0.5rem;
+
+  @media screen and (min-width: 1025px) {
+    width: auto;
+    padding-right: 0;
+  }
 }
 
 .withdraw__bank-text {
@@ -343,27 +559,47 @@
   letter-spacing: .038rem;
 
   color: var(--pmbet-gray);
+
+  @media screen and (min-width: 1025px) {
+    font-size: 1rem;
+    line-height: normal;
+    letter-spacing: normal;
+  }
 }
 
 .withdraw__bank-text:first-child {
   margin-bottom: 0.142rem;
+
+  @media screen and (min-width: 1025px) {
+    margin-bottom: 0.285rem;
+  }
 }
 
 .withdraw__bank-card.active .withdraw__bank-arrow {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .withdraw__bank-arrow {
-  width: 8.696%;
   position: relative;
-  padding: 0 0.821rem;
-  transition: all 200ms;
-}
 
-.withdraw__bank-arrow::before {
-  content: '';
-  display: block;
-  padding-top: 62.5%;
+  width: 8.696%;
+
+  padding-right: 0.821rem;
+  padding-left: 0.821rem;
+
+  transition: all 200ms;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 62.5%;
+  }
+
+  svg {
+    max-height: 100%;
+    max-width: 100%;
+    fill: var(--pmbet-gray);
+  }
 }
 
 .withdraw__bank-arrow-box {
@@ -374,15 +610,33 @@
 .withdraw__bank-arrow-box svg {
   max-width: 100%;
   max-height: 100%;
+
 }
 
 .withdraw__bank-inner {
-  padding: 0.657rem 0.714rem 0.857rem;
+  padding-top: 0.657rem;
+  padding-right: 0.714rem;
+  padding-bottom: 2rem;
+  padding-left: 0.714rem;
   color: var(--pmbet-gray);
+
+  @media screen and (min-width: 1025px) {
+    padding: 0;
+  }
 }
 
 .withdraw__bank-inner-content {
   padding-right: 3.65rem;
+
+  @media screen and (min-width: 1025px){
+    font-weight: 600;
+    font-size: 0.857rem;
+    color: var(--pmbet-gray);
+    padding-right: 1.285rem;
+    padding-left: 1.285rem;
+    width: 100%;
+    max-width: 62rem;
+  }
 }
 
 .withdraw__bank-inner-title {
@@ -412,8 +666,38 @@
 .withdraw__bank-form {
   display: flex;
   flex-direction: column;
+
   margin-top: 0.714rem;
   margin-bottom: 1.428rem;
+
+  @media screen and (min-width: 1025px) {
+    font-family: 'Poppins', Arial, sans-serif;
+
+    margin-bottom: 0;
+    margin-top: 1.285rem;
+
+    .withdraw__bank-input {
+      appearance: none;
+      border: 0;
+
+      display: flex;
+      align-items: center;
+
+      font-size: 0.857rem;
+      font-weight: 600;
+      color: var(--pmbet-blue-darker);
+
+      height: 2.857rem;
+      background-color: var(--pmbet-white-lighter);
+
+      padding-right: 0.857rem;
+      padding-left: 0.857rem;
+    }
+
+    .withdraw__bank-row_valid {
+      width: auto;
+    }
+  }
 }
 
 .withdraw__bank-row {
@@ -421,6 +705,14 @@
   display: flex;
   padding-top: 1.642rem;
   margin-bottom: 1.814rem;
+
+  @media screen and (min-width: 1025px){
+    margin-bottom: 0;
+
+    &:not(:last-of-type){
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .withdraw__bank-row.withdraw__bank-row_valid {
@@ -459,27 +751,91 @@
   font-size: 1rem;
   font-family: "Roboto", "Arial", sans-serif;
   font-weight: 700;
+
+  @media screen and (min-width: 1025px){
+    font-family: "Poppins", "Arial", sans-serif;
+  }
 }
 
 .withdraw__bank-row_card {
   width: 71.519%;
+
+  @media screen and (min-width: 1025px) {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}
+
+.withdraw__bank-line {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 1025px) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    .withdraw__bank-row {
+      margin-bottom: 0;
+    }
+
+    .withdraw__bank-row_card {
+      width: 7rem;
+    }
+
+    .withdraw__bank-row_card .withdraw__bank-label {
+      width: 100%;
+    }
+  }
 }
 
 .withdraw__bank-row_card .withdraw__bank-label {
   width: 23.404%;
+
+  @media screen and (min-width: 1025px) {
+    width: calc(100% / 4 - 0.428rem);
+  }
 }
 
 .withdraw__bank-row_card .withdraw__bank-label:not(:last-child) {
   margin-right: auto;
+
+  @media screen and (min-width: 1025px) {
+    margin-right: 0;
+  }
 }
 
 .withdraw__bank-row_card input {
   text-align: center;
   padding-left: 0;
+
+  @media screen and (min-width: 1025px) {
+    appearance: none;
+    border: 0;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 0.857rem;
+    font-weight: 600;
+    color: var(--pmbet-blue-darker);
+
+    height: 2.857rem;
+    background-color: var(--pmbet-white-lighter);
+
+    text-align: center;
+
+    padding-right: 2.214rem;
+    padding-left: 2.214rem;
+  }
 }
 
 .withdraw__bank-row_name {
   width: 71.519%;
+
+  @media screen and (min-width: 1025px) {
+    width: 100%;
+  }
 }
 
 .withdraw__bank-row_valid {
@@ -489,6 +845,14 @@
 
 .withdraw__bank-select-box {
   width: 48.695%;
+
+  @media screen and (min-width: 1025px) {
+    width: 6.785rem;
+
+    &:not(:last-of-type) {
+      margin-right: 0.571rem;
+    }
+  }
 }
 
 .withdraw__bank-select {
@@ -496,21 +860,51 @@
   padding-left: 0.714rem;
   appearance: none;
 
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: calc(100% - 1.071rem);
+  background-size: 1.141rem auto;
   background-color: var(--pmbet-white);
   background-image: url("../../images/icon/arrow-bottom.svg");
-  background-size: 1.141rem 0.64rem;
-  background-position-x: calc(100% - 1.071rem);
-  background-position-y: 50%;
-  background-repeat: no-repeat;
+
+  @media screen and (min-width: 1025px) {
+    border: 0;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 0.857rem;
+    font-weight: 600;
+
+    color: var(--pmbet-blue-darker);
+
+    height: 2.857rem;
+
+    background-color: var(--pmbet-white-lighter);
+    padding-left: 0.857rem;
+
+    padding-right: 2rem;
+    background-position: right 0.857rem center;
+  }
 }
 
 .withdraw__bank-row_submit {
   width: 100%;
   align-items: stretch;
+
+  @media screen and (min-width: 1025px) {
+    height: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
 
 .withdraw__bank-row_submit .withdraw__bank-label {
   width: 61.881%;
+
+  @media screen and (min-width: 1025px) {
+    width: 100%;
+  }
 }
 
 .withdraw__bank-submit-btn {
@@ -526,6 +920,25 @@
   line-height: 1.5rem;
   text-transform: uppercase;
   text-align: center;
+
+  @media screen and (min-width: 1025px) {
+    width: auto;
+
+    margin-top: auto;
+    margin-left: auto;
+
+    margin-right: -2.071rem;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 10.714rem;
+
+    border-radius: 0.142rem;
+
+    padding: 0.714rem;
+  }
 }
 
 .withdraw__bank-submit-btn:disabled {
@@ -537,6 +950,24 @@
   display: none;
 
   padding: 0.857rem 0 0;
+
+  @media screen and (min-width: 1025px) {
+    display: flex;
+    padding: 0;
+    align-items: flex-end;
+    margin-left: 7.142rem;
+    flex-grow: 1;
+  }
+}
+
+.withdraw__bank-box {
+  @media screen and (min-width: 1025px) {
+    padding-right: 1.285rem;
+    padding-bottom: 1.285rem;
+    padding-left: 1.285rem;
+    border-bottom: 1px solid var(--pmbet-black-03);
+    margin-bottom: 1.285rem;
+  }
 }
 
 //.withdraw__bank-drop::before {
@@ -564,12 +995,24 @@
 
   padding-top: 1.642rem;
   margin: 0 0.571rem 0 0.714rem;
+
+  @media screen and (min-width: 1025px) {
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: unset;
+  }
 }
 
 .withdraw__bank-drop-block {
   display: flex;
 
   width: 83.668%;
+
+  @media screen and (min-width: 1025px) {
+    flex-grow: 1;
+  }
 }
 
 .withdraw__bank-drop-label {
@@ -578,6 +1021,10 @@
   align-items: stretch;
 
   width: 100%;
+
+  @media screen and (min-width: 1025px) {
+    margin-right: 1.285rem;
+  }
 }
 
 .withdraw__bank-drop-input {
@@ -594,6 +1041,23 @@
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
+
+  @media screen and (min-width: 1025px) {
+    appearance: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.857rem;
+    color: var(--pmbet-blue-darker);
+    height: 2.857rem;
+    background-color: var(--pmbet-white-lighter);
+    padding-right: 0.857rem;
+    padding-left: 0.857rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: normal;
+    margin-right: 1.285rem;
+    width: 100%;
+  }
 }
 
 .withdraw__bank-btn {
@@ -611,6 +1075,29 @@
   line-height: 1.5rem;
   text-transform: uppercase;
   text-align: center;
+
+  @media screen and (min-width: 1025px) {
+    position: relative;
+    width: auto;
+    line-height: normal;
+    appearance: none;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-right: 0.714rem;
+    padding-left: 0.714rem;
+    height: 2.857rem;
+
+    border-radius: 0.142rem;
+
+    min-width: 10.714rem;
+
+    color: var(--pmbet-white-dark);
+
+    cursor: pointer;
+  }
 }
 
 .withdraw__bank-btn:disabled {
@@ -630,11 +1117,44 @@
   height: 1.95rem;
   width: 1.642rem;
   flex-shrink: 0;
+
+  @media screen and (min-width: 1025px) {
+    height: 1.428rem;
+    width: 1.071rem;
+    cursor: pointer;
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
 }
+
 
 .withdraw__bank-drop-block .withdraw__bank-label-text {
   transform: translateY(-1.642rem);
 }
 
 
+.withdraw__deposit-body {
+  @Media screen and (min-width: 1025px) {
+    padding-top: 1.285rem;
+    padding-right: 1.285rem;
+    padding-left: 1.285rem;
+    display: flex;
+    height: calc(100% - 3.972rem);
+    max-height: 100%;
+
+    .menu-inner {
+      width: 12.42rem;
+      flex-shrink: 0;
+      margin-right: 1.285rem;
+      padding: 0;
+      flex-direction: column;
+      height: 100%;
+      max-height: 100%;
+      overflow-y: hidden;
+    }
+  }
+}
 

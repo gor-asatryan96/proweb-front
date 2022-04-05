@@ -48,7 +48,7 @@ const CongratulationUseStep = ({ onClose }) => <>
     </div>
   </div>
   <div className="popup-gray__btn-container">
-    <div className="popup-gray__btn popup-gray__btn-green">Use</div>
+    <div className="popup-gray__btn popup-gray__btn-green ">Use</div>
     <div onClick={onClose} className="popup-gray__btn popup-gray__btn-white">Cancel</div>
   </div>
 </>;

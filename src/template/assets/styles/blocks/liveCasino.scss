@@ -2,11 +2,33 @@
   background-color: var(--pmbet-cream);
 
   padding-top: 1.785rem;
-  //height: calc(100vh - 7.714rem);
-  //overflow-y: auto;
+  height: calc(100vh - 8.428rem);
+  overflow-y: auto;
 
   .bet-rate__live__score {
     margin-right: 0.357rem;
+
+    @media screen and (min-width: 1025px) {
+      margin-right: 0.714rem;
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    height: calc(100vh - 7.714rem);
+    overflow-y: auto;
+    padding-top: 0;
+
+    &::-webkit-scrollbar {
+      width: 0.357rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--pmbet-white);
+    }
   }
 }
 
@@ -16,12 +38,23 @@
 
   padding-top: 1.8rem;
   //padding-bottom: 3.928rem;
+
+  @media screen and (min-width: 1025px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2.142rem;
+    padding-bottom: 3.928rem;
+  }
 }
 
 .live-casino__row--game {
   display: block;
 
   padding-top: 0;
+
+  @media  screen and (min-width: 1025px){
+    padding-top: 2.142rem;
+  }
 }
 
 .live-casino__row .casino-game__load {
@@ -39,6 +72,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: 1025px) {
+    width: 32.02%;
+
+    &:not(:last-child) {
+      margin-right: 1.428rem;
+    }
+
+    .casino-game__more {
+      padding-top: 1.642rem;
+    }
+  }
 }
 
 .live-casino__column:not(.live-casino__column--casino) {
@@ -55,6 +100,10 @@
   align-items: center;
 
   margin-bottom: 1.214rem;
+
+  @media screen and (min-width: 1025px) {
+    margin-bottom: 1.428rem;
+  }
 }
 
 .live-casino__category__icon {
@@ -62,6 +111,11 @@
   width: 2.357rem;
 
   margin-right: 0.471rem;
+
+  @media screen and (min-width: 1025px) {
+    width: 3.142rem;
+    margin-right: 0.642rem;
+  }
 }
 
 .live-casino__category__icon::before {
@@ -83,6 +137,10 @@
   color: var(--pmbet-gray-dark);
 
   text-transform: uppercase;
+
+  @media screen and (min-width: 1025px) {
+    text-transform: capitalize;
+  }
 }
 
 .live-casino__match {
@@ -103,10 +161,16 @@
   border-radius: 0.285rem;
 
   background-size: cover;
+  background-image: url("../../../assets/images/fields/football-pitch.jpg");
+  background-position: center center;
 }
 
 .live-casino__match .bet-match__item:not(:last-of-type) {
   margin-bottom: 0.642rem;
+
+  @media screen and (min-width: 1025px) {
+    margin-bottom: 1.071rem;
+  }
 }
 
 .live-casino__match .bet-match__header {
@@ -114,6 +178,10 @@
   padding-right: 0.357rem;
 
   margin-bottom: 0.2rem;
+
+  @media screen and (min-width: 1025px) {
+    margin-bottom: 0.571rem;
+  }
 }
 
 .live-casino__match .bet-match__country {
@@ -133,6 +201,11 @@
   padding-right: 0.357rem;
   padding-bottom: 0.357rem;
   padding-left: 0.357rem;
+
+  @media screen and (min-width: 1025px) {
+    padding-bottom: 0.857rem;
+    padding-left: 0.571rem;
+  }
 }
 
 .live-casino__match .bet-rate__set__info {
@@ -200,6 +273,7 @@
   color: var(--pmbet-green);
 
   font-size: 1.214rem;
+
 }
 
 .live-casino__advertising {
@@ -220,11 +294,25 @@
 
   margin-right: 0;
   margin-bottom: 1.071rem;
+
+  @media screen and (min-width: 1025px){
+    width: calc(50% - 0.5355rem);
+  }
 }
 
 .live-casino__advertising .casino-game__item:not(:nth-of-type(3n)) {
   margin-right: 0.75rem;
+
+  @media screen and (min-width: 1025px){
+    margin-right: 0;
+  }
 }
+
+.live-casino__advertising .casino-game__item:nth-child(odd){
+  @media screen and (min-width: 1025px){
+    margin-right: 1.071rem;
+  }
+  }
 
 //.live-casino__advertising .casino-game__item:nth-last-of-type(-n + 2) {
 //  margin-bottom: 0;
@@ -232,6 +320,10 @@
 
 .live-casino__advertising .casino-game__img::before {
   padding-top: 74.193%;
+
+  @media screen and (min-width: 1025px){
+    padding-top: 9.071rem;
+  }
 }
 
 .live-casino__advertising .casino-game__name {
@@ -240,6 +332,13 @@
 
   padding-top: 0;
   padding-bottom: 0;
+
+  @media screen and (min-width: 1025px){
+    padding-top: 0.393rem;
+    padding-bottom: 0.393rem;
+    font-size: 1.142rem;
+    font-weight: 700;
+  }
 }
 
 .live-casino__row--game .live-casino__category {
@@ -257,3 +356,253 @@
 .live-casino__list .casino-game__list {
   width: 100%;
 }
+
+// desktop 
+
+// .live-casino {
+//   background-color: var(--pmbet-cream);
+
+//   height: calc(100vh - 7.714rem);
+//   overflow-y: auto;
+// }
+
+// .live-casino__row {
+//   display: flex;
+//   justify-content: space-between;
+
+//   padding-top: 2.142rem;
+//   padding-bottom: 3.928rem;
+// }
+
+// .live-casino__row--game {
+//   display: block;
+// }
+
+// .live-casino__row .casino-game__load {
+//   padding-top: 0.572rem;
+//   padding-right: 3.339rem;
+//   padding-bottom: 0.572rem;
+//   padding-left: 3.339rem;
+
+//   border-radius: 0.285rem;
+
+//   text-transform: capitalize;
+// }
+
+// .live-casino__column {
+//   width: 32.02%;
+
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .live-casino__column:not(.live-casino__column--casino) {
+//   flex-shrink: 0;
+// }
+
+// .live-casino__column:not(:last-child) {
+//   margin-right: 1.428rem;
+// }
+
+// .live-casino__column--casino {
+//   width: auto;
+//   flex-grow: 1;
+// }
+
+// .live-casino__category {
+//   display: flex;
+//   align-items: center;
+
+//   margin-bottom: 1.428rem;
+// }
+
+// .live-casino__category__icon {
+//   position: relative;
+//   width: 3.142rem;
+
+//   margin-right: 0.642rem;
+// }
+
+// .live-casino__category__icon::before {
+//   content: "";
+//   display: block;
+//   padding-top: 88.63%;
+// }
+
+// .live-casino__category__icon svg {
+//   max-height: 100%;
+//   max-width: 100%;
+
+//   fill: var(--pmbet-gray-dark);
+// }
+
+// .live-casino__category__title {
+//   font-size: 1.857rem;
+//   font-weight: 700;
+//   color: var(--pmbet-gray-dark);
+
+//   text-transform: capitalize;
+// }
+
+// .live-casino__match {
+//   display: flex;
+//   flex-direction: column;
+//   align-self: stretch;
+
+//   flex-grow: 1;
+
+//   width: 100%;
+// }
+
+// .live-casino__match .bet-match__list {
+//   flex-grow: 1;
+// }
+
+// .live-casino__match .bet-match__item {
+//   border-radius: 0.285rem;
+
+//   background-size: cover;
+// }
+
+// .live-casino__match .bet-match__header {
+//   padding-top: 0.275rem;
+//   padding-right: 0.357rem;
+
+//   margin-bottom: 0.571rem;
+// }
+
+// .live-casino__match .bet-match__country {
+//   margin-left: 0.714rem;
+// }
+
+// .live-casino__match .bet-match__name {
+//   font-weight: 300;
+//   color: var(--pmbet-white-lighter--2-09);
+// }
+
+// .live-casino__match .bet-rate__nav__list {
+//   margin-left: auto;
+// }
+
+// .live-casino__match .bet-rate__set {
+//   padding-right: 0.357rem;
+//   padding-bottom: 0.857rem;
+//   padding-left: 0.571rem;
+// }
+
+// .live-casino__match .bet-rate__set__info {
+//   display: flex;
+//   flex-direction: column;
+//   align-self: stretch;
+// }
+
+// .live-casino__match .bet-rate__set__team {
+//   color: var(--pmbet-white-light--2);
+// }
+
+// .live-casino__match .bet-rate__set__rate {
+//   margin-top: auto;
+// }
+
+// .live-casino__match .bet-rate__live__score {
+//   color: var(--pmbet-white-light--2);
+// }
+
+// .live-casino__match .bet-rate__set__btn {
+//   width: 4.142rem;
+
+//   padding-top: 0.711rem;
+//   padding-bottom: 0.711rem;
+
+//   background-color: var(--pmbet-white-lightest--2);
+// }
+
+// .live-casino__match .bet-rate__set__btn.active {
+//   //background-size: ;
+//   background-position: top 0.285rem right 0.285rem;
+//   background-size: 0.928rem auto;
+// }
+
+// .live-casino__match .bet-rate__live__score {
+//   display: flex;
+//   flex-direction: column;
+
+//   align-self: stretch;
+//   justify-content: space-between;
+// }
+
+// .live-casino__match .bet-rate__live__num {
+//   text-align: right;
+// }
+
+// .live-casino__match .bet-rate__live__num:first-child {
+//   margin-bottom: auto;
+// }
+
+// .live-casino__match .bet-rate__live__time {
+//   margin-top: auto;
+// }
+
+// .live-casino__match .bet-rate__set__number {
+//   color: var(--pmbet-gray-light);
+// }
+
+// .live-casino__match .bet-rate__set__coefficient {
+//   color: var(--pmbet-green);
+
+//   font-size: 1.214rem;
+// }
+
+// .live-casino__advertising {
+//   display: flex;
+//   flex-direction: column;
+
+//   flex-grow: 1;
+
+//   width: 100%;
+// }
+
+// .live-casino__advertising .casino-game__list {
+//   flex-grow: 1;
+// }
+
+// .live-casino__advertising .casino-game__item:nth-child(n) {
+//   width: calc(50% - 0.5355rem);
+
+//   margin-right: 0;
+//   margin-bottom: 1.071rem;
+// }
+
+// .live-casino__advertising .casino-game__item:nth-child(odd) {
+//   margin-right: 1.071rem;
+// }
+
+// .live-casino__advertising .casino-game__item:nth-last-of-type(-n + 2) {
+//   margin-bottom: 0;
+// }
+
+// .live-casino__advertising .casino-game__img::before {
+//   padding-top: 9.071rem;
+// }
+
+// .live-casino__advertising .casino-game__name {
+//   padding-top: 0.393rem;
+//   padding-bottom: 0.393rem;
+// }
+
+// .live-casino__row--game .live-casino__category {
+//   justify-content: center;
+// }
+
+// .live-casino__list {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+
+//   width: 100%;
+// }
+
+// .live-casino__list .casino-game__list {
+//   width: 100%;
+// }

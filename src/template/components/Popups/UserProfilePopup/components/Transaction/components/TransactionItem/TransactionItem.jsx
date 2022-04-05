@@ -6,7 +6,9 @@ const statusClases = {
   Canceled: 'transaction__column_loser',
 };
 
-const TransactionItem = ({ data, isOpen, toggleTransaction }) => {
+const TransactionItem = ({
+  data, isOpen, toggleTransaction, isDesktop,
+}) => {
   const {
     date, id, system, amount, status, type, balance,
   } = data;
@@ -20,8 +22,12 @@ const TransactionItem = ({ data, isOpen, toggleTransaction }) => {
             <div className="transaction__time">{time}</div>
           </div>
         </div>
+        {isDesktop && <div className="transaction__column transaction__column_id">{id}</div>}
+        {isDesktop && <div className="transaction__column transaction__column_type">{type}</div>}
         <div className="transaction__column transaction__column_system">{system}</div>
         <div className="transaction__column transaction__column_amount">${amount}</div>
+        {isDesktop && <div className="transaction__column transaction__column_balance">{balance}</div>}
+
         <div
           className={
           classNames(
@@ -33,7 +39,8 @@ const TransactionItem = ({ data, isOpen, toggleTransaction }) => {
           }>
           {status}
         </div>
-        <div onClick={toggleTransaction} className="transaction__column-icon">
+
+        {!isDesktop && <div onClick={toggleTransaction} className="transaction__column-icon">
           <div className={classNames('img-container', { 'rotate-180': isOpen })}>
             <svg xmlns="http://www.w3.org/2000/svg" width="15.97" height="8.958" viewBox="0 0 15.97 8.958">
               <g
@@ -58,9 +65,9 @@ const TransactionItem = ({ data, isOpen, toggleTransaction }) => {
               </g>
             </svg>
           </div>
-        </div>
+        </div>}
       </div>
-      {isOpen && <div className="transaction__row-drop active">
+      {isOpen && !isDesktop && <div className="transaction__row-drop active">
         <div className="transaction__row transaction__row_drop">
           <div className="transaction__column transaction__column_drop-title">ID</div>
           <div className="transaction__column transaction__column_drop-value">{id}</div>

@@ -1,17 +1,10 @@
 .fixtures {
-  display: none;
   flex-direction: column;
   overflow: hidden;
   touch-action: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   height: 100%;
   width: 100%;
   z-index: 5;
-
   background-color: var(--pmbet-cream)
 }
 
@@ -22,6 +15,28 @@
 .fixtures .menu-back__title {
   letter-spacing: 0.055rem;
 }
+.fixtures__content{
+  @media screen and (min-width: 1025px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -6.571rem;
+    font-family: "Poppins", "Arial", sans-serif;
+  }
+}
+
+.fixture-caption{
+  @media screen and (min-width: 1025px){
+    font-size: 1.428rem;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    color: var(--pmbet-gray);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.285rem;
+  }
+}
 
 .fixtures__list {
   display: flex;
@@ -31,6 +46,17 @@
   list-style-type: none;
 
   margin: 0;
+
+  @media screen and (min-width: 1025px){
+    display: flex;
+    align-items: flex-start;
+    width: 73.285rem;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: var(--pmbet-white-5);
+    padding: 2.714rem 2.714rem 1.428rem;
+
+  }
 }
 
 .fixtures__item {
@@ -38,10 +64,24 @@
   background-color: var(--pmbet-white-5);
   margin-bottom: 0.7857rem;
   border-radius: 0.214rem;
+
+  @media screen and (min-width: 1025px){
+    width:21.05%;
+    margin-bottom: 1.428rem;
+    border-radius: 0;
+    font-weight: 600;
+    color: var(--pmbet-gray-light);
+
+    &:not(:nth-child(4n)){
+      margin-right: calc(15.8%/3);
+    }
+  }
 }
 
 .fixtures__item:nth-child(2n+1) {
-  margin-right: calc(100% - (2 * 47.9798%));
+  @media screen and (max-width: 1024px){
+    margin-right: calc(100% - (2 * 47.9798%));
+  }
 }
 
 .fixtures__item-a {
@@ -57,4 +97,17 @@
   color: var(--pmbet-blue-darker);
 
   padding: 0.428rem 0.714rem;
+
+  @media screen and (min-width: 1025px){
+    display: flex;
+    text-decoration: none;
+    background-color: inherit;
+    font-weight: 600;
+    color: inherit;
+    padding: 0.5rem 0.714rem;
+    line-height: normal;
+    font-size: 1rem;
+    font-family: "Poppins", "Arial", sans-serif;
+    cursor: pointer;
+  }
 }

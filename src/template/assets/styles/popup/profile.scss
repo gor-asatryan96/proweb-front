@@ -1,18 +1,28 @@
 .profile {
-  display: none;
   flex-direction: column;
   overflow: hidden;
   touch-action: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   height: 100%;
   width: 100%;
   z-index: 5;
   background-color: var(--pmbet-cream);
   font-family: "Poppins", "Arial", sans-serif;
+
+  @media screen and (min-width: 1025px){
+    height: 90.679%;
+    width: 88.75%;
+
+    .menu-inner{
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1.428rem;
+      padding-right: 7.142rem;
+      padding-left: 7.142rem;
+    }
+  }
+
+
 }
 
 //.profile__list {
@@ -114,6 +124,16 @@
   width: 100%;
   padding: 0.571rem 2.357rem;
   font-family: "Roboto", "Arial", sans-serif;
+
+  @media screen and (min-width: 1025px){
+    padding: 0;
+    width: calc(50% - 2.785rem);;
+    font-family: "Poppins", "Arial", sans-serif;
+
+    &:last-child{
+      margin-top: auto;
+    }
+  }
 }
 
 .profile__label-text {
@@ -125,45 +145,103 @@
   font-size: 1.285rem;
   font-weight: bold;
   line-height: 1.714rem;
+
+  @media screen and (min-width: 1025px){
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: 0;
+    margin-bottom: 0.71rem;
+    line-height: normal;
+  }
+
 }
 
 .profile__form-block {
   width: 100%;
   padding-bottom: 1.118rem;
+
+  @media screen and (min-width: 1025px){
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child){
+      margin-bottom: 1.071rem;
+    }
+
+  }
 }
+
 
 .profile__form-block.profile__form-block_password {
   padding-bottom: 1.7rem;
+
+  @media screen and (min-width: 1025px){
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 .profile__form-block.profile__form-block_city {
   padding-bottom: 0.9rem;
+
+  @media screen and (min-width: 1025px){
+    padding-bottom: 0;
+  }
 }
 
 .profile__form-block.profile__form-block_btn {
   padding-bottom: 1rem;
   margin-top: 1rem;
+
+  @media screen and (min-width: 1025px){
+    display: flex;
+    margin-top: 1.071rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 .profile__form-row {
   width: 100%;
+
+  @media screen and (min-width: 1025px){
+    display: flex;
+    flex-direction: column;
+    &:not(:last-child){
+      margin-bottom: 0.142rem;
+    }
+  }
 }
 
 .profile__form-row_2 {
   display: flex;
   justify-content: space-between;
+
+  @media screen and (min-width: 1025px){
+    justify-content: unset;
+    flex-direction: row;
+  }
 }
 
 .profile__label {
   position: relative;
   display: block;
   width: 100%;
+
+  @media screen and (min-width: 1025px){
+    display: flex;
+  }
 }
 
 .profile__label_code {
   width: 4rem;
   flex-shrink: 0;
   margin-right: 0.357rem;
+  @media screen and (min-width: 1025px){
+    width: 4.071rem;
+    margin-right: 0.142rem;
+  }
 }
 
 .profile__label_code input {
@@ -192,6 +270,25 @@
   font-size: 1.285rem;
   font-family: "Roboto", "Arial", sans-serif;
   line-height: 1.714rem;
+
+  @media screen and (min-width: 1025px){
+    appearance: none;
+    border: 0;
+    padding-right: 0.679rem;
+    padding-left: 0.679rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 0.857rem;
+    font-weight: 600;
+    color: var(--pmbet-blue-darker);
+    height: 2.858rem;
+    width: 100%;
+    line-height: unset;
+    border-radius: 0;
+    font-family: "Poppins", "Arial", sans-serif;
+    margin-bottom: 0;
+    min-height: unset;
+  }
 }
 
 .profile__input:disabled {
@@ -209,10 +306,50 @@
   background-repeat: no-repeat;
   background-position-x: calc(100% - 1.142rem);
   background-position-y: 50%;
+
+  @media screen and (min-width: 1025px){
+    padding-right: 1.785rem;
+    background-position: right 0.714rem center;
+    background-size: 0.642rem auto;
+    cursor: pointer;
+  }
 }
 
 .profile__select_3 {
   width: 31.896%;
+
+  @media screen and (min-width: 1025px){
+    appearance: none;
+    padding-right: 1.785rem;
+    background-repeat: no-repeat;
+    background-position: right 0.714rem center;
+    background-size: 0.642rem auto;
+    width: 100%;
+
+    &:not(:last-child){
+      margin-right: 1.285rem;
+    }
+  }
+}
+
+.profile__select_3_month{
+  @media screen and (min-width: 1025px){
+    width: 7.31rem;
+  }
+}
+
+.profile__select_3_day{
+  @media screen and (min-width: 1025px){
+   min-width: 4.285rem;
+    width: unset;
+  }
+}
+
+.profile__select_3_year{
+  @media screen and (min-width: 1025px){
+    min-width: 5rem;
+    width: unset;
+  }
 }
 
 .profile__form-btn {
@@ -234,11 +371,38 @@
   line-height: 1.5rem;
   text-transform: uppercase;
   text-align: center;
+
+  @media screen and (min-width: 1025px){
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    min-width: 10.714rem;
+    border-radius: 0.214rem;
+    background-color: var(--pmbet-green);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-family: 'Roboto',"Arial","sans-serif";
+    font-size: 1.142rem;
+    line-height: unset;
+    font-weight: 700;
+    color: var(--pmbet-white);
+    max-width: unset;
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 .profile__form-btn.profile__form-btn_changes {
   padding: 0.714rem 1.5rem;
   margin-top: 0.571rem;
+
+  @media screen and (min-width: 1025px){
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    margin-top: 0;
+    margin-left: auto;
+  }
 }
 
 .profile__form-btn:disabled {
@@ -258,14 +422,39 @@
   outline: none;
 
   background-color: unset;
+
+  @media screen and (min-width: 1025px){
+    right: 0.714rem;
+    width: 1rem;
+    padding: 0.285rem;
+    background-color: transparent;
+    height: unset;
+    cursor: pointer;
+
+    &:before{
+      content: "";
+      display: block;
+      padding-top: 64.285%;
+    }
+  }
 }
 
 .profile__label-icon .img-container {
   display: block;
+
+  @media screen and (min-width: 1025px){
+    display: flex;
+  }
 }
 
 .profile__label-icon svg {
   fill: var(--pmbet-gray-light-6);
   max-width: 100%;
   max-height: 100%;
+
+  @media screen and (min-width: 1025px){
+    fill: var(--pmbet-gray-light);
+    width:0.87rem;
+    height: 0.56rem;
+  }
 }

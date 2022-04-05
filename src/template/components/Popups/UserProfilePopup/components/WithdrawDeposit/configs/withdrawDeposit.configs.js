@@ -2,6 +2,10 @@ import { COMPANY_LOGOS } from '../../../../../../assets/images/company-logo';
 import { OPERATORS_LOGOS } from '../../../../../../assets/images/operators';
 import { COMPANIES_NAMES } from '../../../../../../constants/companies.constants';
 import { OPERATORS_NAMES } from '../../../../../../constants/operators.constants';
+import DepositInfo from '../components/DepositInfo/DepositInfo';
+import DepositPopup from '../components/DepositPopup/DepositPopup';
+import WithdrawDepositBanks from '../components/WithdrawDepositBanks/WithdrawDepositBanks';
+import WithdrawOperator from '../components/WithdrawOperator/WithdrawOperator';
 import { WITHDRAW_DEPOSIT_TYPES } from '../constants/withdrawDepostir.constants';
 
 const {
@@ -30,4 +34,22 @@ export const WITHDRAW_DEPOSIT_ITEMS = {
   banks: {
     name: 'My banks accounts', image: COMPANY_LOGOS[VISA_MASTER], class: 'withdraw__img_visa', type: BANKS_TYPE,
   },
+};
+
+export const WITHDRAW_COMPONENTS = {
+  [OPERATOR_TYPE]: WithdrawOperator,
+  [PMBET_TYPE]: WithdrawOperator,
+  [BANKS_TYPE]: WithdrawDepositBanks,
+};
+
+export const DEPOSIT_MOBILE_COMPONENTS = {
+  [OPERATOR_TYPE]: DepositPopup,
+  [PMBET_TYPE]: DepositPopup,
+  [BANKS_TYPE]: WithdrawDepositBanks,
+};
+
+export const DEPOSIT_DESKTOP_COMPONENTS = {
+  [OPERATOR_TYPE]: DepositInfo,
+  [PMBET_TYPE]: DepositInfo,
+  [BANKS_TYPE]: WithdrawDepositBanks,
 };

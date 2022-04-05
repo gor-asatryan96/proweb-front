@@ -1,11 +1,13 @@
-import classNames from 'classnames';
+import Flag from '../../../../../components/Flag/Flag';
 
 const LanguageItem = ({ language, onLanguageClick }) => (
   <li className="menu__language__item">
     <button onClick={onLanguageClick} className="menu__language__btn">
       <span className="menu__language__current">
         <span className="menu__language__flag">
-          <div className={classNames('flags ff-xl', `flag-${language}`)} />
+          <span className="img-container">
+            <Flag code={language} />
+          </span>
         </span>
         <span className="menu__language__name">
           {language}

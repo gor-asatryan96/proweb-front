@@ -10,6 +10,12 @@
   height: 3.857rem;
   flex-shrink: 0;
   background-color: var(--pmbet-blue);
+
+  @media screen and (min-width: 1025px) {
+    justify-content: unset;
+    align-items: unset;
+    height: 3.571rem;
+  }
 }
 
 .userMenuConfig__idConfigLinkIcon {
@@ -34,7 +40,55 @@
   font-family: "Poppins", "Arial", sans-serif;
   font-size: 1.142rem;
   font-weight: 600;
+
+  @media screen and (min-width: 1025px) {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--pmbet-gray-light);
+
+    height: 100%;
+    width: 100%;
+
+    padding-right: 1.428rem;
+    padding-left: 1.428rem;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--pmbet-green);
+      transition: var(--pmbet-transition);
+      height: 0.214rem;
+      width: 0;
+    }
+  }
 }
+
+.userMenuConfig__idConfigLinkIconText.active {
+  color: var(--pmbet-green);
+
+  @media screen and (min-width: 1025px) {
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
 
 .userMenuConfig__headerCell {
   width: 2.9rem;
@@ -43,15 +97,38 @@
 .userMenuConfig__closeButton {
   background-color: transparent;
   border: none;
+
+  @media screen and (min-width: 1025px){
+    position: relative;
+    appearance: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 3.571rem;
+    cursor: pointer;
+  }
 }
 
 .userMenuConfig__closeButtonSvg {
   width: 1.33rem;
   height: 1.33rem;
-}
+
+  @media screen and (min-width: 1025px){
+    width: 0.87rem;
+    height: 0.87rem;
+  }
+  }
+
 
 .userMenuConfig__closeButtonSvg {
   fill: var(--pmbet-white-lightest--3);
+
+  @media screen and (min-width: 1025px){
+    fill: var(--pmbet-gray-light);
+    stroke: var(--pmbet-gray-light);
+  }
 }
 
 .userMenuConfig__headerGearIcon {
@@ -69,6 +146,15 @@
 .userMenuConfig__headerInfo {
   display: flex;
   align-items: center;
+
+  @media screen and (min-width: 1025px){
+    justify-content: center;
+    flex-grow: 1;
+
+    &:not(:last-of-type){
+      margin-right: 0.642rem;
+    }
+  }
 }
 
 .userMenuConfig__balance {
@@ -76,6 +162,14 @@
   padding-left: 1.428rem;
 
   flex-shrink: 0;
+
+  @media screen and (min-width: 1025px) {
+    padding-right: 2.5rem;
+    padding-left: 1.285rem;
+
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 .userMenuConfig__row {
@@ -88,6 +182,12 @@
   padding-bottom: 1.1rem;
 
   font-family: "Poppins", "Arial", sans-serif;
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
 }
 
 .userMenuConfig__row::after {
@@ -99,13 +199,21 @@
   height: 2px;
   width: 100%;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom,var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
+  background-image: linear-gradient(to bottom, var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
+
+  @media screen and (min-width: 1025px) {
+    content: none;
+  }
 }
 
 .userMenuConfig__column--info {
   flex-grow: 1;
 
   margin-right: 0.5rem;
+
+  @media screen and (min-width: 1025px) {
+    margin-right: 0;
+  }
 }
 
 .userMenuConfig__column--deposit {
@@ -114,6 +222,10 @@
 
 .userMenuConfig__line {
   display: flex;
+
+  @media screen and (min-width: 1025px) {
+    flex-direction: column;
+  }
 }
 
 .userMenuConfig__name {
@@ -126,6 +238,15 @@
   font-weight: 600;
 
   word-break: break-all;
+
+  @media screen and (min-width: 1025px) {
+    font-size: 0.714rem;
+    color: var(--pmbet-white);
+    margin-right: 0;
+    width: max-content;
+    margin-bottom: 0.35rem;
+  }
+
 }
 
 .userMenuConfig__value {
@@ -135,6 +256,10 @@
   color: var(--pmbet-green);
 
   //flex-shrink: 1;
+
+  @media screen and (min-width: 1025px) {
+    letter-spacing: unset;
+  }
 }
 
 .userMenuConfig__currency {
@@ -142,6 +267,11 @@
   font-weight: 600;
 
   color: var(--pmbet-blue-darker);
+
+  @media screen and (min-width: 1025px) {
+    color: var(--pmbet-white);
+    font-size: 1rem;
+  }
 }
 
 .userMenuConfig__deposit {
@@ -162,6 +292,8 @@
   list-style: none;
 
   flex-shrink: 0;
+
+  overscroll-behavior: contain;
 
   max-height: calc(100vh - 23.704rem);
   overflow-y: auto;
@@ -185,7 +317,7 @@
   height: 2px;
   width: 100%;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom,var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
+  background-image: linear-gradient(to bottom, var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
 }
 
 .userMenuConfig__link {

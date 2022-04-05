@@ -2,6 +2,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.popup-winner__inner{
+    @media screen and (min-width: 1025px){
+        min-height: 27.428rem
+    }
+}
+
 .popup-winner__title {
     font-family: inherit;
     font-size: 1.7142rem;
@@ -14,6 +20,16 @@
 
     padding: 0 3.2143rem 0 3.0714rem;
     margin-bottom: 1.6rem;
+
+    @media screen and (min-width: 1025px){
+        font-size: 1.571rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        letter-spacing: unset;
+        padding:0;
+        line-height: unset;
+
+    }
 }
 
 .popup-winner__desc {
@@ -21,12 +37,21 @@
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.5rem;
-  letter-spacing: 0.011rem;
+    letter-spacing: 0.011rem;
 
     color: var(--pmbet-gray);
 
     padding: 0 3.2143rem 0 3.0714rem;
     margin-bottom: 1.5rem;
+
+    @media screen and (min-width: 1025px){
+        margin-bottom: 1.071rem;
+        text-align: center;
+        padding: 0;
+        letter-spacing: unset;
+
+
+    }
 }
 
 .popup-winner__img-box {
@@ -34,6 +59,12 @@
     width: 81.013%;
 
     margin-bottom: 2.1428rem;
+
+    @media screen and (min-width: 1025px){
+        width: calc(100% + 0.714rem);
+        margin-bottom: 1.714rem;
+        margin-left: -0.357rem;
+    }
 }
 
 .popup-winner__img-box::after {

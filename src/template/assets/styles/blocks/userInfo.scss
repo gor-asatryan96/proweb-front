@@ -18,11 +18,26 @@
   align-items: center;
   padding: 0 0.714rem;
   font-size: 1rem;
+
+  @media screen and (min-width: 1025px){
+    padding: 0;
+    height: 100%;
+    font-weight: 700;
+    line-height: 1.357rem;
+    justify-content: center;
+    margin-right: 0.785rem;
+    border: none;
+
+  }
 }
 
 .userInfo__amountSize {
   margin-right: 0.2rem;
   color: var(--pmbet-green);
+
+  @media screen and (min-width: 1025px){
+    margin-right: 0;
+  }
 }
 
 .userInfo__amountType {
@@ -37,21 +52,54 @@
   align-items: center;
   padding: 0 1rem;
   margin-bottom: 0.1rem;
+  cursor: pointer;
+
+  @media screen and (min-width: 1025px){
+    padding-left: 1.142rem;
+    padding-right: 1.428rem;
+    line-height: 1.357rem;
+    height: 100%;
+    font-weight: 700;
+  }
 }
 
 .userInfo__idConfigLinkIcon {
   display: flex;
   width: 1.428rem;
   height: 1.571rem;
+
+  @media screen and (min-width: 1025px){
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .userInfo__idConfigLinkIconSvg {
   width: 100%;
   height: 100%;
   stroke: var(--pmbet-green);
+  &.gift {
+    fill: var(--pmbet-green)
+  }
+
+  @media screen and (min-width: 1025px){
+    width: 1.27rem;
+    height: 1.31rem;
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .userInfo__idConfigLinkIdWithText {
   color: var(--pmbet-green);
   font-size: 0.857rem;
+
+  @media screen and (min-width: 1025px){
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.142rem;
+  }
 }

@@ -7,9 +7,15 @@ const MyBetsHistory = ({ goBack, configs }) => {
 
   return (
     <>
-      {activeHistory
-        ? <MyBetsHistoryItemInfo goBack={() => setActiveHistory(null)} />
-        : <MyBetsHistoryMenu configs={configs} goBack={goBack} setActiveHistory={setActiveHistory} />
+      {
+        configs.isDesktop && <>
+          <MyBetsHistoryMenu configs={configs} goBack={goBack} setActiveHistory={setActiveHistory} />
+        </>
+       }
+      {
+        !configs.isDesktop && (activeHistory
+          ? <MyBetsHistoryItemInfo goBack={() => setActiveHistory(null)} />
+          : <MyBetsHistoryMenu configs={configs} goBack={goBack} setActiveHistory={setActiveHistory} />)
       }
     </>
   );

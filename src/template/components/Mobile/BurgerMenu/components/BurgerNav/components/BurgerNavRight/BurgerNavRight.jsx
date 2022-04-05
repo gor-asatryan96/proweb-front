@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { selectActiveSport, setActiveSport } from '../../../../../../../../redux/slices/sport.slice';
 import { SPORTS_ICONS } from '../../../../../../../assets/images/sport-kind';
-import { SPORTS_NAMES } from '../../../../../../../pages/SportLive/constants/sport.constants';
+import { SPORTS_NAMES } from '../../../../../../../pages/Sportsbook/constants/sport.constants';
 import BurgerNavRightItem from './components/BurgerNavRightItem/BurgerNavRightItem';
 
 const actualSports = Object.keys(SPORTS_NAMES);

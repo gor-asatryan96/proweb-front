@@ -1,17 +1,8 @@
 .deposit {
-  display: none;
   flex-direction: column;
   overflow: hidden;
   touch-action: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
   z-index: 5;
-  background-color: var(--pmbet-cream);
   font-family: "Poppins", "Arial", sans-serif;
 }
 
@@ -74,12 +65,33 @@
 
   width: 13.071rem;
   margin: 0 auto;
+
+  @media screen and (min-width: 1025px) {
+    position: relative;
+    width: 11.428rem;
+    margin-bottom: 0.1rem;
+    margin-left: 0;
+
+    .img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .img-container {
+      justify-content: flex-start;
+    }
+
+  }
 }
 
 .deposit__voda-logo::before {
   content: "";
   display: block;
   padding-top: 24.59%;
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 30%;
+  }
 }
 
 .deposit__voda-title {
@@ -90,6 +102,15 @@
   font-weight: 600;
   line-height: 1.785rem;
   letter-spacing: 0.01rem;
+
+  @media screen and (min-width: 1025px) {
+    color: var(--pmbet-gray);
+    margin-bottom: 0.45rem;
+    font-size: 1rem;
+    line-height: normal;
+    letter-spacing: normal;
+    margin-top: 0;
+  }
 }
 
 .deposit__voda-sub {
@@ -98,6 +119,13 @@
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5rem;
+
+  @media screen and (min-width: 1025px) {
+    font-size: 0.857rem;
+    color: var(--pmbet-gray);
+    margin-bottom: 0.714rem;
+    line-height: normal;
+  }
 }
 
 .deposit__voda-list {
@@ -108,10 +136,22 @@
   padding: 0;
 
   list-style: none;
+
+  @media screen and (min-width: 1025px) {
+    justify-content: flex-start;
+    align-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2.214rem;
+    max-height: 12.2rem
+  }
 }
 
 .deposit__voda-item:not(:last-child) {
   margin-bottom: 0.56rem;
+
+  @media screen and (min-width: 1025px) {
+    margin-bottom: 0.6rem;
+  }
 }
 
 .deposit__voda-item strong {
@@ -120,6 +160,11 @@
   line-height: 1.785rem;
 
   color: var(--pmbet-green);
+
+  @media screen and (min-width: 1025px) {
+    font-size: 1rem;
+    line-height: normal;
+  }
 }
 
 .deposit__voda-item p {
@@ -129,6 +174,13 @@
   letter-spacing: 0.01rem;
 
   margin: 0;
+
+  @media screen and (min-width: 1025px) {
+    font-size: 0.857rem;
+    color: var(--pmbet-gray);
+    line-height: normal;
+    letter-spacing: normal;
+  }
 }
 
 .deposit__voda-desc {
@@ -137,6 +189,13 @@
   font-size: 0.857rem;
   font-weight: 600;
   line-height: 1.285rem;
+
+  @media screen and (min-width: 1025px) {
+    font-size: 0.714rem;
+    color: var(--pmbet-gray-7);
+    line-height: normal;
+    margin-top: 0;
+  }
 }
 
 .deposit__pm {
@@ -180,6 +239,14 @@
   font-weight: 600;
   line-height: 1.785rem;
   text-align: center;
+
+  @media screen and (min-width: 1025px) {
+    color: var(--pmbet-gray);
+    margin-bottom: 0.45rem;
+    font-size: 1rem;
+    line-height: normal;
+    text-align: left;
+  }
 }
 
 .deposit__pm-title_upper {
@@ -192,12 +259,38 @@
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5rem;
+
+  @media screen and (min-width: 1025px) {
+    font-size: 0.857rem;
+    color: var(--pmbet-gray);
+    margin-bottom: 0.714rem;
+    line-height: normal;
+  }
 }
 
 .deposit__pm-list {
   margin: 0 0 0.714rem 0;
   padding: 0;
   list-style: none;
+
+  @media screen and (min-width: 1025px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 2.214rem;
+    max-height: 12.2rem;
+  }
+}
+
+.deposit__pm-item {
+  @media screen and (min-width: 1025px) {
+    &:not(:last-child) {
+      margin-bottom: 0.6rem;
+    }
+
+  }
 }
 
 .deposit__pm-item strong {
@@ -206,6 +299,12 @@
   font-size: 1.142rem;
   font-weight: 600;
   line-height: 1.785rem;
+
+  @media screen and (min-width: 1025px) {
+    margin-bottom: 0.142rem;
+    font-size: 1rem;
+    line-height: normal;
+  }
 }
 
 .deposit__pm-item p {
@@ -214,11 +313,55 @@
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5rem;
+
+  @media screen and (min-width: 1025px) {
+    font-size: 0.857rem;
+    line-height: normal;
+    color: var(--pmbet-gray)
+  }
 }
 
 .deposit__pm-desc {
   font-size: 0.857rem;
   font-weight: 600;
   line-height: 1.285rem;
+
+  @media screen and (min-width: 1025px) {
+    font-size: 0.714rem;
+    line-height: normal;
+    color: var(--pmbet-gray-7);
+  }
 }
 
+.withdraw__deposit-list {
+  @media screen and (min-width: 1025px) {
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    flex-grow: 1;
+
+    &::-webkit-scrollbar {
+      width: 0.357rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--pmbet-white);
+    }
+  }
+
+}
+
+.deposit__info--item {
+  @media screen and (min-width: 1025px) {
+    padding: 1.285rem;
+    background-color: var(--pmbet-white);
+
+    &:not(:last-child) {
+      margin-bottom: 1.285rem;
+    }
+  }
+}

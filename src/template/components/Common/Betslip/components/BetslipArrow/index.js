@@ -11,7 +11,7 @@ const BetslipArrow = ({
     })}>
     <span className="img-container">
       <svg width="18px" height="11px">
-        <use xlinkHref="#arrow-top" />
+        <use xlinkHref="#arrow-bottom" />
       </svg>
     </span>
   </span>

@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useLocation, useRoutes } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import { useEffect } from 'react';
 import Panel from './components/Mobile/Panel/Panel';
 import BurgerMenu from './components/Mobile/BurgerMenu/BurgerMenu';
 import Slider from './components/Mobile/Slider/Slider';
@@ -17,19 +19,29 @@ const App = () => {
 
   const isBurgerActive = useSelector(selectIsBurgerActive);
   const routes = useRoutes(ALL_ROUTES);
-
   useSideEffects();
 
   const isSearchActive = [ '/games' ].includes(pathname);
   const isSwiperActive = [ '/sport', '/live', '/games' ].includes(pathname);
+
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1025px)',
+  });
+
+  useEffect(() => {
+    if (!isDesktop) {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+  }, [ isDesktop ]);
 
   return (
     <div className="wrapper-outer">
       <div className="wrapper">
         <Header />
         {isBurgerActive && <BurgerMenu />}
-        {isSearchActive && <SearchPanel />}
-        {isSwiperActive && <Slider />}
+        {!isDesktop && isSearchActive && <SearchPanel />}
+        {!isDesktop && isSwiperActive && <Slider />}
         {routes}
         <Betslip />
         <Panel />

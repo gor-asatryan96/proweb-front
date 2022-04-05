@@ -1,4 +1,4 @@
-import { SPORT_IDS } from '../../../pages/SportLive/constants/sport.constants';
+import { SPORT_IDS } from '../../../pages/Sportsbook/constants/sport.constants';
 import football from './football.svg';
 import basketball from './basketball.svg';
 import tennis from './tennis.svg';
