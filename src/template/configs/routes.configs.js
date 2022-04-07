@@ -12,11 +12,13 @@ export const PANEL_ROUTES = [
   {
     path: '/',
     name: 'HOME',
+    icon: 'home',
     element: <Home />,
   },
   {
     path: '/sport',
     name: 'SPORTS',
+    icon: 'sport',
     element: <Sportsbook />,
     children: [
       {
@@ -28,6 +30,7 @@ export const PANEL_ROUTES = [
   {
     path: '/live',
     name: 'LIVE',
+    icon: 'live',
     element: <Sportsbook live />,
     children: [
       {
@@ -39,46 +42,55 @@ export const PANEL_ROUTES = [
   {
     path: '/casino',
     name: 'CASINO',
+    icon: 'casino',
     element: <IframeSection />,
   },
   {
     path: '/games',
     name: 'GAMES',
+    icon: 'games',
     element: <Games />,
   },
   {
     path: '/live-casino',
     name: 'LIVE CASINO',
+    icon: 'live-casino',
     element: <IframeSection />,
   },
   {
     path: '/chukua-tano',
     name: 'CHUKUA TANO',
+    icon: 'chukua-tano',
     element: <IframeSection />,
   },
   {
     path: '/virtual-sport',
     name: 'VIRTUAL SPORT',
+    icon: 'virtual-sport',
     element: <IframeSection />,
   },
   {
     path: '/live-games',
     name: 'LIVE GAMES',
+    icon: 'live-games',
     element: <IframeSection />,
   },
   {
     path: '/e-sports',
     name: 'E SPORTS',
+    icon: 'e-sports',
     element: <IframeSection />,
   },
   {
     path: '/pm-league',
     name: 'PM LEAGUE',
+    icon: 'pm-league',
     element: <IframeSection />,
   },
   {
     path: '/jackpot',
     name: 'JACKPOT',
+    icon: 'jackpot',
     element: <IframeSection />,
   },
 ];

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const PanelItem = ({ data, active }) => {
+const PanelItem = ({ data }) => {
   const label = data.path.slice(1);
   return (
     <NavLink
@@ -13,7 +13,7 @@ const PanelItem = ({ data, active }) => {
         <div className="panel__icon">
           <div className="img-container">
             <svg>
-              <use xlinkHref={`#${label}`} />
+              <use xlinkHref={`#${data.icon}`} />
             </svg>
           </div>
         </div>

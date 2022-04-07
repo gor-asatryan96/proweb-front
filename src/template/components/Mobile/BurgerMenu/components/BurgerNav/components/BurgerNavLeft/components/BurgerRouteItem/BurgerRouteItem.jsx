@@ -11,7 +11,7 @@ const BurgerRouteItem = ({ data }) => {
         <span className="gameTypes__icon">
           <span className="img-container">
             <svg>
-              <use xlinkHref={`#${label}`} />
+              <use xlinkHref={`#${data.icon}`} />
             </svg>
           </span>
         </span>
