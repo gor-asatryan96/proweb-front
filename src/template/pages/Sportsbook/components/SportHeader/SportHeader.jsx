@@ -25,8 +25,10 @@ const SportHeader = ({
         <li onClick={() => setIsFilterOpen(prev => !prev)} className="bet-filter__item bet-filter__item--filter">
           <div className="bet-filter__item-content">
             <div className={
-              classNames('bet-filter__btn bet-filter__btn--filter',
-                { active: isFilterOpen, 'bet-filter__btn--selected': filterSelected })
+              classNames(
+                'bet-filter__btn bet-filter__btn--filter',
+                { active: isFilterOpen, 'bet-filter__btn--selected': filterSelected },
+              )
             }>
               <span className="img-container">
                 <span className="bet-filter__icon">

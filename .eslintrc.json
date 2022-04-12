@@ -15,6 +15,7 @@
     "linebreak-style": 0,
     "no-useless-escape":"off",
     "consistent-return": "off",
+    "no-promise-executor-return": 0,
     "quotes": [2, "single", { "avoidEscape": true }],
     "react/react-in-jsx-scope": 0,
     "react/jsx-boolean-value": "error",

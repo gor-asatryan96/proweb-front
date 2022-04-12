@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { FAKE_USER, promise } from '../../fakeData';
 import { clearTokenFromStorage, getErrorMessage } from '../../helpers/api';
 import { POPUPS_IDS } from '../../template/components/Popups/constants/popups.constants';
