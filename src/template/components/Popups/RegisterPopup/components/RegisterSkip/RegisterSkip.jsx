@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../../../../UI';
 import { REGISTER_TABS_IDS } from '../../constants/register.constants';
 
 const { STEP_2, CONFIRM } = REGISTER_TABS_IDS;
@@ -14,9 +15,9 @@ const RegisterSkip = ({ changeTab }) => (
       printing and typesetting industry.
     </div>
     <div className="popup-skip__accept">
-      <button onClick={() => changeTab(CONFIRM)} className="popup-skip__accept__btn popup__btn">
+      <Button onClick={() => changeTab(CONFIRM)} className='popup-skip__accept__btn'>
         Skip and Registration
-      </button>
+      </Button>
     </div>
     <div className="popup-skip__full">
       <div onClick={() => changeTab(STEP_2)} className="popup-skip__full__btn">

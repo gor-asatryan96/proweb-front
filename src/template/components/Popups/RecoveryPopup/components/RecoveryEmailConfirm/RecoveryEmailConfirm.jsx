@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { closePopup, openPopup } from '../../../../../../redux/slices/popups.slice';
+import { Button } from '../../../../UI';
 import { POPUPS_IDS } from '../../../constants/popups.constants';
 
 const { RECOVERY, LOGIN } = POPUPS_IDS;
@@ -27,9 +28,9 @@ const RecoveryEmailConfirm = ({ userInfo }) => {
         </span>
       </div>
       <div className="popup-forgot__submit">
-        <button onClick={onContinueClick} className="popup__btn">
+        <Button onClick={onContinueClick}>
           Continue
-        </button>
+        </Button>
       </div>
     </div>
   );

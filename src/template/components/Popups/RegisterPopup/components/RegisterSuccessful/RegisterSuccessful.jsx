@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { closePopup, openPopup } from '../../../../../../redux/slices/popups.slice';
+import { Button } from '../../../../UI';
 import { POPUPS_IDS } from '../../../constants/popups.constants';
 
 const { REGISTER, LOGIN } = POPUPS_IDS;
@@ -22,9 +23,9 @@ const RegisterSuccessful = () => {
         You have successful Register
       </div>
       <div className="popup-forgot__submit">
-        <button onClick={onContinueClick} className="popup__btn">
+        <Button onClick={onContinueClick}>
           Continue
-        </button>
+        </Button>
       </div>
     </>
   );

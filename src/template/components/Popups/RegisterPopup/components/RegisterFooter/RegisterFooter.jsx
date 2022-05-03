@@ -1,3 +1,5 @@
+import { Button } from '../../../../UI';
+
 const RegisterFooter = ({
   buttonText = 'Register', isTermsAccepted, setIsTermsAccepted,
 }) => (
@@ -6,17 +8,17 @@ const RegisterFooter = ({
       <div className="popup__term__info">
         by clicking button bellow, you agree to our
 
-        <a className="popup__term__link">
+        <a className="popup__term__link" href='/'>
           termS & conditions
         </a>
 
-        <a className="popup__term__link">
+        <a className="popup__term__link" href='/'>
           privacy policy
         </a>
 
         and
 
-        <a className="popup__term__link">
+        <a className="popup__term__link" href='/'>
           cookies policy
         </a>
       </div>
@@ -27,9 +29,9 @@ const RegisterFooter = ({
       </div>
     </div>
     <div className="popup-create__accept">
-      <button disabled={!isTermsAccepted} type="submit" className="popup__btn">
+      <Button disabled={!isTermsAccepted} type="submit">
         {buttonText}
-      </button>
+      </Button>
     </div></>
 );
 

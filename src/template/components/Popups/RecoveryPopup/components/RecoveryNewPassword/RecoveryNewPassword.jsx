@@ -1,3 +1,5 @@
+import { Button } from '../../../../UI';
+
 const RecoveryNewPassword = ({ setNextPage }) => (
   <form action="">
     <div className="popup-forgot__caption">
@@ -26,9 +28,9 @@ const RecoveryNewPassword = ({ setNextPage }) => (
       </div>
     </div>
     <div className="popup-forgot__submit">
-      <button onClick={setNextPage} className="popup__btn">
+      <Button onClick={setNextPage}>
         Continue
-      </button>
+      </Button>
     </div>
   </form>
 );

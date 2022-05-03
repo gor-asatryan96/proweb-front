@@ -1,9 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import classNames from 'classnames';
-import { useState } from 'react';
 import { closePopup, openPopup } from '../../../../redux/slices/popups.slice';
-import { Popup } from '../../UI';
+import { Button, Input, Popup } from '../../UI';
 import logo from '../../../assets/images/logo.svg';
 import { POPUPS_IDS } from '../constants/popups.constants';
 import { loginThunk } from '../../../../redux/thunks/auth.thunk';
@@ -16,8 +14,6 @@ const LoginPopup = () => {
   const {
     register, handleSubmit, formState: { errors },
   } = useForm();
-
-  const [ isPasswordShow, setIsPasswordShow ] = useState(false);
 
   const onClose = () => {
     dispatch(closePopup(LOGIN));
@@ -61,35 +57,21 @@ const LoginPopup = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="popup__form">
               <div className="popup__line">
-                <input
-                  {...register('name', { required: true })}
-                  className="popup__input input"
-                  type="text"
-                  placeholder="Username/Email" />
+                <Input
+                  controllProps={register('name', { required: 'Username/Email is required' })}
+                  type='text'
+                  placeholder='Username/Email'
+                  error={errors.name} />
+
               </div>
-              {errors.name && <div className="popup__error">
-                Username/Email is required
-              </div>}
               <div className="popup__line popup__line--password">
-                <input
-                  {...register('password', { required: true })}
-                  className="popup__input input"
-                  type={isPasswordShow ? 'text' : 'password'}
-                  placeholder="Password" />
-                <button
-                  type='button'
-                  onClick={() => setIsPasswordShow(prev => !prev)}
-                  className={classNames('input__show', { 'eye-show': isPasswordShow })}>
-                  <span className="img-container">
-                    <svg width="14" height="9">
-                      <use xlinkHref="#password-eye" />
-                    </svg>
-                  </span>
-                </button>
+                <Input
+                  controllProps={register('password', { required: 'Password is required' })}
+                  type='password'
+                  eye
+                  placeholder='Create your password'
+                  error={errors.password} />
               </div>
-              {errors.password && <div className="popup__error">
-                Password is required
-              </div>}
             </div>
             <div className="popup-login__accept">
               <div className="popup-login__remember">
@@ -102,9 +84,7 @@ const LoginPopup = () => {
                   <span className="checkbox__round" />
                 </div>
               </div>
-              <button disabled={isAuthLoading} className="popup__btn">
-                Log In
-              </button>
+              <Button loading={isAuthLoading}>Log In</Button>
             </div>
             <div onClick={onRecoveryClick} className="popup-login__forgot">
               <div className="popup-login__forgot__btn">
@@ -115,9 +95,7 @@ const LoginPopup = () => {
               <div className="popup-login__register__name">
                 Don't have an account?
               </div>
-              <button onClick={onRegisterClick} className="popup__btn">
-                REGISTER NOW
-              </button>
+              <Button onClick={onRegisterClick}>REGISTER NOW</Button>
             </div>
           </form>
         </div>

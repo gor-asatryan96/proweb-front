@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { PHONE_REGEX } from '../../../../../../helpers/regex.helpers';
 import { validateEmail } from '../../../../../../helpers/utils';
-import { Input } from '../../../../UI';
+import { Button, Input } from '../../../../UI';
 import { RECOVERY_TABS_IDS } from '../../constants/recovery.constants';
 
 const { EMAIL, PHONE } = RECOVERY_TABS_IDS;
@@ -41,9 +41,9 @@ const RecoveryStart = ({ changeTab, setUserInfo }) => {
         </div>
       </div>
       <div className="popup-forgot__submit">
-        <button className="popup__btn">
+        <Button>
           Reset
-        </button>
+        </Button>
       </div>
     </form>
   );
