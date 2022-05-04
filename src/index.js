@@ -2,12 +2,11 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
 import App from './template/App';
-import { store, persistor } from './redux/store';
+import { store } from './redux/store';
 import * as serviceWorker from './serviceWorker';
 import './assets/styles/index.scss';
-import LanguageProvider from './context/LanguageProvider';
+import TranslationProvider from './context/TranslationProvider';
 import { setupAxios } from './api/axios';
 
 setupAxios();
@@ -15,17 +14,13 @@ setupAxios();
 const root = createRoot(document.getElementById('root'));
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <LanguageProvider>
-            <App />
-          </LanguageProvider>
-        </PersistGate>
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <TranslationProvider>
+        <App />
+      </TranslationProvider>
+    </Provider>
+  </BrowserRouter>,
 );
 
 // If you want your app to work offline and load faster, you can change
