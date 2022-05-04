@@ -5,8 +5,8 @@ const initialState = {
   activeLanguage: 'EN',
 };
 
-export const configsSlice = createSlice({
-  name: 'configs',
+export const appConfigsSlice = createSlice({
+  name: 'appConfigs',
   initialState,
   reducers: {
     toggleBurger: (state, { payload }) => { state.isBurgerActive = payload; },
@@ -16,10 +16,10 @@ export const configsSlice = createSlice({
 });
 
 // ACTIONS
-export const { toggleBurger, toggleLanguage, resetConfigsSlice } = configsSlice.actions;
+export const { toggleBurger, toggleLanguage, resetConfigsSlice } = appConfigsSlice.actions;
 
 // SELECTORS
-export const selectIsBurgerActive = state => state.configs.isBurgerActive;
-export const selectActiveLanguage = state => state.configs.activeLanguage;
+export const selectIsBurgerActive = state => state.appConfigs.isBurgerActive;
+export const selectActiveLanguage = state => state.appConfigs.activeLanguage;
 
-export default configsSlice.reducer;
+export default appConfigsSlice.reducer;
