@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import MyBetsHistoryItemInfo from '../MyBetsHistory/components/MyBetsHistoryItemInfo/MyBetsHistoryItemInfo';
 import BetHistoryList from '../MyBetsHistory/components/BetHistoryList/BetHistoryList';
+import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
 
 const items = [
   {
@@ -14,9 +15,7 @@ const items = [
 const CouponCheck = ({ goBack, configs }) => {
   const [ isChecked, setIsChecked ] = useState(null);
   const [ ticket, setTicket ] = useState(null);
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   return (
     <>

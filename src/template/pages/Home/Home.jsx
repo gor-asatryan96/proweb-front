@@ -7,11 +7,10 @@ import img4 from '../../assets/images/games/1.jpg';
 import img5 from '../../assets/images/games/2.jpg';
 import img6 from '../../assets/images/casino-game/1.jpg';
 import bannerIcon from '../../assets/images/games/9.jpg';
+import { MEDIA_QUERIES } from '../../../constants/mediaQuery.constants';
 
 const Home = () => {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
   return (
     <section className="live-casino">
       <div className="container">
@@ -816,7 +815,7 @@ const Home = () => {
                       <div className="img-container">
                         <img src={img4} alt="Casino game" />
                       </div>
-                      <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="">
+                      <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="/">
                         <div className="img-container">
                           <svg>
                             <use xlinkHref="#star" />
@@ -828,10 +827,10 @@ const Home = () => {
                           BOOK OF DEAD
                         </div>
                         <div className="casino-game__visit">
-                          <a className="casino-game__btn casino-game__now" href="#">
+                          <a className="casino-game__btn casino-game__now" href="/">
                             PLAY NOW
                           </a>
-                          <a className="casino-game__btn casino-game__practise" href="#">
+                          <a className="casino-game__btn casino-game__practise" href="/">
                             PRACTICE
                           </a>
                         </div>
@@ -846,7 +845,7 @@ const Home = () => {
                       <div className="img-container">
                         <img src={img5} alt="Casino game" />
                       </div>
-                      <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="">
+                      <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="/">
                         <div className="img-container">
                           <svg>
                             <use xlinkHref="#star" />
@@ -858,10 +857,10 @@ const Home = () => {
                           BOOK OF DEAD
                         </div>
                         <div className="casino-game__visit">
-                          <a className="casino-game__btn casino-game__now" href="">
+                          <a className="casino-game__btn casino-game__now" href="/">
                             PLAY NOW
                           </a>
-                          <a className="casino-game__btn casino-game__practise" href="">
+                          <a className="casino-game__btn casino-game__practise" href="/">
                             PRACTICE
                           </a>
                         </div>
@@ -876,7 +875,7 @@ const Home = () => {
                       <div className="img-container">
                         <img src={img4} alt="Casino game" />
                       </div>
-                      <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="">
+                      <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="/">
                         <div className="img-container">
                           <svg>
                             <use xlinkHref="#star" />
@@ -888,10 +887,10 @@ const Home = () => {
                           BOOK OF DEAD
                         </div>
                         <div className="casino-game__visit">
-                          <a className="casino-game__btn casino-game__now" href="#">
+                          <a className="casino-game__btn casino-game__now" href="/">
                             PLAY NOW
                           </a>
-                          <a className="casino-game__btn casino-game__practise" href="#">
+                          <a className="casino-game__btn casino-game__practise" href="/">
                             PRACTICE
                           </a>
                         </div>
@@ -906,7 +905,7 @@ const Home = () => {
                       <div className="img-container">
                         <img src={img5} alt="Casino game" />
                       </div>
-                      <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="">
+                      <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="/">
                         <div className="img-container">
                           <svg>
                             <use xlinkHref="#star" />
@@ -918,10 +917,10 @@ const Home = () => {
                           BOOK OF DEAD
                         </div>
                         <div className="casino-game__visit">
-                          <a className="casino-game__btn casino-game__now" href="">
+                          <a className="casino-game__btn casino-game__now" href="/">
                             PLAY NOW
                           </a>
-                          <a className="casino-game__btn casino-game__practise" href="">
+                          <a className="casino-game__btn casino-game__practise" href="/">
                             PRACTICE
                           </a>
                         </div>
@@ -961,7 +960,7 @@ const Home = () => {
                     <div className="img-container">
                       <img src={img6} alt="Casino game" />
                     </div>
-                    <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="">
+                    <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="/">
                       <div className="img-container">
                         <svg>
                           <use xlinkHref="#star" />
@@ -973,10 +972,10 @@ const Home = () => {
                         BOOK OF DEAD
                       </div>
                       <div className="casino-game__visit">
-                        <a className="casino-game__btn casino-game__now" href="#">
+                        <a className="casino-game__btn casino-game__now" href="/">
                           PLAY NOW
                         </a>
-                        <a className="casino-game__btn casino-game__practise" href="#">
+                        <a className="casino-game__btn casino-game__practise" href="/">
                           PRACTICE
                         </a>
                       </div>
@@ -991,7 +990,7 @@ const Home = () => {
                     <div className="img-container">
                       <img src={img6} alt="Casino game" />
                     </div>
-                    <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="">
+                    <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="/">
                       <div className="img-container">
                         <svg>
                           <use xlinkHref="#star" />
@@ -1003,10 +1002,10 @@ const Home = () => {
                         BOOK OF DEAD
                       </div>
                       <div className="casino-game__visit">
-                        <a className="casino-game__btn casino-game__now" href="#">
+                        <a className="casino-game__btn casino-game__now" href="/">
                           PLAY NOW
                         </a>
-                        <a className="casino-game__btn casino-game__practise" href="#">
+                        <a className="casino-game__btn casino-game__practise" href="/">
                           PRACTICE
                         </a>
                       </div>
@@ -1021,7 +1020,7 @@ const Home = () => {
                     <div className="img-container">
                       <img src={img6} alt="Casino game" />
                     </div>
-                    <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="">
+                    <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="/">
                       <div className="img-container">
                         <svg>
                           <use xlinkHref="#star" />
@@ -1033,10 +1032,10 @@ const Home = () => {
                         BOOK OF DEAD
                       </div>
                       <div className="casino-game__visit">
-                        <a className="casino-game__btn casino-game__now" href="#">
+                        <a className="casino-game__btn casino-game__now" href="/">
                           PLAY NOW
                         </a>
-                        <a className="casino-game__btn casino-game__practise" href="#">
+                        <a className="casino-game__btn casino-game__practise" href="/">
                           PRACTICE
                         </a>
                       </div>
@@ -1051,7 +1050,7 @@ const Home = () => {
                     <div className="img-container">
                       <img src={img6} alt="Casino game" />
                     </div>
-                    <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="">
+                    <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="/">
                       <div className="img-container">
                         <svg>
                           <use xlinkHref="#star" />
@@ -1063,10 +1062,10 @@ const Home = () => {
                         BOOK OF DEAD
                       </div>
                       <div className="casino-game__visit">
-                        <a className="casino-game__btn casino-game__now" href="#">
+                        <a className="casino-game__btn casino-game__now" href="/">
                           PLAY NOW
                         </a>
-                        <a className="casino-game__btn casino-game__practise" href="#">
+                        <a className="casino-game__btn casino-game__practise" href="/">
                           PRACTICE
                         </a>
                       </div>
@@ -1081,7 +1080,7 @@ const Home = () => {
                     <div className="img-container">
                       <img src={img6} alt="Casino game" />
                     </div>
-                    <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="">
+                    <a className="bet-rate__nav__link bet-rate__nav__link--favorite" href="/">
                       <div className="img-container">
                         <svg>
                           <use xlinkHref="#star" />
@@ -1093,10 +1092,10 @@ const Home = () => {
                         BOOK OF DEAD
                       </div>
                       <div className="casino-game__visit">
-                        <a className="casino-game__btn casino-game__now" href="#">
+                        <a className="casino-game__btn casino-game__now" href="/">
                           PLAY NOW
                         </a>
-                        <a className="casino-game__btn casino-game__practise" href="#">
+                        <a className="casino-game__btn casino-game__practise" href="/">
                           PRACTICE
                         </a>
                       </div>

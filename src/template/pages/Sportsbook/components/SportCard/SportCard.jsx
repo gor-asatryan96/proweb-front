@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { addBet, removeBet, selectBetsIds } from '../../../../../redux/slices/betslip.slice';
 import SportCardBet from './components/SportCardBet/SportCardBet';
-import { toggleFavoriteItem } from '../../../../../redux/slices/favorites.slice';
-import { FAVORITES_TYPES } from '../../constants/sport.constants';
+import { MEDIA_QUERIES } from '../../../../../constants/mediaQuery.constants';
 
 const SportCard = ({
   data, live,
@@ -13,11 +12,6 @@ const SportCard = ({
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const betsIds = useSelector(selectBetsIds);
-
-  const addToFavorites = (e, id) => {
-    e.stopPropagation();
-    dispatch(toggleFavoriteItem({ id, type: FAVORITES_TYPES.GAME }));
-  };
 
   const onItemClick = () => {
     navigate(String(data.id));
@@ -33,9 +27,7 @@ const SportCard = ({
     }
   };
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   return (
     <li onClick={onItemClick} className="bet-rate__item">

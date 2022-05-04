@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
 import WithdrawDepositMenu from './components/WithdrawDepositMenu/WithdrawDepositMenu';
 import { DEPOSIT_MOBILE_COMPONENTS, DEPOSIT_DESKTOP_COMPONENTS, WITHDRAW_DEPOSIT_ITEMS } from './configs/withdrawDeposit.configs';
 
@@ -8,9 +9,7 @@ const depositKeys = Object.keys(WITHDRAW_DEPOSIT_ITEMS);
 const Deposit = ({ goBack, configs }) => {
   const [ activeItem, setActiveItem ] = useState(null);
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   const ActiveMobileComponent = DEPOSIT_MOBILE_COMPONENTS[activeItem?.type];
 

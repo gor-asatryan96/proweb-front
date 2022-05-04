@@ -3,9 +3,10 @@ import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import Flag from '../../../../components/Flag/Flag';
+import { MEDIA_QUERIES } from '../../../../constants/mediaQuery.constants';
 import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 
-import { selectActiveLanguage, toggleLanguage } from '../../../../redux/slices/configs.slice';
+import { selectActiveLanguage, toggleLanguage } from '../../../../redux/slices/appConfigs.slice';
 import LanguageItem from './components/LanguageItem';
 import { LANGUAGES_LIST } from './constants/language.constants';
 
@@ -16,9 +17,7 @@ const LanguageSwitcher = () => {
 
   const dropdownRef = useRef(null);
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   const onLanguageClick = (lang) => {
     dispatch(toggleLanguage(lang));

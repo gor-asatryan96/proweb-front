@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import classNames from 'classnames';
-import { toggleBurger } from '../../../../redux/slices/configs.slice';
+import { toggleBurger } from '../../../../redux/slices/appConfigs.slice';
 
 import { openPopup } from '../../../../redux/slices/popups.slice';
 import {
@@ -14,9 +14,10 @@ import RowSkeleton from '../../Skeletons/RowSkeleton/RowSkeleton';
 import SearchPanel from '../SearchPanel/SearchPanel';
 import { selectFavorites } from '../../../../redux/slices/favorites.slice';
 import { selectGifts } from '../../../../redux/slices/gifts.slice';
+import { MEDIA_QUERIES } from '../../../../constants/mediaQuery.constants';
 
 const {
-  LOGIN, REGISTER, USER_PROFILE, FAVOURITES, GIFTS, CONGRATULATIONS, ERROR, INFO_RULES, RECOVERY,
+  LOGIN, REGISTER, USER_PROFILE, FAVOURITES, GIFTS,
 } = POPUPS_IDS;
 
 const Header = () => {
@@ -33,9 +34,7 @@ const Header = () => {
     dispatch(openPopup({ id }));
   };
   const openBurger = () => dispatch(toggleBurger(true));
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   return (
     <header className="header">
@@ -86,7 +85,7 @@ const Header = () => {
                 <a className="config__link" href="#">
                   <div className="img-container">
                     <div className="config__content">
-                      <svg className="config__img config__img--comment" width="1.625ren" height="1.5rem" fill="#5f6c79" stroke="#5f6c79">
+                      <svg className="config__img config__img--comment" width="1.625rem" height="1.5rem" fill="#5f6c79" stroke="#5f6c79">
                         <use xlinkHref="#chat-2" />
                       </svg>
                     </div>

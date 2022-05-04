@@ -12,6 +12,7 @@ import UserProfileMain from './components/UserProfileMain/UserProfileMain';
 import { USER_PROFILE_TABS } from './configs/userProfile.configs';
 import UserProfileHeader from './components/UserProfileHeader/UserProfileHeader';
 import { USER_PROFILE_TABS_NAMES } from './constants/userProfile.constants';
+import { MEDIA_QUERIES } from '../../../../constants/mediaQuery.constants';
 
 const { USER_PROFILE } = POPUPS_IDS;
 
@@ -22,9 +23,7 @@ const UserConfigPopup = () => {
 
   const [ activeTab, setActiveTab ] = useState(popupProps?.tab);
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   const activeTabConfigs = useMemo(() => (
     activeTab ? USER_PROFILE_TABS[activeTab] : null

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
 import WithdrawDepositMenu from './components/WithdrawDepositMenu/WithdrawDepositMenu';
 import { WITHDRAW_COMPONENTS, WITHDRAW_DEPOSIT_ITEMS } from './configs/withdrawDeposit.configs';
 
@@ -8,9 +9,7 @@ const withdrawDepositKeys = Object.keys(WITHDRAW_DEPOSIT_ITEMS);
 const Withdraw = ({ goBack, configs }) => {
   const [ activeItem, setActiveItem ] = useState(null);
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   const ActiveComponent = WITHDRAW_COMPONENTS[activeItem?.type];
 

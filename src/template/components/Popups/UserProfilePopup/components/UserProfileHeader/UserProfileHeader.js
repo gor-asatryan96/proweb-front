@@ -5,15 +5,14 @@ import classNames from 'classnames';
 import { USER_PROFILE_TABS } from '../../configs/userProfile.configs';
 import { fixedTo2 } from '../../../../../../helpers/utils';
 import { selectUserBalance, selectUserCurrency } from '../../../../../../redux/slices/user.slice';
+import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
 
 const UserProfileHeader = ({
   userId, onClose, setActiveTab, activeTab,
 }) => {
   const balance = useSelector(selectUserBalance);
   const currency = useSelector(selectUserCurrency);
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   return (
     <>

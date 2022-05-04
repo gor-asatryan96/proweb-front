@@ -5,6 +5,7 @@ import gameImage from '../../assets/images/games/1.jpg';
 import GameItem from './components/GameItem/GameItem';
 
 import bannerIcon from '../../assets/images/games/9.jpg';
+import { MEDIA_QUERIES } from '../../../constants/mediaQuery.constants';
 
 const gameItems = [
   {
@@ -23,9 +24,8 @@ const gameItems = [
 ];
 
 const Games = () => {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
+
   return (
     <section className="live-casino casino-kind">
       <div className="container">

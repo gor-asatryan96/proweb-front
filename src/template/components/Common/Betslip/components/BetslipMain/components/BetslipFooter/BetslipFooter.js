@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { betslipTab, removeBet } from '../../../../../../../../redux/slices/betslip.slice';
 import { BET_SLIP_HEADER_NAV } from '../../../../constants/betslip.constants';
+import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
 
 const BetslipFooter = () => {
   const [ betAmount, setBetAmount ] = useState('');
@@ -18,9 +19,7 @@ const BetslipFooter = () => {
     setBetAmount(e.target.value);
   };
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   return (
     <div className="bet-item__panel">

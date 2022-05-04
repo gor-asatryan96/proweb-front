@@ -1,9 +1,8 @@
 import { useMediaQuery } from 'react-responsive';
+import { MEDIA_QUERIES } from '../../../constants/mediaQuery.constants';
 
 const DailyExpress = () => {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
   return (
     <section className="content-section">
       {!isDesktop && (

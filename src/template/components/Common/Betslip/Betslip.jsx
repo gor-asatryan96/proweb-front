@@ -7,6 +7,7 @@ import { selectBets } from '../../../../redux/slices/betslip.slice';
 import { BETSLIP_TABS } from './constants/betslip.constants';
 import BetslipArrow from './components/BetslipArrow';
 import { BETSLIP_CONFIGS } from './configs/betslip.configs';
+import { MEDIA_QUERIES } from '../../../../constants/mediaQuery.constants';
 
 const { BETSLIP, MY_BETS } = BETSLIP_TABS;
 
@@ -17,9 +18,7 @@ const Betslip = () => {
 
   const betsIds = Object.keys(bets);
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   const ActiveComponent = BETSLIP_CONFIGS[activeTab].Component;
 

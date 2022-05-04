@@ -1,10 +1,9 @@
 import { useMediaQuery } from 'react-responsive';
+import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
 import MyBetsHistoryMenuItem from '../MyBetsHistoryMenu/components/MyBetsHistoryMenuItem/MyBetsHistoryMenuItem';
 
 const BetHistoryList = ({ bets = [], setActiveHistory = () => {} }) => {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   return (
     <>

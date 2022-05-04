@@ -1,14 +1,14 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { MEDIA_QUERIES } from '../../../../../constants/mediaQuery.constants';
 import { SPORT_TABS, LIVE_TABS } from '../../constants/sport.constants';
 
 const SportHeader = ({
   isFilterOpen, setIsFilterOpen, filterSelected, activeTab, setActiveTab, live,
 }) => {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
+
   return (
     <div className="bet-filter">
       <ul className="bet-filter__list">

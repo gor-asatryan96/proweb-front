@@ -1,16 +1,11 @@
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
-import { useMediaQuery } from 'react-responsive';
 import { BET_SLIP_HEADER_NAV } from '../../../../constants/betslip.constants';
-import BetslipArrow from '../../../BetslipArrow';
 import { betslipTab, changeBetslipNav } from '../../../../../../../../redux/slices/betslip.slice';
 
-const BetslipNav = ({ closeBetslip, isBetslipOpen }) => {
+const BetslipNav = () => {
   const currentTab = useSelector(betslipTab);
   const dispatch = useDispatch();
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
 
   return (
     (

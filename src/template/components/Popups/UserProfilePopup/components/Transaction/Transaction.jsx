@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
 import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import TransactionItem from './components/TransactionItem/TransactionItem';
 import { TRANSACTION_HEADERS, TRANSACTION_MOBILE_HEADERS } from './constants/transaction.constants';
@@ -91,9 +92,7 @@ const Transaction = ({ goBack, configs }) => {
       setOpenTransactions(prev => [ ...prev, id ]);
     }
   };
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   const headers = Object.values(isDesktop ? TRANSACTION_HEADERS : TRANSACTION_MOBILE_HEADERS);
 

@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { GENDER_TYPES } from '../../../../../../../../constants/gender.constants';
+import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
 import { selectUser } from '../../../../../../../../redux/slices/user.slice';
 
 const MyProfileInfo = () => {
@@ -20,9 +21,7 @@ const MyProfileInfo = () => {
     console.log('MyProfileInfo', data);
   };
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="profile__form">

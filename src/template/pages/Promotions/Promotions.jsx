@@ -1,12 +1,12 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { MEDIA_QUERIES } from '../../../constants/mediaQuery.constants';
 import promotionImg from '../../assets/images/banners/15.jpg';
 import Advertising from '../../components/Common/Advertising/Advertising';
 
 const Promotions = () => {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
+
   return (
     <section className="promotion">
       <div className="promotion-container container">

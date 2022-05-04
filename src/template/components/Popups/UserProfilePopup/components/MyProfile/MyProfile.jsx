@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
+import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
 import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import MyProfileInfo from './components/MyProfileInfo/MyProfileInfo';
 import MyProfilePassword from './components/MyProfilePassword/MyProfilePassword';
@@ -7,9 +8,7 @@ import MyProfilePassword from './components/MyProfilePassword/MyProfilePassword'
 const MyProfile = ({ goBack, configs }) => {
   const email = useSelector(state => state.user.email);
   const number = useSelector(state => state.user.number);
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   return (
     <>
@@ -79,7 +78,7 @@ const MyProfile = ({ goBack, configs }) => {
                     </div>
                   </div>
                   <div className="popup-profile__form-exit">
-                    <a className="popup-profile__form-logout" href="">
+                    <a className="popup-profile__form-logout" href="/">
                       Logout
                     </a>
                   </div>

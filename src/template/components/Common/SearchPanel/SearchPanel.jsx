@@ -1,7 +1,7 @@
-import { useTranslation } from '../../../../context/LanguageProvider';
+import { useTranslation } from '../../../../context/TranslationProvider';
 
 const SearchPanel = () => {
-  const t = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="search">

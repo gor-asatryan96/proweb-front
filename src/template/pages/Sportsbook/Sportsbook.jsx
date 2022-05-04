@@ -8,15 +8,14 @@ import SportMenu from './components/SportMenu/SportMenu';
 import Sport from './components/Sport/Sport';
 import Live from './components/Live/Live';
 import { selectBetsIds } from '../../../redux/slices/betslip.slice';
+import { MEDIA_QUERIES } from '../../../constants/mediaQuery.constants';
 
 const Sportsbook = ({ live }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const betsIds = useSelector(selectBetsIds);
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   useEffect(() => {
     if (isDesktop && !id) {

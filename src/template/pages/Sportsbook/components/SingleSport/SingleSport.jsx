@@ -7,6 +7,7 @@ import SingleSportBets from './components/SingleSportBets/SingleSportBets';
 import { LIVE_PANEL_TABS_CONFIGS } from './configs/singleSport.configs';
 import SpainIcon from '../../../../assets/images/flag/spain.svg';
 import FilterButton from '../SportFilters/components/FilterButton/FilterButton';
+import { MEDIA_QUERIES } from '../../../../../constants/mediaQuery.constants';
 
 const livePanelTabs = Object.keys(LIVE_PANEL_TABS_CONFIGS);
 const typeFilters = [ 'All', 'Match Result', 'Handicap', 'Total', 'Over/Under', 'Goals', 'Double Bets', 'Half', 'Minutes', 'Specials' ];
@@ -21,9 +22,7 @@ const SingleSport = ({ live }) => {
   };
 
   const activePanelTabConfigs = LIVE_PANEL_TABS_CONFIGS[activePanelTab];
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   return (
     <section className="bet bet-game">
