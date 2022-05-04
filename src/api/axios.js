@@ -8,7 +8,7 @@ export function setupAxios() {
       const { url, method } = req;
 
       if (!req.baseURL) {
-        req.baseURL = `${process.env.REACT_APP_API_URL}/api`;
+        req.baseURL = `${process.env.REACT_APP_API_URL}/${process.env.REACT_APP_API_VERSION}`;
       }
 
       if (method.toLowerCase() === 'get') {
@@ -34,7 +34,7 @@ export function setupAxios() {
       if (method.toLowerCase() === 'get') {
         cancels.delete(`${method}:${url}`);
       }
-      return response.data;
+      return response.data.data;
     },
     (error) => {
       if (axios.isCancel(error)) {
