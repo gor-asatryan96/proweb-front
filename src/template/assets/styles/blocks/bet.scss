@@ -861,7 +861,7 @@
 
 .bet-match__flag {
   position: relative;
-  width: 1.785rem;
+  width: 1.85rem;
   flex-shrink: 0;
 
   margin-right: 0.428rem;
@@ -1323,6 +1323,8 @@
   padding-bottom: 0.5rem;
   padding-left: 0.714rem;
 
+  margin-bottom: 0.857rem;
+
   border: none;
   background-color: var(--pmbet-white-5);
   border-radius: 0.214rem;
@@ -1396,7 +1398,7 @@
   position: relative;
 
   padding-top: 0.928rem;
-  padding-bottom: 0.714rem;
+  // padding-bottom: 0.714rem;
 }
 
 .bet-ratio__extra__item::after {
@@ -1432,6 +1434,7 @@
 .bet-ratio__extra__row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .bet-ratio__extra__row:not(:last-child) {
@@ -1455,6 +1458,8 @@
   padding-right: 0.714rem;
   padding-bottom: 0.5rem;
   padding-left: 0.714rem;
+
+  margin-bottom: 0.857rem;
 
   width: calc(50% - 0.428rem);
   flex-shrink: 0;

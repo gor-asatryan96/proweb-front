@@ -37,5 +37,6 @@ export const {
 export const selectBets = state => state.betslip.bets;
 export const betslipTab = state => state.betslip.currentTab;
 export const selectBetsIds = state => Object.keys(state.betslip.bets);
+export const selectIsBetExist = state => !!Object.keys(state.betslip.bets).length;
 
 export default betslipSlice.reducer;

@@ -8,25 +8,24 @@ import Slider from './components/Mobile/Slider/Slider';
 import './assets/styles/template-index.scss';
 import Header from './components/Common/Header/Header';
 import Popups from './components/Popups/Popups';
-import { selectIsBurgerActive } from '../redux/slices/configs.slice';
+import { selectIsBurgerActive } from '../redux/slices/appConfigs.slice';
 import { ALL_ROUTES } from './configs/routes.configs';
 import SearchPanel from './components/Common/SearchPanel/SearchPanel';
 import Betslip from './components/Common/Betslip/Betslip';
-import { useSideEffects } from './hooks/useSideEffects';
+import { useAppSideEffects } from './hooks/app.hooks';
+import { MEDIA_QUERIES } from '../constants/mediaQuery.constants';
 
 const App = () => {
   const { pathname } = useLocation();
 
   const isBurgerActive = useSelector(selectIsBurgerActive);
   const routes = useRoutes(ALL_ROUTES);
-  useSideEffects();
+  useAppSideEffects();
 
   const isSearchActive = [ '/games' ].includes(pathname);
   const isSwiperActive = [ '/sport', '/live', '/games' ].includes(pathname);
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1025px)',
-  });
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   useEffect(() => {
     if (!isDesktop) {

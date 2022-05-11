@@ -1,12 +1,11 @@
 import { useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleBurger } from '../../../../redux/slices/configs.slice';
+import { toggleBurger } from '../../../../redux/slices/appConfigs.slice';
 import { INFO_RULES_CONFIGS } from '../../Common/InfoRules/configs/infoRules.configs';
 import BurgerNav from './components/BurgerNav/BurgerNav';
 
 const BurgerMenu = () => {
   const dispatch = useDispatch();
-  const [ activeNav, setActiveNav ] = useState('Sport');
   const [ activeTab, setActiveTab ] = useState(null);
 
   const activeTabConfigs = useMemo(() => (
