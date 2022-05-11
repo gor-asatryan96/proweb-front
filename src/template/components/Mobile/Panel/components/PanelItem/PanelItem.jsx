@@ -6,7 +6,7 @@ const PanelItem = ({ data }) => {
   const label = data.path.slice(1);
   return (
     <NavLink
-      to={data.path}
+      to={data.to}
       aria-label={label}
       className={({ isActive }) => classNames('panel__item', { 'panel__item--active': isActive })}>
       <div className='panel__link panel__link--sport'>

@@ -51,7 +51,7 @@ const Plus7 = () => {
         <ul className="panel-more__list">
           {PLUS_7_ROUTES.map(route => (
             <li key={route.name} onClick={closeDropdown} className="panel-more__item">
-              <NavLink to={route.path} className="panel-more__link panel-more__link--main">
+              <NavLink to={route.to} className="panel-more__link panel-more__link--main">
                 {route.name}
               </NavLink>
             </li>
