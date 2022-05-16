@@ -69,10 +69,10 @@ export const prematchExtraReducers = (builder) => {
       state.isSportsLoading = false;
     })
     .addCase(getPrematchEventsThunk.pending, (state) => {
-      state.isSportEventsLoading = true;
+      state.isEventsLoading = true;
     })
     .addCase(getPrematchEventsThunk.fulfilled, (state, { payload }) => {
-      state.isSportEventsLoading = false;
+      state.isEventsLoading = false;
       if (payload.competition) {
         const { events, ...activeLeague } = payload.competition;
         state.events = events;
@@ -80,7 +80,7 @@ export const prematchExtraReducers = (builder) => {
       }
     })
     .addCase(getPrematchEventsThunk.rejected, (state, { error }) => {
-      state.isSportEventsLoading = false;
+      state.isEventsLoading = false;
     })
     .addCase(getSinglePrematchThunk.pending, (state) => {
       state.isActiveEventLoading = true;

@@ -28,6 +28,7 @@ export const selectIsPrematchSportsLoading = state => state.prematch.isSportsLoa
 export const selectPrematchSportsList = state => state.prematch.sportsList;
 export const selectPrematchActiveLeague = state => state.prematch.activeLeague;
 export const selectPrematchEvents = state => state.prematch.events;
+export const selectIsPrematchEventsLoading = state => state.prematch.isEventsLoading;
 export const selectPrematchActiveEvent = state => state.prematch.activeEvent;
 
 export default prematchSlice.reducer;
