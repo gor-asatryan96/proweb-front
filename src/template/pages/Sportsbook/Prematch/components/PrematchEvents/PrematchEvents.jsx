@@ -5,17 +5,18 @@ import { SPORT_TABS } from '../../constants/prematch.constants';
 import PrematchCard from '../PrematchCard/PrematchCard';
 import SportFilters from '../PrematchFilters/PrematchFilters';
 import SportHeader from '../PrematchHeader/PrematchHeader';
-import { selectPrematchEvents } from '../../../../../../redux/slices/prematch.slice';
+import { selectIsPrematchEventsLoading, selectPrematchEvents } from '../../../../../../redux/slices/prematch.slice';
+import PrematchCardSkeleton from '../PrematchCard/PrematchCardSkeleton';
+import { LOADING_ITEMS } from '../../../../../../helpers/utils';
 
 const PrematchEvents = () => {
   const sportEvents = useSelector(selectPrematchEvents);
+  const isEventsLoading = useSelector(selectIsPrematchEventsLoading);
   const [ isFilterOpen, setIsFilterOpen ] = useState(false);
   const [ activeTab, setActiveTab ] = useState(SPORT_TABS.TOPS);
 
-  console.log('sportEvents', sportEvents);
-
   return (
-    <div className="bet__column">
+    <div className={classNames('bet__column', { bet__column_loading: isEventsLoading })}>
       <div className={classNames('bet-filter__block', { active: isFilterOpen })}>
         <SportHeader
           isFilterOpen={isFilterOpen}
@@ -26,9 +27,12 @@ const PrematchEvents = () => {
       </div>
       <div className="bet-rate">
         <ul className="bet-rate__list">
-          {sportEvents.map(event => <PrematchCard
-            key={event.eventId}
-            event={event} />)}
+          {/* <PrematchCardSkeleton /> */}
+          {isEventsLoading
+            ? LOADING_ITEMS.map((_, i) => <PrematchCardSkeleton key={i} />)
+            : sportEvents.map(event => <PrematchCard
+                key={event.eventId}
+                event={event} />)}
         </ul>
       </div>
       {/* <div className="bet-search">

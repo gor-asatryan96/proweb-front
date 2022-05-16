@@ -18,8 +18,9 @@ const PrematchMenuItem = ({ data, isActive }) => {
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   const onSportClick = () => {
-    // eslint-disable-next-line max-len
-    navigate(`/sport/${replaceSpaces(data.sportName)}/${replaceSpaces(data.countries[0].name)}/${replaceSpaces(data.countries[0].leagues[0].competitionName)}`);
+    if (isActive) return;
+    navigate(`/sport/${replaceSpaces(data.sportName)}/${replaceSpaces(data.countries[0].name)}/${
+      replaceSpaces(data.countries[0].leagues[0].competitionName)}`);
     dispatch(setPrematchActiveSport(data.sportId));
   };
 

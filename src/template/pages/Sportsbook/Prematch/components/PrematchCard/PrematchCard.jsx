@@ -25,7 +25,7 @@ const PrematchCard = ({
   const prices = event.collections[0]?.markets[0]?.prices || [];
 
   const onItemClick = () => {
-    navigate(`/sport/${sportName}/${country}/${league}/${replaceSpaces(event.eventName)}_${event.eventId}`);
+    navigate(`/sport/${sportName}/${country}/${league}/${replaceSpaces(event.eventName)}-${event.eventId}`);
   };
 
   const onBetClick = (e, bet, isActive) => {

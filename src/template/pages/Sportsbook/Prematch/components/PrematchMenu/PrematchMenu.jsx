@@ -1,14 +1,13 @@
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
-import { LOADING_ITEMS } from '../../../../../../helpers/utils';
-import {
-  selectPrematchActiveSport, selectIsPrematchSportsLoading, selectPrematchSportsList,
-} from '../../../../../../redux/slices/prematch.slice';
+import { LOADING_ITEMS, replaceUnderscores } from '../../../../../../helpers/utils';
+import { selectIsPrematchSportsLoading, selectPrematchSportsList } from '../../../../../../redux/slices/prematch.slice';
+import { usePrematchParams } from '../../hooks/prematch.hooks';
 import PrematchMenuItem from './components/PrematchMenuItem/PrematchMenuItem';
 import PrematchMenuItemSkeleton from './components/PrematchMenuItem/PrematchMenuItemSkeleton';
 
 const PrematchMenu = () => {
-  const activeSport = useSelector(selectPrematchActiveSport);
+  const sportName = replaceUnderscores(usePrematchParams().sportName);
   const sportsList = useSelector(selectPrematchSportsList);
   const isSportsLoading = useSelector(selectIsPrematchSportsLoading);
 
@@ -23,7 +22,7 @@ const PrematchMenu = () => {
             <PrematchMenuItem
               key={sport.id}
               data={sport}
-              isActive={+activeSport === sport.sportId}
+              isActive={sportName === sport.sportName}
             />
           ))
         }
