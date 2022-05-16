@@ -3,7 +3,7 @@ import { clearTokenFromStorage } from '../../helpers/api';
 import { authExtraReducers } from '../thunks/auth.thunk';
 import { userInfoExtraReducers } from '../thunks/user.thunk';
 
-const initialState = {
+export const initialUserState = {
   isConnected: false,
   isAuth: false,
   isLoading: false,
@@ -11,14 +11,14 @@ const initialState = {
 };
 
 export const userSlice = createSlice({
-  name: 'userInfo',
-  initialState,
+  name: 'user',
+  initialState: initialUserState,
   reducers: {
     setIsConnected: (state) => { state.isConnected = true; },
     resetUser: () => {
       clearTokenFromStorage();
       return {
-        ...initialState,
+        ...initialUserState,
         isConnected: true,
       };
     },

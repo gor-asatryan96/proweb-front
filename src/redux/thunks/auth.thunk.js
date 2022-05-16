@@ -1,26 +1,44 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { FAKE_USER, promise } from '../../fakeData';
+import axios from 'axios';
 import { clearTokenFromStorage, getErrorMessage } from '../../helpers/api';
 import { POPUPS_IDS } from '../../template/components/Popups/constants/popups.constants';
 import { closePopup } from '../slices/popups.slice';
+import { resetUser } from '../slices/user.slice';
 
+// THUNKS ************
 export const loginThunk = createAsyncThunk(
-  'userInfo/login',
-  async ({ name, password, isRemember }, { dispatch }) => {
-    // const response = await axios.post('/user/login', { name, password });
-    const response = await promise(FAKE_USER);
+  'user/login',
+  async ({ login, password, isRemember }, { dispatch }) => {
+    const response = await axios.post('/auth/sign-in', { login, password });
     const storage = isRemember ? localStorage : sessionStorage;
-    storage.setItem('token', response.token);
+    storage.setItem('token', response['user_token']);
     dispatch(closePopup(POPUPS_IDS.LOGIN));
     return response;
   },
 );
 
-const loginThunkPending = (state) => {
-  state.isLoading = true;
-  state.error = null;
-};
+export const getUserByTokenThunk = createAsyncThunk(
+  'user/getUserByToken',
+  async (user_token) => {
+    const response = await axios.get('/auth/me', {
+      headers: { 'x-auth-token': user_token },
+    });
+    return { ...response, user_token };
+  },
+);
 
+export const logoutThunk = createAsyncThunk(
+  'user/logout',
+  async (_, { dispatch, getState }) => {
+    const token = getState().user['user_token'];
+    dispatch(resetUser());
+    dispatch(closePopup(POPUPS_IDS.USER_PROFILE));
+    const response = await axios.post('/auth/sign-out', null, { headers: { 'x-auth-token': token }});
+    return response;
+  },
+);
+
+// THUNK HANDLERS ****************
 const loginThunkFulfilled = (_, { payload }) => ({
   isConnected: true,
   isAuth: true,
@@ -29,29 +47,21 @@ const loginThunkFulfilled = (_, { payload }) => ({
   ...payload,
 });
 
-const loginThunkRejected = (state, { error }) => {
-  state.isLoading = false;
-  state.error = getErrorMessage(error.message);
-};
-
-export const getUserByTokenThunk = createAsyncThunk(
-  'userInfo/getUserByToken',
-  async ({ token }) => {
-    // const response = await axios.post('/user/login', { name, password });
-    const response = await promise(FAKE_USER);
-    return response;
-  },
-);
-
-const getUserByTokenThunkRejected = () => {
-  clearTokenFromStorage();
-};
-
+// EXTRA REDUCER ****************
 export const authExtraReducers = (builder) => {
   builder
-    .addCase(loginThunk.pending, loginThunkPending)
+    .addCase(loginThunk.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    })
     .addCase(loginThunk.fulfilled, loginThunkFulfilled)
-    .addCase(loginThunk.rejected, loginThunkRejected)
+    .addCase(loginThunk.rejected, (state, { error }) => {
+      state.isLoading = false;
+      state.error = getErrorMessage(error.message);
+    })
     .addCase(getUserByTokenThunk.fulfilled, loginThunkFulfilled)
-    .addCase(getUserByTokenThunk.rejected, getUserByTokenThunkRejected);
+    .addCase(getUserByTokenThunk.rejected, (state) => {
+      state.isConnected = true;
+      clearTokenFromStorage();
+    });
 };

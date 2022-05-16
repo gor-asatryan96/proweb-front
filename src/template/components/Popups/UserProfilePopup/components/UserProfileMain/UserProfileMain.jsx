@@ -1,10 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { fixedTo2 } from '../../../../../../helpers/utils';
-import { closePopup } from '../../../../../../redux/slices/popups.slice';
-import {
-  resetUser, selectUserBalance, selectUserCurrency, selectUserUnits,
-} from '../../../../../../redux/slices/user.slice';
-import { POPUPS_IDS } from '../../../constants/popups.constants';
+import { selectUserBalance, selectUserCurrency, selectUserUnits } from '../../../../../../redux/slices/user.slice';
+import { logoutThunk } from '../../../../../../redux/thunks/auth.thunk';
 import { USER_PROFILE_TABS } from '../../configs/userProfile.configs';
 import { USER_PROFILE_TABS_NAMES } from '../../constants/userProfile.constants';
 
@@ -19,8 +16,7 @@ const UserProfileMain = ({ setActiveTab }) => {
   const units = useSelector(selectUserUnits);
 
   const onLogoutClick = () => {
-    dispatch(resetUser());
-    dispatch(closePopup(POPUPS_IDS.USER_PROFILE));
+    dispatch(logoutThunk());
   };
 
   return (

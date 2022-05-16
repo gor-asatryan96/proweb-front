@@ -20,9 +20,9 @@ export function replaceAll(str, from, to) {
 }
 
 export function replaceSpaces(str) {
-  return replaceAll(str, ' ', '_');
+  return replaceAll(str, ' ', '-');
 }
 
 export function replaceUnderscores(str) {
-  return replaceAll(str, '_', ' ');
+  return replaceAll(str, '-', ' ');
 }

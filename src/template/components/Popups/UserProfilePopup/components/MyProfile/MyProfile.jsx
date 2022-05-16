@@ -1,23 +1,29 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
+import { logoutThunk } from '../../../../../../redux/thunks/auth.thunk';
 import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import MyProfileInfo from './components/MyProfileInfo/MyProfileInfo';
 import MyProfilePassword from './components/MyProfilePassword/MyProfilePassword';
 
 const MyProfile = ({ goBack, configs }) => {
+  const dispatch = useDispatch();
   const email = useSelector(state => state.user.email);
   const number = useSelector(state => state.user.number);
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
+  const onLogoutClick = () => {
+    dispatch(logoutThunk());
+  };
+
   return (
     <>
       {
-                !configs.isDesktop && <GoBackHeader
-                  title={configs.name}
-                  goBack={goBack}
-                  icon={configs.icon} />
-            }
+      !configs.isDesktop && <GoBackHeader
+        title={configs.name}
+        goBack={goBack}
+        icon={configs.icon} />
+      }
       <div className="menu-inner">
         {/* <!-- TODO: add className active /checked --> hastat chi */}
         <div className="profile__form">
@@ -78,9 +84,9 @@ const MyProfile = ({ goBack, configs }) => {
                     </div>
                   </div>
                   <div className="popup-profile__form-exit">
-                    <a className="popup-profile__form-logout" href="/">
+                    <button onClick={onLogoutClick} className="popup-profile__form-logout">
                       Logout
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>

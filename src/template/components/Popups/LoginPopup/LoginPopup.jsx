@@ -58,7 +58,7 @@ const LoginPopup = () => {
             <div className="popup__form">
               <div className="popup__line">
                 <Input
-                  controllProps={register('name', { required: 'Username/Email is required' })}
+                  controllProps={register('login', { required: 'Username/Email is required' })}
                   type='text'
                   placeholder='Username/Email'
                   error={errors.name} />

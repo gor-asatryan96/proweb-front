@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { store } from '../redux/store';
 
 export function setupAxios() {
   const cancels = new Map();
@@ -6,9 +7,16 @@ export function setupAxios() {
   axios.interceptors.request.use(
     (req) => {
       const { url, method } = req;
+      const token = store.getState().user['user_token'];
+
+      req.timeout = 10000;
 
       if (!req.baseURL) {
         req.baseURL = `${process.env.REACT_APP_API_URL}/${process.env.REACT_APP_API_VERSION}`;
+      }
+
+      if (token) {
+        req.headers['x-auth-token'] = token;
       }
 
       if (method.toLowerCase() === 'get') {
