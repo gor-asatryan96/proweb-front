@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { prematchExtraReducers } from '../thunks/prematch.thunk';
+import { prematchExtraReducers } from './prematch.thunk';
 
 const initialState = {
   activeSport: null,

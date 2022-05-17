@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Popup } from '../../UI';
 import logo from '../../../assets/images/logo.svg';
-import { closePopup } from '../../../../redux/slices/popups.slice';
+import { closePopup } from '../../../../redux/reducers/popups/popups.slice';
 import { POPUPS_IDS } from '../constants/popups.constants';
 import { RECOVERY_TABS_CONFIGS } from './configs/recovery.configs';
 import { RECOVERY_TABS_IDS } from './constants/recovery.constants';

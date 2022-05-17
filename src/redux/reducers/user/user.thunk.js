@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { getErrorMessage } from '../../helpers/api';
+import { getErrorMessage } from '../../../helpers/api';
 
 export const registerUserThunk = createAsyncThunk(
   'userInfo/registerUser',

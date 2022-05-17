@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { closePopup, openPopup } from '../../../../redux/slices/popups.slice';
+import { closePopup, openPopup } from '../../../../redux/reducers/popups/popups.slice';
 import { Button, Input, Popup } from '../../UI';
 import logo from '../../../assets/images/logo.svg';
 import { POPUPS_IDS } from '../constants/popups.constants';
-import { loginThunk } from '../../../../redux/thunks/auth.thunk';
+import { loginThunk } from '../../../../redux/reducers/user/auth.thunk';
 
 const { LOGIN, REGISTER, RECOVERY } = POPUPS_IDS;
 

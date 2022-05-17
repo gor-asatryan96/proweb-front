@@ -4,8 +4,8 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 
 import { useMediaQuery } from 'react-responsive';
-import { closePopup } from '../../../../redux/slices/popups.slice';
-import { selectUserId } from '../../../../redux/slices/user.slice';
+import { closePopup } from '../../../../redux/reducers/popups/popups.slice';
+import { selectUserId } from '../../../../redux/reducers/user/user.slice';
 import { Popup } from '../../UI';
 import { POPUPS_IDS } from '../constants/popups.constants';
 import UserProfileMain from './components/UserProfileMain/UserProfileMain';

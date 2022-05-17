@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { closePopup } from '../../../../redux/slices/popups.slice';
+import { closePopup } from '../../../../redux/reducers/popups/popups.slice';
 import { INFO_RULES_CONFIGS } from '../../Common/InfoRules/configs/infoRules.configs';
 import { INFO_RULES_TAB_NAMES } from '../../Common/InfoRules/constants/infoRules.constants';
 import { Popup } from '../../UI';

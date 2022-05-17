@@ -5,7 +5,7 @@ import { SPORT_TABS } from '../../constants/prematch.constants';
 import PrematchCard from '../PrematchCard/PrematchCard';
 import SportFilters from '../PrematchFilters/PrematchFilters';
 import SportHeader from '../PrematchHeader/PrematchHeader';
-import { selectIsPrematchEventsLoading, selectPrematchEvents } from '../../../../../../redux/slices/prematch.slice';
+import { selectIsPrematchEventsLoading, selectPrematchEvents } from '../../../../../../redux/reducers/prematch/prematch.slice';
 import PrematchCardSkeleton from '../PrematchCard/PrematchCardSkeleton';
 import { LOADING_ITEMS } from '../../../../../../helpers/utils';
 

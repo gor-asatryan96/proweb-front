@@ -7,7 +7,7 @@ import Advertising from '../../components/Common/Advertising/Advertising';
 import SportMenu from './components/SportMenu/SportMenu';
 import Sport from './components/Sport/Sport';
 import Live from './components/Live/Live';
-import { selectBetsIds } from '../../../redux/slices/betslip.slice';
+import { selectBetsIds } from '../../../redux/reducers/betslip/betslip.slice';
 import { MEDIA_QUERIES } from '../../../constants/mediaQuery.constants';
 
 const Sportsbook = ({ live }) => {

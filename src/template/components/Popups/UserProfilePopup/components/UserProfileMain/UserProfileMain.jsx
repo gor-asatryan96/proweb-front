@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { fixedTo2 } from '../../../../../../helpers/utils';
-import { selectUserBalance, selectUserCurrency, selectUserUnits } from '../../../../../../redux/slices/user.slice';
-import { logoutThunk } from '../../../../../../redux/thunks/auth.thunk';
+// import { selectUserBalance } from '../../../../../../redux/reducers/user/user.slice';
+import { selectUserBalance, selectUserCurrency, selectUserUnits } from '../../../../../../redux/reducers/user/user.slice';
+import { logoutThunk } from '../../../../../../redux/reducers/user/auth.thunk';
 import { USER_PROFILE_TABS } from '../../configs/userProfile.configs';
 import { USER_PROFILE_TABS_NAMES } from '../../constants/userProfile.constants';
 

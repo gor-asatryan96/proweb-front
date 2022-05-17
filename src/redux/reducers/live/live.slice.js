@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { SPORT_IDS } from '../../template/pages/Sportsbook/constants/sport.constants';
+import { SPORT_IDS } from '../../../template/pages/Sportsbook/constants/sport.constants';
 
 const initialState = {
   activeSport: SPORT_IDS.FOOTBALL,

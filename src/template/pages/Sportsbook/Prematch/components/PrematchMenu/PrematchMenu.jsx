@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import { LOADING_ITEMS, replaceUnderscores } from '../../../../../../helpers/utils';
-import { selectIsPrematchSportsLoading, selectPrematchSportsList } from '../../../../../../redux/slices/prematch.slice';
+import { selectIsPrematchSportsLoading, selectPrematchSportsList } from '../../../../../../redux/reducers/prematch/prematch.slice';
 import { usePrematchParams } from '../../hooks/prematch.hooks';
 import PrematchMenuItem from './components/PrematchMenuItem/PrematchMenuItem';
 import PrematchMenuItemSkeleton from './components/PrematchMenuItem/PrematchMenuItemSkeleton';

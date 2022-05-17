@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { betslipTab, removeBet } from '../../../../../../../../redux/slices/betslip.slice';
+import { betslipTab, removeBet } from '../../../../../../../../redux/reducers/betslip/betslip.slice';
 import { BET_SLIP_HEADER_NAV } from '../../../../constants/betslip.constants';
 import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
 

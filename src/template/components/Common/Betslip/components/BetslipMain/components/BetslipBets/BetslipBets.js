@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import BetslipItem from '../../../BetslipItem/BetslipItem';
-import { betslipTab, removeBet, selectBets } from '../../../../../../../../redux/slices/betslip.slice';
+import { betslipTab, removeBet, selectBets } from '../../../../../../../../redux/reducers/betslip/betslip.slice';
 
 const BetslipBets = () => {
   const dispatch = useDispatch();

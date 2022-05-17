@@ -6,10 +6,10 @@ import Advertising from '../../../components/Common/Advertising/Advertising';
 import { usePrematchSideEffects } from './hooks/prematch.hooks';
 import PrematchMenu from './components/PrematchMenu/PrematchMenu';
 import { MEDIA_QUERIES } from '../../../../constants/mediaQuery.constants';
-import { selectIsBetExist } from '../../../../redux/slices/betslip.slice';
+import { selectIsBetExist } from '../../../../redux/reducers/betslip/betslip.slice';
 import PrematchEvents from './components/PrematchEvents/PrematchEvents';
 import SinglePrematch from './components/SinglePrematch/SinglePrematch';
-import { selectPrematchActiveEvent } from '../../../../redux/slices/prematch.slice';
+import { selectPrematchActiveEvent } from '../../../../redux/reducers/prematch/prematch.slice';
 
 const Prematch = () => {
   const isBetExist = useSelector(selectIsBetExist);

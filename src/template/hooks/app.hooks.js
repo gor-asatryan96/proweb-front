@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { openPopup } from '../../redux/slices/popups.slice';
-import { setIsConnected } from '../../redux/slices/user.slice';
-import { getUserByTokenThunk } from '../../redux/thunks/auth.thunk';
-import { messagesThunk } from '../../redux/thunks/messages.thunk';
+import { openPopup } from '../../redux/reducers/popups/popups.slice';
+import { setIsConnected } from '../../redux/reducers/user/user.slice';
+import { getUserByTokenThunk } from '../../redux/reducers/user/auth.thunk';
+import { messagesThunk } from '../../redux/reducers/messages/messages.thunk';
 import { DESTINATION_CONFIGS } from '../components/Popups/configs/destination.configs';
-import { getServerConfigsThunk } from '../../redux/thunks/serverConfigs.thunk';
+import { getServerConfigsThunk } from '../../redux/reducers/serverConfigs/serverConfigs.thunk';
 
 export const useAppSideEffects = () => {
   const dispatch = useDispatch();

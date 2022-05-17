@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 import { FAKE_SPORT_ITEMS } from '../../../../../fakeData';
-import { selectFavorites } from '../../../../../redux/slices/favorites.slice';
+import { selectFavorites } from '../../../../../redux/reducers/favorites/favorites.slice';
 import { FAVORITES_TYPES, SPORT_TABS } from '../../constants/sport.constants';
 
 import SportCard from '../SportCard/SportCard';

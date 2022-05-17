@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { closePopup, openPopup } from '../../../../redux/slices/popups.slice';
+import { closePopup, openPopup } from '../../../../redux/reducers/popups/popups.slice';
 import { GIFTS_ICONS } from '../../../assets/images/gift';
 import { Popup } from '../../UI';
 import { POPUPS_IDS } from '../constants/popups.constants';

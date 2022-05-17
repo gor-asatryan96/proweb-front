@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { formateDate } from '../../../../../../../helpers/date';
 import trash from '../../../../../../assets/images/icon/trash.svg';
-import { deleteMessage } from '../../../../../../../redux/slices/messages.slice';
+import { deleteMessage } from '../../../../../../../redux/reducers/messages/messages.slice';
 
 const MessageItem = ({
   data: {

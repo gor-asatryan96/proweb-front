@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import dayjs from 'dayjs';
-import { formateDate } from '../../helpers/date';
+import { formateDate } from '../../../helpers/date';
 
 const initialState = {
   favoriteItems: {},

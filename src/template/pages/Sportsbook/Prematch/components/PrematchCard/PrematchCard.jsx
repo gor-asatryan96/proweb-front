@@ -2,11 +2,11 @@ import dayjs from 'dayjs';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { addBet, removeBet, selectBetsIds } from '../../../../../../redux/slices/betslip.slice';
+import { addBet, removeBet, selectBetsIds } from '../../../../../../redux/reducers/betslip/betslip.slice';
 import PrematchCardBet from './components/PrematchCardBet/PrematchCardBet';
 import { usePrematchParams } from '../../hooks/prematch.hooks';
 import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
-import { selectPrematchActiveLeague } from '../../../../../../redux/slices/prematch.slice';
+import { selectPrematchActiveLeague } from '../../../../../../redux/reducers/prematch/prematch.slice';
 import { replaceSpaces } from '../../../../../../helpers/utils';
 
 const PrematchCard = ({

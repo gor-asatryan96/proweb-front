@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleBurger } from '../../../../redux/slices/appConfigs.slice';
+import { toggleBurger } from '../../../../redux/reducers/appConfigs/appConfigs.slice';
 import { INFO_RULES_CONFIGS } from '../../Common/InfoRules/configs/infoRules.configs';
 import BurgerNav from './components/BurgerNav/BurgerNav';
 

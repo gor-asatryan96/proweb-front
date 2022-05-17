@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { BET_SLIP_HEADER_NAV } from '../../../../constants/betslip.constants';
-import { betslipTab, changeBetslipNav } from '../../../../../../../../redux/slices/betslip.slice';
+import { betslipTab, changeBetslipNav } from '../../../../../../../../redux/reducers/betslip/betslip.slice';
 
 const BetslipNav = () => {
   const currentTab = useSelector(betslipTab);

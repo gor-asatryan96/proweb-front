@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { addBet, removeBet, selectBetsIds } from '../../../../../redux/slices/betslip.slice';
+import { addBet, removeBet, selectBetsIds } from '../../../../../redux/reducers/betslip/betslip.slice';
 import SportCardBet from './components/SportCardBet/SportCardBet';
 import { MEDIA_QUERIES } from '../../../../../constants/mediaQuery.constants';
 

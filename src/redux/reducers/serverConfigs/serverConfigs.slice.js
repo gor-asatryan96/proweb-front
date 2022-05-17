@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { serverConfigsExtraReducers } from '../thunks/serverConfigs.thunk';
+import { serverConfigsExtraReducers } from './serverConfigs.thunk';
 
 const initialState = {
   isServerConfigsLoading: true,

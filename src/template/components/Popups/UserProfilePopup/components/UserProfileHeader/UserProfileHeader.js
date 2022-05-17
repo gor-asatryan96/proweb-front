@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 import { USER_PROFILE_TABS } from '../../configs/userProfile.configs';
 import { fixedTo2 } from '../../../../../../helpers/utils';
-import { selectUserBalance, selectUserCurrency } from '../../../../../../redux/slices/user.slice';
+import { selectUserBalance, selectUserCurrency } from '../../../../../../redux/reducers/user/user.slice';
 import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
 
 const UserProfileHeader = ({

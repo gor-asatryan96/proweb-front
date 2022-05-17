@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Popup } from '../../UI';
 import RegistersStepNumber from './components/RegisterStepNumber/RegistersStepNumber';
 import logo from '../../../assets/images/logo.svg';
-import { closePopup } from '../../../../redux/slices/popups.slice';
+import { closePopup } from '../../../../redux/reducers/popups/popups.slice';
 import { POPUPS_IDS } from '../constants/popups.constants';
 import { REGISTER_TABS_IDS } from './constants/register.constants';
 import LicenceFooter from '../components/LicenceFooter/LicenceFooter';

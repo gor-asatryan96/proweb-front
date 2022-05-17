@@ -4,8 +4,10 @@ import { useMediaQuery } from 'react-responsive';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { MEDIA_QUERIES } from '../../../../../constants/mediaQuery.constants';
 import { replaceSpaces, replaceUnderscores } from '../../../../../helpers/utils';
-import { resetPrematchSlice, selectPrematchEvents, selectPrematchSportsList } from '../../../../../redux/slices/prematch.slice';
-import { getPrematchEventsThunk, getPrematchSportsListThunk, getSinglePrematchThunk } from '../../../../../redux/thunks/prematch.thunk';
+import { resetPrematchSlice, selectPrematchEvents, selectPrematchSportsList } from '../../../../../redux/reducers/prematch/prematch.slice';
+import {
+  getPrematchEventsThunk, getPrematchSportsListThunk, getSinglePrematchThunk,
+} from '../../../../../redux/reducers/prematch/prematch.thunk';
 
 export const usePrematchParams = () => {
   const params = useParams();

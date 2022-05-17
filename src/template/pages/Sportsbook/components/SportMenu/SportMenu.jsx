@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectPrematchActiveSport, setPrematchActiveSport } from '../../../../../redux/slices/prematch.slice';
+import { selectPrematchActiveSport, setPrematchActiveSport } from '../../../../../redux/reducers/prematch/prematch.slice';
 import { SPORTS_NAMES } from '../../constants/sport.constants';
 import SportMenuItem from './components/SportMenuItem/SportMenuItem';
 

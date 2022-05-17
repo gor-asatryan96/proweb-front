@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectPrematchActiveSport, setPrematchActiveSport } from '../../../../../../../../redux/slices/prematch.slice';
+import { selectPrematchActiveSport, setPrematchActiveSport } from '../../../../../../../../redux/reducers/prematch/prematch.slice';
 import { SPORTS_ICONS } from '../../../../../../../assets/images/sport-kind';
 import { SPORTS_NAMES } from '../../../../../../../pages/Sportsbook/constants/sport.constants';
 import BurgerNavRightItem from './components/BurgerNavRightItem/BurgerNavRightItem';

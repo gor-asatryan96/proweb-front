@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { BET_SLIP_HEADER_NAV } from '../../template/components/Common/Betslip/constants/betslip.constants';
+import { BET_SLIP_HEADER_NAV } from '../../../template/components/Common/Betslip/constants/betslip.constants';
 
 const initialState = {
   bets: {},

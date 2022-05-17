@@ -6,7 +6,7 @@ import Flag from '../../../../components/Flag/Flag';
 import { MEDIA_QUERIES } from '../../../../constants/mediaQuery.constants';
 import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 
-import { selectActiveLanguage, toggleLanguage } from '../../../../redux/slices/appConfigs.slice';
+import { selectActiveLanguage, toggleLanguage } from '../../../../redux/reducers/appConfigs/appConfigs.slice';
 import LanguageItem from './components/LanguageItem';
 import { LANGUAGES_LIST } from './constants/language.constants';
 

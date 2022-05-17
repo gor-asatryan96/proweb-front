@@ -3,17 +3,17 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import classNames from 'classnames';
-import { toggleBurger } from '../../../../redux/slices/appConfigs.slice';
+import { toggleBurger } from '../../../../redux/reducers/appConfigs/appConfigs.slice';
 
-import { openPopup } from '../../../../redux/slices/popups.slice';
+import { openPopup } from '../../../../redux/reducers/popups/popups.slice';
 import {
   selectIsAuth, selectIsConnected, selectUserBalance, selectUserCurrency, selectUserId,
-} from '../../../../redux/slices/user.slice';
+} from '../../../../redux/reducers/user/user.slice';
 import { POPUPS_IDS } from '../../Popups/constants/popups.constants';
 import RowSkeleton from '../../Skeletons/RowSkeleton/RowSkeleton';
 import SearchPanel from '../SearchPanel/SearchPanel';
-import { selectFavorites } from '../../../../redux/slices/favorites.slice';
-import { selectGifts } from '../../../../redux/slices/gifts.slice';
+import { selectFavorites } from '../../../../redux/reducers/favorites/favorites.slice';
+import { selectGifts } from '../../../../redux/reducers/gifts/gifts.slice';
 import { MEDIA_QUERIES } from '../../../../constants/mediaQuery.constants';
 
 const {

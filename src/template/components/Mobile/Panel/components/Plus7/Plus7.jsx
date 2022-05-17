@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import SocialMedia from '../../../../Common/SocialMedia/SocialMedia';
 import { PLUS_7_ROUTES } from '../../../../../configs/routes.configs';
-import { openPopup } from '../../../../../../redux/slices/popups.slice';
+import { openPopup } from '../../../../../../redux/reducers/popups/popups.slice';
 import { POPUPS_IDS } from '../../../../Popups/constants/popups.constants';
 import { INFO_RULES_TAB_NAMES } from '../../../../Common/InfoRules/constants/infoRules.constants';
 import { useOutsideClick } from '../../../../../../hooks/useOutsideClick';

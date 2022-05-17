@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Popup } from '../../UI';
-import { closePopup } from '../../../../redux/slices/popups.slice';
+import { closePopup } from '../../../../redux/reducers/popups/popups.slice';
 import { POPUPS_IDS } from '../constants/popups.constants';
 import FavouritsGroup from './components/FavouritsGroup/FavouritsGroup';
 import FavouritsCasinoItem from './components/FavouritsCasinoItem/FavouritsCasinoItem';
 import SportCard from '../../../pages/Sportsbook/components/SportCard/SportCard';
 import FavouritsFilterItem from './components/FavouritsFilterItem/FavouritsFilterItem';
-import { selectFavorites } from '../../../../redux/slices/favorites.slice';
+import { selectFavorites } from '../../../../redux/reducers/favorites/favorites.slice';
 import { FAVORITES_TYPES } from '../../../pages/Sportsbook/constants/sport.constants';
 
 const FavouritesPopup = () => {

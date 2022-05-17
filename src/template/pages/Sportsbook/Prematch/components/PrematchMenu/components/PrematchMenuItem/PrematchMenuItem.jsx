@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
-import { selectServerImageUrl } from '../../../../../../../../redux/slices/serverConfigs.slice';
-import { setPrematchActiveSport } from '../../../../../../../../redux/slices/prematch.slice';
+import { selectServerImageUrl } from '../../../../../../../../redux/reducers/serverConfigs/serverConfigs.slice';
+import { setPrematchActiveSport } from '../../../../../../../../redux/reducers/prematch/prematch.slice';
 import BallSkeleton from './BallSkeleton';
 import { replaceSpaces } from '../../../../../../../../helpers/utils';
 

@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { FAKE_SPORTS_LIST, promise } from '../../fakeData';
-import { replaceUnderscores } from '../../helpers/utils';
+import { replaceUnderscores } from '../../../helpers/utils';
 
 // GET SPORTS LIST
 export const getPrematchSportsListThunk = createAsyncThunk(

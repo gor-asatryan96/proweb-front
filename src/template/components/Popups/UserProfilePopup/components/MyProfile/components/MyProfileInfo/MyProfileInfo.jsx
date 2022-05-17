@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { GENDER_TYPES } from '../../../../../../../../constants/gender.constants';
 import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
-import { selectUser } from '../../../../../../../../redux/slices/user.slice';
+import { selectUser } from '../../../../../../../../redux/reducers/user/user.slice';
 
 const MyProfileInfo = () => {
   const { gender = 1, name = '' } = useSelector(selectUser);

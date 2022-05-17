@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { clearTokenFromStorage } from '../../helpers/api';
-import { authExtraReducers } from '../thunks/auth.thunk';
-import { userInfoExtraReducers } from '../thunks/user.thunk';
+import { clearTokenFromStorage } from '../../../helpers/api';
+import { authExtraReducers } from './auth.thunk';
+import { userInfoExtraReducers } from './user.thunk';
 
-export const initialUserState = {
+const initialState = {
   isConnected: false,
   isAuth: false,
   isLoading: false,
@@ -12,13 +12,13 @@ export const initialUserState = {
 
 export const userSlice = createSlice({
   name: 'user',
-  initialState: initialUserState,
+  initialState,
   reducers: {
     setIsConnected: (state) => { state.isConnected = true; },
     resetUser: () => {
       clearTokenFromStorage();
       return {
-        ...initialUserState,
+        ...initialState,
         isConnected: true,
       };
     },

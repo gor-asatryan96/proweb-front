@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { clearTokenFromStorage, getErrorMessage } from '../../helpers/api';
-import { POPUPS_IDS } from '../../template/components/Popups/constants/popups.constants';
-import { closePopup } from '../slices/popups.slice';
-import { resetUser } from '../slices/user.slice';
+import { clearTokenFromStorage, getErrorMessage } from '../../../helpers/api';
+import { POPUPS_IDS } from '../../../template/components/Popups/constants/popups.constants';
+import { closePopup } from '../popups/popups.slice';
+import { resetUser } from './user.slice';
 
 // THUNKS ************
 export const loginThunk = createAsyncThunk(

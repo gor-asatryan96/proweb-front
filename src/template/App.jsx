@@ -8,7 +8,7 @@ import Slider from './components/Mobile/Slider/Slider';
 import './assets/styles/template-index.scss';
 import Header from './components/Common/Header/Header';
 import Popups from './components/Popups/Popups';
-import { selectIsBurgerActive } from '../redux/slices/appConfigs.slice';
+import { selectIsBurgerActive } from '../redux/reducers/appConfigs/appConfigs.slice';
 import { ALL_ROUTES } from './configs/routes.configs';
 import SearchPanel from './components/Common/SearchPanel/SearchPanel';
 import Betslip from './components/Common/Betslip/Betslip';

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useMediaQuery } from 'react-responsive';
-import { selectBets } from '../../../../redux/slices/betslip.slice';
+import { selectBets } from '../../../../redux/reducers/betslip/betslip.slice';
 import { BETSLIP_TABS } from './constants/betslip.constants';
 import BetslipArrow from './components/BetslipArrow';
 import { BETSLIP_CONFIGS } from './configs/betslip.configs';

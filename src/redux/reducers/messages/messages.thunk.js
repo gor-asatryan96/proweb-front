@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { promise } from '../../fakeData';
-import { messagesMock } from '../../template/components/Popups/UserProfilePopup/components/Messages/Messages';
+import { promise } from '../../../fakeData';
+import { messagesMock } from '../../../template/components/Popups/UserProfilePopup/components/Messages/Messages';
 
 export const messagesThunk = createAsyncThunk(
   'messages/getMessages',

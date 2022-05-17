@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { messagesExtraReducers } from '../thunks/messages.thunk';
+import { messagesExtraReducers } from './messages.thunk';
 
 const initialState = {
   messages: [],

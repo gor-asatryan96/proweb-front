@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
-import { logoutThunk } from '../../../../../../redux/thunks/auth.thunk';
+import { logoutThunk } from '../../../../../../redux/reducers/user/auth.thunk';
 import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import MyProfileInfo from './components/MyProfileInfo/MyProfileInfo';
 import MyProfilePassword from './components/MyProfilePassword/MyProfilePassword';

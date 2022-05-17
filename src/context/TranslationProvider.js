@@ -3,8 +3,8 @@ import React, {
   useState, useEffect, useContext, createContext, useCallback,
 } from 'react';
 import { useSelector } from 'react-redux';
-import { selectActiveLanguage } from '../redux/slices/appConfigs.slice';
-import { selectServerTranslationUrl } from '../redux/slices/serverConfigs.slice';
+import { selectActiveLanguage } from '../redux/reducers/appConfigs/appConfigs.slice';
+import { selectServerTranslationUrl } from '../redux/reducers/serverConfigs/serverConfigs.slice';
 
 const TranslationContext = createContext({});
 

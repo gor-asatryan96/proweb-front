@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import MessageItem from './components/MessageItem';
-import { selectMessages, setMessagesRead } from '../../../../../../redux/slices/messages.slice';
+import { selectMessages, setMessagesRead } from '../../../../../../redux/reducers/messages/messages.slice';
 
 export const messagesMock = [
   {

@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
 import SinglePrematchBets from './components/SinglePrematchBets/SinglePrematchBets';
 import FilterButton from '../PrematchFilters/components/FilterButton/FilterButton';
 import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
-import { selectPrematchActiveEvent } from '../../../../../../redux/slices/prematch.slice';
+import { selectPrematchActiveEvent } from '../../../../../../redux/reducers/prematch/prematch.slice';
 import Flag from '../../../../../../components/Flag/Flag';
 
 const typeFilters = [ 'All', 'Match Result', 'Handicap', 'Total', 'Over/Under', 'Goals', 'Double Bets', 'Half', 'Minutes', 'Specials' ];
