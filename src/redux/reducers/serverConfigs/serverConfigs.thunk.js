@@ -1,14 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { FAKE_SERVER_CONFIGS, promise } from '../../../fakeData';
+import { FAKE_SERVER_CONFIGS } from '../../../fakeData';
 
 // GET SPORTS LIST
 export const getServerConfigsThunk = createAsyncThunk(
   'serverConfigs/get',
   async () => {
-    const response = await promise(FAKE_SERVER_CONFIGS);
-    // const response = await axios.get('/sport/list');
-    return response;
+    const response = await axios.get('/config');
+    return { ...response, ...FAKE_SERVER_CONFIGS };
   },
 );
 
