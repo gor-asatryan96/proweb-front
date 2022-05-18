@@ -7,7 +7,11 @@ import Sportsbook from '../pages/Sportsbook/Sportsbook';
 import SingleSport from '../pages/Sportsbook/components/SingleSport/SingleSport';
 import Home from '../pages/Home/Home';
 import Promotions from '../pages/Promotions/Promotions';
-import Prematch from '../pages/Sportsbook/Prematch/Prematch';
+import Sport from '../pages/Sportsbook/Sport/Sport';
+import Prematch from '../pages/Sportsbook/Sport/pages/Prematch/Prematch';
+import { SPORT_TABS_URLS } from '../pages/Sportsbook/Sport/constants/sport.constants';
+
+const { PRE_MATCH } = SPORT_TABS_URLS;
 
 export const PANEL_ROUTES = [
   {
@@ -18,17 +22,21 @@ export const PANEL_ROUTES = [
     element: <Home />,
   },
   {
-    path: '/sport/*',
-    to: '/sport',
+    path: '/Sport',
+    to: '/Sport',
     name: 'SPORTS',
     icon: 'sport',
-    element: <Prematch />,
-    // children: [
-    //   {
-    //     path: ':id',
-    //     element: <SingleSport />,
-    //   },
-    // ],
+    element: <Sport />,
+    children: [
+      {
+        path: `${PRE_MATCH}/*`,
+        element: <Prematch />,
+      },
+      {
+        path: '*',
+        element: <Navigate to={`/Sport/${PRE_MATCH}`} />,
+      },
+    ],
   },
   {
     path: '/live',

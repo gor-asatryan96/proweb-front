@@ -3,7 +3,7 @@ import user from './user/user.slice';
 import popups from './popups/popups.slice';
 import appConfigs from './appConfigs/appConfigs.slice';
 import serverConfigs from './serverConfigs/serverConfigs.slice';
-import prematch from './prematch/prematch.slice';
+import sport from './sport/sport.slice';
 import live from './live/live.slice';
 import betslip from './betslip/betslip.slice';
 import favorites from './favorites/favorites.slice';
@@ -15,7 +15,7 @@ export const reducers = combineReducers({
   popups,
   appConfigs,
   serverConfigs,
-  prematch,
+  sport,
   live,
   betslip,
   favorites,

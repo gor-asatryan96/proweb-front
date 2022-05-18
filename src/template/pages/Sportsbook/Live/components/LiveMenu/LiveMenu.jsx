@@ -1,13 +1,13 @@
 import { SPORTS_NAMES } from '../../constants/sport.constants';
-import SportMenuItem from './components/SportMenuItem/SportMenuItem';
+import LiveMenuItem from './components/LiveMenuItem/LiveMenuItem';
 
 const actualSports = Object.keys(SPORTS_NAMES);
 
-const SportMenu = () => (
+const LiveMenu = () => (
   <section className="sidebar">
     <ul className="sidebar__list">
       {actualSports.map(id => (
-        <SportMenuItem
+        <LiveMenuItem
           key={id}
           id={id}
             // active={+activeSport === +id}
@@ -17,4 +17,4 @@ const SportMenu = () => (
   </section>
 );
 
-export default SportMenu;
+export default LiveMenu;
