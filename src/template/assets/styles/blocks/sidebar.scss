@@ -31,6 +31,125 @@
 
 }
 
+//============= Sidebar BetType =============
+
+.sidebar__betType {
+  width: 100%;
+}
+
+.sidebar__betTypeList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+}
+
+.sidebar__betTypeItem {
+  width: 100%;
+  border-bottom: 1px solid var(--pmbet-blue-dark);
+
+  &.active {
+    background-color: var(--pmbet-blue-dark);
+  }
+}
+
+.sidebar__betTypeInner {
+  width: 100%;
+}
+
+.sidebar__betTypeButton {
+  width: 100%;
+  height: 2.625rem;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sidebar__betTypeIcon {
+  margin-right: 1.125rem;
+  width: 1.375rem;
+  height: 1.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar__betTypeSvg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.sidebar__betTypeName {
+  font-family: "Poppins", "Arial", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--pmbet-white);
+}
+
+.sidebar__betTypeItem.active .sidebar__betTypeName{
+  color: var(--pmbet-green);
+}
+
+
+.sidebar__betTypeTime {
+  margin: 1rem 0 0.5rem ;
+  padding-left: 0.31rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar__betTypeHour {
+  width: calc(100% / 5 - 2rem / 5);
+  margin-right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.sidebar__betTypeTimeButton {
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--pmbet-gray-light);
+  background-color: var(--pmbet-blue);
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    color: var(--pmbet-white);
+    background-color: var(--pmbet-green);
+  }
+
+  &.active {
+    color: var(--pmbet-white);
+    background-color: var(--pmbet-green);
+  }
+}
+
+  //============= Sidebar BetType =============
+
 .sidebar__list {
   position: relative;
 
@@ -163,27 +282,197 @@
   max-width: 100%;
 }
 
-.sidebar__quantity {
+.sidebar__info {
   position: absolute;
   top: 0;
   right: -1.5rem;
-
   transform: translateY(-25%);
+  display: flex;
+  align-items: center;
 
+  @media screen  and (min-width: 1025px){
+    position: static;
+    margin-left: auto;
+    transform: translateY(0);
+  }
+}
+
+.sidebar__quantity {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-size: 0.928rem;
   font-weight: 700;
 
 
   @media screen  and (min-width: 1025px){
-    position: static;
     display: flex;
     font-size: 0.85rem;
-    margin-left: auto;
-    transform: translateY(0);
     font-family: "Poppins", "Arial", sans-serif;
-
   }
+}
+
+.sidebar__more {
+  margin-left: 0.75rem;
+  width: 0.56rem;
+  height: 0.56rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar__svg {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+  fill: var(--pmbet-green);
+  transition: 0.3s;
+}
+
+.sidebar__btn.open .sidebar__svg {
+  transform: rotate(180deg);
+}
+
+.sidebar__ligue {
+  padding: 0.25rem 0.31rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--pmbet-blue-dark);
+}
+
+.sidebar__ligueList {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar__ligueItem {
+  margin-bottom: 1px;
+  padding: 0 0.625rem;
+  width: 100%;
+  height: 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 0.75rem;
+  color: var(--pmbet-white-lightest--3);
+  background-color: var(--pmbet-blue);
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: var(--pmbet-green);
+  }
+
+  &.active {
+    color: var(--pmbet-green);
+  }
+}
+
+
+//================ Sidebar Country ================
+
+.sidebar__country {
+  width: 100%;
+}
+
+.sidebar__countryList {
+  margin: 0;
+  padding: 5px 12px;
+  width: 100%;
+  list-style-type: none;
+  background-color: var(--pmbet-blue-dark);
+}
+
+.sidebar__countryItem {
+
+}
+
+.sidebar__countryButton {
+  margin-bottom: 1px;
+  padding: 0 0.75rem;
+  width: 100%;
+  height: 2.81rem;
+  border: none;
+  outline: none;
+  background-color: var(--pmbet-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--pmbet-gray-light);
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--pmbet-green);
+  }
+
+  &.active {
+    color: var(--pmbet-green);
+  }
+}
+
+.country__title {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__countryFlag {
+  margin-right: 0.31rem;
+  width: 1.375rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar__countryName {
+
+}
+
+.sidebar__countryInfo {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__countryQuantity {
+
+}
+
+.sidebar__countryMore {
+  margin-left: 0.75rem;
+  width: 0.56rem;
+  height: 0.56rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar__countrySvg {
+  width: 100%;
+  height: 100%;
+  fill: var(--pmbet-gray-light);
+  transition: 0.3s;
+}
+
+.sidebar__countryButton.active .sidebar__countrySvg {
+  fill: var(--pmbet-green);
+  transform: rotate(180deg);
 }
 
 
