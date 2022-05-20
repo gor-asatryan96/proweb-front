@@ -1,12 +1,15 @@
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
 import { LOADING_ITEMS, replaceUnderscores } from '../../../../../../helpers/utils';
 import { selectIsPrematchSportsLoading, selectPrematchSportsList } from '../../../../../../redux/reducers/sport/sport.slice';
 import { useSportParams } from '../../hooks/sport.hooks';
 import PrematchMenuItem from './components/PrematchMenuItem/PrematchMenuItem';
 import PrematchMenuItemSkeleton from './components/PrematchMenuItem/PrematchMenuItemSkeleton';
+import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
 
 const PrematchMenu = () => {
+  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
   const sportName = replaceUnderscores(useSportParams().sportName);
   const sportsList = useSelector(selectPrematchSportsList);
   const isSportsLoading = useSelector(selectIsPrematchSportsLoading);
@@ -62,7 +65,7 @@ const PrematchMenu = () => {
                 <div className="sidebar__betTypeName">pre-match</div>
               </button>
             </div>
-            <div className="sidebar__betTypeTime">
+            {isDesktop && <div className="sidebar__betTypeTime">
               <div className="sidebar__betTypeHour">
                 <button type="button" className="sidebar__betTypeTimeButton active">All</button>
               </div>
@@ -73,14 +76,28 @@ const PrematchMenu = () => {
                 <button type="button" className="sidebar__betTypeTimeButton">6 hrs</button>
               </div>
               <div className="sidebar__betTypeHour">
-                <button type="button" className="sidebar__betTypeTimeButton">9 hrs</button>
-              </div>
-              <div className="sidebar__betTypeHour">
                 <button type="button" className="sidebar__betTypeTimeButton">12 hrs</button>
               </div>
-            </div>
+            </div>}
           </li>
         </ul>
+        {!isDesktop && <div className="sidebar__betTypeTime">
+          <div className="sidebar__betTypeHour">
+            <button type="button" className="sidebar__betTypeTimeButton active">All</button>
+          </div>
+          <div className="sidebar__betTypeHour">
+            <button type="button" className="sidebar__betTypeTimeButton">3 hrs</button>
+          </div>
+          <div className="sidebar__betTypeHour">
+            <button type="button" className="sidebar__betTypeTimeButton">6 hrs</button>
+          </div>
+          <div className="sidebar__betTypeHour">
+            <button type="button" className="sidebar__betTypeTimeButton">9 hrs</button>
+          </div>
+          <div className="sidebar__betTypeHour">
+            <button type="button" className="sidebar__betTypeTimeButton">12 hrs</button>
+          </div>
+        </div>}
       </div>
       <div className="sidebar__content">
         <ul className="sidebar__list">

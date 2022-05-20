@@ -42,6 +42,16 @@
   padding: 0;
   list-style-type: none;
   width: 100%;
+
+  @media screen and (max-width: 1024px){
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
 .sidebar__betTypeItem {
@@ -50,6 +60,12 @@
 
   &.active {
     background-color: var(--pmbet-blue-dark);
+  }
+
+  @media screen and (max-width: 1024px){
+    width: calc(100% / 4);
+    min-width: max-content;
+    border-right: 1px solid var(--pmbet-blue-dark);
   }
 }
 
@@ -66,6 +82,13 @@
   outline: none;
   background-color: transparent;
   cursor: pointer;
+
+  @media screen and (max-width: 1024px){
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .sidebar__betTypeIcon {
@@ -105,10 +128,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 1024px){
+    justify-content: flex-start;
+    margin: 0;
+    padding: 1rem 0 1rem 1rem;
+    background-color: var(--pmbet-blue-dark);
+  }
 }
 
 .sidebar__betTypeHour {
-  width: calc(100% / 5 - 2rem / 5);
+  width: calc(100% / 4 - 1.5rem / 4);
   margin-right: 0.5rem;
   display: flex;
   justify-content: center;
@@ -116,6 +146,10 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 3.375rem;
   }
 }
 
@@ -145,6 +179,10 @@
   &.active {
     color: var(--pmbet-white);
     background-color: var(--pmbet-green);
+  }
+
+  @media screen and (max-width: 1024px) {
+    height: 1.875rem;
   }
 }
 
