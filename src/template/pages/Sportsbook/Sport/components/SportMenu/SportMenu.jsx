@@ -74,6 +74,9 @@ const PrematchMenu = () => {
               <div className="sidebar__betTypeHour">
                 <button type="button" className="sidebar__betTypeTimeButton">12 hrs</button>
               </div>
+              <div className="sidebar__betTypeHour">
+                <button type="button" className="sidebar__betTypeTimeButton">24 hrs</button>
+              </div>
             </div>}
           </li>
         </ul>
@@ -88,10 +91,10 @@ const PrematchMenu = () => {
             <button type="button" className="sidebar__betTypeTimeButton">6 hrs</button>
           </div>
           <div className="sidebar__betTypeHour">
-            <button type="button" className="sidebar__betTypeTimeButton">9 hrs</button>
+            <button type="button" className="sidebar__betTypeTimeButton">12 hrs</button>
           </div>
           <div className="sidebar__betTypeHour">
-            <button type="button" className="sidebar__betTypeTimeButton">12 hrs</button>
+            <button type="button" className="sidebar__betTypeTimeButton">24 hrs</button>
           </div>
         </div>}
       </div>

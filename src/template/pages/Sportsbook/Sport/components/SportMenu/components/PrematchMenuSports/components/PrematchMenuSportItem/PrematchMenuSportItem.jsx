@@ -51,7 +51,7 @@ const PrematchMenuSportItem = ({ data, isActive }) => {
           )}
         </button>
       </div>
-      {isOpen && <PrematchMenuCountries />}
+      {(isOpen && isDesktop) && <PrematchMenuCountries />}
     </li>
   );
 };

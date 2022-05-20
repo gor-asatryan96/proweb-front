@@ -62,7 +62,7 @@
     background-color: var(--pmbet-blue-dark);
   }
 
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: 1025px){
     width: calc(100% / 4);
     min-width: max-content;
     border-right: 1px solid var(--pmbet-blue-dark);
@@ -134,22 +134,31 @@
     margin: 0;
     padding: 1rem 0 1rem 1rem;
     background-color: var(--pmbet-blue-dark);
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
 .sidebar__betTypeHour {
-  width: calc(100% / 4 - 1.5rem / 4);
+  width: calc(100% / 5 - 2rem / 5);
   margin-right: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  &:first-child {
+    position: sticky;
+  }
+
   &:last-child {
     margin-right: 0;
   }
 
-  @media screen and (max-width: 1024px) {
-    width: 3.375rem;
+  @media screen and (max-width: 1025px) {
+    min-width: 3.375rem;
   }
 }
 
@@ -202,6 +211,10 @@
     width: 100%;
     max-width: 100%;
     overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
 
@@ -372,12 +385,17 @@
 }
 
 .sidebar__ligue {
-  padding: 0.25rem 0.31rem 0;
+  padding: 0.25rem 0.31rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--pmbet-blue-dark);
+
+  @media screen  and (max-width: 1025px){
+    padding: 0;
+    background-color: transparent;
+  }
 }
 
 .sidebar__ligueList {
@@ -416,6 +434,13 @@
   &.active {
     color: var(--pmbet-green);
   }
+
+  @media screen  and (max-width: 1025px){
+    margin: 0;
+    color: var(--pmbet-blue-darkest);
+    background-color: var(--pmbet-cream);
+    border-bottom: 1px solid var(--pmbet-white-6);
+  }
 }
 
 
@@ -423,6 +448,10 @@
 
 .sidebar__country {
   width: 100%;
+
+  @media screen  and (max-width: 1025px){
+    height: 100%;
+  }
 }
 
 .sidebar__countryList {
@@ -431,10 +460,20 @@
   width: 100%;
   list-style-type: none;
   background-color: var(--pmbet-blue-dark);
+
+  @media screen  and (max-width: 1025px){
+    padding: 0;
+    background-color: transparent;
+  }
 }
 
 .sidebar__countryItem {
+  width: 100%;
 
+  @media screen  and (max-width: 1025px){
+    height: 100%;
+    padding: 0;
+  }
 }
 
 .sidebar__countryButton {
@@ -461,6 +500,13 @@
 
   &.active {
     color: var(--pmbet-green);
+  }
+
+  @media screen  and (max-width: 1025px){
+    margin: 0;
+    color: var(--pmbet-gray);
+    background-color: var(--pmbet-white);
+    border-bottom: 1px solid var(--pmbet-black-3);
   }
 }
 
