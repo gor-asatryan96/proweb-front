@@ -1,17 +1,13 @@
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
-import { LOADING_ITEMS, replaceUnderscores } from '../../../../../../helpers/utils';
-import { selectIsPrematchSportsLoading, selectPrematchSportsList } from '../../../../../../redux/reducers/sport/sport.slice';
-import { useSportParams } from '../../hooks/sport.hooks';
-import PrematchMenuItem from './components/PrematchMenuItem/PrematchMenuItem';
-import PrematchMenuItemSkeleton from './components/PrematchMenuItem/PrematchMenuItemSkeleton';
+import { selectIsPrematchSportsLoading } from '../../../../../../redux/reducers/sport/sport.slice';
 import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
+import PrematchMenuSports from './components/PrematchMenuSports/PrematchMenuSports';
 
 const PrematchMenu = () => {
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
-  const sportName = replaceUnderscores(useSportParams().sportName);
-  const sportsList = useSelector(selectPrematchSportsList);
+
   const isSportsLoading = useSelector(selectIsPrematchSportsLoading);
 
   return (
@@ -99,22 +95,7 @@ const PrematchMenu = () => {
           </div>
         </div>}
       </div>
-      <div className="sidebar__content">
-        <ul className="sidebar__list">
-          {isSportsLoading
-            ? LOADING_ITEMS.map((_, i) => (
-              <PrematchMenuItemSkeleton key={i} />
-            ))
-            : sportsList.map(sport => (
-              <PrematchMenuItem
-                key={sport.id}
-                data={sport}
-                isActive={sportName === sport.sportName}
-                        />
-            ))
-                }
-        </ul>
-      </div>
+      <PrematchMenuSports />
     </section>
   );
 };

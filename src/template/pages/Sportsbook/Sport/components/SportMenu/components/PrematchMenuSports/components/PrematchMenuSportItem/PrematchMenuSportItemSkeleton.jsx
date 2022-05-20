@@ -1,8 +1,8 @@
 import { useMediaQuery } from 'react-responsive';
 import ContentLoader from 'react-content-loader';
-import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
+import { MEDIA_QUERIES } from '../../../../../../../../../../constants/mediaQuery.constants';
 
-const PrematchMenuItemSkeleton = () => {
+const PrematchMenuSportItemSkeleton = () => {
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   return (
@@ -29,4 +29,4 @@ const PrematchMenuItemSkeleton = () => {
   );
 };
 
-export default PrematchMenuItemSkeleton;
+export default PrematchMenuSportItemSkeleton;
