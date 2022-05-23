@@ -53,3 +53,11 @@ export const SPORTS_CONFIGS = {
     icon: SPORTS_ICONS.RUGBY_LEAGUE,
   },
 };
+
+export const SPORT_TIME_FILTERS = [
+  { name: 'All', value: null },
+  { name: '3 Hrs', value: '3-h' },
+  { name: '6 Hrs', value: '6-h' },
+  { name: '12 Hrs', value: '12-h' },
+  { name: '24 Hrs', value: '1-d' },
+];

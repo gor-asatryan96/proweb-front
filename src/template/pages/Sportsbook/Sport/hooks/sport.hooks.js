@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { resetPrematchSlice } from '../../../../../redux/reducers/sport/sport.slice';
+import { resetPrematchSlice, selectPrematchTimeFilter } from '../../../../../redux/reducers/sport/sport.slice';
 import { getPrematchSportsListThunk } from '../../../../../redux/reducers/sport/sport.thunk';
 import { SPORT_TABS_URLS } from '../constants/sport.constants';
 
@@ -19,6 +19,7 @@ export const useSportParams = () => {
 export const useSportSideEffects = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const rangeFilter = useSelector(selectPrematchTimeFilter);
 
   const { urlTab } = useSportParams();
 
@@ -29,8 +30,8 @@ export const useSportSideEffects = () => {
   }, [ urlTab ]);
 
   useEffect(() => {
-    dispatch(getPrematchSportsListThunk());
+    dispatch(getPrematchSportsListThunk(rangeFilter));
+  }, [ rangeFilter ]);
 
-    return () => dispatch(resetPrematchSlice());
-  }, []);
+  useEffect(() => () => dispatch(resetPrematchSlice()), []);
 };

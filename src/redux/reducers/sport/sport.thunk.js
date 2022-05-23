@@ -5,10 +5,10 @@ import { replaceUnderscores } from '../../../helpers/utils';
 // GET SPORTS LIST
 export const getPrematchSportsListThunk = createAsyncThunk(
   'sport/getSportsList',
-  async () => {
+  async (rangeFilter) => {
     const response = await axios.get('/sport-book/sport/list', {
       params: {
-        rangeFilter: '1-h',
+        rangeFilter,
       },
     });
     return response;
