@@ -1,8 +1,11 @@
-export const PREMATCH_EXTRA_TABS = {
-  HOTS_TOPS: 'Hots & Tops',
-  EXPRESS: 'Express Bet',
-  BOOSTED: 'Boosted Odds',
+export const SPORT_TABS = {
+  // HOTS_TOPS: 'Hots & Tops',
+  // EXPRESS: 'Express Bet',
+  // BOOSTED: 'Boosted Odds',
+  PRE_MATCH: 'Pre-Match',
 };
+
+export const SPORT_TABS_LIST = Object.values(SPORT_TABS);
 
 export const SPORT_TABS_URLS = {
   PRE_MATCH: 'Pre-Match',
@@ -92,12 +95,6 @@ export const SPORTS_NAMES = {
   [CRICKET]: 'CRICKET',
   [RUGBY_UNION]: 'RUGBY UNION',
   [RUGBY_LEAGUE]: 'RUGBY LEAGUE',
-};
-
-export const SPORT_TABS = {
-  TOPS: 'TOPS',
-  UPCOMING: 'UPCOMING',
-  LEAGUES: 'LEAGUES',
 };
 
 export const SPORT_EXTRA_TYPES = {

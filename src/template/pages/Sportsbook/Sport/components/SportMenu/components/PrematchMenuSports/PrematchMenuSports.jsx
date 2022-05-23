@@ -20,7 +20,7 @@ const PrematchMenuSports = () => {
           : sportsList.map(sport => (
             <PrematchMenuSportItem
               key={sport.id}
-              data={sport}
+              sport={sport}
               isActive={sportName === sport.sportName}
                     />
           ))

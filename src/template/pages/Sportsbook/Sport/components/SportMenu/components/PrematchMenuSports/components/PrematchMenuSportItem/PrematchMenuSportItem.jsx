@@ -7,7 +7,7 @@ import { selectServerImageUrl } from '../../../../../../../../../../redux/reduce
 import PrematchMenuCountries from '../../../PrematchMenuCountries/PrematchMenuCountries';
 import BallSkeleton from '../BallSkeleton/BallSkeleton';
 
-const PrematchMenuSportItem = ({ data, isActive }) => {
+const PrematchMenuSportItem = ({ sport, isActive }) => {
   const serverImageUrl = useSelector(selectServerImageUrl);
   const [ isImageLoaded, setIsImageLoaded ] = useState(false);
   const [ isOpen, setIsOpen ] = useState(false);
@@ -15,13 +15,10 @@ const PrematchMenuSportItem = ({ data, isActive }) => {
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   const onSportClick = () => {
-    // if (isActive) return;
-    // navigate(`/Sport/${PRE_MATCH}/${replaceSpaces(data.sportName)}/${replaceSpaces(data.countries[0].name)}/${
-    //   replaceSpaces(data.countries[0].leagues[0].competitionName)}`);
-    setIsOpen(prevState => !prevState);
+    setIsOpen(prev => !prev);
   };
 
-  const sportIcon = serverImageUrl && `${serverImageUrl}/sports/${data.sportId}.svg`;
+  const sportIcon = serverImageUrl && `${serverImageUrl}/sports/${sport.sportId}.svg`;
 
   return (
     <li
@@ -35,12 +32,12 @@ const PrematchMenuSportItem = ({ data, isActive }) => {
             </span>
           </span>
           <span className="sidebar__name">
-            {data.sportName}
+            {sport.sportName}
           </span>
           {isDesktop && (
           <span className="sidebar__info">
             <span className="sidebar__quantity">
-              {data.eventsCount}
+              {sport.eventsCount}
             </span>
             <span className="sidebar__more">
               <svg className="sidebar__svg">
@@ -51,7 +48,7 @@ const PrematchMenuSportItem = ({ data, isActive }) => {
           )}
         </button>
       </div>
-      {(isOpen && isDesktop) && <PrematchMenuCountries />}
+      {(isOpen && isDesktop) && <PrematchMenuCountries countries={sport.countries} />}
     </li>
   );
 };
