@@ -47,10 +47,10 @@ export const usePrematchSideEffects = () => {
   }, [ sportName, isSportExist, country, league ]);
 
   useEffect(() => {
-    if (isSportExist && sportName && (!league || !country)) {
+    if (isSportExist && sportName && isDesktop && (!league || !country)) {
       navigateToFirstLeague();
     }
-  }, [ sportName, country, league, isSportExist ]);
+  }, [ sportName, country, league, isSportExist, isDesktop ]);
 
   useEffect(() => {
     if (event && events.length) {
@@ -68,11 +68,14 @@ export const usePrematchSideEffects = () => {
   useEffect(() => {
     if (isSportExist && !sportName && !country && !league) {
       const currentSport = sportList[0];
-      // eslint-disable-next-line max-len
-      navigate(`/Sport/${PRE_MATCH}/${replaceSpaces(currentSport.sportName)}/${replaceSpaces(currentSport.countries[0].name)}/${
-        replaceSpaces(currentSport.countries[0].leagues[0].competitionName)}`);
+      if (isDesktop) {
+        navigate(`/Sport/${PRE_MATCH}/${replaceSpaces(currentSport.sportName)}/${replaceSpaces(currentSport.countries[0].name)}/${
+          replaceSpaces(currentSport.countries[0].leagues[0].competitionName)}`);
+      } else {
+        navigate(`/Sport/${PRE_MATCH}/${replaceSpaces(currentSport.sportName)}`);
+      }
     }
-  }, [ isSportExist ]);
+  }, [ isSportExist, isDesktop ]);
 
   function navigateToFirstLeague() {
     const existSport = sportList.find(sport => sport.sportName === replaceUnderscores(sportName)) || sportList[0];
@@ -86,6 +89,6 @@ export const usePrematchSideEffects = () => {
   function navigateToFirstEvent() {
     if (!event.length) return;
     const firstEvent = events[0];
-    navigate(`/Sport/${PRE_MATCH}/${sportName}/${country}/${league}/${replaceSpaces(firstEvent.eventName)}_${firstEvent.eventId}`);
+    navigate(`/Sport/${PRE_MATCH}/${sportName}/${country}/${league}/${replaceSpaces(firstEvent.eventName)}-${firstEvent.eventId}`);
   }
 };

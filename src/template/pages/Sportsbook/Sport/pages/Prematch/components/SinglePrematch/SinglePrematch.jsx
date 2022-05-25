@@ -7,10 +7,11 @@ import dayjs from 'dayjs';
 import SinglePrematchBets from './components/SinglePrematchBets/SinglePrematchBets';
 import FilterButton from '../PrematchFilters/components/FilterButton/FilterButton';
 import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
-import { selectPrematchActiveEvent } from '../../../../../../../../redux/reducers/sport/sport.slice';
+import { selectIsSingleEventLoading, selectPrematchActiveEvent } from '../../../../../../../../redux/reducers/sport/sport.slice';
 import Flag from '../../../../../../../../components/Flag/Flag';
 import { useSportParams } from '../../../../hooks/sport.hooks';
 import { SPORT_TABS_URLS } from '../../../../constants/sport.constants';
+import SingleSportSkeleton from '../../../../../components/SingleSportSkeleton/SingleSportSkeleton';
 
 const typeFilters = [ 'All', 'Match Result', 'Handicap', 'Total', 'Over/Under', 'Goals', 'Double Bets', 'Half', 'Minutes', 'Specials' ];
 const { PRE_MATCH } = SPORT_TABS_URLS;
@@ -19,9 +20,16 @@ const SinglePrematch = () => {
   const navigate = useNavigate();
   const urlPaths = useSportParams();
   const event = useSelector(selectPrematchActiveEvent);
+  const isSingleEventLoading = useSelector(selectIsSingleEventLoading);
+
   const [ activeFilter, setActiveFilter ] = useState(typeFilters[0]);
 
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
+
+  console.log('isSingleEventLoading', isSingleEventLoading);
+  console.log('event', event);
+
+  if (isSingleEventLoading || !event) return <SingleSportSkeleton />;
 
   const {
     competitionName, eventStartTime, eventName, country, collections,

@@ -2,12 +2,18 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
+import { useNavigate } from 'react-router-dom';
 import { MEDIA_QUERIES } from '../../../../../../../../../../constants/mediaQuery.constants';
+import { replaceSpaces } from '../../../../../../../../../../helpers/utils';
 import { selectServerImageUrl } from '../../../../../../../../../../redux/reducers/serverConfigs/serverConfigs.slice';
+import { SPORT_TABS } from '../../../../../../constants/sport.constants';
 import PrematchMenuCountries from '../../../PrematchMenuCountries/PrematchMenuCountries';
 import BallSkeleton from '../BallSkeleton/BallSkeleton';
 
+const { PRE_MATCH } = SPORT_TABS;
+
 const PrematchMenuSportItem = ({ sport, isActive }) => {
+  const navigate = useNavigate();
   const serverImageUrl = useSelector(selectServerImageUrl);
   const [ isImageLoaded, setIsImageLoaded ] = useState(false);
   const [ isOpen, setIsOpen ] = useState(false);
@@ -15,7 +21,9 @@ const PrematchMenuSportItem = ({ sport, isActive }) => {
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
   const onSportClick = () => {
-    setIsOpen(prev => !prev);
+    isDesktop
+      ? setIsOpen(prev => !prev)
+      : navigate(`/Sport/${PRE_MATCH}/${replaceSpaces(sport.sportName)}`);
   };
 
   const sportIcon = serverImageUrl && `${serverImageUrl}/sports/${sport.sportId}.svg`;

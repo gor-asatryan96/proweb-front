@@ -13,8 +13,8 @@ const PrematchCardSkeleton = () => {
         speed={2}
         width='100%'
         height='100%'
-        backgroundColor="var(--pmbet-blue-sky)"
-        foregroundColor='var(--pmbet-blue-lighter)'
+        backgroundColor="var(--pmbet-blue-sky-05)"
+        foregroundColor='var(--pmbet-blue-sky-08)'
         >
         <rect x="0" y="2.5%" width="40%" height="16%" rx="2px" ry="2px" />
         {isDesktop && <>

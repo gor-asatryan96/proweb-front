@@ -194,6 +194,22 @@
 
 .bet-filter__block {
   position: relative;
+
+  &.skeleton {
+    height: 3.375rem;
+
+    .bet-filter__skeleton {
+      width: 4rem;
+      min-width: 4rem;
+      height: 1.937rem;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .bet-filter__skeleton:not(:last-child) {
+      margin-right: 1.071rem;
+    }
+  }
 }
 
 .bet-filter__block.active::before {
@@ -449,7 +465,7 @@
 }
 
 .bet-rate__nav__link--favorite {
-  width: 1.428rem;
+  width: 1.32rem;
 }
 
 .bet-rate__nav__link--favorite svg {
@@ -743,6 +759,18 @@
 
 .bet-match {
   margin-bottom: 1.071rem;
+
+  &.skeleton {
+    .bet-match__bg {
+      height: 4.02rem;
+      padding: 0.428rem 0.85rem 0.38rem 0.2rem;
+
+      @media screen and (min-width: 1025px){
+        height: 6.17rem;
+        padding: 0.428rem 0.571rem;
+      }
+    }
+  }
 }
 
 .bet-match__list {
@@ -1401,6 +1429,34 @@
 
   padding-top: 0.928rem;
   // padding-bottom: 0.714rem;
+
+  &.skeleton {
+    .bet-ratio__nav__title {
+      height: 1rem;
+      width: 5rem;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .bet-ratio__nav__arrow {
+      height: 0.7rem;
+      width: 1rem;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .bet-ratio__extra__btn, .bet-ratio__match__btn {
+      height: 1.851rem;
+      padding: 0;
+      background-color: unset;
+      overflow: hidden;
+    }
+
+    .bet-ratio__nav {
+      margin-bottom: 0.2rem;
+    }
+    
+  }
 }
 
 .bet-ratio__extra__item::after {

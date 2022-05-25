@@ -8,6 +8,9 @@ const initialState = {
   events: [],
   activeEvent: null,
   timeFilter: SPORT_TIME_FILTERS[0].value,
+  isSportsLoading: true,
+  isEventsLoading: true,
+  isActiveEventLoading: true,
 };
 
 export const sportSlice = createSlice({
@@ -31,6 +34,7 @@ export const selectPrematchActiveLeague = state => state.sport.activeLeague;
 export const selectPrematchEvents = state => state.sport.events;
 export const selectIsPrematchEventsLoading = state => state.sport.isEventsLoading;
 export const selectPrematchActiveEvent = state => state.sport.activeEvent;
+export const selectIsSingleEventLoading = state => state.sport.isActiveEventLoading;
 export const selectPrematchTimeFilter = state => state.sport.timeFilter;
 
 export default sportSlice.reducer;
