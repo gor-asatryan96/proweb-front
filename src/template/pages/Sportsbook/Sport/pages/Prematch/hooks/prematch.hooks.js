@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { MEDIA_QUERIES } from '../../../../../../../constants/mediaQuery.constants';
 import { replaceSpaces, replaceUnderscores } from '../../../../../../../helpers/utils';
 import {
-  resetPrematchEvent, selectPrematchEvents, selectPrematchSportsList,
+  resetPrematchEvent, selectIsSingleEventLoading, selectPrematchEvents, selectPrematchSportsList,
 } from '../../../../../../../redux/reducers/sport/sport.slice';
 import {
   getPrematchEventsThunk, getSinglePrematchThunk,
@@ -18,9 +18,9 @@ const { PRE_MATCH } = SPORT_TABS_URLS;
 export const usePrematchSideEffects = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { pathname } = useLocation();
   const sportList = useSelector(selectPrematchSportsList);
   const events = useSelector(selectPrematchEvents);
+  const isEventLoading = useSelector(selectIsSingleEventLoading);
 
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
   const isSportExist = sportList.length;
@@ -38,16 +38,13 @@ export const usePrematchSideEffects = () => {
         .then((res) => {
           if (res.error) {
             navigateToFirstLeague();
-          } else if (!event && !res.error && isDesktop) {
-            const firstEvent = res.competition?.events[0];
-            navigate(`${pathname}/${replaceSpaces(firstEvent.eventName)}-${firstEvent.eventId}`);
           }
         });
     }
   }, [ sportName, isSportExist, country, league ]);
 
   useEffect(() => {
-    if (isSportExist && sportName && isDesktop && (!league || !country)) {
+    if (isSportExist && sportName && (isDesktop ? (!league || !country) : (country && !league))) {
       navigateToFirstLeague();
     }
   }, [ sportName, country, league, isSportExist, isDesktop ]);
@@ -64,6 +61,12 @@ export const usePrematchSideEffects = () => {
     }
     return () => dispatch(resetPrematchEvent());
   }, [ event, events ]);
+
+  useEffect(() => {
+    if (isDesktop && !event && !isEventLoading && events.length) {
+      navigateToFirstEvent();
+    }
+  }, [ event, events, isDesktop, isEventLoading ]);
 
   useEffect(() => {
     if (isSportExist && !sportName && !country && !league) {
@@ -87,8 +90,9 @@ export const usePrematchSideEffects = () => {
   }
 
   function navigateToFirstEvent() {
-    if (!event.length) return;
+    if (!events.length) return;
     const firstEvent = events[0];
+    console.log('navigateToFirstEvent', firstEvent.eventId);
     navigate(`/Sport/${PRE_MATCH}/${sportName}/${country}/${league}/${replaceSpaces(firstEvent.eventName)}-${firstEvent.eventId}`);
   }
 };
