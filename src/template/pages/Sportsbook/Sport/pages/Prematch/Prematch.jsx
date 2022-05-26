@@ -23,7 +23,7 @@ const Prematch = () => {
   }, [ sportList, sportParams.sportName ]);
 
   const isCountriesVisible = !isDesktop && currentSportCountries && !sportParams.country;
-  const isEventsVisible = isDesktop || (sportParams.league && !sportParams.event);
+  const isEventsVisible = isDesktop || ((sportParams.country || sportParams.league) && !sportParams.event);
   const isSingleVisible = isDesktop || sportParams.event;
 
   return (

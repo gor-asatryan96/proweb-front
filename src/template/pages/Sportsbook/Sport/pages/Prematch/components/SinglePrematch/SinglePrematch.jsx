@@ -26,9 +26,6 @@ const SinglePrematch = () => {
 
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
 
-  console.log('isSingleEventLoading', isSingleEventLoading);
-  console.log('event', event);
-
   if (isSingleEventLoading || !event) return <SingleSportSkeleton />;
 
   const {

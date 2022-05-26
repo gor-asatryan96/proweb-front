@@ -69,6 +69,8 @@ export const sportExtraReducers = (builder) => {
     })
     .addCase(getPrematchEventsThunk.pending, (state) => {
       state.isEventsLoading = true;
+      state.events = [];
+      state.activeEvent = null;
     })
     .addCase(getPrematchEventsThunk.fulfilled, (state, { payload }) => {
       state.isEventsLoading = false;
@@ -83,6 +85,7 @@ export const sportExtraReducers = (builder) => {
     })
     .addCase(getSinglePrematchThunk.pending, (state) => {
       state.isActiveEventLoading = true;
+      state.activeEvent = null;
     })
     .addCase(getSinglePrematchThunk.fulfilled, (state, { payload }) => {
       const { events, ...info } = payload;

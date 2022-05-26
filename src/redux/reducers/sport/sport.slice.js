@@ -10,7 +10,7 @@ const initialState = {
   timeFilter: SPORT_TIME_FILTERS[0].value,
   isSportsLoading: true,
   isEventsLoading: true,
-  isActiveEventLoading: true,
+  isActiveEventLoading: false,
 };
 
 export const sportSlice = createSlice({
