@@ -1,6 +1,6 @@
-const IframeSection = () => (
+const IframeSection = ({ children }) => (
   <section className='iframe-section'>
-    iframe section
+    {children || 'iframe section'}
   </section>
 );
 

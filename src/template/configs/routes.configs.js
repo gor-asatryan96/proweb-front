@@ -77,7 +77,9 @@ export const PANEL_ROUTES = [
     to: '/chukua-tano',
     name: 'CHUKUA TANO',
     icon: 'chukua-tano',
-    element: <IframeSection />,
+    element: <IframeSection>
+      <iframe title='Chukua Tano' src='https://chukuatano.co.tz/' />
+    </IframeSection>,
   },
   {
     path: '/virtual-sport',

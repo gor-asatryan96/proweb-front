@@ -16,11 +16,11 @@ export const serverConfigsExtraReducers = (builder) => {
     .addCase(getServerConfigsThunk.pending, (state) => {
       state.isServerConfigsLoading = true;
     })
-    .addCase(getServerConfigsThunk.fulfilled, (state, { payload }) => {
-      state.isServerConfigsLoading = false;
-      state.configs = payload;
-    })
-    .addCase(getServerConfigsThunk.rejected, (state, { error }) => {
+    .addCase(getServerConfigsThunk.fulfilled, (_, { payload }) => ({
+      isServerConfigsLoading: false,
+      ...payload,
+    }))
+    .addCase(getServerConfigsThunk.rejected, (state) => {
       state.isServerConfigsLoading = false;
     });
 };

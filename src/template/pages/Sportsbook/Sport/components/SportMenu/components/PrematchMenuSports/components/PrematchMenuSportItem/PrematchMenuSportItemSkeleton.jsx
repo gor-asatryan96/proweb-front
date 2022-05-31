@@ -23,7 +23,10 @@ const PrematchMenuSportItemSkeleton = () => {
           y={isDesktop ? '37%' : '70%'}
           width={isDesktop ? '30%' : '70%'}
           height={isDesktop ? '26%' : '18%'} />
-        {isDesktop && <rect x="88%" y="37%" width="6%" height="26%" />}
+        {isDesktop && <>
+          <rect x="88%" y="37%" width="6%" height="26%" />
+          <rect x="75%" y="37%" width="10%" height="26%" />
+        </>}
       </ContentLoader>
     </div>
   );

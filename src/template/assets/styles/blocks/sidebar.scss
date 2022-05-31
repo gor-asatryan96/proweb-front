@@ -474,6 +474,20 @@
     height: 100%;
     padding: 0;
   }
+
+  &.skeleton {
+    .sidebar__countryName {
+      height: 1rem;
+      width: 4rem;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .sidebar__countryQuantity {
+      width: 1.2rem;
+      height: 1rem;
+    }
+  }
 }
 
 .sidebar__countryButton {

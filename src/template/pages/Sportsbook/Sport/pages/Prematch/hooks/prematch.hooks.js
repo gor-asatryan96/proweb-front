@@ -66,7 +66,7 @@ export const usePrematchSideEffects = () => {
     if (isDesktop && !event && !isEventLoading && events.length) {
       navigateToFirstEvent();
     }
-  }, [ event, events, isDesktop, isEventLoading ]);
+  }, [ events, isDesktop, isEventLoading ]);
 
   useEffect(() => {
     if (isSportExist && !sportName && !country && !league) {
