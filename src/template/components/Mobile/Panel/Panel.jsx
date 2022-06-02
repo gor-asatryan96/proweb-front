@@ -17,9 +17,8 @@ const Panel = () => {
         {isDesktop && (
           <>
             <Plus7 />
-            <div className="panel__item panel__item--language">
-              <LanguageSwitcher />
-            </div>
+
+            <div className="panel__item panel__item--language" />
           </>)}
       </div>
     </section>

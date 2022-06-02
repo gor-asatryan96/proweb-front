@@ -15,6 +15,7 @@ import SearchPanel from '../SearchPanel/SearchPanel';
 import { selectFavorites } from '../../../../redux/reducers/favorites/favorites.slice';
 import { selectGifts } from '../../../../redux/reducers/gifts/gifts.slice';
 import { MEDIA_QUERIES } from '../../../../constants/mediaQuery.constants';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 const {
   LOGIN, REGISTER, USER_PROFILE, FAVOURITES, GIFTS,
@@ -58,43 +59,34 @@ const Header = () => {
         {isDesktop && (
           <SearchPanel />
         )}
-        <div className="config header__config">
+        {!isDesktop && <div className="config header__config">
           <ul className="config__list">
-            <li onClick={() => togglePopup(FAVOURITES)} className="config__item">
+            <li className="config__item">
               <div className="config__link">
                 <div className="img-container">
                   <div className="config__content">
-                    {
-                      isDesktop && (
-                        <div className="config__notification">
-                          4
-                        </div>
-                      )
-                    }
-                    <svg className={classNames('favourite__image', {
-                      active: Object.keys(favoriteItems).length,
-                    })}>
-                      <use xlinkHref="#star" />
+                    <svg className="headerMobileSearch__svg">
+                      <use xlinkHref="#searchMobile" />
                     </svg>
                   </div>
                 </div>
               </div>
             </li>
             {isDesktop && (
-              <li className="config__item">
-                <a className="config__link" href="#">
-                  <div className="img-container">
-                    <div className="config__content">
-                      <svg className="config__img config__img--comment" width="1.625rem" height="1.5rem" fill="#5f6c79" stroke="#5f6c79">
-                        <use xlinkHref="#chat-2" />
-                      </svg>
-                    </div>
+            <li className="config__item">
+              <a className="config__link" href="#">
+                <div className="img-container">
+                  <div className="config__content">
+                    <svg className="config__img config__img--comment" width="1.625rem" height="1.5rem" fill="#5f6c79" stroke="#5f6c79">
+                      <use xlinkHref="#chat-2" />
+                    </svg>
                   </div>
-                </a>
-              </li>
+                </div>
+              </a>
+            </li>
             )}
           </ul>
-        </div>
+          </div>}
         {/* {!isConnected
         && <div className='headerSkeletons'>
           <div><RowSkeleton /></div>
@@ -126,6 +118,9 @@ const Header = () => {
                   <div className="userInfo__amountSize">{balance}</div>
                   <div className="userInfo__amountType">{currency}</div>
                 </div>
+                <div className="userInfo__deposit">
+                  <button className="userInfoDeposit__button">Deposit</button>
+                </div>
                 <div onClick={() => togglePopup(gifts.length ? GIFTS : USER_PROFILE)} className="userInfo__idConfigLink">
                   {
                     gifts.length ? (<>
@@ -145,7 +140,6 @@ const Header = () => {
                     </>
                     )
                   }
-                  <span className="userInfo__idConfigLinkIdWithText">ID: {userId}</span>
                 </div>
               </div>
             </div>
@@ -164,6 +158,7 @@ const Header = () => {
               </ul>
             </nav>)
         }
+        {isDesktop && <LanguageSwitcher />}
       </div>
     </header>
   );

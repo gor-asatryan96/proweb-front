@@ -9,10 +9,7 @@ const SearchPanel = () => {
         <form className="search__form" action="">
           <div className="search__block">
             <label className="search__hint">
-              <span className="search__caption">
-                {t('Search')}
-              </span>
-              <input className="search__input" type="text" placeholder="Sport, Live, Casino, Games..." />
+              <input className="search__input" type="text" placeholder="Search" />
             </label>
             <button className="search__btn" aria-label="search button">
               <span className="img-container">

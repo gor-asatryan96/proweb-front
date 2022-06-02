@@ -9,8 +9,8 @@
 
 .userInfo__amount {
   display: flex;
-  border-left: 1px solid var(--pmbet-blue-dark);
-  border-right: 1px solid var(--pmbet-blue-dark);
+  //border-left: 1px solid var(--pmbet-blue-dark);
+  //border-right: 1px solid var(--pmbet-blue-dark);
 }
 
 .userInfo__amount {
@@ -23,7 +23,7 @@
     padding: 0;
     height: 100%;
     font-weight: 700;
-    line-height: 1.357rem;
+    line-height: 1.8rem;
     justify-content: center;
     margin-right: 0.785rem;
     border: none;
@@ -33,7 +33,7 @@
 
 .userInfo__amountSize {
   margin-right: 0.2rem;
-  color: var(--pmbet-green);
+  color: var(--pmbet-white);
 
   @media screen and (min-width: 1025px){
     margin-right: 0;
@@ -41,7 +41,9 @@
 }
 
 .userInfo__amountType {
-  color: var(--pmbet-white);
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--pmbet-green);
   text-transform: uppercase;
 }
 
@@ -90,16 +92,5 @@
     height: 1.31rem;
     max-width: 100%;
     max-height: 100%;
-  }
-}
-
-.userInfo__idConfigLinkIdWithText {
-  color: var(--pmbet-green);
-  font-size: 0.857rem;
-
-  @media screen and (min-width: 1025px){
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 1.142rem;
   }
 }

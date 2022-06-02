@@ -1,0 +1,74 @@
+.prematchHeader {
+  padding: 0.94rem 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--pmbet-white-lightest);
+
+  &.mobile {
+    padding: 1.5rem;
+  }
+}
+
+.prematchHeader__back {
+  width: 0.5rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prematchHeaderBack__button {
+  margin-right: 1rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prematchHeaderBack__svg {
+  width: 0.5rem;
+  height: 1rem;
+  object-position: center;
+  object-fit: cover;
+  fill: var(--pmbet-green);
+}
+
+.prematchHeader__info {
+  display: flex;
+  align-items: center;
+
+  &.mobile {
+    width: calc(100% - 1.5rem);
+  }
+}
+
+.prematchHeader__flag {
+  margin-right: 0.5rem;
+  width: 1.375rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.prematchHeader__country {
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--pmbet-gray);
+}
+
+.prematchHeader__league {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--pmbet-gray);
+}
+
+.prematchHeader__count {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--pmbet-gray);
+}

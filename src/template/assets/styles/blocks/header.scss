@@ -91,6 +91,33 @@
    margin-bottom: 3px;
  }
 
+ .userInfo__deposit {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .userInfoDeposit__button {
+   width: 6.25rem;
+   height: 1.875rem;
+   text-align: center;
+   border: none;
+   outline: none;
+   background-color: var(--pmbet-green);
+   font-size: 0.875rem;
+   font-weight: 700;
+   border-radius: 2px;
+   overflow: hidden;
+   text-transform: uppercase;
+   color: var(--pmbet-white);
+   cursor: pointer;
+
+   @media screen and (max-width: 1024px){
+      width: max-content;
+     padding: 0 0.5rem;
+   }
+ }
+
  .header__config{
    @media screen and (min-width: 1025px){
      margin-left: auto;
