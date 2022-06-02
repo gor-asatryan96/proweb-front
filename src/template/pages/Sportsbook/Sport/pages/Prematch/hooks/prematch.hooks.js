@@ -92,7 +92,6 @@ export const usePrematchSideEffects = () => {
   function navigateToFirstEvent() {
     if (!events.length) return;
     const firstEvent = events[0];
-    console.log('navigateToFirstEvent', firstEvent.eventId);
     navigate(`/Sport/${PRE_MATCH}/${sportName}/${country}/${league}/${replaceSpaces(firstEvent.eventName)}-${firstEvent.eventId}`);
   }
 };

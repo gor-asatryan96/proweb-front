@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import { clearTokenFromStorage, getErrorMessage } from '../../../helpers/api';
 import { POPUPS_IDS } from '../../../template/components/Popups/constants/popups.constants';
 import { closePopup } from '../popups/popups.slice';
@@ -38,6 +39,14 @@ export const logoutThunk = createAsyncThunk(
   },
 );
 
+export const changePasswordThunk = createAsyncThunk(
+  'user/changePassword',
+  async (data) => {
+    const response = await axios.post('/auth/change-password', data);
+    return response;
+  },
+);
+
 // THUNK HANDLERS ****************
 const loginThunkFulfilled = (_, { payload }) => ({
   isConnected: true,
@@ -63,5 +72,16 @@ export const authExtraReducers = (builder) => {
     .addCase(getUserByTokenThunk.rejected, (state) => {
       state.isConnected = true;
       clearTokenFromStorage();
+    })
+    .addCase(changePasswordThunk.pending, (state) => {
+      state.isChangePasswordLoading = true;
+    })
+    .addCase(changePasswordThunk.fulfilled, (state) => {
+      state.isChangePasswordLoading = false;
+      toast.success('Password was changed');
+    })
+    .addCase(changePasswordThunk.rejected, (state) => {
+      state.isChangePasswordLoading = false;
+      toast.error('something went wrong');
     });
 };

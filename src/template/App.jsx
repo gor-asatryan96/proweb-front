@@ -1,7 +1,8 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation, useRoutes } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
 import Panel from './components/Mobile/Panel/Panel';
 import BurgerMenu from './components/Mobile/BurgerMenu/BurgerMenu';
 import Slider from './components/Mobile/Slider/Slider';
@@ -46,6 +47,7 @@ const App = () => {
         <Panel />
       </div>
       <Popups />
+      <ToastContainer />
     </div>
   );
 };

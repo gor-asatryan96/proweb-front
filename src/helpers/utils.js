@@ -1,4 +1,4 @@
-import { EMAIL_REGEX, NUMBER_REGEX } from './regex.helpers';
+import { EMAIL_REGEX, NOT_NUMBER_REGEX } from './regex.helpers';
 
 export const LOADING_ITEMS = Array(40).fill(null);
 
@@ -7,7 +7,7 @@ export function validateEmail(email) {
 }
 
 export function allowOnlyNumber(value) {
-  return value.replace(NUMBER_REGEX, '');
+  return value.replace(NOT_NUMBER_REGEX, '');
 }
 
 export function fixedTo2(num) {

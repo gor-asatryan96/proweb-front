@@ -1,19 +1,25 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { changePasswordThunk } from '../../../../../../../../redux/reducers/user/auth.thunk';
+import { selectIsChangePasswordLoading } from '../../../../../../../../redux/reducers/user/user.slice';
+import { Button } from '../../../../../../UI';
 
 const passwordInputs = [
-  { key: 'currentPassword', placeholder: 'Current password' },
+  { key: 'oldPassword', placeholder: 'Current password' },
   { key: 'newPassword', placeholder: 'New password' },
-  { key: 'confirmPassword', placeholder: 'Confirm new password' },
+  { key: 'newPasswordConfirm', placeholder: 'Confirm new password' },
 ];
 
 const MyProfilePassword = () => {
+  const dispatch = useDispatch();
+  const isChangeLoading = useSelector(selectIsChangePasswordLoading);
   const [ showPasswords, setShowPasswords ] = useState([]);
   const [ isNotSameError, setIsNotSameError ] = useState(false);
 
   const {
-    register, handleSubmit, formState: { errors },
+    register, handleSubmit, formState: { errors }, reset,
   } = useForm();
 
   const toggleShowPasswords = (key) => {
@@ -25,11 +31,11 @@ const MyProfilePassword = () => {
   };
 
   const onSubmit = (data) => {
-    if (data.newPassword !== data.confirmPassword) {
+    if (data.newPassword !== data.newPasswordConfirm) {
       return setIsNotSameError(true);
     }
     setIsNotSameError(false);
-    console.log('MyProfilePassword', data);
+    dispatch(changePasswordThunk(data)).unwrap().then(() => reset());
   };
 
   return (
@@ -61,7 +67,12 @@ const MyProfilePassword = () => {
       {isNotSameError
       && <div className='popup__error'>password and confirmation do not match</div>}
       <div className="profile__form-block profile__form-block_btn">
-        <button type="submit" className="profile__form-btn">save password</button>
+        <Button
+          type='submit'
+          loading={isChangeLoading}
+          className='profile__form-btn'>
+          save password
+        </Button>
       </div>
     </form>
   );

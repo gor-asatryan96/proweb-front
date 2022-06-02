@@ -40,5 +40,6 @@ export const selectUserId = state => state.user.id;
 export const selectUserBalance = state => state.user.balance;
 export const selectUserCurrency = state => state.user.currency;
 export const selectUserUnits = state => state.user.units;
+export const selectIsChangePasswordLoading = state => state.user.isChangePasswordLoading;
 
 export default userSlice.reducer;

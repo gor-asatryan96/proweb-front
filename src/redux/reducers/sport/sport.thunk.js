@@ -33,7 +33,6 @@ export const getPrematchEventsThunk = createAsyncThunk(
       country,
       topEvents: false,
     });
-    console.log('response', response);
     return response;
   },
 );
@@ -50,7 +49,6 @@ export const getSinglePrematchThunk = createAsyncThunk(
       eventID,
       topEvents: false,
     });
-    console.log('response', response);
     return response[0];
   },
 );
