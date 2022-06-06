@@ -67,6 +67,7 @@ export const sportExtraReducers = (builder) => {
     })
     .addCase(getPrematchEventsThunk.pending, (state) => {
       state.isEventsLoading = true;
+      state.activeLeague = [];
       state.events = [];
       state.activeEvent = null;
     })
@@ -75,7 +76,7 @@ export const sportExtraReducers = (builder) => {
       if (payload.competition) {
         const { events, ...activeLeague } = payload.competition;
         state.events = events;
-        state.activeLeague = activeLeague;
+        state.activeLeague = { eventsCount: events.length, ...activeLeague };
       }
     })
     .addCase(getPrematchEventsThunk.rejected, (state, { error }) => {
