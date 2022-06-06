@@ -12,7 +12,7 @@ const PrematchHeader = () => {
   const leagueInfo = useSelector(selectPrematchActiveLeague);
   const isEventsLoading = useSelector(selectIsPrematchEventsLoading);
 
-  if (!leagueInfo || !isEventsLoading) return <PrematchHeaderSkeleton />;
+  if (!leagueInfo || isEventsLoading) return <PrematchHeaderSkeleton />;
 
   return (
     <div className={s.prematchHeader}>
