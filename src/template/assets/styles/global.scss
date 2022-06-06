@@ -225,7 +225,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .nav__link.nav__link--login {
   color: var(--pmbet-white);
-  white-space: pre-wrap;
+  white-space: nowrap;
   font-family: "Roboto Condensed","Arial",sans-serif;
 }
 

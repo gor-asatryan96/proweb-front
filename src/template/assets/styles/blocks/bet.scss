@@ -212,6 +212,39 @@
   }
 }
 
+.bet-filter__more {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bet-filter__select {
+  width: 50.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bet-filter__sides {
+  padding: 0 10px;
+  width: 13.428rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: 1025px) {
+    width: 10.998rem;
+  }
+}
+
+.bet-filter__side {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--pmbet-gray);
+}
+
 .bet-filter__block.active::before {
   content: "";
   display: block;

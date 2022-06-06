@@ -12,7 +12,7 @@
 
 .header__container {
   display: flex;
-
+  justify-content: space-between;
   height: 100%;
 
   @media screen and (min-width: 1025px){
@@ -35,6 +35,12 @@
   @media screen and (min-width: 1025px){
     margin-right: 0.71rem;
   }
+}
+
+.header__item {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .header__nav {

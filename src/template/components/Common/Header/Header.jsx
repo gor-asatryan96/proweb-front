@@ -40,7 +40,8 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container header__container">
-        {!isDesktop && (
+        <div className="header__item">
+          {!isDesktop && (
           <div onClick={openBurger} className="burger header__burger">
             <span className="img-container">
               <svg className="burger-icon" width="28" height="24">
@@ -48,117 +49,120 @@ const Header = () => {
               </svg>
             </span>
           </div>
-        )}
-        <div className="logo header__logo">
-          <div className="img-container">
-            <svg className="logo__img" width="80.83" height="28.12">
-              <use xlinkHref="#logo" />
-            </svg>
+          )}
+          <div className="logo header__logo">
+            <div className="img-container">
+              <svg className="logo__img" width="80.83" height="28.12">
+                <use xlinkHref="#logo" />
+              </svg>
+            </div>
           </div>
-        </div>
-        {isDesktop && (
+          {isDesktop && (
           <SearchPanel />
-        )}
-        {!isDesktop && <div className="config header__config">
-          <ul className="config__list">
-            <li className="config__item">
-              <div className="config__link">
-                <div className="img-container">
-                  <div className="config__content">
-                    <svg className="headerMobileSearch__svg">
-                      <use xlinkHref="#searchMobile" />
-                    </svg>
+          )}
+          {!isDesktop && <div className="config header__config">
+            <ul className="config__list">
+              <li className="config__item">
+                <div className="config__link">
+                  <div className="img-container">
+                    <div className="config__content">
+                      <svg className="headerMobileSearch__svg">
+                        <use xlinkHref="#searchMobile" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            {isDesktop && (
-            <li className="config__item">
-              <a className="config__link" href="#">
-                <div className="img-container">
-                  <div className="config__content">
-                    <svg className="config__img config__img--comment" width="1.625rem" height="1.5rem" fill="#5f6c79" stroke="#5f6c79">
-                      <use xlinkHref="#chat-2" />
-                    </svg>
+              </li>
+              {isDesktop && (
+              <li className="config__item">
+                <a className="config__link" href="#">
+                  <div className="img-container">
+                    <div className="config__content">
+                      <svg className="config__img config__img--comment" width="1.625rem" height="1.5rem" fill="#5f6c79" stroke="#5f6c79">
+                        <use xlinkHref="#chat-2" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </li>
-            )}
-          </ul>
+                </a>
+              </li>
+              )}
+            </ul>
           </div>}
-        {/* {!isConnected
+          {/* {!isConnected
         && <div className='headerSkeletons'>
           <div><RowSkeleton /></div>
           <div><RowSkeleton /></div>
           </div>} */}
-        {!isConnected
-        && <div className="header__user userInfo">
-          <div className="userInfo__container">
-            <div className="userInfo__amount">
-              <div className='balanceSkeleton'><RowSkeleton radius='0.2rem' /></div>
-              <div className='currencySkeleton'><RowSkeleton radius='0.2rem' /></div>
-            </div>
-            <div className="userInfo__idConfigLink">
-              <span className="userInfo__idConfigLinkIcon">
-                <svg className="userInfo__idConfigLinkIconSvg" viewBox="0 0 20.46 21">
-                  <use xlinkHref="#userIconInfo" />
-                </svg>
-              </span>
-              <span className="userSkeleton"><RowSkeleton radius='0.15rem' /></span>
-            </div>
-          </div>
         </div>
-          }
-        {isConnected
-          && (isAuth
-            ? <div className="header__user userInfo">
-              <div className="userInfo__container">
-                <div className="userInfo__amount">
-                  <div className="userInfo__amountSize">{balance}</div>
-                  <div className="userInfo__amountType">{currency}</div>
-                </div>
-                <div className="userInfo__deposit">
-                  <button className="userInfoDeposit__button">Deposit</button>
-                </div>
-                <div onClick={() => togglePopup(gifts.length ? GIFTS : USER_PROFILE)} className="userInfo__idConfigLink">
-                  {
-                    gifts.length ? (<>
-                      <span className="userInfo__idConfigLinkIcon">
-                        <svg className="userInfo__idConfigLinkIconSvg gift" viewBox="0 0 20.46 21">
-                          <use xlinkHref="#gift" />
-                        </svg>
-                        {gifts.length}
-                      </span>
-                    </>
-                    ) : (<>
-                      <span className="userInfo__idConfigLinkIcon">
-                        <svg className="userInfo__idConfigLinkIconSvg" viewBox="0 0 20.46 21">
-                          <use xlinkHref="#userIconInfo" />
-                        </svg>
-                      </span>
-                    </>
-                    )
-                  }
+        <div className="header__item">
+          {!isConnected
+              && <div className="header__user userInfo">
+                <div className="userInfo__container">
+                  <div className="userInfo__amount">
+                    <div className='balanceSkeleton'><RowSkeleton radius='0.2rem' /></div>
+                    <div className='currencySkeleton'><RowSkeleton radius='0.2rem' /></div>
+                  </div>
+                  <div className="userInfo__idConfigLink">
+                    <span className="userInfo__idConfigLinkIcon">
+                      <svg className="userInfo__idConfigLinkIconSvg" viewBox="0 0 20.46 21">
+                        <use xlinkHref="#userIconInfo" />
+                      </svg>
+                    </span>
+                    <span className="userSkeleton"><RowSkeleton radius='0.15rem' /></span>
+                  </div>
                 </div>
               </div>
-            </div>
-            : <nav className="nav header__nav">
-              <ul className="nav__list">
-                <li className="nav__item" onClick={() => togglePopup(LOGIN)}>
-                  <div className="nav__link nav__link--login">
-                    log in
+          }
+          {isConnected
+              && (isAuth
+                ? <div className="header__user userInfo">
+                  <div className="userInfo__container">
+                    <div className="userInfo__amount">
+                      <div className="userInfo__amountSize">{balance}</div>
+                      <div className="userInfo__amountType">{currency}</div>
+                    </div>
+                    <div className="userInfo__deposit">
+                      <button className="userInfoDeposit__button">Deposit</button>
+                    </div>
+                    <div onClick={() => togglePopup(gifts.length ? GIFTS : USER_PROFILE)} className="userInfo__idConfigLink">
+                      {
+                          gifts.length ? (<>
+                            <span className="userInfo__idConfigLinkIcon">
+                              <svg className="userInfo__idConfigLinkIconSvg gift" viewBox="0 0 20.46 21">
+                                <use xlinkHref="#gift" />
+                              </svg>
+                              {gifts.length}
+                            </span>
+                          </>
+                          ) : (<>
+                            <span className="userInfo__idConfigLinkIcon">
+                              <svg className="userInfo__idConfigLinkIconSvg" viewBox="0 0 20.46 21">
+                                <use xlinkHref="#userIconInfo" />
+                              </svg>
+                            </span>
+                          </>
+                          )
+                        }
+                    </div>
                   </div>
-                </li>
-                <li className="nav__item" onClick={() => togglePopup(REGISTER)}>
-                  <div className="nav__link nav__link--register">
-                    register
-                  </div>
-                </li>
-              </ul>
-            </nav>)
-        }
-        {isDesktop && <LanguageSwitcher />}
+                </div>
+                : <nav className="nav header__nav">
+                  <ul className="nav__list">
+                    <li className="nav__item" onClick={() => togglePopup(LOGIN)}>
+                      <div className="nav__link nav__link--login">
+                        log in
+                      </div>
+                    </li>
+                    <li className="nav__item" onClick={() => togglePopup(REGISTER)}>
+                      <div className="nav__link nav__link--register">
+                        register
+                      </div>
+                    </li>
+                  </ul>
+                </nav>)
+          }
+          {isDesktop && <LanguageSwitcher />}
+        </div>
       </div>
     </header>
   );
