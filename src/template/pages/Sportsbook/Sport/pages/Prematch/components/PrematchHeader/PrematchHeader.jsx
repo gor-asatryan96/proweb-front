@@ -5,14 +5,14 @@ import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.cons
 import s from './PrematchHeader.module.scss';
 import Flag from '../../../../../../../../components/Flag/Flag';
 import { selectIsPrematchEventsLoading, selectPrematchActiveLeague } from '../../../../../../../../redux/reducers/sport/sport.slice';
-import PrematchCardSkeleton from '../PrematchCard/PrematchCardSkeleton';
+import PrematchHeaderSkeleton from './PrematchHeaderSkeleton';
 
 const PrematchHeader = () => {
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
   const leagueInfo = useSelector(selectPrematchActiveLeague);
   const isEventsLoading = useSelector(selectIsPrematchEventsLoading);
 
-  if (!leagueInfo || !isEventsLoading) return <PrematchCardSkeleton />;
+  if (!leagueInfo || !isEventsLoading) return <PrematchHeaderSkeleton />;
 
   return (
     <div className={s.prematchHeader}>
