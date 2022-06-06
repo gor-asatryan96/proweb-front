@@ -1,13 +1,29 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { useSelector } from 'react-redux';
 import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
-import { SPORT_TABS } from '../../../../constants/sport.constants';
 import s from './PrematchHeader.module.scss';
 import Flag from '../../../../../../../../components/Flag/Flag';
+import { useSportParams } from '../../../../hooks/sport.hooks';
+import { selectPrematchSportsList } from '../../../../../../../../redux/reducers/sport/sport.slice';
+import { replaceUnderscores } from '../../../../../../../../helpers/utils';
 
 const PrematchHeader = () => {
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
+  const { sportName, country, league } = useSportParams();
+  const sportList = useSelector(selectPrematchSportsList);
+
+  const currentLeague = useMemo(() => {
+    if (!sportList.length || !sportName || !country || !league) return null;
+    const sportInfo = sportList.find(sport => sport.sportName === replaceUnderscores(sportName));
+    if (!sportInfo) return null;
+    const countryInfo = sportInfo.countries.find(item => item.name === replaceUnderscores(country));
+    if (!countryInfo) return null;
+    const leagueInfo = countryInfo.leagues.find(el => el.competitionName === replaceUnderscores(league));
+    if (!leagueInfo) return null;
+    return leagueInfo;
+  }, [ sportList, sportName, country, league ]);
 
   return (
     <div className={s.prematchHeader}>
