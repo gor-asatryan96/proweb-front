@@ -213,17 +213,29 @@
 }
 
 .bet-filter__more {
-  margin: 1rem 0;
+  padding: 0.5rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, var(--pmbet-black-03) 50%, var(--pmbet-white-6) 50%);
+  }
 }
 
 .bet-filter__select {
   width: 50.5%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .bet-filter__sides {

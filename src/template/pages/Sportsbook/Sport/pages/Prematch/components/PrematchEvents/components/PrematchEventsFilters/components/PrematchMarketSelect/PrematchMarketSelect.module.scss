@@ -1,6 +1,14 @@
 .PrematchSelect__label {
   width: 100%;
   position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+
+  @media screen and (max-width: 1025px) {
+    max-width: 15.21rem;
+    border: 1px solid var(--pmbet-cream);
+    border-radius: 5px;
+  }
 }
 
 .PrematchSelect {
