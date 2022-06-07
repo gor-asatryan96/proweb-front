@@ -2,13 +2,12 @@ import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import PrematchCard from '../PrematchCard/PrematchCard';
-// import SportFilters from '../PrematchFilters/PrematchFilters';
-import PrematchHeader from '../PrematchHeader/PrematchHeader';
 import { selectIsPrematchEventsLoading, selectPrematchEvents } from '../../../../../../../../redux/reducers/sport/sport.slice';
 import PrematchCardSkeleton from '../PrematchCard/PrematchCardSkeleton';
 import { LOADING_ITEMS } from '../../../../../../../../helpers/utils';
-import SportSelect from '../../../../../../../components/Desktop/SportSelect/SportSelect';
 import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
+import PrematchEventsHeader from './components/PrematchEventsHeader/PrematchEventsHeader';
+// import PrematchFilters from '../PrematchFilters/PrematchFilters';
 
 const PrematchEvents = () => {
   const sportEvents = useSelector(selectPrematchEvents);
@@ -18,18 +17,7 @@ const PrematchEvents = () => {
 
   return (
     <div className={classNames('bet__column', { bet__column_loading: isEventsLoading })}>
-      <div className='bet-filter__block'>
-        <PrematchHeader />
-        {isDesktop && <div className="bet-filter__more">
-          <div className="bet-filter__select">
-            <SportSelect />
-          </div>
-          <div className="bet-filter__sides">
-            <div className="bet-filter__side">Home</div>
-            <div className="bet-filter__side">Away</div>
-          </div>
-          </div>}
-      </div>
+      <PrematchEventsHeader />
       <div className="bet-rate">
         <ul className="bet-rate__list">
           {/* <PrematchCardSkeleton /> */}
