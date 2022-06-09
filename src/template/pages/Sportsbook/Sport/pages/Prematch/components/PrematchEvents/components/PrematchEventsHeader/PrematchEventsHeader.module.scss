@@ -87,3 +87,53 @@
   font-weight: 700;
   color: var(--pmbet-gray);
 }
+
+.skeleton {
+  .prematchHeader__flag {
+    width: 1.375rem;
+    height: 1rem;
+  }
+  
+  .prematchHeader__country {
+    width: 3rem;
+    height: 0.9rem;
+  }
+  
+  .prematchHeader__league {
+    width: 5rem;
+    height: 0.9rem;
+  }
+  
+  .prematchHeader__count {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .skeletonSelect {
+    height: 1.625rem;
+    background-color: var(--pmbet-white);
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    & > div {
+      height: 0.9rem;
+    }
+  
+    & > div:first-child {
+      margin-left: 0.3rem;
+      width: 5rem;
+    }
+  
+    & > div:last-child {
+      width: 0.9rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .skeletonMarketType {
+    height: 0.9rem;
+    width: 2.5rem;
+  }
+}
