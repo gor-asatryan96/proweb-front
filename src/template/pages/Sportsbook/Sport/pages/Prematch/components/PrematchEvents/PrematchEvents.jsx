@@ -1,19 +1,15 @@
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
-import { useMediaQuery } from 'react-responsive';
 import PrematchCard from '../PrematchCard/PrematchCard';
 import { selectIsPrematchEventsLoading, selectPrematchEvents } from '../../../../../../../../redux/reducers/sport/sport.slice';
 import PrematchCardSkeleton from '../PrematchCard/PrematchCardSkeleton';
 import { LOADING_ITEMS } from '../../../../../../../../helpers/utils';
-import { MEDIA_QUERIES } from '../../../../../../../../constants/mediaQuery.constants';
 import PrematchEventsHeader from './components/PrematchEventsHeader/PrematchEventsHeader';
 // import PrematchFilters from '../PrematchFilters/PrematchFilters';
 
 const PrematchEvents = () => {
   const sportEvents = useSelector(selectPrematchEvents);
   const isEventsLoading = useSelector(selectIsPrematchEventsLoading);
-  const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
-  // const [ isFilterOpen, setIsFilterOpen ] = useState(false);
 
   return (
     <div className={classNames('bet__column', { bet__column_loading: isEventsLoading })}>

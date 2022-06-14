@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation, useRoutes } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
@@ -24,16 +23,9 @@ const App = () => {
   useAppSideEffects();
 
   const isSearchActive = [ '/games' ].includes(pathname);
-  const isSwiperActive = [ '/sport', '/live', '/games' ].includes(pathname);
+  const isSliderActive = [ '/sport', '/live', '/games' ].includes(pathname);
 
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
-
-  useEffect(() => {
-    if (!isDesktop) {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-  }, [ isDesktop ]);
 
   return (
     <div className="wrapper-outer">
@@ -41,7 +33,7 @@ const App = () => {
         <Header />
         {isBurgerActive && <BurgerMenu />}
         {!isDesktop && isSearchActive && <SearchPanel />}
-        {!isDesktop && isSwiperActive && <Slider />}
+        {!isDesktop && isSliderActive && <Slider />}
         {routes}
         <Betslip />
         <Panel />
