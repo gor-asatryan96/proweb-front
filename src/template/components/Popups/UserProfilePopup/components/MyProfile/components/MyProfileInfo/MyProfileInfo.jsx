@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
@@ -8,6 +9,8 @@ import { selectUser } from '../../../../../../../../redux/reducers/user/user.sli
 
 const MyProfileInfo = () => {
   const { gender = 1, name = '' } = useSelector(selectUser);
+  const user = useSelector(selectUser);
+
   const {
     register, handleSubmit, formState: { errors },
   } = useForm({
@@ -58,42 +61,90 @@ const MyProfileInfo = () => {
       <span className="profile__label-text">Date of birth</span>
       <div className="profile__form-block profile__form-block_date">
         <div className="profile__form-row profile__form-row_2">
-          <select {...register('month')} className="profile__select profile__select_3 profile__select_3_month">
+          <div className="profile__select profile__select_3 profile__select_3_month">
+            <div className="profile__option">
+              <div style={{ padding: 15, paddingLeft: 0 }}>
+                {dayjs(user.birthday).format('MMMM')}
+              </div>
+            </div>
+          </div>
+
+          {/* <select {...register('month')} className="profile__select profile__select_3 profile__select_3_month">
             <option className="profile__option">August</option>
             <option className="profile__option">September</option>
-          </select>
-          <select {...register('day')} className="profile__select profile__select_3 profile__select_3_day">
+          </select> */}
+
+          <div className="profile__select profile__select_3 profile__select_3_day">
+            <div className="profile__option">
+              <div style={{ padding: 15, paddingLeft: 0 }}>
+                {dayjs(user.birthday).format('DD')}
+              </div>
+            </div>
+          </div>
+
+          {/* <select {...register('day')} className="profile__select profile__select_3 profile__select_3_day">
             <option className="profile__option">13</option>
             <option className="profile__option">14</option>
-          </select>
-          <select {...register('year')} className="profile__select profile__select_3 profile__select_3_year">
+          </select> */}
+
+          <div className="profile__select profile__select_3 profile__select_3_day">
+            <div className="profile__option">
+              <div style={{ padding: 15, paddingLeft: 0 }}>
+                {dayjs(user.birthday).format('YYYY')}
+              </div>
+            </div>
+          </div>
+
+          {/* <select {...register('year')} className="profile__select profile__select_3 profile__select_3_year">
             <option className="profile__option">1987</option>
             <option className="profile__option">1986</option>
-          </select>
+          </select> */}
+
         </div>
       </div>
       <span className="profile__label-text">Country of residence</span>
       <div className="profile__form-block profile__form-block_city">
         <div className="profile__form-row">
-          <select {...register('country')} className="profile__select">
+          <div className="profile__select">
+            <div className='profile__select profile_input_phone'>
+              {user.country}
+            </div>
+          </div>
+
+          {/* <select {...register('country')} className="profile__select">
             <option className="profile__option">Armenia</option>
-          </select>
+          </select> */}
         </div>
+
       </div>
       <span className="profile__label-text">Address</span>
       <div className="profile__form-block profile__form-block_address">
         <div className="profile__form-row">
-          <select {...register('address')} className="profile__select">
+          <div className="profile__select">
+            <div className='profile_input_phone profile__select'>
+              {user.address}
+            </div>
+          </div>
+
+          {/* <select {...register('address')} className="profile__select">
             <option className="profile__option">Komitas</option>
-          </select>
+          </select> */}
+
         </div>
       </div>
       <span className="profile__label-text">Currency</span>
       <div className="profile__form-block profile__form-block_currency">
         <div className="profile__form-row">
-          <select {...register('currency')} className="profile__select">
+          <div className="profile__select">
+            <div className='profile__select profile_input_phone'>
+              {user.currency}
+            </div>
+          </div>
+
+          {/* <select {...register('currency')} className="profile__select">
             <option className="profile__option">Euro</option>
-          </select>
+          </select> */}
+
         </div>
       </div>
       <span className="profile__label-text">Document type</span>

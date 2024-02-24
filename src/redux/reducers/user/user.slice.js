@@ -37,6 +37,7 @@ export const selectUser = state => state.user;
 export const selectIsAuth = state => state.user.isAuth;
 export const selectIsConnected = state => state.user.isConnected;
 export const selectUserId = state => state.user.id;
+export const selectUserGender = state => state.user.gender;
 export const selectUserBalance = state => state.user.balance;
 export const selectUserCurrency = state => state.user.currency;
 export const selectUserUnits = state => state.user.units;

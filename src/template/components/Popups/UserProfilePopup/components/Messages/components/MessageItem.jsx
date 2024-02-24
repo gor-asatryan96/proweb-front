@@ -4,10 +4,11 @@ import { useDispatch } from 'react-redux';
 import { formateDate } from '../../../../../../../helpers/date';
 import trash from '../../../../../../assets/images/icon/trash.svg';
 import { deleteMessage } from '../../../../../../../redux/reducers/messages/messages.slice';
+import { messagesReadThunk } from '../../../../../../../redux/reducers/messages/messages.thunk';
 
 const MessageItem = ({
   data: {
-    id, title, date, message,
+    message_id, status, message_title, inserted_at, message_body,
   }, isOpen, toggleMessage, isRead, isDesktop,
 }) => {
   const dispatch = useDispatch();
@@ -15,25 +16,34 @@ const MessageItem = ({
     e.preventDefault();
     dispatch(deleteMessage(messageId));
   };
+  const messageId = message_id;
+
+  const onMessageClick = () => {
+    if (status === 'UNREAD') {
+      dispatch(messagesReadThunk(messageId));
+    }
+  };
 
   return (
-    <div className={classNames('message__row message__inner', {
-      read: isRead, desktop: isDesktop,
-    })}>
+    <div
+      onClick={() => onMessageClick(messageId)}
+      className={classNames('message__row message__inner', {
+        read: status === 'READ', desktop: isDesktop,
+      })}>
       <div className="message__inner-block" onClick={toggleMessage}>
-        <div className='message__column message__column_title'>{title}</div>
+        <div className='message__column message__column_title'>{message_title}</div>
         <div className="message__column message__column_date">
           <div className="message__column_day">
             <span>
-              {formateDate(date).day}
+              {formateDate(inserted_at).day}
             </span>
             {isDesktop && (
-            <span>16:30</span>
+            <span>{formateDate(inserted_at).time}</span>
             )}
           </div>
           {
             isDesktop && <>
-              <div onClick={e => handleMessageDeleting(e, id)} className='message__trash-icon'>
+              <div onClick={e => handleMessageDeleting(e, messageId)} className='message__trash-icon'>
                 <img src={trash} alt="trash" />
               </div>
             </>
@@ -46,7 +56,7 @@ const MessageItem = ({
         </div>
       </div>
       <div className={classNames('message__inner-text', { active: isOpen })}>
-        {message}
+        {message_body}
       </div>
     </div>
   );

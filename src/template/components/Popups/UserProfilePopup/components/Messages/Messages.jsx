@@ -2,54 +2,23 @@ import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import MessageItem from './components/MessageItem';
-import { selectMessages, setMessagesRead } from '../../../../../../redux/reducers/messages/messages.slice';
-
-export const messagesMock = [
-  {
-    id: '1',
-    title: 'new game',
-    date: new Date(),
-    message: 'lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industrys Standard Dummy',
-    read: false,
-  },
-  {
-    id: '2',
-    title: 'promotion',
-    date: new Date(),
-    message: 'lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industrys Standard Dummy',
-    read: false,
-  },
-  {
-    id: '3',
-    title: 'free bet',
-    date: new Date(),
-    message: 'lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industrys Standard Dummy',
-    read: false,
-  },
-  {
-    id: '4',
-    title: 'info',
-    date: new Date(),
-    message: 'lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industrys Standard Dummy',
-    read: false,
-  },
-];
+import { selectMessages } from '../../../../../../redux/reducers/messages/messages.slice';
+import { getMessagesThunk } from '../../../../../../redux/reducers/messages/messages.thunk';
 
 const Messages = ({ goBack, configs }) => {
+  const dispatch = useDispatch();
   const [ openMessages, setOpenMessages ] = useState([]);
-  const [ readMessages, setReadMessages ] = useState([]);
 
   const messages = useSelector(selectMessages);
-  const readMessagesLength = useMemo(() => messages.filter(item => !item.read).length, [ readMessages ]);
-  const dispatch = useDispatch();
+  const readMessagesLength = useMemo(() => messages.filter(item => item.status === 'READ').length, [ messages ]);
 
   const toggleMessage = (id) => {
-    setReadMessages((prev) => {
-      if (!prev.includes(id)) {
-        prev.push(id);
-      }
-      return [ ...prev ];
-    });
+    // setReadMessages((prev) => {
+    //   if (!prev.includes(id)) {
+    //     prev.push(id);
+    //   }
+    //   return [ ...prev ];
+    // });
     if (openMessages.includes(id)) {
       setOpenMessages(prev => prev.filter(item => item !== id));
     } else {
@@ -57,9 +26,9 @@ const Messages = ({ goBack, configs }) => {
     }
   };
 
-  useEffect(() => () => {
-    dispatch(setMessagesRead(readMessages));
-  }, [ readMessages ]);
+  useEffect(() => {
+    dispatch(getMessagesThunk());
+  }, [ ]);
 
   return (
     <>
@@ -88,9 +57,10 @@ const Messages = ({ goBack, configs }) => {
             isDesktop={configs.isDesktop}
             key={message.id}
             data={message}
-            isRead={message.read}
-            isOpen={openMessages.includes(message.id)}
-            toggleMessage={() => toggleMessage(message.id)} />
+            isRead={message.status}
+            isOpen={openMessages.includes(message.message_id)}
+            toggleMessage={() => toggleMessage(message.message_id)}
+            />
         ))}
       </div>
     </>

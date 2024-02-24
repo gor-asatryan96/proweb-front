@@ -2,15 +2,24 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { MEDIA_QUERIES } from '../../../../../../constants/mediaQuery.constants';
 import { logoutThunk } from '../../../../../../redux/reducers/user/auth.thunk';
+import {
+  selectUser, selectUserBalance, selectUserGender, selectUserId, selectUserUnits,
+} from '../../../../../../redux/reducers/user/user.slice';
 import GoBackHeader from '../../../components/GoBackHeader/GoBackHeader';
 import MyProfileInfo from './components/MyProfileInfo/MyProfileInfo';
 import MyProfilePassword from './components/MyProfilePassword/MyProfilePassword';
 
 const MyProfile = ({ goBack, configs }) => {
   const dispatch = useDispatch();
-  const email = useSelector(state => state.user.email);
-  const number = useSelector(state => state.user.number);
+  const email = useSelector(state => state.user.e_mail);
+  const user = useSelector(selectUser);
+  const gender = useSelector(selectUserGender);
   const isDesktop = useMediaQuery(MEDIA_QUERIES.DESKTOP);
+  const userId = useSelector(selectUserId);
+  const userBalance = useSelector(selectUserBalance);
+  const userUnits = useSelector(selectUserUnits);
+  const userPhone = user.phone.slice(4);
+  const phoneExtensions = useSelector(state => state.serverConfigs.phoneExtensions);
 
   const onLogoutClick = () => {
     dispatch(logoutThunk());
@@ -42,26 +51,41 @@ const MyProfile = ({ goBack, configs }) => {
                     <div className="popup-profile__form-content">
                       <div className="popup-profile__form-line">
                         <label className="popup-profile__form-multi">
-                          <select
+                          <div className="popup-profile__form-select  popup-profile__input">
+                            <div>
+                              {gender}.
+                            </div>
+                          </div>
+                          {/* <select
                             className="popup-profile__form-select popup-profile__form-select--month popup-profile__input"
                             name="">
                             <option value="">Mr.</option>
                             <option value="">Mrs.</option>
-                          </select>
+                          </select> */}
                         </label>
                         <label className="popup-profile__form-label">
-                          <input
+
+                          <div className='popup-profile__form-input popup-profile__input'>
+                            <div style={{ padding: 15, paddingLeft: 0 }}>
+                              {user.f_name} {user.l_name}
+                            </div>
+                          </div>
+
+                          {/* <input
                             className="popup-profile__form-input popup-profile__input"
                             type="text"
-                            value="093933394" />
+                            value={user.f_name} /> */}
+
                           <span className="popup-profile__form-change">
-                            <button className="popup-profile__form-edit">
+
+                            {/* <button className="popup-profile__form-edit">
                               <span className="img-container">
                                 <svg width="12" height="14">
                                   <use xlinkHref="#edit" />
                                 </svg>
                               </span>
-                            </button>
+                            </button> */}
+
                             <span className="popup-profile__form-confirm">
                               <button className="popup-profile__form-accept">
                                 <span className="img-container">
@@ -97,7 +121,7 @@ const MyProfile = ({ goBack, configs }) => {
                       ID:
                     </div>
                     <div className="popup-profile__form-value">
-                      123456789
+                      {userId}
                     </div>
                   </li>
                   <li className="popup-profile__form-item popup-profile__input">
@@ -106,7 +130,7 @@ const MyProfile = ({ goBack, configs }) => {
                     </div>
                     <div className="popup-profile__form-value">
                       <span className="popup-profile__form-unit">
-                        123456789.00
+                        {userBalance}
                       </span>
                       <span className="popup-profile__form-currency">
                         TZS
@@ -119,7 +143,7 @@ const MyProfile = ({ goBack, configs }) => {
                     </div>
                     <div className="popup-profile__form-value">
                       <span className="popup-profile__form-unit">
-                        0.00
+                        {userUnits}
                       </span>
                     </div>
                   </li>
@@ -131,24 +155,39 @@ const MyProfile = ({ goBack, configs }) => {
           <div className="profile__form-block profile__form-block_contact">
             <div className="profile__form-row">
               <label className="profile__label">
-                <input type="text" className="profile__input" value={email} disabled />
+
+                <div className="profile__input">
+                  <div className="profile__input profile_input_phone">
+                    {email}
+                  </div>
+                </div>
+
+                {/* <input type="text" className="profile__input" value={email} disabled /> */}
               </label>
             </div>
             <div className="profile__form-row profile__form-row_2">
+
               <label className="profile__label profile__label_code">
-                <input disabled className="profile__input" value='+374' />
+                <input className="profile__input" value={phoneExtensions[0]} />
               </label>
+
               <label className="profile__label profile__label_number">
-                <input disabled type="number" className="profile__input" value={number} />
+                <div className="profile__input profile_input_phone">
+                  {userPhone}
+                </div>
+                {/* <input type="number" className="profile__input" value={userPhone} /> */}
+
                 {isDesktop && (
                 <span className="popup-profile__form-change">
-                  <button className="popup-profile__form-edit">
+
+                  {/* <button className="popup-profile__form-edit">
                     <span className="img-container">
                       <svg width="12" height="14">
                         <use xlinkHref="#edit" />
                       </svg>
                     </span>
-                  </button>
+                  </button> */}
+
                   <span className="popup-profile__form-confirm">
                     <button className="popup-profile__form-accept">
                       <span className="img-container">

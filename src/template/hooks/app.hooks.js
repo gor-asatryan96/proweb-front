@@ -5,7 +5,6 @@ import { useMediaQuery } from 'react-responsive';
 import { openPopup } from '../../redux/reducers/popups/popups.slice';
 import { setIsConnected } from '../../redux/reducers/user/user.slice';
 import { getUserByTokenThunk } from '../../redux/reducers/user/auth.thunk';
-import { messagesThunk } from '../../redux/reducers/messages/messages.thunk';
 import { DESTINATION_CONFIGS } from '../components/Popups/configs/destination.configs';
 import { getServerConfigsThunk } from '../../redux/reducers/serverConfigs/serverConfigs.thunk';
 import { MEDIA_QUERIES } from '../../constants/mediaQuery.constants';
@@ -31,7 +30,6 @@ export const useAppSideEffects = () => {
     !token && (token = sessionStorage.getItem('token'));
 
     dispatch(token ? getUserByTokenThunk(token) : setIsConnected());
-    dispatch(messagesThunk());
     // dispatch(setGifts(GIFTS)); // TODO: get real gifts from server
   }, []);
 

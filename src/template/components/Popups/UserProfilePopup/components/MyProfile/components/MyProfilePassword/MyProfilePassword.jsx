@@ -12,6 +12,8 @@ const passwordInputs = [
   { key: 'newPasswordConfirm', placeholder: 'Confirm new password' },
 ];
 
+const fieldsKeys = passwordInputs.map(item => item.key);
+
 const MyProfilePassword = () => {
   const dispatch = useDispatch();
   const isChangeLoading = useSelector(selectIsChangePasswordLoading);
@@ -19,8 +21,10 @@ const MyProfilePassword = () => {
   const [ isNotSameError, setIsNotSameError ] = useState(false);
 
   const {
-    register, handleSubmit, formState: { errors }, reset,
+    register, handleSubmit, formState: { errors }, reset, watch,
   } = useForm();
+
+  const [ oldPassword, newPassword, newPasswordConfirm ] = watch(fieldsKeys);
 
   const toggleShowPasswords = (key) => {
     setShowPasswords(prev => (
@@ -67,12 +71,14 @@ const MyProfilePassword = () => {
       {isNotSameError
       && <div className='popup__error'>password and confirmation do not match</div>}
       <div className="profile__form-block profile__form-block_btn">
-        <Button
+        {
+        newPasswordConfirm && <Button
           type='submit'
           loading={isChangeLoading}
           className='profile__form-btn'>
           save password
-        </Button>
+          </Button>
+       }
       </div>
     </form>
   );

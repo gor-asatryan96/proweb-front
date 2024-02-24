@@ -256,6 +256,7 @@
 
 .profile__input,
 .profile__select {
+  display: flex;
   min-height: 3.285rem;
   width: 100%;
   padding: 0.821rem 0.857rem;
@@ -291,6 +292,12 @@
   }
 }
 
+
+.profile_input_phone {
+  display: flex;
+  align-items: center;
+}
+
 .profile__input:disabled {
   opacity: 50%;
 }
@@ -301,7 +308,7 @@
 
 .profile__select {
   appearance: none;
-  background-image: url("../../images/icon/arrow-bottom.svg");
+  // background-image: url("../../images/icon/arrow-bottom.svg");
   background-size: 1.214rem 0.714rem;
   background-repeat: no-repeat;
   background-position-x: calc(100% - 1.142rem);
@@ -311,7 +318,7 @@
     padding-right: 1.785rem;
     background-position: right 0.714rem center;
     background-size: 0.642rem auto;
-    cursor: pointer;
+    // cursor: pointer;
   }
 }
 
@@ -429,7 +436,7 @@
     padding: 0.285rem;
     background-color: transparent;
     height: unset;
-    cursor: pointer;
+    // cursor: pointer;
 
     &:before{
       content: "";

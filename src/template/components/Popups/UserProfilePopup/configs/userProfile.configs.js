@@ -19,17 +19,17 @@ export const USER_PROFILE_TABS = {
   [MESSAGES]: {
     name: MESSAGES, icon: 'message', Component: Messages, class: 'message',
   },
-  [GIFTS]: {
-    name: GIFTS, icon: 'profile-gift', Component: Gifts, class: 'gifts',
-  },
+  // [GIFTS]: {
+  //   name: GIFTS, icon: 'profile-gift', Component: Gifts, class: 'gifts',
+  // },
   [MY_BETS_HISTORY]: {
     name: MY_BETS_HISTORY, icon: 'profile-history', Component: MyBetsHistory, class: 'history',
   },
-  [WITHDRAW]: {
-    name: WITHDRAW, icon: 'withdraw', Component: Withdraw, class: 'withdraw',
-  },
   [DEPOSIT]: {
     name: DEPOSIT, icon: '', Component: Deposit, class: 'withdraw',
+  },
+  [WITHDRAW]: {
+    name: WITHDRAW, icon: 'withdraw', Component: Withdraw, class: 'withdraw',
   },
   [TRANSACTION]: {
     name: TRANSACTION, icon: 'transaction', Component: Transaction, class: 'transaction transaction_none',

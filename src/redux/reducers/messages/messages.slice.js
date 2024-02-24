@@ -13,14 +13,13 @@ const messagesSlice = createSlice({
       state.messages = payload;
     },
     setMessagesRead: (state, { payload }) => {
-      state.messages.forEach((item) => {
-        if (payload.includes(item.id)) {
-          item.read = true;
-        }
-      });
+      const index = state.messages.findIndex(item => item.message_id === payload);
+      if (index !== -1) {
+        state.messages[index].status = 'READ';
+      }
     },
     deleteMessage: (state, { payload }) => {
-      state.messages = state.messages.filter(item => item.id !== payload);
+      state.messages = state.messages.filter(item => item.message_id !== payload);
     },
   },
   extraReducers: (builder) => {

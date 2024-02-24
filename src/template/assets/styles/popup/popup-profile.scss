@@ -325,6 +325,7 @@
 
 .popup-profile__form-unit {
   color: var(--pmbet-green);
+  padding-right: 5px;
 }
 
 .popup-profile__form-block {
@@ -494,8 +495,9 @@
   background-size: 0.642rem auto;
 
   @media screen and (min-width: 1025px) {
-    background-image: url("../../images/icon/arrow-bottom-gray.svg");
-    cursor: pointer;
+    // background-image: url("../../images/icon/arrow-bottom-gray.svg");
+    // cursor: pointer;
+    padding: 1rem;
   }
 
 }
